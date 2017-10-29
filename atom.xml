@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://korcow.github.io/"/>
-  <updated>2017-10-29T06:04:06.842Z</updated>
+  <updated>2017-10-29T06:24:58.458Z</updated>
   <id>http://korcow.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://korcow.github.io/2017/10/29/%ED%84%B0%EB%AF%B8%EB%84%90-%EB%8B%A8%EC%B6%95%ED%82%A4/"/>
     <id>http://korcow.github.io/2017/10/29/터미널-단축키/</id>
     <published>2017-10-29T03:58:17.000Z</published>
-    <updated>2017-10-29T06:04:06.842Z</updated>
+    <updated>2017-10-29T06:24:58.458Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="터미널-단축키"><a href="#터미널-단축키" class="headerlink" title="터미널 단축키"></a>터미널 단축키</h1><p>xNIX 계열의 터미널에서 공통적으로 사용되는 단축키 입니다.<br>터미널과 shell에 따라 조금씩 다르고, 더많은 단축키가 있지만 아래 키는 대부분 공통적으로 동작 됩니다. </p><table><thead><tr><th>단축키</th><th>설명</th></tr></thead><tbody><tr><td><code>TAB</code></td><td>자동완성(파일및디렉토리, 명령을 자동완성)</td></tr><tr><td><code>Ctrl+h</code></td><td>백스페이와 같습니다.(더 편합니다.)</td></tr><tr><td><code>Ctrl+a</code></td><td>처음으로 이동</td></tr><tr><td><code>Ctrl+e</code></td><td>행 끝으로 이동</td></tr><tr><td><code>Ctrl+b</code></td><td>한 문자 뒤로 이동</td></tr><tr><td><code>Alt+b</code></td><td>한 단어 뒤로 이동</td></tr><tr><td><code>Ctrl+f</code></td><td>한 문자 앞으로 이동</td></tr><tr><td><code>Alt+f</code></td><td>한 단어 앞으로 이동</td></tr><tr><td><code>Ctrl+u</code></td><td>현재줄을 삭제합니다.</td></tr><tr><td><code>Ctrl+k</code></td><td>커서 위치에서 행 끝까지 삭제합니다.</td></tr><tr><td><code>Ctrl+w</code></td><td>커서앞 한단어를 삭제합니다.</td></tr><tr><td><code>Esc+Backspace</code></td><td>이전 단어 삭제</td></tr><tr><td><code>Ctrl+y</code></td><td>클립보드에서 텍스트를 붙여넣습니다.</td></tr><tr><td><code>Ctrl+l</code></td><td>화면 상단에 현재 줄을 남겨두고 화면을 지웁니다.</td></tr><tr><td><code>Ctrl+r</code></td><td>증분 검색 기록 을 역순으로 추적</td></tr><tr><td><code>Alt+p</code></td><td>비 증분 검색 기록을 역순으로 추적</td></tr><tr><td><code>Ctrl+p</code></td><td>비 증분 검색 기록을 역순으로 추적</td></tr></tbody></table><p>터미널 단축키는 man page, sed, edlin, vim, python, perl, rube 에서도 동일하게 사용됩니다. </p><h1 id="TAB-Ctrl-l-Ctrl-u-Ctrl-w-Ctrl-e-Ctrl-a-Ctrl-p-Ctrl-r"><a href="#TAB-Ctrl-l-Ctrl-u-Ctrl-w-Ctrl-e-Ctrl-a-Ctrl-p-Ctrl-r" class="headerlink" title="TAB, Ctrl+l, Ctrl+u, Ctrl+w, Ctrl+e, Ctrl+a, Ctrl+p, Ctrl+r"></a>TAB, Ctrl+l, Ctrl+u, Ctrl+w, Ctrl+e, Ctrl+a, Ctrl+p, Ctrl+r</h1><p>위 키는 반드시 손에 익히세요.</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="터미널-단축키"><a href="#터미널-단축키" class="headerlink" title="터미널 단축키"></a>터미널 단축키</h1><p>xNIX 계열의 터미널에서 공통적으로 사용되는 단축키 입니다.<br>터미널과 shell에 따라 조금씩 다르고, 더많은 단축키가 있지만 아래 키는 대부분 공통적으로 동작 됩니다. </p><table><thead><tr><th>단축키</th><th>설명</th></tr></thead><tbody><tr><td><code>TAB</code></td><td>자동완성(파일및디렉토리, 명령을 자동완성)</td></tr><tr><td><code>Ctrl+h</code></td><td>백스페이와 같습니다.(더 편합니다.)</td></tr><tr><td><code>Ctrl+a</code></td><td>처음으로 이동</td></tr><tr><td><code>Ctrl+e</code></td><td>행 끝으로 이동</td></tr><tr><td><code>Ctrl+b</code></td><td>한 문자 뒤로 이동</td></tr><tr><td><code>Alt+b</code></td><td>한 단어 뒤로 이동</td></tr><tr><td><code>Ctrl+f</code></td><td>한 문자 앞으로 이동</td></tr><tr><td><code>Alt+f</code></td><td>한 단어 앞으로 이동</td></tr><tr><td><code>Ctrl+u</code></td><td>현재줄을 삭제합니다.</td></tr><tr><td><code>Ctrl+k</code></td><td>커서 위치에서 행 끝까지 삭제합니다.</td></tr><tr><td><code>Ctrl+w</code></td><td>커서앞 한단어를 삭제합니다.</td></tr><tr><td><code>Esc+Backspace</code></td><td>이전 단어 삭제</td></tr><tr><td><code>Ctrl+y</code></td><td>클립보드에서 텍스트를 붙여넣습니다.</td></tr><tr><td><code>Ctrl+l</code></td><td>화면 상단에 현재 줄을 남겨두고 화면을 지웁니다.</td></tr><tr><td><code>Ctrl+r</code></td><td>증분 검색 기록 을 역순으로 추적</td></tr><tr><td><code>Alt+p</code></td><td>비 증분 검색 기록을 역순으로 추적</td></tr><tr><td><code>Ctrl+p</code></td><td>비 증분 검색 기록을 역순으로 추적</td></tr></tbody></table><p>터미널 단축키는 man page, sed, edlin, vim, python, perl, rube 에서도 동일하게 사용됩니다. </p><h1 id="TAB-Ctrl-li1-Ctrl-u-Ctrl-w-Ctrl-e-Ctrl-a-Ctrl-p-Ctrl-r"><a href="#TAB-Ctrl-li1-Ctrl-u-Ctrl-w-Ctrl-e-Ctrl-a-Ctrl-p-Ctrl-r" class="headerlink" title="TAB, Ctrl+li1, Ctrl+u, Ctrl+w, Ctrl+e, Ctrl+a, Ctrl+p, Ctrl+r"></a>TAB, Ctrl+li1, Ctrl+u, Ctrl+w, Ctrl+e, Ctrl+a, Ctrl+p, Ctrl+r</h1><p>위 키는 반드시 손에 익히세요.</p>]]></content>
     
     <summary type="html">
     
