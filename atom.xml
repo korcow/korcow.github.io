@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://korcow.github.io/"/>
-  <updated>2017-10-28T05:04:55.722Z</updated>
+  <updated>2017-10-29T04:44:04.577Z</updated>
   <id>http://korcow.github.io/</id>
   
   <author>
@@ -17,13 +17,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>터미널 단축키</title>
+    <link href="http://korcow.github.io/2017/10/29/%ED%84%B0%EB%AF%B8%EB%84%90-%EB%8B%A8%EC%B6%95%ED%82%A4/"/>
+    <id>http://korcow.github.io/2017/10/29/터미널-단축키/</id>
+    <published>2017-10-29T03:58:17.000Z</published>
+    <updated>2017-10-29T04:44:04.577Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="터미널-단축키"><a href="#터미널-단축키" class="headerlink" title="터미널 단축키"></a>터미널 단축키</h1><p>xNIX 계열의 터미널에서 공통적으로 사용되는 단축키 입니다.<br>터미널과 shell에 따라 약간 틀린것도 있지만 대부분 똑같습니다.<br>아래 설명한 것보도 몇개 더 있습니다. </p><table><thead><tr><th>단축키</th><th>설명</th></tr></thead><tbody><tr><td><code>Ctrl+h</code></td><td>백스페이와 같습니다.(더 편합니다.)</td></tr><tr><td><code>Ctrl+a</code></td><td>처음으로 이동</td></tr><tr><td><code>Ctrl+E</code></td><td>행 끝으로 이동</td></tr><tr><td><code>Ctrl+b</code></td><td>한 문자 뒤로 이동</td></tr><tr><td><code>Alt+b</code></td><td>한 단어 뒤로 이동</td></tr><tr><td><code>Ctrl+f</code></td><td>한 문자 앞으로 이동</td></tr><tr><td><code>Alt+f</code></td><td>한 단어 앞으로 이동</td></tr><tr><td><code>Ctrl+u</code></td><td>현재줄을 삭제합니다.</td></tr><tr><td><code>Ctrl+k</code></td><td>커서 위치에서 행 끝까지 삭제합니다.</td></tr><tr><td><code>Ctrl+w</code></td><td>커서앞 한단어를 삭제합니다.</td></tr><tr><td><code>Esc+Backspace</code></td><td>이전 단어 삭제</td></tr><tr><td><code>Ctrl+Y</code></td><td>클립보드에서 텍스트를 붙여넣습니다.</td></tr><tr><td><code>Ctrl+l</code></td><td>화면 상단에 현재 줄을 남겨두고 화면을 지웁니다.</td></tr><tr><td><code>Ctrl+r</code></td><td>증분 검색 기록 을 역순으로 추적</td></tr><tr><td><code>Alt+p</code></td><td>비 증분 검색 기록을 역순으로 추적</td></tr><tr><td><code>Ctrl+p</code></td><td>비 증분 검색 기록을 역순으로 추적</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;터미널-단축키&quot;&gt;&lt;a href=&quot;#터미널-단축키&quot; class=&quot;headerlink&quot; title=&quot;터미널 단축키&quot;&gt;&lt;/a&gt;터미널 단축키&lt;/h1&gt;&lt;p&gt;xNIX 계열의 터미널에서 공통적으로 사용되는 단축키 입니다.&lt;br&gt;터미널과 shell에 
+      
+    
+    </summary>
+    
+      <category term="centos, terminal" scheme="http://korcow.github.io/categories/centos-terminal/"/>
+    
+    
+      <category term="centos, terminal" scheme="http://korcow.github.io/tags/centos-terminal/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Centos설치</title>
     <link href="http://korcow.github.io/2017/10/28/Centos%EC%84%A4%EC%B9%98/"/>
     <id>http://korcow.github.io/2017/10/28/Centos설치/</id>
     <published>2017-10-28T04:54:29.000Z</published>
-    <updated>2017-10-28T05:04:55.722Z</updated>
+    <updated>2017-10-28T17:26:44.130Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Centos설치"><a href="#Centos설치" class="headerlink" title="Centos설치"></a>Centos설치</h1><p>실습의 편의를 위해 VirtualBox에 Centos를 설치하겠습니다.</p><h2 id="1-virtualbox-다운로드"><a href="#1-virtualbox-다운로드" class="headerlink" title="1. virtualbox 다운로드"></a>1. virtualbox 다운로드</h2><h2 id="2-Centos-다운로드"><a href="#2-Centos-다운로드" class="headerlink" title="2. Centos 다운로드"></a>2. Centos 다운로드</h2><h2 id="3-virtualbox-설치"><a href="#3-virtualbox-설치" class="headerlink" title="3. virtualbox 설치"></a>3. virtualbox 설치</h2><h2 id="4-virtualbox-실행-및-centos설치"><a href="#4-virtualbox-실행-및-centos설치" class="headerlink" title="4. virtualbox 실행 및 centos설치"></a>4. virtualbox 실행 및 centos설치</h2>]]></content>
+    <content type="html"><![CDATA[<h1 id="Centos설치"><a href="#Centos설치" class="headerlink" title="Centos설치"></a>Centos설치</h1><p>실습의 편의를 위해 VirtualBox에 Centos를 설치하겠습니다.</p><h2 id="1-virtualbox-다운로드"><a href="#1-virtualbox-다운로드" class="headerlink" title="1. virtualbox 다운로드"></a>1. virtualbox 다운로드</h2><p><a href="http://virtualbox.org" target="_blank" rel="external">http://virtualbox.org</a> 사이트에서 자신의 운영체제에 맞는 최신 버전의 virtualbox를 다운로드 받습니다.</p><h2 id="2-Centos-다운로드"><a href="#2-Centos-다운로드" class="headerlink" title="2. Centos 다운로드"></a>2. Centos 다운로드</h2><p><a href="http://centos.org" target="_blank" rel="external">http://centos.org</a> 에서 centos7 dvd iso 이미지를 다운로드 받습니다.</p><h2 id="3-virtualbox-설치"><a href="#3-virtualbox-설치" class="headerlink" title="3. virtualbox 설치"></a>3. virtualbox 설치</h2><h2 id="4-virtualbox-실행-및-centos설치"><a href="#4-virtualbox-실행-및-centos설치" class="headerlink" title="4. virtualbox 실행 및 centos설치"></a>4. virtualbox 실행 및 centos설치</h2>]]></content>
     
     <summary type="html">
     
@@ -35,9 +60,7 @@
     
     </summary>
     
-      <category term="TUT" scheme="http://korcow.github.io/categories/TUT/"/>
-    
-      <category term="Centos" scheme="http://korcow.github.io/categories/TUT/Centos/"/>
+      <category term="Centos" scheme="http://korcow.github.io/categories/Centos/"/>
     
     
       <category term="centos" scheme="http://korcow.github.io/tags/centos/"/>
