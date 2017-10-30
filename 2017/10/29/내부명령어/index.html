@@ -1,4 +1,171 @@
-<!DOCTYPE html><html lang="ko"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>내부명령어 | KORCOW</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">내부명령어</h1><a id="logo" href="/.">KORCOW</a><p class="description"></p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 홈</i></a><a href="/archives/"><i class="fa fa-archive"> 아카이브</i></a><a href="/about/"><i class="fa fa-user"> 소개</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">내부명령어</h1><div class="post-meta">Oct 29, 2017<span> | </span><span class="category"><a href="/categories/Centos/">Centos</a></span></div><a data-disqus-identifier="2017/10/29/내부명령어/" href="/2017/10/29/내부명령어/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>내부명령어 | KORCOW</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="pwd, cd" />
+    
+    <meta name="description" content="내부명령어내부명령은 Shell에 들어있고 별도 파일로 존재 하지 않는다고 했습니다. 내부명령어는 프로그램 언어 이기 때문에 당연히 변수, 상수, 조건문, 반복문, 배열,등이 있겠죠. 그걸 내부 명령어라고 합니다.  컴퓨터는 명령을 내리면 결과를 돌려 줍니다. 받은 결과를 다른 명령령의 인자로 돌려 줄 수 있다는 것도 꼭 기억하시기 바랍니다. Termin">
+<meta name="keywords" content="pwd, cd">
+<meta property="og:type" content="article">
+<meta property="og:title" content="내부명령어">
+<meta property="og:url" content="http://korcow.github.io/2017/10/29/내부명령어/index.html">
+<meta property="og:site_name" content="KORCOW">
+<meta property="og:description" content="내부명령어내부명령은 Shell에 들어있고 별도 파일로 존재 하지 않는다고 했습니다. 내부명령어는 프로그램 언어 이기 때문에 당연히 변수, 상수, 조건문, 반복문, 배열,등이 있겠죠. 그걸 내부 명령어라고 합니다.  컴퓨터는 명령을 내리면 결과를 돌려 줍니다. 받은 결과를 다른 명령령의 인자로 돌려 줄 수 있다는 것도 꼭 기억하시기 바랍니다. Termin">
+<meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2017-10-30T11:17:30.856Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="내부명령어">
+<meta name="twitter:description" content="내부명령어내부명령은 Shell에 들어있고 별도 파일로 존재 하지 않는다고 했습니다. 내부명령어는 프로그램 언어 이기 때문에 당연히 변수, 상수, 조건문, 반복문, 배열,등이 있겠죠. 그걸 내부 명령어라고 합니다.  컴퓨터는 명령을 내리면 결과를 돌려 줍니다. 받은 결과를 다른 명령령의 인자로 돌려 줄 수 있다는 것도 꼭 기억하시기 바랍니다. Termin">
+    
+
+    
+        <link rel="alternate" href="/" title="KORCOW" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">홈</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Centos/">Centos</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Vim/">Vim</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="검색" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '포스트',
+            PAGES: 'Pages',
+            CATEGORIES: '카테고리',
+            TAGS: '태그',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Centos/">Centos</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-내부명령어" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        내부명령어
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2017/10/29/내부명령어/" class="article-date">
+            <time datetime="2017-10-29T10:46:54.000Z" itemprop="datePublished">2017-10-29</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/pwd-cd/">pwd, cd</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
 <hr>
 <h1 id="내부명령어"><a href="#내부명령어" class="headerlink" title="내부명령어"></a>내부명령어</h1><p>내부명령은 Shell에 들어있고 별도 파일로 존재 하지 않는다고 했습니다. 내부명령어는 프로그램 언어 이기 때문에 당연히 변수, 상수, 조건문, 반복문, 배열,등이 있겠죠. 그걸 내부 명령어라고 합니다. </p>
 <p>컴퓨터는 명령을 내리면 결과를 돌려 줍니다. 받은 결과를 다른 명령령의 인자로 돌려 줄 수 있다는 것도 꼭 기억하시기 바랍니다.</p>
@@ -432,29 +599,346 @@ popd 명령이 성공적이면, dirs 명령도  실행하며  반환  상태값�
 <li><p><code>wait [n]</code><br>  특정 프로세스를 기다리다가 종료값을  반환한다. n 은 프로세스 ID이거나 작업 스펙이다; 작업 스펙이면 그 작업의 파이프라인에 존재하는 모든 프로세스를 기다린다. n 을 적지 않으면, 현재 활성 중인 모든 프로세스를 기다리며 반환값은 0 이다. n 이 존재하지 않는 프로세스 또는 작업을 가리키는 경우 반환 상태값은 127 이다. 그렇지 않으면, 반환값은 기다렸던 마지막 프로세스 또는 작업의 종료 상태값이 된다.</p>
 </li>
 </ul>
-</div><div class="tags"><a href="/tags/pwd-cd/">pwd, cd</a></div><div class="post-nav"><a href="/2017/10/29/외부명령어/" class="pre">외부명령어</a><a href="/2017/10/29/내부명령어와-외부명령어/" class="next">내부명령어와 외부명령어</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论 「请确保 disqus.com 可以正常加载」</button></div><script>var disqus_shortname = 'GJwxUwWRTS';
-var disqus_identifier = '2017/10/29/내부명령어/';
-var disqus_title = '내부명령어';
-var disqus_url = 'http://korcow.github.io/2017/10/29/내부명령어/';
-$('.btn_click_load').click(function() {
-  (function() {
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://korcow.github.io/2017/10/29/내부명령어/" data-id="cj9cms2pg000fe47oc53m2zkz" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>팔로우:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2017/10/29/외부명령어/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">새로운</strong>
+        <p class="article-nav-title">
+        
+            외부명령어
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2017/10/29/내부명령어와-외부명령어/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">오래된</strong>
+        <p class="article-nav-title">내부명령어와 외부명령어</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">최근 글</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Vim/">Vim</a></p>
+                            <p class="item-title"><a href="/2017/10/30/vim설치/" class="title">vim설치</a></p>
+                            <p class="item-date"><time datetime="2017-10-30T11:46:09.000Z" itemprop="datePublished">2017-10-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/10/29/외부명령어/" class="title">외부명령어</a></p>
+                            <p class="item-date"><time datetime="2017-10-29T10:47:23.000Z" itemprop="datePublished">2017-10-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Centos/">Centos</a></p>
+                            <p class="item-title"><a href="/2017/10/29/내부명령어/" class="title">내부명령어</a></p>
+                            <p class="item-date"><time datetime="2017-10-29T10:46:54.000Z" itemprop="datePublished">2017-10-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Centos/">Centos</a></p>
+                            <p class="item-title"><a href="/2017/10/29/내부명령어와-외부명령어/" class="title">내부명령어와 외부명령어</a></p>
+                            <p class="item-date"><time datetime="2017-10-29T10:46:40.000Z" itemprop="datePublished">2017-10-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Centos/">Centos</a></p>
+                            <p class="item-title"><a href="/2017/10/29/디렉토리/" class="title">디렉토리</a></p>
+                            <p class="item-date"><time datetime="2017-10-29T10:45:14.000Z" itemprop="datePublished">2017-10-29</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">카테고리</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Centos/">Centos</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vim/">Vim</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">아카이브</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">10월 2017</a><span class="archive-list-count">13</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">태그</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Centos/">Centos</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos/">centos</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos-terminal/">centos, terminal</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/directory-디렉토리/">directory, 디렉토리</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pwd-cd/">pwd, cd</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virtualbox/">virtualbox</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/리눅스설치/">리눅스설치</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/명령어/">명령어</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">태그 클라우드</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Centos/" style="font-size: 20px;">Centos</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/centos-terminal/" style="font-size: 10px;">centos, terminal</a> <a href="/tags/directory-디렉토리/" style="font-size: 10px;">directory, 디렉토리</a> <a href="/tags/pwd-cd/" style="font-size: 10px;">pwd, cd</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/virtualbox/" style="font-size: 10px;">virtualbox</a> <a href="/tags/리눅스설치/" style="font-size: 10px;">리눅스설치</a> <a href="/tags/명령어/" style="font-size: 10px;">명령어</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">링크</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2017 woo-seok Han</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://korcow.github.io/2017/10/29/내부명령어/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
     dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-  $('.btn_click_load').css('display','none');
-});
-$.ajax({
-  url: 'https://disqus.com/next/config.json',
-  timeout: 3000,
-  type: 'GET',
-  success: (function() {
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    $('.btn_click_load').css('display','none');
-  })(),
-  error: function() {
-    $('.btn_click_load').css('display','block');
-  }
-});</script><script id="dsq-count-scr" src="//GJwxUwWRTS.disqus.com/count.js" async></script></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://korcow.github.io"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 카테고리</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Centos/">Centos</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vim/">Vim</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 태그</i></div><div class="tagcloud"><a href="/tags/centos/" style="font-size: 15px;">centos</a> <a href="/tags/virtualbox/" style="font-size: 15px;">virtualbox</a> <a href="/tags/리눅스설치/" style="font-size: 15px;">리눅스설치</a> <a href="/tags/vim/" style="font-size: 15px;">vim</a> <a href="/tags/pwd-cd/" style="font-size: 15px;">pwd, cd</a> <a href="/tags/명령어/" style="font-size: 15px;">명령어</a> <a href="/tags/directory-디렉토리/" style="font-size: 15px;">directory, 디렉토리</a> <a href="/tags/Centos/" style="font-size: 15px;">Centos</a> <a href="/tags/centos-terminal/" style="font-size: 15px;">centos, terminal</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 과거</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/10/30/vim설치/">vim설치</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/29/외부명령어/">외부명령어</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/29/내부명령어/">내부명령어</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/29/내부명령어와-외부명령어/">내부명령어와 외부명령어</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/29/디렉토리/">디렉토리</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/29/부팅-순서/">부팅 순서</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/29/리눅스의-특징/">리눅스의 특징</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/29/터미널-단축키/">터미널 단축키</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/28/Centos설치/">Centos설치</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/28/post/">post</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-comment-o"> 최근 댓글</i></div><script type="text/javascript" src="//GJwxUwWRTS.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 블로그롤</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2017 <a href="/." rel="nofollow">KORCOW.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
