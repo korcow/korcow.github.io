@@ -173,9 +173,51 @@
 <ul>
 <li><p>옵션이 파일명이면 파일로 만들어 주거나 파일에 덧붙여 줍니다. xNIX는 장치도 파일입니다. 파이프와 리다이렉션은 무척 중요합니다. 지금은 가볍게 이해 정도만 해주세요. 리다이렉션은 <code>&lt;</code>, <code>&lt;&lt;</code> 도 가능합니다.</p>
 </li>
-<li><p>와일드카드<br>문자 | 설명<br>—|—<br><code>*</code>| 모든 문자<br><code>?</code>| 문자하나<br><code>[characters]</code>| characters 문자 집합에 포함된 문자<br><code>[!characters]</code>| characters 문자 집합에 포함 되지 않은 문자<br><code>[[:class:]]</code>| 클래스에 포함된 문자<br><code>[[:alphanumeric:]]</code> | 알파벳과 숫자를 지정<br><code>[[:alpha:]]</code> | 알파벳 지정<br><code>[[:digit:]]</code> | 숫자를 지정 </p>
+<li><p>와일드카드</p>
 </li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>문자</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>*</code></td>
+<td>모든 문자 </td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>문자하나</td>
+</tr>
+<tr>
+<td><code>[characters]</code></td>
+<td>characters 문자 집합에 포함된 문자</td>
+</tr>
+<tr>
+<td><code>[!characters]</code></td>
+<td>characters 문자 집합에 포함 되지 않은 문자</td>
+</tr>
+<tr>
+<td><code>[[:class:]]</code></td>
+<td>클래스에 포함된 문자</td>
+</tr>
+<tr>
+<td><code>[[:alphanumeric:]]</code></td>
+<td>알파벳과 숫자를 지정 </td>
+</tr>
+<tr>
+<td><code>[[:alpha:]]</code></td>
+<td>알파벳 지정 </td>
+</tr>
+<tr>
+<td><code>[[:digit:]]</code></td>
+<td>숫자를 지정 </td>
+</tr>
+</tbody>
+</table>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># man cd</span></div><div class="line"><span class="comment"># man pwd</span></div><div class="line"><span class="comment"># man bash</span></div></pre></td></tr></table></figure>
 <p>man 명령을 이용해 도움말을 볼 수 있습니다.<br>man 도움말에서 h-key를 누르면 사용법을 볼수 있습니다.<br>q-key를 누르면 종료됩니다. 커서키를 이용해서 위, 아래로 이동하며 볼 수 있습니다.</p>
 <hr>
