@@ -553,7 +553,7 @@ pre {
   transform: rotate(180deg); }
 
 .timeline-label p {
-  font-family: Helvetica, "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+  font-family: "나눔고딕", "Nanum Gothic", "Noto Sans KR",Helvetica, "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
   margin-bottom: 3px; }
 
 #process .timeline-centered .timeline-entry .timeline-entry-inner {
@@ -651,7 +651,7 @@ pre {
 #process .present,
 #process .born {
   font-size: 14px;
-  font-family: 'Georgia', serif, Helvetica, "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
+  font-family: "나눔고딕", "Nanum Gothic", "Noto Sans KR",'Georgia', serif, Helvetica, "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial, sans-serif;
   font-style: italic;
   color: #333;
   padding: 10px;
@@ -769,7 +769,7 @@ figure.highlight,
   .codeblock .code,
   .codeblock .tag {
     background-color: inherit;
-    font-family: "Nanum Gothic Coding", Menlo, Consolas, monospace;
+    font-family: "나눔고딕", "Nanum Gothic", "Noto Sans KR", Menlo, Consolas, monospace;
     border: none;
     padding: 0;
     margin: 0;
@@ -817,7 +817,7 @@ figure.highlight,
 
 .gist .line,
 .gist .line-number {
-  font-family: "Nanum Gothic Coding", Menlo, Consolas, monospace;
+  font-family: "나눔고딕","Nanum Gothic", Menlo, Consolas, monospace;
   font-size: 1em;
   margin: 0 0 5px 0; }
 
