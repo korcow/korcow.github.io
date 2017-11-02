@@ -390,6 +390,8 @@
       <url>/2017/10/31/%EC%99%80%EC%9D%BC%EB%93%9C%EC%B9%B4%EB%93%9C/</url>
       <content type="html"><![CDATA[<div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
 <hr>
+<p>와일드 카드는 반드시 알고 있어야 하는 명령입니다.<br>물론 정규식을 사용해도 되지만 왠만한 것은 와일드카드로 문제 없이 사용가능합니다.</p>
+<p>여러개의 파일의 일괄처리가 필요할 경우, 파일의 삭제, 복사, 이동, 문자열 추가, 삭제, 치환등을 처리할때 꼭 필요합니다.</p>
 <h2 id="와일드카드"><a href="#와일드카드" class="headerlink" title="와일드카드"></a>와일드카드</h2><table>
 <thead>
 <tr>
