@@ -6,12 +6,55 @@
       <title><![CDATA[외부명령어 요약]]></title>
       <url>/2017/11/02/%EC%99%B8%EB%B6%80%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%9A%94%EC%95%BD/</url>
       <content type="html"><![CDATA[<h1 id="외부-명령어"><a href="#외부-명령어" class="headerlink" title="외부 명령어"></a>외부 명령어</h1><h2 id="파일-관리-명령어"><a href="#파일-관리-명령어" class="headerlink" title="파일 관리 명령어"></a>파일 관리 명령어</h2><ul>
-<li>ls | 파일의 리스트를 보여줌.<ul>
-<li>ls -a 모든파일을 보여줌</li>
+<li>ls        | 파일의 리스트를 보여줌.<ul>
+<li><code>ls -a</code> 모든파일을 보여줌</li>
 </ul>
 </li>
-<li>cat| 파일의 내용을 보여줌.</li>
-<li>cal| 달력을 보여줌.</li>
+<li>touch        | 파일의 생성일자를 변경. 파일이 없다면 새로운 파일을 만듦.<ul>
+<li>touch abc.txt | 파일이 없을경우 새로운 파일을 생성</li>
+<li>touch -t 200010100909 abc.txt | 입력한 시간으로 수정</li>
+<li>touch -c abc.txt | 현재 시간으로 수정</li>
+</ul>
+</li>
+<li>cat        | 파일의 내용을 보여줌.<ul>
+<li><code>cat abc.txt</code> abc.txt 파일의 내용을 출력</li>
+</ul>
+</li>
+<li>which        | 명령어의 위치를 알려줌.(명령어가 어느것인지 <code>$PATH</code>에서만 찾음)</li>
+<li>whereis    | 명령어의 위치를 알려줌.(명령어가 어디에 있는지 <code>/bin;/etc;/man</code> 에서찾음)</li>
+<li>file        | 파일의 정보를 알려줌.</li>
+<li>cp        | 파일을 복사.</li>
+<li>rm        | 파일을 지움.</li>
+<li>mv        | 파일을 이동시킴.</li>
+<li>more        | 파일의 내용을 보여줌.</li>
+<li>grep        | 단어(키워드)를 찾아줌.</li>
+<li>find        | 파일을 찾아줌.</li>
+<li>ln        | 링크를 만들어줌.</li>
+<li>mkdir        | 디렉토리를 만들어줌.</li>
+<li>rmdir        | 디렉토리를 삭제해줌.</li>
+<li>wc        | 파일의 통계(라인수, 단어수, 문자수)를 보여줌.</li>
+<li>tail        |</li>
+<li>head        |</li>
+<li>less        |</li>
+</ul>
+<h2 id="권한-소유-관리"><a href="#권한-소유-관리" class="headerlink" title="권한 소유 관리"></a>권한 소유 관리</h2><ul>
+<li>id        |</li>
+<li>whoami    |</li>
+<li>finger    |</li>
+<li>chmod        |</li>
+<li>chown        |</li>
+<li>sudo        |</li>
+<li>passwd    |</li>
+<li>useradd    |</li>
+<li>w            |</li>
+<li>who        |</li>
+<li><h2 id="프로세스관리"><a href="#프로세스관리" class="headerlink" title="프로세스관리"></a>프로세스관리</h2></li>
+<li><p>top<br>-</p>
+<h2 id="기본-응용"><a href="#기본-응용" class="headerlink" title="기본 응용"></a>기본 응용</h2></li>
+<li><p>cal        | 달력을 보여줌.</p>
+</li>
+<li>time        |</li>
+<li>date        |</li>
 </ul>
 ]]></content>
       
