@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://korcow.github.io/"/>
-  <updated>2017-11-02T13:39:31.862Z</updated>
+  <updated>2017-11-02T13:45:42.344Z</updated>
   <id>http://korcow.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>파일내용보기</title>
+    <link href="http://korcow.github.io/2017/11/02/%ED%8C%8C%EC%9D%BC%EB%82%B4%EC%9A%A9%EB%B3%B4%EA%B8%B0/"/>
+    <id>http://korcow.github.io/2017/11/02/파일내용보기/</id>
+    <published>2017-11-02T13:43:13.000Z</published>
+    <updated>2017-11-02T13:45:42.344Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="파일-내용-보기"><a href="#파일-내용-보기" class="headerlink" title="파일 내용 보기"></a>파일 내용 보기</h2><p>파일의 내용을 볼 수 있는 방법은 많이 있지만<br>cat<br>head<br>tail<br>등을 많이 사용합니다.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;파일-내용-보기&quot;&gt;&lt;a href=&quot;#파일-내용-보기&quot; class=&quot;headerlink&quot; title=&quot;파일 내용 보기&quot;&gt;&lt;/a&gt;파일 내용 보기&lt;/h2&gt;&lt;p&gt;파일의 내용을 볼 수 있는 방법은 많이 있지만&lt;br&gt;cat&lt;br&gt;head&lt;br&gt;ta
+      
+    
+    </summary>
+    
+      <category term="Centos" scheme="http://korcow.github.io/categories/Centos/"/>
+    
+    
+      <category term="Centos" scheme="http://korcow.github.io/tags/Centos/"/>
+    
+      <category term="cat" scheme="http://korcow.github.io/tags/cat/"/>
+    
+      <category term="head" scheme="http://korcow.github.io/tags/head/"/>
+    
+      <category term="tail" scheme="http://korcow.github.io/tags/tail/"/>
+    
+  </entry>
   
   <entry>
     <title>파일및디렉토리삭제</title>
@@ -561,35 +592,6 @@
       <category term="리다이렉션" scheme="http://korcow.github.io/tags/%EB%A6%AC%EB%8B%A4%EC%9D%B4%EB%A0%89%EC%85%98/"/>
     
       <category term="파이프라인" scheme="http://korcow.github.io/tags/%ED%8C%8C%EC%9D%B4%ED%94%84%EB%9D%BC%EC%9D%B8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>내부명령어와 외부명령어</title>
-    <link href="http://korcow.github.io/2017/10/29/%EB%82%B4%EB%B6%80%EB%AA%85%EB%A0%B9%EC%96%B4%EC%99%80-%EC%99%B8%EB%B6%80%EB%AA%85%EB%A0%B9%EC%96%B4/"/>
-    <id>http://korcow.github.io/2017/10/29/내부명령어와-외부명령어/</id>
-    <published>2017-10-29T10:46:40.000Z</published>
-    <updated>2017-11-01T05:07:07.773Z</updated>
-    
-    <content type="html"><![CDATA[<div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div><hr><h1 id="내부명령어와-외부명령어"><a href="#내부명령어와-외부명령어" class="headerlink" title="내부명령어와 외부명령어"></a>내부명령어와 외부명령어</h1><p>리눅스의 명령은 내부명령과 외부명령으로 나뉘어 집니다.</p><p>내부명령은 별도의 파일이 존재 하지 않습니다.<br>Shell이라고 하는 인터프리터(명령해석기)에 명령이 들어 있습니다.<br>리눅스의 터미널을 실행하면 커서가 깜빡거립니다. 명령입력 대기를 하고있는 겁니다.<br>사용자가 명령을 내리면 Shell이 해석해서 Kernel에 전달하고<br>kernel은 cpu에 전달하고 cpu는 명령을 처리해서 다시<br>Kernel로 전달해 최종적으로 Shell에 돌려줍니다.</p><img src="/2017/10/29/내부명령어와-외부명령어/2017-10-30_19-50-59.png" alt="[그림1]" title="[그림1]"><p>외부명령은 OS가 갖추어야할 기본 프로그램이 존재하며 /bin 과 /usr/bin에 들어 있는 파일들이 외부명령 프로그램들입니다.</p><ul><li>파일 및 디렉토리 관리 명령</li><li>프로세스 관리 명령</li><li>JOB 관리 명령</li><li>보안 및 권한관리 명령</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;div class=&quot;video-container&quot;&gt;&lt;iframe src=&quot;//www.youtube.com/embed/SSu822Lgta8&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
-&lt;hr&gt;
-&lt;h1 id=&quot;
-      
-    
-    </summary>
-    
-      <category term="Centos" scheme="http://korcow.github.io/categories/Centos/"/>
-    
-    
-      <category term="외부명령어" scheme="http://korcow.github.io/tags/%EC%99%B8%EB%B6%80%EB%AA%85%EB%A0%B9%EC%96%B4/"/>
-    
-      <category term="내부명령어" scheme="http://korcow.github.io/tags/%EB%82%B4%EB%B6%80%EB%AA%85%EB%A0%B9%EC%96%B4/"/>
     
   </entry>
   
