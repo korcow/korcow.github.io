@@ -1664,7 +1664,7 @@ alias vi=gvim -v</code></p>
     
     <entry>
       <title><![CDATA[터미널 단축키]]></title>
-      <url>/2017/10/29/centos-%ED%84%B0%EB%AF%B8%EB%84%90-%EB%8B%A8%EC%B6%95x%ED%82%A4/</url>
+      <url>/2017/10/29/centos-%ED%84%B0%EB%AF%B8%EB%84%90-%EB%8B%A8%EC%B6%95%ED%82%A4/</url>
       <content type="html"><![CDATA[<div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
 <h1 id="터미널-단축키"><a href="#터미널-단축키" class="headerlink" title="터미널 단축키"></a>터미널 단축키</h1><p>xNIX 계열의 터미널에서 공통적으로 사용되는 단축키 입니다.<br>터미널과 shell에 따라 조금씩 다르고, 더많은 단축키가 있지만 아래 키는 대부분 공통적으로 동작 됩니다.</p>
 <table>
