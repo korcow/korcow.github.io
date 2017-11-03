@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://korcow.github.io/"/>
-  <updated>2017-11-01T05:08:01.166Z</updated>
+  <updated>2017-11-01T15:48:39.304Z</updated>
   <id>http://korcow.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>경로이동하기</title>
+    <link href="http://korcow.github.io/2017/11/01/centos-change/"/>
+    <id>http://korcow.github.io/2017/11/01/centos-change/</id>
+    <published>2017-11-01T14:55:27.000Z</published>
+    <updated>2017-11-01T15:48:39.304Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="경로이동하기"><a href="#경로이동하기" class="headerlink" title="경로이동하기"></a>경로이동하기</h1><ul><li><code>pwd</code> 현재의 경로를 확인합니다.</li><li><code>.</code> 현재의 경로를 의미합니다.<ul><li><code>./abc</code> 현재경로에 있는 abc파일을 실행합니다.</li></ul></li><li><code>..</code> 상위경로를 의미합니다.<ul><li><code>cd ..</code> 부모경로로 이동합니다. </li></ul></li><li>cd 디렉토리명으로 경로를 이동할 수 있습니다.<ul><li><code>cd temp</code></li><li>디렉토리 이름을 쓸때 Tab키를 누르면 자동완성</li></ul></li><li>바로전 경로로 이동하려면 <ul><li><code>cd -</code></li></ul></li><li>홈디렉토리로 이동하려면<ul><li><code>cd ~</code></li></ul></li><li>현재의 경로를 저장하려면<ul><li>pushd .</li><li>절대경로로 지정<ul><li>pushd /etc/apache2/conf</li></ul></li></ul></li><li>저장된 경로로 이동하려면<ul><li>popd</li></ul></li></ul><h2 id="경로에는-상대-경로와-절대-경로가-있습니다"><a href="#경로에는-상대-경로와-절대-경로가-있습니다" class="headerlink" title="경로에는 상대 경로와 절대 경로가 있습니다."></a>경로에는 상대 경로와 절대 경로가 있습니다.</h2><h2 id="상대경로"><a href="#상대경로" class="headerlink" title="상대경로"></a>상대경로</h2><p>현재 위치의 경로를 기준</p><p>##절대경로<br>/를 기준</p><p>pushd</p><p>popd</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;경로이동하기&quot;&gt;&lt;a href=&quot;#경로이동하기&quot; class=&quot;headerlink&quot; title=&quot;경로이동하기&quot;&gt;&lt;/a&gt;경로이동하기&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;pwd&lt;/code&gt; 현재의 경로를 확인합니다.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.
+      
+    
+    </summary>
+    
+      <category term="Centos" scheme="http://korcow.github.io/categories/Centos/"/>
+    
+    
+      <category term="cd" scheme="http://korcow.github.io/tags/cd/"/>
+    
+      <category term="pushd" scheme="http://korcow.github.io/tags/pushd/"/>
+    
+      <category term="popd" scheme="http://korcow.github.io/tags/popd/"/>
+    
+  </entry>
   
   <entry>
     <title>리눅스의 특징</title>
