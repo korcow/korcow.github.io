@@ -4,7 +4,7 @@
     
     <entry>
       <title><![CDATA[파일내용보기]]></title>
-      <url>/2017/11/02/centos-%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%82%E1%85%A2%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%87%E1%85%A9%E1%84%80%E1%85%B5x/</url>
+      <url>/2017/11/02/centos-%ED%8C%8C%EC%9D%BC%EB%82%B4%EC%9A%A9%EB%B3%B4%EA%B8%B0/</url>
       <content type="html"><![CDATA[<h2 id="파일-내용-보기"><a href="#파일-내용-보기" class="headerlink" title="파일 내용 보기"></a>파일 내용 보기</h2><p>파일의 내용을 볼 수 있는 방법은 많이 있지만<br>cat<br>head<br>tail<br>등을 많이 사용합니다.</p>
 ]]></content>
       
