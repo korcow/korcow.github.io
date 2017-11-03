@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[경로이동하기]]></title>
       <url>/2017/11/01/centos-change/</url>
-      <content type="html"><![CDATA[<h1 id="경로이동하기"><a href="#경로이동하기" class="headerlink" title="경로이동하기"></a>경로이동하기</h1><ul>
+      <content type="html"><![CDATA[<h3 id="경로이동하기"><a href="#경로이동하기" class="headerlink" title="경로이동하기"></a>경로이동하기</h3><ul>
 <li><code>pwd</code> 현재의 경로를 확인합니다.</li>
 <li><code>.</code> 현재의 경로를 의미합니다.<ul>
 <li><code>./abc</code> 현재경로에 있는 abc파일을 실행합니다.</li>
@@ -41,8 +41,8 @@
 </ul>
 </li>
 </ul>
-<h2 id="경로에는-상대-경로와-절대-경로가-있습니다"><a href="#경로에는-상대-경로와-절대-경로가-있습니다" class="headerlink" title="경로에는 상대 경로와 절대 경로가 있습니다."></a>경로에는 상대 경로와 절대 경로가 있습니다.</h2><h2 id="상대경로"><a href="#상대경로" class="headerlink" title="상대경로"></a>상대경로</h2><p>현재 위치의 경로를 기준</p>
-<p>##절대경로<br>/를 기준</p>
+<h3 id="경로에는-상대-경로와-절대-경로가-있습니다"><a href="#경로에는-상대-경로와-절대-경로가-있습니다" class="headerlink" title="경로에는 상대 경로와 절대 경로가 있습니다."></a>경로에는 상대 경로와 절대 경로가 있습니다.</h3><h4 id="상대경로"><a href="#상대경로" class="headerlink" title="상대경로"></a>상대경로</h4><p>현재 위치의 경로를 기준</p>
+<h4 id="절대경로"><a href="#절대경로" class="headerlink" title="절대경로"></a>절대경로</h4><p>/를 기준</p>
 <p>pushd</p>
 <p>popd</p>
 ]]></content>
@@ -71,15 +71,15 @@
       <url>/2017/10/29/centos-linux/</url>
       <content type="html"><![CDATA[<div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
 <hr>
-<h1 id="리눅스의-특징과-역할"><a href="#리눅스의-특징과-역할" class="headerlink" title="리눅스의 특징과 역할"></a>리눅스의 특징과 역할</h1><h2 id="특징"><a href="#특징" class="headerlink" title="특징"></a>특징</h2><ul>
+<h3 id="리눅스의-특징과-역할"><a href="#리눅스의-특징과-역할" class="headerlink" title="리눅스의 특징과 역할"></a>리눅스의 특징과 역할</h3><h4 id="특징"><a href="#특징" class="headerlink" title="특징"></a>특징</h4><ul>
 <li>멀티유저, 멀티태스킹, 멀티 프로세싱, 서버용 운영체제</li>
 <li>GUI 와 CUI 를 지원</li>
 <li>무료이며, 수많은 소스가 공개 되어 있다.</li>
 <li>안정성, 적은 리소스 점유로 mobile, embeded에서도 사용</li>
 </ul>
-<h2 id="운영체제-역할"><a href="#운영체제-역할" class="headerlink" title="운영체제 역할"></a>운영체제 역할</h2><p>리눅스는 많은 OS(Operating System) 운영체제중의 하나입니다.<br></p>
+<h4 id="운영체제-역할"><a href="#운영체제-역할" class="headerlink" title="운영체제 역할"></a>운영체제 역할</h4><p>리눅스는 많은 OS(Operating System) 운영체제중의 하나입니다.<br></p>
 <p>위에 보는 그림과 같이 컴퓨터는 많은 장치로 구성되어 있습니다. 운영체제는 각각의 장치를 유기적으로 연결해서 컴퓨터를 사용할 수 있도록 해줍니다. SB는 각종 입출력 장치를 제어하고, NB는 PCI BUS 와 SB를 제어 합니다. OS가 없으면 컴퓨터는 동작 하지 않습니다.</p>
-<h2 id="기능"><a href="#기능" class="headerlink" title="기능"></a>기능</h2><ul>
+<h4 id="기능"><a href="#기능" class="headerlink" title="기능"></a>기능</h4><ul>
 <li>파일(디렉토리)관리<ul>
 <li>파일생성, 이동, 삭제, 복사</li>
 </ul>
