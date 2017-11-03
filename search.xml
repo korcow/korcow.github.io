@@ -359,7 +359,7 @@
     
     <entry>
       <title><![CDATA[shell이란]]></title>
-      <url>/2017/10/31/centos-shell%E1%84%8B%E1%85%B5%E1%84%85%E1%85%A1%E1%86%ABx/</url>
+      <url>/2017/10/31/centos-shell%EC%9D%B4%EB%9E%80/</url>
       <content type="html"><![CDATA[<p>리눅스 시스템이 부팅이 완료되고 로그인을 하면 커서가 깜빡이며 명령 수행을 대기합니다. 이것을 shell prompt 라고합니다.<br>shell은 interpreter 입니다. 명령을 해석하고 올바른 명령이라면 kernel로 명령을 전달하고 처리 합니다.</p>
 <p>shell이 interpreter라고 했습니다.</p>
 <p>컴파일러는 명령을 모두 해석해서 한번에 처리합니다.<br>인터프리터는 명령을 한줄씩 해석해서 처리 합니다.</p>
