@@ -1837,7 +1837,9 @@ alias vi=gvim -v</code></p>
       <content type="html"><![CDATA[<h3 id="Centos설치"><a href="#Centos설치" class="headerlink" title="Centos설치"></a>Centos설치</h3><p>실습의 편의를 위해 VirtualBox에 Centos를 설치하겠습니다.</p>
 <h4 id="1-virtualbox-다운로드"><a href="#1-virtualbox-다운로드" class="headerlink" title="1. virtualbox 다운로드"></a>1. virtualbox 다운로드</h4><p><a href="http://virtualbox.org" target="_blank" rel="external">http://virtualbox.org</a> 사이트에서 자신의 운영체제에 맞는 최신 버전의 virtualbox를 다운로드 받습니다.</p>
 <h4 id="2-Centos-다운로드"><a href="#2-Centos-다운로드" class="headerlink" title="2. Centos 다운로드"></a>2. Centos 다운로드</h4><p><a href="http://centos.org" target="_blank" rel="external">http://centos.org</a> 에서 centos7 dvd iso 이미지를 다운로드 받습니다.</p>
-<h4 id="3-virtualbox-설치"><a href="#3-virtualbox-설치" class="headerlink" title="3. virtualbox 설치"></a>3. virtualbox 설치</h4><h4 id="4-virtualbox-실행-및-centos설치"><a href="#4-virtualbox-실행-및-centos설치" class="headerlink" title="4. virtualbox 실행 및 centos설치"></a>4. virtualbox 실행 및 centos설치</h4>]]></content>
+<h4 id="3-virtualbox-설치"><a href="#3-virtualbox-설치" class="headerlink" title="3. virtualbox 설치"></a>3. virtualbox 설치</h4><p>virtualbox를 설치합니다.</p>
+<h4 id="4-virtualbox-실행-및-centos설치"><a href="#4-virtualbox-실행-및-centos설치" class="headerlink" title="4. virtualbox 실행 및 centos설치"></a>4. virtualbox 실행 및 centos설치</h4><p>virtualbox를 실행하고 centos를 설치합니다.</p>
+]]></content>
       
         <categories>
             
