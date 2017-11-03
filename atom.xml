@@ -164,7 +164,7 @@
     <link href="http://korcow.github.io/2017/11/01/centos-%EA%B2%BD%EB%A1%9C%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0/"/>
     <id>http://korcow.github.io/2017/11/01/centos-경로이동하기/</id>
     <published>2017-11-01T14:55:27.000Z</published>
-    <updated>2017-11-03T11:40:59.595Z</updated>
+    <updated>2017-11-03T11:46:00.011Z</updated>
     
     <content type="html"><![CDATA[<h3 id="경로이동하기"><a href="#경로이동하기" class="headerlink" title="경로이동하기"></a>경로이동하기</h3><ul><li><code>pwd</code> 현재의 경로를 확인합니다.</li><li><code>.</code> 현재의 경로를 의미합니다.<ul><li><code>./abc</code> 현재경로에 있는 abc파일을 실행합니다.</li></ul></li><li><code>..</code> 상위경로를 의미합니다.<ul><li><code>cd ..</code> 부모경로로 이동합니다. </li></ul></li><li>cd 디렉토리명으로 경로를 이동할 수 있습니다.<ul><li><code>cd temp</code></li><li>디렉토리 이름을 쓸때 Tab키를 누르면 자동완성</li></ul></li><li>바로전 경로로 이동하려면 <ul><li><code>cd -</code></li></ul></li><li>홈디렉토리로 이동하려면<ul><li><code>cd ~</code></li></ul></li><li>현재의 경로를 저장하려면<ul><li>pushd .</li><li>절대경로로 지정<ul><li>pushd /etc/apache2/conf</li></ul></li></ul></li><li>저장된 경로로 이동하려면<ul><li>popd</li></ul></li></ul><h4 id="경로에는-상대-경로와-절대-경로가-있습니다"><a href="#경로에는-상대-경로와-절대-경로가-있습니다" class="headerlink" title="경로에는 상대 경로와 절대 경로가 있습니다."></a>경로에는 상대 경로와 절대 경로가 있습니다.</h4><h4 id="상대경로"><a href="#상대경로" class="headerlink" title="상대경로"></a>상대경로</h4><p>현재 위치의 경로를 기준</p><h4 id="절대경로"><a href="#절대경로" class="headerlink" title="절대경로"></a>절대경로</h4><p>/를 기준</p><p>pushd</p><p>popd</p>]]></content>
     
