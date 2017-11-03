@@ -31,7 +31,7 @@
     
     <entry>
       <title><![CDATA[파일및디렉토리삭제]]></title>
-      <url>/2017/11/02/centos-%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%86%E1%85%B5%E1%86%BE%E1%84%83%E1%85%B5%E1%84%85%E1%85%A6%E1%86%A8%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5%E1%84%89%E1%85%A1%E1%86%A8%E1%84%8C%E1%85%A6x/</url>
+      <url>/2017/11/02/centos-%E1%84%91%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%86%E1%85%B5%E1%86%BE%E1%84%83%E1%85%B5%E1%84%85%E1%85%A6%E1%86%A8%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5%E1%84%89%E1%85%A1%E1%86%A8%E1%84%8C%E1%85%A6/</url>
       <content type="html"><![CDATA[<h2 id="파일-및-디렉토리-삭제"><a href="#파일-및-디렉토리-삭제" class="headerlink" title="파일 및 디렉토리 삭제"></a>파일 및 디렉토리 삭제</h2><h3 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h3><p>파일을 삭제하는 명령입니다.<br>파일을 삭제하는 것은 꼭 필요하지만 위험을 초례 할 수 있는 명령입니다.</p>
 <p>추천하는 방법은 ls로 확인후 rm명령과 혼합해서 사용하는 방법을 추천합니다.<br>파일을 지울 때는 파일의 소유권과 권한에 따라 지울 수 없는 경우도 있습니다.<br>이때는 sudo 를 사용하거나 소유권을 또는 권한을 이양 받아 사용해야 합니다.</p>
 <ul>
@@ -89,7 +89,7 @@
     
     <entry>
       <title><![CDATA[외부명령어 요약]]></title>
-      <url>/2017/11/02/centos-%E1%84%8B%E1%85%AC%E1%84%87%E1%85%AE%E1%84%86%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%A5-%E1%84%8B%E1%85%AD%E1%84%8B%E1%85%A3%E1%86%A8x/</url>
+      <url>/2017/11/02/centos-%E1%84%8B%E1%85%AC%E1%84%87%E1%85%AE%E1%84%86%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%A5-%E1%84%8B%E1%85%AD%E1%84%8B%E1%85%A3%E1%86%A8/</url>
       <content type="html"><![CDATA[<h1 id="외부-명령어"><a href="#외부-명령어" class="headerlink" title="외부 명령어"></a>외부 명령어</h1><h2 id="파일-관리-명령어"><a href="#파일-관리-명령어" class="headerlink" title="파일 관리 명령어"></a>파일 관리 명령어</h2><ul>
 <li>ls        | 파일의 리스트를 보여줌.<ul>
 <li><code>ls -a</code> 모든파일을 보여줌</li>
@@ -162,7 +162,7 @@
     
     <entry>
       <title><![CDATA[히스토리]]></title>
-      <url>/2017/11/02/centos-%E1%84%92%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5x/</url>
+      <url>/2017/11/02/centos-%E1%84%92%E1%85%B5%E1%84%89%E1%85%B3%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5/</url>
       <content type="html"><![CDATA[<h1 id="히스토리"><a href="#히스토리" class="headerlink" title="히스토리"></a>히스토리</h1><p>리눅스는 명령을 수행하면 모든 명령을 history log에 담아 둡니다.</p>
 <ul>
 <li><code>history</code> 명령히스토리를 보여줍니다.</li>
@@ -190,7 +190,7 @@
     
     <entry>
       <title><![CDATA[경로이동하기]]></title>
-      <url>/2017/11/01/centos-%E1%84%80%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A9%E1%84%8B%E1%85%B5%E1%84%83%E1%85%A9%E1%86%BC%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5x/</url>
+      <url>/2017/11/01/centos-%E1%84%80%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A9%E1%84%8B%E1%85%B5%E1%84%83%E1%85%A9%E1%86%BC%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5/</url>
       <content type="html"><![CDATA[<h1 id="경로이동하기"><a href="#경로이동하기" class="headerlink" title="경로이동하기"></a>경로이동하기</h1><ul>
 <li><code>pwd</code> 현재의 경로를 확인합니다.</li>
 <li><code>.</code> 현재의 경로를 의미합니다.<ul>
@@ -254,7 +254,7 @@
     
     <entry>
       <title><![CDATA[복사하기]]></title>
-      <url>/2017/11/01/centos-%E1%84%87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A1%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5x/</url>
+      <url>/2017/11/01/centos-%E1%84%87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A1%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5/</url>
       <content type="html"><![CDATA[<div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
 <hr>
 <h1 id="cp-복사하기"><a href="#cp-복사하기" class="headerlink" title="cp(복사하기)"></a>cp(복사하기)</h1><p>리눅스에서 파일을 복사하는 명령입니다.<br>파일 하나만 복사할 수도 있도 여러개를 복사할 수도 있습니다.<br>물론 디렉토리도 복사할 수 있습니다.</p>
@@ -306,7 +306,7 @@
     
     <entry>
       <title><![CDATA[CtrlP 플러그인]]></title>
-      <url>/2017/10/31/vim-ctrlp-%E1%84%91%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A5%E1%84%80%E1%85%B3%E1%84%8B%E1%85%B5%E1%86%ABx/</url>
+      <url>/2017/10/31/vim-ctrlp-%E1%84%91%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A5%E1%84%80%E1%85%B3%E1%84%8B%E1%85%B5%E1%86%AB/</url>
       <content type="html"><![CDATA[<h2 id="기본사용법"><a href="#기본사용법" class="headerlink" title="기본사용법"></a>기본사용법</h2><ul>
 <li><code>Ctrl+p</code>를 누르면 하단에 파일검색 모드가 열립니다.</li>
 <li><code>Ctrl+f</code>를 누르면 모드가 바뀝니다. 현재열린 버퍼 &gt; 파일 &gt; 전체</li>
@@ -387,7 +387,7 @@
     
     <entry>
       <title><![CDATA[와일드카드]]></title>
-      <url>/2017/10/31/centos-%E1%84%8B%E1%85%AA%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%83%E1%85%B3%E1%84%8F%E1%85%A1%E1%84%83%E1%85%B3x/</url>
+      <url>/2017/10/31/centos-%E1%84%8B%E1%85%AA%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%83%E1%85%B3%E1%84%8F%E1%85%A1%E1%84%83%E1%85%B3/</url>
       <content type="html"><![CDATA[<div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
 <hr>
 <p>와일드 카드는 반드시 알고 있어야 하는 명령입니다.<br>물론 정규식을 사용해도 되지만 왠만한 것은 와일드카드로 문제 없이 사용가능합니다.</p>
@@ -512,7 +512,7 @@
     
     <entry>
       <title><![CDATA[외부명령어]]></title>
-      <url>/2017/10/31/centos-%E1%84%8B%E1%85%AC%E1%84%87%E1%85%AE%E1%84%86%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%A5-1x/</url>
+      <url>/2017/10/31/centos-%E1%84%8B%E1%85%AC%E1%84%87%E1%85%AE%E1%84%86%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%A5-1/</url>
       <content type="html"></content>
       
         
@@ -520,7 +520,7 @@
     
     <entry>
       <title><![CDATA[solarized_theme적용하기]]></title>
-      <url>/2017/10/31/vim-solarized-theme%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5x/</url>
+      <url>/2017/10/31/vim-solarized-theme%E1%84%8C%E1%85%A5%E1%86%A8%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5/</url>
       <content type="html"><![CDATA[<div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
 <hr>
 <h2 id="터미널-Solarized-Theme-적용"><a href="#터미널-Solarized-Theme-적용" class="headerlink" title="터미널 Solarized Theme 적용"></a>터미널 Solarized Theme 적용</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$mkdir</span> -p ~/.mysetting/Solarized</div><div class="line"><span class="variable">$cd</span> ~/.mysetting/Solarized</div><div class="line"><span class="variable">$git</span> <span class="built_in">clone</span> https://github.com/sigurdga/gnome-terminal-colors-solarized.git</div><div class="line"><span class="variable">$cd</span> gnome-terminal-colors-solarized</div><div class="line">$./install.sh</div><div class="line"></div><div class="line">그럼 다음과 같은 순서 대로 물어 물어 옵니다.</div><div class="line">색상 선택: 1번을 선택</div><div class="line">Please select a color scheme:</div><div class="line">1) dark</div><div class="line">2) dark_alternative</div><div class="line">3) light</div><div class="line"><span class="comment">#? 1</span></div><div class="line"></div><div class="line">프로파일 선택: 1번을 선택</div><div class="line">Please select a Gnome Terminal profile:</div><div class="line">1) 이름 없음</div><div class="line"><span class="comment">#? 1</span></div><div class="line"></div><div class="line">You have selected:</div><div class="line"></div><div class="line">  Scheme: dark</div><div class="line">  Profile: 이름 없음 (b1dcc9dd-5262-4d8d-a863-c897e6d979b9)</div><div class="line"></div><div class="line">프로파일을 덮어쓰겠냐고 물으면 yes를 입력</div><div class="line">Are you sure you want to overwrite the selected profile?</div><div class="line">(YES to <span class="built_in">continue</span>) yes</div><div class="line">Confirmation received -- applying settings</div><div class="line"></div><div class="line">A dircolors adapted to solarized can be automatically downloaded.</div><div class="line"></div><div class="line">1) Download seebi<span class="string">' dircolors-solarized: https://github.com/seebi/dircolors-solarized</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">2) [DEFAULT] I don'</span>t need any dircolors.</div><div class="line"></div><div class="line">디렉토리및파일 색상 변경을 설치하겠냐고 물으면 2번을 눌러 설치 안함을 선택.</div><div class="line">Enter your choice : [2] 2</div></pre></td></tr></table></figure>
@@ -556,7 +556,7 @@
     
     <entry>
       <title><![CDATA[Vundle 설치]]></title>
-      <url>/2017/10/31/vim-vundle-%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8E%E1%85%B5x/</url>
+      <url>/2017/10/31/vim-vundle-%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8E%E1%85%B5/</url>
       <content type="html"><![CDATA[<div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
 <hr>
 <h1 id="프로그래밍을-위한-vim-세팅"><a href="#프로그래밍을-위한-vim-세팅" class="headerlink" title="프로그래밍을 위한 vim 세팅"></a>프로그래밍을 위한 vim 세팅</h1><h2 id="복사-붙여넣기"><a href="#복사-붙여넣기" class="headerlink" title="복사/붙여넣기"></a>복사/붙여넣기</h2><ul>
@@ -614,7 +614,7 @@
     
     <entry>
       <title><![CDATA[vim의 고급 사용법]]></title>
-      <url>/2017/10/31/vim-%E1%84%80%E1%85%A9%E1%84%80%E1%85%B3%E1%86%B8-%E1%84%89%E1%85%A1%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%87%E1%85%A5%E1%86%B8x/</url>
+      <url>/2017/10/31/vim-%E1%84%80%E1%85%A9%E1%84%80%E1%85%B3%E1%86%B8-%E1%84%89%E1%85%A1%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%87%E1%85%A5%E1%86%B8/</url>
       <content type="html"><![CDATA[<div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
 <hr>
 <h1 id="vim-고급-사용법"><a href="#vim-고급-사용법" class="headerlink" title="vim 고급 사용법"></a>vim 고급 사용법</h1><p>고급사용법?</p>
@@ -843,7 +843,7 @@
     
     <entry>
       <title><![CDATA[vim의 기본사용법]]></title>
-      <url>/2017/10/31/vim-%E1%84%80%E1%85%B5%E1%84%87%E1%85%A9%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%87%E1%85%A5%E1%86%B8x/</url>
+      <url>/2017/10/31/vim-%E1%84%80%E1%85%B5%E1%84%87%E1%85%A9%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%87%E1%85%A5%E1%86%B8/</url>
       <content type="html"><![CDATA[<div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
 <hr>
 <h1 id="기본-사용법"><a href="#기본-사용법" class="headerlink" title="기본 사용법"></a>기본 사용법</h1><h2 id="실행하기"><a href="#실행하기" class="headerlink" title="실행하기"></a>실행하기</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$vi</span></div></pre></td></tr></table></figure>
@@ -899,7 +899,7 @@
     
     <entry>
       <title><![CDATA[vim 실행과 종료]]></title>
-      <url>/2017/10/31/vim-%E1%84%89%E1%85%B5%E1%86%AF%E1%84%92%E1%85%A2%E1%86%BC%E1%84%80%E1%85%AA-%E1%84%8C%E1%85%A9%E1%86%BC%E1%84%85%E1%85%ADx/</url>
+      <url>/2017/10/31/vim-%E1%84%89%E1%85%B5%E1%86%AF%E1%84%92%E1%85%A2%E1%86%BC%E1%84%80%E1%85%AA-%E1%84%8C%E1%85%A9%E1%86%BC%E1%84%85%E1%85%AD/</url>
       <content type="html"><![CDATA[<div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
 <hr>
 <h1 id="vim의-실행과-종료"><a href="#vim의-실행과-종료" class="headerlink" title="vim의 실행과 종료"></a>vim의 실행과 종료</h1><h2 id="실행하기"><a href="#실행하기" class="headerlink" title="실행하기"></a>실행하기</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$vi</span></div></pre></td></tr></table></figure>
@@ -929,7 +929,7 @@
     
     <entry>
       <title><![CDATA[vim설치]]></title>
-      <url>/2017/10/30/vim-%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8E%E1%85%B5x/</url>
+      <url>/2017/10/30/vim-%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8E%E1%85%B5/</url>
       <content type="html"><![CDATA[<h1 id="vim-설치하기"><a href="#vim-설치하기" class="headerlink" title="vim 설치하기"></a>vim 설치하기</h1><div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
 <hr>
 <p>대부분의 Unix계열은 기본으로 vim이 설치 되어 있습니다.<br>vim은 별도로 설치 하지 않아도 됩니다.<br>윈도우 계열은 vim.org에서 자신의 운영체제에 맞는 버젼을 다운받아 설치 하면 됩니다.<br>Unix계열은 gui를 사용 한다면 편의상 gvim을 설치하는 것이 좋습니다. 그래야 클립보드를 사용할 수 있습니다.</p>
@@ -957,7 +957,7 @@ alias vi=gvim -v</code></p>
     
     <entry>
       <title><![CDATA[외부명령어]]></title>
-      <url>/2017/10/29/centos-%E1%84%8B%E1%85%AC%E1%84%87%E1%85%AE%E1%84%86%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%A5x/</url>
+      <url>/2017/10/29/centos-%E1%84%8B%E1%85%AC%E1%84%87%E1%85%AE%E1%84%86%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%A5/</url>
       <content type="html"><![CDATA[<h1 id="외부명령어"><a href="#외부명령어" class="headerlink" title="외부명령어"></a>외부명령어</h1><p>외부 명령어는 명령라기 보다는 프로그램이라고 생각하는 것이 편합니다.<br>운영체제의 기본 기능을 프로그램으로 만들어서 실행 하는 겁니다.</p>
 <p>/bin 또는 /usr/bin에 들어 있습니다.</p>
 <p>파일관리 : 파일의 목록을 확인하고, 복사하고, 지우고, 링크걸고, 찾고 하는 프로그램등이 있습니다.</p>
@@ -985,7 +985,7 @@ alias vi=gvim -v</code></p>
     
     <entry>
       <title><![CDATA[내부명령어]]></title>
-      <url>/2017/10/29/centos-%E1%84%82%E1%85%A2%E1%84%87%E1%85%AE%E1%84%86%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%A5x/</url>
+      <url>/2017/10/29/centos-%E1%84%82%E1%85%A2%E1%84%87%E1%85%AE%E1%84%86%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%A5/</url>
       <content type="html"><![CDATA[<div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
 <hr>
 <h1 id="내부명령어"><a href="#내부명령어" class="headerlink" title="내부명령어"></a>내부명령어</h1><p>내부명령은 Shell에 들어있고 별도 파일로 존재 하지 않는다고 했습니다. 내부명령어는 프로그램 언어 이기 때문에 당연히 변수, 상수, 조건문, 반복문, 배열,등이 있겠죠. 그걸 내부 명령어라고 합니다.</p>
@@ -1504,7 +1504,7 @@ alias vi=gvim -v</code></p>
     
     <entry>
       <title><![CDATA[내부명령어와 외부명령어]]></title>
-      <url>/2017/10/29/centos-%E1%84%82%E1%85%A2%E1%84%87%E1%85%AE%E1%84%86%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%A5%E1%84%8B%E1%85%AA-%E1%84%8B%E1%85%AC%E1%84%87%E1%85%AE%E1%84%86%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%A5x/</url>
+      <url>/2017/10/29/centos-%E1%84%82%E1%85%A2%E1%84%87%E1%85%AE%E1%84%86%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%A5%E1%84%8B%E1%85%AA-%E1%84%8B%E1%85%AC%E1%84%87%E1%85%AE%E1%84%86%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%A5/</url>
       <content type="html"><![CDATA[<div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
 <hr>
 <h1 id="내부명령어와-외부명령어"><a href="#내부명령어와-외부명령어" class="headerlink" title="내부명령어와 외부명령어"></a>내부명령어와 외부명령어</h1><p>리눅스의 명령은 내부명령과 외부명령으로 나뉘어 집니다.</p>
@@ -1538,7 +1538,7 @@ alias vi=gvim -v</code></p>
     
     <entry>
       <title><![CDATA[디렉토리]]></title>
-      <url>/2017/10/29/centos-%E1%84%83%E1%85%B5%E1%84%85%E1%85%A6%E1%86%A8%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5x/</url>
+      <url>/2017/10/29/centos-%E1%84%83%E1%85%B5%E1%84%85%E1%85%A6%E1%86%A8%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5/</url>
       <content type="html"><![CDATA[<div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
 <hr>
 <p>/<br>최상위 디렉토리(root directory).</p>
@@ -1612,7 +1612,7 @@ alias vi=gvim -v</code></p>
     
     <entry>
       <title><![CDATA[리눅스의 특징]]></title>
-      <url>/2017/10/29/centos-%E1%84%85%E1%85%B5%E1%84%82%E1%85%AE%E1%86%A8%E1%84%89%E1%85%B3%E1%84%8B%E1%85%B4-%E1%84%90%E1%85%B3%E1%86%A8%E1%84%8C%E1%85%B5%E1%86%BCx/</url>
+      <url>/2017/10/29/centos-%E1%84%85%E1%85%B5%E1%84%82%E1%85%AE%E1%86%A8%E1%84%89%E1%85%B3%E1%84%8B%E1%85%B4-%E1%84%90%E1%85%B3%E1%86%A8%E1%84%8C%E1%85%B5%E1%86%BC/</url>
       <content type="html"><![CDATA[<div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
 <hr>
 <h1 id="리눅스의-특징과-역할"><a href="#리눅스의-특징과-역할" class="headerlink" title="리눅스의 특징과 역할"></a>리눅스의 특징과 역할</h1><h2 id="특징"><a href="#특징" class="headerlink" title="특징"></a>특징</h2><ul>
@@ -1664,7 +1664,7 @@ alias vi=gvim -v</code></p>
     
     <entry>
       <title><![CDATA[터미널 단축키]]></title>
-      <url>/2017/10/29/centos-%E1%84%90%E1%85%A5%E1%84%86%E1%85%B5%E1%84%82%E1%85%A5%E1%86%AF-%E1%84%83%E1%85%A1%E1%86%AB%E1%84%8E%E1%85%AE%E1%86%A8%E1%84%8F%E1%85%B5x/</url>
+      <url>/2017/10/29/centos-%E1%84%90%E1%85%A5%E1%84%86%E1%85%B5%E1%84%82%E1%85%A5%E1%86%AF-%E1%84%83%E1%85%A1%E1%86%AB%E1%84%8E%E1%85%AE%E1%86%A8%E1%84%8F%E1%85%B5/</url>
       <content type="html"><![CDATA[<div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
 <h1 id="터미널-단축키"><a href="#터미널-단축키" class="headerlink" title="터미널 단축키"></a>터미널 단축키</h1><p>xNIX 계열의 터미널에서 공통적으로 사용되는 단축키 입니다.<br>터미널과 shell에 따라 조금씩 다르고, 더많은 단축키가 있지만 아래 키는 대부분 공통적으로 동작 됩니다.</p>
 <table>

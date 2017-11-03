@@ -1,0 +1,241 @@
+<!DOCTYPE html><html lang="ko"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="테스트"><title>vim의 고급 사용법 | KORCOW</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">vim의 고급 사용법</h1><a id="logo" href="/.">KORCOW</a><p class="description">HANS</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 홈</i></a><a href="/archives/"><i class="fa fa-archive"> 아카이브</i></a><a href="/test/"><i class="fa fa-user"> test</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">vim의 고급 사용법</h1><div class="post-meta">Oct 31, 2017<span> | </span><span class="category"><a href="/categories/Vim/">Vim</a></span></div><a data-disqus-identifier="2017/10/31/vim-고급-사용법/" href="/2017/10/31/vim-고급-사용법/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
+<hr>
+<h1 id="vim-고급-사용법"><a href="#vim-고급-사용법" class="headerlink" title="vim 고급 사용법"></a>vim 고급 사용법</h1><p>고급사용법?</p>
+<p>프로그래밍을 하다보면 어쩌다 한번씩 vim을 사용할 때가 있습니다. 서버의 환경변수를 수정할 때…</p>
+<p>이럴때는 몇가지 기능만 쓸수 있으면 됩니다. 불편하지만 사용하는데 문제 되지 않습니다. 여기서 조금더 나아가 필수 명령을 숙지 한다면 vim을 다른 어떤 에디터 보다 편하고 빠르게 사용할 수 있습니다.</p>
+<p>vim을 메인 에디터로 사용하기 위해 기본으로 알아야 사항을 최소한으로 요약 했읍니다. 물론 전체 기능의 10%도 안되는 내용이지만 아래 내용만 알아도 vim을 사용하는데 큰 불편함을 느끼지 않을 겁니다. 또 알아서 필요한 기능을 찾을 수 있는 레벨까지 올라 갈 겁니다. vim은 모든 사람들이 사용하는 패턴이 틀립니다. 자신만의 사용 패턴을 빨리 찾는 것이 중요합니다.</p>
+<h2 id="Mode"><a href="#Mode" class="headerlink" title="Mode"></a>Mode</h2><p>vim은 크게 4가지 모드로 동작되어 집니다.</p>
+<ul>
+<li>Normal Mode</li>
+<li>Insert Mode</li>
+<li>Visual Mode</li>
+<li>Commnd-Line Mode</li>
+</ul>
+<p>이중에 가장 기본이 되는 모드는 Normal Mode(command mode)라고도 합니다.<br>언제든 <code>Ctrl+[</code> 키를 입력하면 Normal Mode가 됩니다.<br>이곳에서 Insert mode , Visual mode, Command-Line mode 로 이동이 가능합니다. 반대로 각각의 모드에서 모드 전환을 하려면 반드시 Normal mode 로 이동해서 전환 해야 합니다.</p>
+<h2 id="Normal-mode"><a href="#Normal-mode" class="headerlink" title="Normal mode"></a>Normal mode</h2><ul>
+<li>모드이동 명령<ul>
+<li>Normal Mode : <esc>, <code>Ctrl+[</code></esc></li>
+<li>Insert Mode : i, I, a, A, o, O</li>
+<li>Visual Mode : v, V, Ctrl+v(windows는 Ctrl+q)</li>
+<li>Command-line Mode : <code>:</code></li>
+</ul>
+</li>
+<li>커서이동 명령 h: motion.txt<ul>
+<li>h, j, k, l : 좌우로 한칸, 위아래로 한줄씩 커서를 이동합니다. 명령앞에 숫자를 입력하면 숫자 만큼 명령을 수행 합니다.<ul>
+<li>예) 10l : 오른쪽으로 10칸 이동</li>
+<li>예) 10h : 왼쪽으로 10칸 이동</li>
+</ul>
+</li>
+<li>단어단위로 이동 : w, W, b, B, e, gE</li>
+<li><code>0, $, ^, [, {, (, ), }, ]</code> : 현재줄의 처음과 끝, 문장의 처음과 끝, 문단의 처음과 끝으로 이동</li>
+<li>H, M, L<ul>
+<li>H : 화면 맨위로</li>
+<li>M : 화면 중간으로</li>
+<li>L : 화면 끝으로</li>
+</ul>
+</li>
+<li>gg, nG : 줄단위로 커서를 이동 시킵니다.<ul>
+<li>gg는 문서 맨 위로 커서를 이동 시킵니다.</li>
+<li>nG는 숫자 위치로 커서를 이동 시킵니다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>찾아서 커서 이동하기 명령</p>
+<ul>
+<li>f, F, t, T, /, ? : 특정 문자, 키워드를 찾아 이동합니다.<ul>
+<li>f : 오른쪽으로 문자를 찾아 이동합니다. F는 왼쪽으로 찾아 이동합니다.</li>
+<li>t : 오른쪽으로 문자를 찾아 찾은 문자 왼쪽에 커서를 위치 시킵니다. T는 왼쪽에서 찾아 오른쪽에 커서를 위치시킵니다.</li>
+<li>/ : /는 키워드를 현재 커서 아래로 모두 찾아 하이라이트 해줍니다. n, N으로 이동 할 수 있습니다. 키워드와 단어는 조금 다릅니다. 키워드는 단어와 공백을 포함합니다.</li>
+<li>? : ?는 현재 커서 위로 키워드를 찾아 이동합니다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>삭제 명령 :h deleting</p>
+<ul>
+<li>x, X, d, dd, D<ul>
+<li>x는 커서위의 문자를 지웁니다. 또는 범위 설정된 부분을 지웁니다.</li>
+<li>X는 커서위의 문자를 지우고 왼쪽문자에 붙입니다.</li>
+<li>d는 삭제 대기 명령입니다. 어떻게 삭제할 지를 대기 하고 있습니다. 이동명령과 조합 가능합니다.<ul>
+<li>dw : 커서 위치에서 부터 한단어 삭제, 주의 have 란 단어의 a에 커서가 있을 경우 ave만 삭제</li>
+<li>d5l : 커서를 기준으로 오른쪽으로 5칸 삭제.</li>
+<li>daw : 커서 위치의 단어를 삭제.</li>
+<li>nd : d앞에 반복 숫자를 사용할 수 있음. 3dw : 3단어 삭제</li>
+<li><code>d$</code> : 커서 위치부터 줄 끝까지 삭제.</li>
+<li><code>d0</code> : 커서 위치부터 줄 처음까지 삭제.</li>
+<li>dG : 커서 위치부터 마지막 까지 삭제.</li>
+<li>dd : 현재줄 모두 삭제.</li>
+<li>D : 커서 위치부터 줄끝까지 삭제.<ul>
+<li>2D: 현재 커서 위치부터 2줄을 삭제. 현재줄 끝까지 삭제되고 추가로 2줄이 삭제됨.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>바꾸기 명령</p>
+<ul>
+<li>s, S, c, C</li>
+<li>s : 커서위 문자를 지우고 insert mode가 됩니다.</li>
+<li>S : 줄 전체를 지우고 insert mode 가 됩니다.</li>
+<li>c : 바꾸기 대기 명령, 이동키와 조합 가능</li>
+<li>cw : 현재 커서위치 부터 한단어를 지우고 insert mode</li>
+<li>caw : 현재 커서위치의 단어를 지우고 insert mdoe</li>
+<li>ci’ : ‘’ 안의 문자열을 지우고 insert mode</li>
+<li>ca’ : ‘’ 포함해서 지우고 insert mode</li>
+<li>ci” : “” 안의 문자열을 지우고 insert mode</li>
+<li>ca” : “” 를 포함 문자열을 지우고 insert mode</li>
+<li>C : 현재 커서부터 줄 끝까지 지우고 insert mode</li>
+</ul>
+</li>
+<li><p>덮어쓰기 명령</p>
+<ul>
+<li>r, R</li>
+<li>r : 현재 커서위의 1문자를 지우고 insert mode(1문자만), 이동 명령과 조합 가능.</li>
+<li>10r : 현재 커서위치의 1문자를 지우고 입력대기(주의 최초r을 10번 반복). </li>
+<li>v2lr : 현재 커서 위치부터 2칸을 지우고 입력대기<ul>
+<li>==========================================<br>위와 같은 문자를 -로 바꾸려면<br>커서를 처음 =에 위치시키고 <code>v$r-</code></li>
+</ul>
+</li>
+<li>R : 줄전체를 지우고 insert mode</li>
+</ul>
+</li>
+<li><p>복사 명령/붙이기 명령</p>
+<ul>
+<li>y, yy, Y</li>
+<li>y : 복사 대기 명령, 이동키와 조합 가능</li>
+<li>3yW : 현재 커서 위치부터 3단어를 복사.</li>
+<li>yy : 한줄을 복사.</li>
+<li>Y : 현재 커서 줄부터 한줄을 복사.</li>
+<li>2Y : 현재 커서 줄부터 2줄을 복사.</li>
+<li>p : 현재 커서 뒤에 붙이기. 행을 복사한 경우 아랫줄에 붙여넣음.</li>
+<li>P : 현재 커저 앞에 붙이기. 행을 복사한 경우 윗줄에 붙여넣음.<br>(주의)붙이기를 할때 복사 한것이 열을 복사한 것인지, 줄을 복사한 것인지에 따라 기준이 앞, 뒤, 윗줄, 아랫줄로 반영됩니다.</li>
+</ul>
+</li>
+<li><p>스크롤 명령</p>
+<ul>
+<li>Ctrl+u, Ctrl+d, Ctrl+e, Ctrl+y, Ctrl+f, Ctrl+b<ul>
+<li>Ctrl+u : 커서를 중앙에 두고 위로 한화면 스크롤</li>
+<li>Ctrl+d : 커서를 중앙에 두고 아래로 한화면 스크롤</li>
+<li>Ctrl+e : 한줄씩 위로</li>
+<li>Ctrl+y : 한줄씩 아래로</li>
+<li>Ctrl+f : 한화면 위로 커서는 화면 상단</li>
+<li>Ctrl+b : 한화면 아래로 커서는 화면 하단</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>접고 펴기 명령 :h fold<ul>
+<li>zf : 폴드 생성. 여러줄을 1줄로 압축 zip fold 해줍니다.</li>
+<li>zo : 폴드를 열어줍니다. zip open</li>
+<li>zc : 폴드를 닫아줍니다.</li>
+<li>zd : 현재 위치의 폴드를 삭제해줍니다.</li>
+<li>zR : 현재 문서의 모든 폴드 열기.</li>
+<li>zM : 현재 문서의 모든 폴드 닫기.</li>
+<li>zE : 현재 문서의 모든 폴드 삭제.</li>
+<li>zD : 현재 위치의 겹쳐진 폴드 삭제.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Insert-Mode"><a href="#Insert-Mode" class="headerlink" title="Insert Mode"></a>Insert Mode</h2><ul>
+<li>i, I, a, A, o, O<ul>
+<li>i : i명령은 커서 앞에 입력합니다. </li>
+<li>I : 줄 처음에 입력을 합니다.</li>
+<li>a : 커서 뒤에 입력을 합니다.</li>
+<li>A : 줄 끝에 입력을 합니다.</li>
+<li>o : 커서 아래에 새줄을 만들고 입력을 합니다.</li>
+<li>O : 커서 위에 새줄을 만들고 입력을 합니다.</li>
+</ul>
+</li>
+<li>문자를 지우려면 백스페이스 또는 <code>Ctrl+h</code>를 입력합니다.</li>
+<li>단어를 지우려면 <code>Ctrl + w</code></li>
+<li>줄을 지우려면 <code>Ctrl + u</code></li>
+<li>Insert mode에서 커서이동은 마우스를 사용하거나 Normal Mode에서 하는 것이 편합니다.</li>
+<li>단어 단위로 이동하려면 <code>Ctrl+좌우방향키</code></li>
+<li>위 아래줄로 이동하려면 <code>Ctrl+gk</code> , <code>Ctrl+gj</code></li>
+<li><code>Ctrl+n</code> 커서 이전에 입력한 단어를 모두 보여주고 자동완성 시켜줍니다. <code>Ctrl+p</code>는 후보를 반대로 찾음<ul>
+<li>캘리포니아 란 단어를 입력 했었고, 다시 입력하려고 하면 캘 까지만 입력하고 Ctrl + n</li>
+</ul>
+</li>
+</ul>
+<h2 id="Visual-Mode"><a href="#Visual-Mode" class="headerlink" title="Visual Mode"></a>Visual Mode</h2><ul>
+<li>v, V, Ctrl + V(windows Ctrl+q)</li>
+<li>비주얼 모드는 범위를 지정할 때 사용하는 mode 입니다.</li>
+<li>v : 라인을 기준으로 범위를 지정합니다. </li>
+<li>V : 줄단위로 범위를 지정합니다.(단위가 줄입니다.)</li>
+<li>Ctrl + v : 열을 기준으로 범위를 지정합니다.</li>
+<li>이동키 또는 마우스로 범위를 지정할 수 있습니다.</li>
+</ul>
+<h2 id="Command-line-Mode"><a href="#Command-line-Mode" class="headerlink" title="Command-line Mode"></a>Command-line Mode</h2><ul>
+<li>파일관리<ul>
+<li>w, e, E, pwd, cd <ul>
+<li>w : 파일을 저장합니다.</li>
+<li>e : 파일을 오픈 합니다. 파일이 존재 하면 open, 없으면 새로 만듦.</li>
+<li>E : netrw를 실행 합니다. vim용 파일 관리 매니저 입니다. 종료는 :bd</li>
+<li>pwd : 현재 작업 디렉토리를 보여줍니다.</li>
+<li>cd : 작업 디렉토리를 이동합니다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>버퍼관리</p>
+<ul>
+<li>ls, bn, bd, bp, b(숫자)<ul>
+<li>ls : 버퍼 목록을 보여줍니다.</li>
+<li>bn : 다음 버퍼로 이동합니다.</li>
+<li>bp : 앞에 있는 버퍼로 이동합니다.</li>
+<li>b(숫자) : 숫자에 해당하는 버퍼로 이동합니다. </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>창관리</p>
+<ul>
+<li>vs, sp, Ctrl+w</li>
+<li>vs : 창을 세로로 나누어 줍니다.</li>
+<li>sp : 창을 가로로 나누어 줍니다.</li>
+<li>Ctrl + w : 찾을 이동합니다. 누를 때마다 창이 전환됩니다.</li>
+</ul>
+</li>
+<li><p>외부명령</p>
+<ul>
+<li>!</li>
+<li>외부명령을 실행 합니다.</li>
+</ul>
+</li>
+</ul>
+</div><div class="tags"><a href="/tags/Vim/">Vim</a></div><div class="post-nav"><a href="/2017/10/31/vim-vundle-설치/" class="pre">Vundle 설치</a><a href="/2017/10/31/vim-기본사용법/" class="next">vim의 기본사용법</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论 「请确保 disqus.com 可以正常加载」</button></div><script>var disqus_shortname = 'korcow-github-io';
+var disqus_identifier = '2017/10/31/vim-고급-사용법/';
+var disqus_title = 'vim의 고급 사용법';
+var disqus_url = 'http://korcow.github.io/2017/10/31/vim-고급-사용법/';
+$('.btn_click_load').click(function() {
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+  $('.btn_click_load').css('display','none');
+});
+$.ajax({
+  url: 'https://disqus.com/next/config.json',
+  timeout: 3000,
+  type: 'GET',
+  success: (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    $('.btn_click_load').css('display','none');
+  })(),
+  error: function() {
+    $('.btn_click_load').css('display','block');
+  }
+});</script><script id="dsq-count-scr" src="//korcow-github-io.disqus.com/count.js" async></script></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"/><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 카테고리</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Centos/">Centos</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vim/">Vim</a><span class="category-list-count">7</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 태그</i></div><div class="tagcloud"><a href="/tags/디렉토리/" style="font-size: 15px;">디렉토리</a> <a href="/tags/Centos/" style="font-size: 15px;">Centos</a> <a href="/tags/외부명령어/" style="font-size: 15px;">외부명령어</a> <a href="/tags/shell/" style="font-size: 15px;">shell</a> <a href="/tags/cd/" style="font-size: 15px;">cd</a> <a href="/tags/pushd/" style="font-size: 15px;">pushd</a> <a href="/tags/popd/" style="font-size: 15px;">popd</a> <a href="/tags/내부명령어/" style="font-size: 15px;">내부명령어</a> <a href="/tags/pwd/" style="font-size: 15px;">pwd</a> <a href="/tags/bg/" style="font-size: 15px;">bg</a> <a href="/tags/fg/" style="font-size: 15px;">fg</a> <a href="/tags/fc/" style="font-size: 15px;">fc</a> <a href="/tags/echo/" style="font-size: 15px;">echo</a> <a href="/tags/exec/" style="font-size: 15px;">exec</a> <a href="/tags/kill/" style="font-size: 15px;">kill</a> <a href="/tags/umask/" style="font-size: 15px;">umask</a> <a href="/tags/export/" style="font-size: 15px;">export</a> <a href="/tags/source/" style="font-size: 15px;">source</a> <a href="/tags/logout/" style="font-size: 15px;">logout</a> <a href="/tags/리다이렉션/" style="font-size: 15px;">리다이렉션</a> <a href="/tags/파이프라인/" style="font-size: 15px;">파이프라인</a> <a href="/tags/directory/" style="font-size: 15px;">directory</a> <a href="/tags/ls/" style="font-size: 15px;">ls</a> <a href="/tags/cp/" style="font-size: 15px;">cp</a> <a href="/tags/와일드카드/" style="font-size: 15px;">와일드카드</a> <a href="/tags/centos/" style="font-size: 15px;">centos</a> <a href="/tags/terminal/" style="font-size: 15px;">terminal</a> <a href="/tags/cat/" style="font-size: 15px;">cat</a> <a href="/tags/head/" style="font-size: 15px;">head</a> <a href="/tags/tail/" style="font-size: 15px;">tail</a> <a href="/tags/rm/" style="font-size: 15px;">rm</a> <a href="/tags/rmdir/" style="font-size: 15px;">rmdir</a> <a href="/tags/history/" style="font-size: 15px;">history</a> <a href="/tags/virtualbox/" style="font-size: 15px;">virtualbox</a> <a href="/tags/리눅스설치/" style="font-size: 15px;">리눅스설치</a> <a href="/tags/Vim/" style="font-size: 15px;">Vim</a> <a href="/tags/vundle/" style="font-size: 15px;">vundle</a> <a href="/tags/ctrlp/" style="font-size: 15px;">ctrlp</a> <a href="/tags/solarized/" style="font-size: 15px;">solarized</a> <a href="/tags/theme/" style="font-size: 15px;">theme</a> <a href="/tags/bundle/" style="font-size: 15px;">bundle</a> <a href="/tags/Vundle/" style="font-size: 15px;">Vundle</a> <a href="/tags/vim/" style="font-size: 15px;">vim</a> <a href="/tags/bash/" style="font-size: 15px;">bash</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 과거</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/11/02/centos-파일내용보기/">파일내용보기</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/02/centos-파일및디렉토리삭제/">파일및디렉토리삭제</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/02/centos-bash/">Bash</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/02/centos-외부명령어-요약/">외부명령어 요약</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/02/centos-히스토리/">히스토리</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/01/centos-경로이동하기/">경로이동하기</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/01/centos-복사하기/">복사하기</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/31/vim-ctrlp-플러그인/">CtrlP 플러그인</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/31/centos-shell이란/">shell이란</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/31/centos-와일드카드/">와일드카드</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-comment-o"> 최근 댓글</i></div><script type="text/javascript" src="//korcow-github-io.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 블로그롤</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2017 <a href="/." rel="nofollow">KORCOW.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.css"><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+   search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
