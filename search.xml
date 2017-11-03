@@ -6,7 +6,7 @@
       <title><![CDATA[Hexo 한글파일명 문제점]]></title>
       <url>/2017/11/04/hexo-%ED%95%9C%EA%B8%80%ED%8C%8C%EC%9D%BC%EB%AA%85/</url>
       <content type="html"><![CDATA[<h3 id="Hexo-한글오류"><a href="#Hexo-한글오류" class="headerlink" title="Hexo 한글오류"></a>Hexo 한글오류</h3><p>이하 내용은 Hexo를 커스텀하다 꼬여서 발생한 문제를 해결하면서 얻은 경험입니다.( 정확하게 소스분석을 하지 않았다는 겁니다.)</p>
-<p>Hexo에서 <code>_Post</code>의 관리는 generator가 md파일을 감시하고 있다 변경이 되면 변경 상태에 따라 html, category, tag, archives 다시 만들어주고 deploy는 .deploy디렉토리에 add, commit, push  동작을 한는것 같습니다. 추측이지만 generator가 한글파일의 감시를 제대로 못해주는 것 같습니다. 감시는 파일명, 내용수정에 따라 동작이 달라지는것 같습니다.</p>
+<p>Hexo에서 <code>_Post</code>의 관리는 generator가 md파일을 감시하고 있다 변경이 되면 변경 상태에 따라 html, category, tag, archives 다시 만들어주고 deploy는 .deploy디렉토리에 add, commit, push  동작을 하는것 같습니다. 추측이지만 generator가 한글파일의 감시를 제대로 못해주는 것 같습니다. 감시는 파일명, 내용수정에 따라 동작이 달라지는것 같습니다.</p>
 <p><strong>요점:</strong></p>
 <ul>
 <li>404오류, archives, Tag, Category, Search, index.html에서 링크오류가 나온다면 파일명과 내용을 수정하면 100% 해결 되었습니다.</li>
