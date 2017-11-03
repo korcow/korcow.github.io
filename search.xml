@@ -943,13 +943,12 @@
       <content type="html"><![CDATA[<div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
 <hr>
 <h3 id="vim의-실행과-종료"><a href="#vim의-실행과-종료" class="headerlink" title="vim의 실행과 종료"></a>vim의 실행과 종료</h3><h4 id="실행하기"><a href="#실행하기" class="headerlink" title="실행하기"></a>실행하기</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$vi</span></div></pre></td></tr></table></figure>
-<p>콘솔에서 vi를 입력하면 vi가 실행됩니다.</p>
-<p>처음 실행이 되면 기본으로 normal mode 되고 이곳에 명령을 입력하면 됩니다.</p>
-<p>텍스트를 입력하기 위해 i명령을 입력하면 하단의 상태줄 좌측에 입력하기 라고 변경됩니다.</p>
-<p>이제 키보드로 타이핑하는 것이 입력이 됩니다.</p>
-<p>텍스트를 입력해 보세요. ^^</p>
-<h4 id="종료하기"><a href="#종료하기" class="headerlink" title="종료하기"></a>종료하기</h4><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">"Ctrl+[ or ``Esc key`` 입력</span></div><div class="line">:<span class="keyword">w</span> <span class="keyword">abc</span>.txt	<span class="comment">"abc.txt로 저장, 저장하지 않고 종료하려면 :q!</span></div><div class="line">:q			<span class="comment">"종료</span></div></pre></td></tr></table></figure>
+<p>콘솔에서 vi를 입력하면 vi가 실행됩니다.<br>처음 실행이 되면 기본으로 normal mode 되고 이곳에 명령을 입력하면 됩니다.</p>
+<p>텍스트를 입력하기 위해 <strong>i명령</strong>을 입력하면 하단의 상태줄 좌측에 입력하기 라고 변경됩니다.<br>이제 키보드로 타이핑하는 것이 입력이 됩니다.<br>텍스트를 입력해 보세요. ^^</p>
+<h4 id="시작과-종료하기"><a href="#시작과-종료하기" class="headerlink" title="시작과 종료하기"></a>시작과 종료하기</h4><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">텍스트를 입력하세요.</div><div class="line">백스페이스는 누르면 글자가 지워집니다.</div><div class="line">마우스나 방향키나 마우스로 커서를 이동할 수 있습니다.</div><div class="line"></div><div class="line"><span class="comment">"Ctrl+[ or ``Esc key`` 입력하면 명령모드</span></div><div class="line">:<span class="keyword">w</span> <span class="keyword">abc</span>.txt	<span class="comment">"abc.txt로 저장, 저장하지 않고 종료하려면 :q!</span></div><div class="line">:q			<span class="comment">"종료</span></div></pre></td></tr></table></figure>
 <h4 id="수정하기"><a href="#수정하기" class="headerlink" title="수정하기"></a>수정하기</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$vi</span> abc.txt</div></pre></td></tr></table></figure>
+<p>바로 전에 작성한 파일이 열립니다. </p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">텍스트를 입력하세요.</div><div class="line">백스페이스는 누르면 글자가 지워집니다.</div><div class="line">마우스나 방향키나 마우스로 커서를 이동할 수 있습니다.</div><div class="line"></div><div class="line">텍스트를 추가하거나 수정해 보세요.</div><div class="line">종료 하는 방법은 똑같습니다.</div><div class="line"></div><div class="line"><span class="comment">"Ctrl+[ or ``Esc key`` 입력하면 명령모드</span></div><div class="line">:<span class="keyword">w</span> <span class="keyword">abc</span>.txt	<span class="comment">"abc.txt로 저장, 저장하지 않고 종료하려면 :q!</span></div><div class="line">:q			<span class="comment">"종료</span></div></pre></td></tr></table></figure>
 ]]></content>
       
         <categories>
