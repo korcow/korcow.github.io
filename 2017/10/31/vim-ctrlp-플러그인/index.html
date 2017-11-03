@@ -1,43 +1,36 @@
-<!DOCTYPE html><html lang="ko"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="테스트"><title>vim의 기본사용법 | KORCOW</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">vim의 기본사용법</h1><a id="logo" href="/.">KORCOW</a><p class="description">HANS</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 홈</i></a><a href="/archives/"><i class="fa fa-archive"> 아카이브</i></a><a href="/test/"><i class="fa fa-user"> test</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">vim의 기본사용법</h1><div class="post-meta">Oct 31, 2017<span> | </span><span class="category"><a href="/categories/Vim/">Vim</a></span></div><a data-disqus-identifier="2017/10/31/vim-기본사용법/" href="/2017/10/31/vim-기본사용법/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
-<hr>
-<h3 id="기본-사용법"><a href="#기본-사용법" class="headerlink" title="기본 사용법"></a>기본 사용법</h3><h4 id="실행하기"><a href="#실행하기" class="headerlink" title="실행하기"></a>실행하기</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$vi</span></div></pre></td></tr></table></figure>
-<p>콘솔에서 vi를 입력하면 vi가 실행됩니다.</p>
-<p>처음 실행이 되면 기본으로 normal mode 되고 이곳에 명령을 입력하면 됩니다.</p>
-<p>텍스트를 입력하기 위해 i명령을 입력하면 하단의 상태줄 좌측에 입력하기 라고 변경됩니다.</p>
-<p>이제 키보드로 타이핑하는 것이 입력이 됩니다. </p>
-<p>텍스트를 입력해 보세요. ^^</p>
-<ul>
-<li>삭제 : 백스페이스를 누르면 키보드 앞의 1문자가 삭제되어 집니다. Ctrl + h 도 동일합니다.</li>
-<li>이동 : 커서키 또는 마우스를 이용해서 이동합니다.</li>
-<li>복사 : 마우스로 복사할 영역을 드래그하고 Y를 누릅니다. 이때 자동으로 visual mode 가 됩니다. 선택이 끝나면 자동으로 normal mode 가 됩니다. 다시 입력하려면 i 명령을 입력하세요.</li>
-<li>붙여넣기 : 붙여넣기 할 위치에 마우스나 방향키를 이용해 커서를 위치시키고 P를 누릅니다. 다시 입력하려면 i 명령을 입력하세요.</li>
-<li>저장하기 : <code>Ctrl + [</code> + <code>:</code> w abc.txt<ul>
-<li>저장하기 명령을 내리려면 Command-lind mode로 이동해야 합니다. <code>&lt;Esc&gt;</code> 또는 <code>Ctrl + [</code> 를 누르고 : (콜론)을 입력하면 Command-line mode 로 이동됩니다.</li>
-<li>vim 하단에 : 이 표시 되면 w 저장할파일명 을 입력합니다.<ul>
-<li>파일명을 한글로 입력하지 마세요.</li>
-<li>파일명에 띄어 쓰기를 하지 마세요.</li>
-<li>파일명에 특수문자를 넣지 마세요.</li>
-<li>컴퓨터를 사용하는 기본 규칙입니다.</li>
-<li>파일명을 한글과 공백을 써야 한다면 “한글 파일명.md” 이렇게 써야 합니다.</li>
-<li><code>Ctrl + [</code> + <code>:</code>  사용을 추천합니다.</li>
+<!DOCTYPE html><html lang="ko"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="테스트"><title>CtrlP 플러그인 | KORCOW</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">CtrlP 플러그인</h1><a id="logo" href="/.">KORCOW</a><p class="description">HANS</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 홈</i></a><a href="/archives/"><i class="fa fa-archive"> 아카이브</i></a><a href="/test/"><i class="fa fa-user"> test</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">CtrlP 플러그인</h1><div class="post-meta">Oct 31, 2017<span> | </span><span class="category"><a href="/categories/Vim/">Vim</a></span></div><a data-disqus-identifier="2017/10/31/vim-ctrlp-플러그인/" href="/2017/10/31/vim-ctrlp-플러그인/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><h3 id="기본사용법"><a href="#기본사용법" class="headerlink" title="기본사용법"></a>기본사용법</h3><ul>
+<li><code>Ctrl+p</code>를 누르면 하단에 파일검색 모드가 열립니다.</li>
+<li><code>Ctrl+f</code>를 누르면 모드가 바뀝니다. 현재열린 버퍼 &gt; 파일 &gt; 전체</li>
+<li><code>Ctrl+j</code>, <code>Ctrl+k</code> 아래, 위로 이동(파일선택)</li>
+</ul>
+<h4 id="Command-line에서는-아래와-같이"><a href="#Command-line에서는-아래와-같이" class="headerlink" title="Command-line에서는 아래와 같이"></a>Command-line에서는 아래와 같이</h4><ul>
+<li>Run :CtrlP or :CtrlP [starting-directory] to invoke CtrlP in find file mode.</li>
+<li>Run :CtrlPBuffer or :CtrlPMRU to invoke CtrlP in find buffer or find MRU file mode.</li>
+<li>Run :CtrlPMixed to search in Files, Buffers and MRU files at the same time.</li>
+</ul>
+<h4 id="Check-help-ctrlp-commands-and-help-ctrlp-extensions-for-other-commands"><a href="#Check-help-ctrlp-commands-and-help-ctrlp-extensions-for-other-commands" class="headerlink" title="Check :help ctrlp-commands and :help ctrlp-extensions for other commands."></a>Check :help ctrlp-commands and :help ctrlp-extensions for other commands.</h4><h4 id="Once-CtrlP-is-open"><a href="#Once-CtrlP-is-open" class="headerlink" title="Once CtrlP is open:"></a>Once CtrlP is open:</h4><ul>
+<li>Press <code>&lt;F5&gt;</code> to purge the cache for the current directory to get new files, remove deleted files and apply new ignore options.</li>
+<li>Press <code>&lt;c-f&gt;</code> and <code>&lt;c-b&gt;</code> to cycle between modes.</li>
+<li>Press <code>&lt;c-d&gt;</code> to switch to filename only search instead of full path.</li>
+<li>Press <code>&lt;c-r&gt;</code> to switch to regexp mode.</li>
+<li>Use <code>&lt;c-j&gt;</code>, <code>&lt;c-k&gt;</code> or the arrow keys to navigate the result list.</li>
+<li>Use <code>&lt;c-t&gt;</code> or <code>&lt;c-v&gt;</code>, <code>&lt;c-x&gt;</code> to open the selected entry in a new tab or in a new split.</li>
+<li>Use <code>&lt;c-n&gt;</code>, <code>&lt;c-p&gt;</code> to select the next/previous string in the prompt’s history.</li>
+<li>Use <code>&lt;c-y&gt;</code> to create a new file and its parent directories.</li>
+<li>Use <code>&lt;c-z&gt;</code> to mark/unmark multiple files and <code>&lt;c-o&gt;</code> to open them.</li>
+</ul>
+<h4 id="Run-help-ctrlp-mappings-or-submit-in-CtrlP-for-more-mapping-help"><a href="#Run-help-ctrlp-mappings-or-submit-in-CtrlP-for-more-mapping-help" class="headerlink" title="Run :help ctrlp-mappings or submit ? in CtrlP for more mapping help."></a>Run :help ctrlp-mappings or submit ? in CtrlP for more mapping help.</h4><ul>
+<li>Submit two or more dots .. to go up the directory tree by one or multiple levels.</li>
+<li>End the input string with a colon : followed by a command to execute it on the opening file(s):<ul>
+<li>Use :25 to jump to line 25.</li>
+<li>Use :diffthis when opening multiple files to run :diffthis on the first 4 files.</li>
 </ul>
 </li>
 </ul>
-</li>
-<li>종료 : <code>Ctrl+[</code> + <code>:</code> q</li>
-<li>저장한 후 종료 해야 합니다. 저장하지 않고 종료하려면 <code>Ctrl+[</code> + <code>:</code> q!<ul>
-<li>종료 명령도 normal mode에서 해야 합니다.</li>
-</ul>
-</li>
-</ul>
-<h4 id="파일-수정하기"><a href="#파일-수정하기" class="headerlink" title="파일 수정하기"></a>파일 수정하기</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$vi</span> abc.txt</div></pre></td></tr></table></figure>
-<ul>
-<li>실행시 수정할 파일명을 같이 입력합니다.<br>  이후 사용법은 동일합니다. 입력을 하려면 i 명령을, 이동하려면 커서키나 마우스사용…</li>
-</ul>
-</div><div class="tags"><a href="/tags/Vim/">Vim</a></div><div class="post-nav"><a href="/2017/10/31/vim-고급-사용법/" class="pre">vim의 고급 사용법</a><a href="/2017/10/31/vim-실행과-종료/" class="next">vim 실행과 종료</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论 「请确保 disqus.com 可以正常加载」</button></div><script>var disqus_shortname = 'korcow-github-io';
-var disqus_identifier = '2017/10/31/vim-기본사용법/';
-var disqus_title = 'vim의 기본사용법';
-var disqus_url = 'http://korcow.github.io/2017/10/31/vim-기본사용법/';
+</div><div class="tags"><a href="/tags/Vim/">Vim</a><a href="/tags/vundle/">vundle</a><a href="/tags/ctrlp/">ctrlp</a></div><div class="post-nav"><a href="/2017/11/01/centos-복사하기/" class="pre">복사하기</a><a href="/2017/10/31/centos-shell이란/" class="next">shell이란</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论 「请确保 disqus.com 可以正常加载」</button></div><script>var disqus_shortname = 'korcow-github-io';
+var disqus_identifier = '2017/10/31/vim-ctrlp-플러그인/';
+var disqus_title = 'CtrlP 플러그인';
+var disqus_url = 'http://korcow.github.io/2017/10/31/vim-ctrlp-플러그인/';
 $('.btn_click_load').click(function() {
   (function() {
     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
