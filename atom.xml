@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://korcow.github.io/"/>
-  <updated>2017-11-03T13:53:44.400Z</updated>
+  <updated>2017-11-03T13:55:46.413Z</updated>
   <id>http://korcow.github.io/</id>
   
   <author>
@@ -20,10 +20,10 @@
     <title>Hexo 한글파일명 문제점</title>
     <link href="http://korcow.github.io/2017/11/03/hexo-%ED%95%9C%EA%B8%80%ED%8C%8C%EC%9D%BC%EB%AA%85/"/>
     <id>http://korcow.github.io/2017/11/03/hexo-한글파일명/</id>
-    <published>2017-11-03T13:53:44.400Z</published>
-    <updated>2017-11-03T13:53:44.400Z</updated>
+    <published>2017-11-03T13:55:46.413Z</published>
+    <updated>2017-11-03T13:55:46.413Z</updated>
     
-    <content type="html"><![CDATA[<h3 id=""><a href="#" class="headerlink" title=" "></a> </h3><p>Hexo에서 <code>_Post</code>의 관리는 hexo generater가 md파일을 html로 만들어주고 .deploy디렉리에 add, commit 을 하고, ddeploy는 push 동작을 한다. 추측이지만 generater가 한글파일의 감시를 제대로 못해주는 것 같다. 감시는 파일명감시, 내용수정감시로 나뉘어 지는 것같다.</p><ul><li>Post의 변경 반영이 안되는 경우<br><code>hexo n &quot;포스트명&quot;</code> 또는 <code>hexo new &quot;포스트명&quot;</code> 으로 포스트를 생성해서 사용하다 수정을 했음에도 반영이 안되는 경우가 종종 있다.<br>이때는 git의 캐시 때문일 수 있으니 5분 정도 기다려 보고, 그래도 안되면 아래처럼 적용을 해준다.</li></ul><p><code>hexo clean</code>  /blog/Public 디렉토리가 삭제<br><code>hexo g -d</code><br>하면 문제가 해결된다</p><p>그래도 안되는 경우 파일명을 바꾸어 준다.<br><code>mv 한글.md 한글x.md</code><br><code>hexo g -d</code><br>변경을 확인하고 변경이 잘 되면 원래대로 이름을 바꾸고 <code>hexo g -d</code></p><p>그래도 안되면 내용을 수정<br><code>hexo g -d</code></p><p>여기 까지 했는데도 안되면 최후의 수단<br>.deploy로 이동후<br><code>git rm -rf *</code><br><code>git commit -m &quot;삭제&quot;</code><br><code>git push</code><br>화일명을 변경, 내용도 수정<br><code>hexo g -d</code></p><ul><li><p>Post가 2개로 보일때<br>이증상은 대부분 로컬서버에서 생기는 것 같다.<br><code>hexo clean</code><br><code>hexo g -d</code><br><code>hexo server -s</code></p></li><li><p>오류없이 사용하려면 Post명을 영어로 사용을 권장.</p></li></ul>]]></content>
+    <content type="html"><![CDATA[<h3 id=""><a href="#" class="headerlink" title=" "></a> </h3><p>Hexo에서 <code>_Post</code>의 관리는 hexo generater가 md파일을 html로 만들어주고 .deploy디렉리에 add, commit 을 하고, ddeploy는 push 동작을 한다. 추측이지만 generater가 한글파일의 감시를 제대로 못해주는 것 같다. 감시는 파일명감시, 내용수정감시로 나뉘어 지는 것같다.</p><ul><li>archive가 반영이 안될때는 파일명을 변경하면 된다.</li><li>Post의 변경 반영이 안되는 경우<br><code>hexo n &quot;포스트명&quot;</code> 또는 <code>hexo new &quot;포스트명&quot;</code> 으로 포스트를 생성해서 사용하다 수정을 했음에도 반영이 안되는 경우가 종종 있다.<br>이때는 git의 캐시 때문일 수 있으니 5분 정도 기다려 보고, 그래도 안되면 아래처럼 적용을 해준다.</li></ul><p><code>hexo clean</code>  /blog/Public 디렉토리가 삭제<br><code>hexo g -d</code><br>하면 문제가 해결된다</p><p>그래도 안되는 경우 파일명을 바꾸어 준다.<br><code>mv 한글.md 한글x.md</code><br><code>hexo g -d</code><br>변경을 확인하고 변경이 잘 되면 원래대로 이름을 바꾸고 <code>hexo g -d</code></p><p>그래도 안되면 내용을 수정<br><code>hexo g -d</code></p><p>여기 까지 했는데도 안되면 최후의 수단<br>.deploy로 이동후<br><code>git rm -rf *</code><br><code>git commit -m &quot;삭제&quot;</code><br><code>git push</code><br>화일명을 변경, 내용도 수정<br><code>hexo g -d</code></p><ul><li><p>Post가 2개로 보일때<br>이증상은 대부분 로컬서버에서 생기는 것 같다.<br><code>hexo clean</code><br><code>hexo g -d</code><br><code>hexo server -s</code></p></li><li><p>오류없이 사용하려면 Post명을 영어로 사용을 권장.</p></li></ul>]]></content>
     
     <summary type="html">
     
