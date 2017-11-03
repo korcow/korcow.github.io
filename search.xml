@@ -387,12 +387,12 @@
     
     <entry>
       <title><![CDATA[와일드카드]]></title>
-      <url>/2017/10/31/centos-%E1%84%8B%E1%85%AA%E1%84%8B%E1%85%B5%E1%86%AF%E1%84%83%E1%85%B3%E1%84%8F%E1%85%A1%E1%84%83%E1%85%B3/</url>
+      <url>/2017/10/31/centos-%EC%99%80%EC%9D%BC%EB%93%9C%EC%B9%B4%EB%93%9C/</url>
       <content type="html"><![CDATA[<div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
 <hr>
 <p>와일드 카드는 반드시 알고 있어야 하는 명령입니다.<br>물론 정규식을 사용해도 되지만 왠만한 것은 와일드카드로 문제 없이 사용가능합니다.</p>
 <p>여러개의 파일의 일괄처리가 필요할 경우, 파일의 삭제, 복사, 이동, 문자열 추가, 삭제, 치환등을 처리할때 꼭 필요합니다.</p>
-<h2 id="와일드카드"><a href="#와일드카드" class="headerlink" title="와일드카드"></a>와일드카드</h2><table>
+<h4 id="와일드카드"><a href="#와일드카드" class="headerlink" title="와일드카드"></a>와일드카드</h4><table>
 <thead>
 <tr>
 <th>문자</th>
@@ -443,13 +443,13 @@
 </tbody>
 </table>
 <p>ls 명령을 사용해 와일드 카드를 사용해 보겠습니다.<br>ls명령과 와일드카드 명령 2개를 같이 사용하는 겁니다.</p>
-<h3 id="테스트용-디렉토리와-파일-만들기"><a href="#테스트용-디렉토리와-파일-만들기" class="headerlink" title="테스트용 디렉토리와 파일 만들기"></a>테스트용 디렉토리와 파일 만들기</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$cd</span> ~</div><div class="line"><span class="variable">$mkdir</span> myTest</div><div class="line"><span class="variable">$cd</span> <span class="built_in">test</span></div><div class="line"><span class="variable">$touch</span> a&#123;a..d&#125;&#123;a..c&#125;&#123;1..3&#125;.txt</div></pre></td></tr></table></figure>
-<h3 id="ls-a"><a href="#ls-a" class="headerlink" title="ls a*"></a><code>ls a*</code></h3><p>a로 시작하는 모든 파일을 보여줍니다.</p>
-<h3 id="ls-a-txt"><a href="#ls-a-txt" class="headerlink" title="ls a*.txt"></a><code>ls a*.txt</code></h3><p>a로 시작하고 .txt로 끝나는 모든 파일을 보여줍니다.</p>
-<h3 id="ls-b-txt"><a href="#ls-b-txt" class="headerlink" title="ls ?b?.txt"></a><code>ls ?b?.txt</code></h3><p>첫문자는 아무 문자나 와도 되고 두번째는 b 세번째는 아무문자 마지막에 .txt로 끝나는 파일을 보여줍니다.</p>
-<h3 id="ls-txt"><a href="#ls-txt" class="headerlink" title="ls *.txt"></a><code>ls *.txt</code></h3><p>.txt로 끝나는 모든 파일을 보여줍니다.</p>
-<h3 id="ls-digit-1-txt"><a href="#ls-digit-1-txt" class="headerlink" title="ls *[[:digit:]1].txt"></a><code>ls *[[:digit:]1].txt</code></h3><p>1.txt앞에 숫자 1만 있으면 그앞에 어떤 문자가 와도 모두 보여줍니다.</p>
-<h3 id="ls-abc"><a href="#ls-abc" class="headerlink" title="ls *[abc]*"></a><code>ls *[abc]*</code></h3><p>파일명 중간이 abc로 된 파일을 모두 보여줍니다.</p>
+<h5 id="테스트용-디렉토리와-파일-만들기"><a href="#테스트용-디렉토리와-파일-만들기" class="headerlink" title="테스트용 디렉토리와 파일 만들기"></a>테스트용 디렉토리와 파일 만들기</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$cd</span> ~</div><div class="line"><span class="variable">$mkdir</span> myTest</div><div class="line"><span class="variable">$cd</span> <span class="built_in">test</span></div><div class="line"><span class="variable">$touch</span> a&#123;a..d&#125;&#123;a..c&#125;&#123;1..3&#125;.txt</div></pre></td></tr></table></figure>
+<h5 id="ls-a"><a href="#ls-a" class="headerlink" title="ls a*"></a><code>ls a*</code></h5><p>a로 시작하는 모든 파일을 보여줍니다.</p>
+<h5 id="ls-a-txt"><a href="#ls-a-txt" class="headerlink" title="ls a*.txt"></a><code>ls a*.txt</code></h5><p>a로 시작하고 .txt로 끝나는 모든 파일을 보여줍니다.</p>
+<h5 id="ls-b-txt"><a href="#ls-b-txt" class="headerlink" title="ls ?b?.txt"></a><code>ls ?b?.txt</code></h5><p>첫문자는 아무 문자나 와도 되고 두번째는 b 세번째는 아무문자 마지막에 .txt로 끝나는 파일을 보여줍니다.</p>
+<h5 id="ls-txt"><a href="#ls-txt" class="headerlink" title="ls *.txt"></a><code>ls *.txt</code></h5><p>.txt로 끝나는 모든 파일을 보여줍니다.</p>
+<h5 id="ls-digit-1-txt"><a href="#ls-digit-1-txt" class="headerlink" title="ls *[[:digit:]1].txt"></a><code>ls *[[:digit:]1].txt</code></h5><p>1.txt앞에 숫자 1만 있으면 그앞에 어떤 문자가 와도 모두 보여줍니다.</p>
+<h5 id="ls-abc"><a href="#ls-abc" class="headerlink" title="ls *[abc]*"></a><code>ls *[abc]*</code></h5><p>파일명 중간이 abc로 된 파일을 모두 보여줍니다.</p>
 ]]></content>
       
         <categories>
@@ -957,8 +957,8 @@ alias vi=gvim -v</code></p>
     
     <entry>
       <title><![CDATA[외부명령어]]></title>
-      <url>/2017/10/29/centos-%E1%84%8B%E1%85%AC%E1%84%87%E1%85%AE%E1%84%86%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%A5/</url>
-      <content type="html"><![CDATA[<h1 id="외부명령어"><a href="#외부명령어" class="headerlink" title="외부명령어"></a>외부명령어</h1><p>외부 명령어는 명령라기 보다는 프로그램이라고 생각하는 것이 편합니다.<br>운영체제의 기본 기능을 프로그램으로 만들어서 실행 하는 겁니다.</p>
+      <url>/2017/10/29/centos-%EC%99%B8%EB%B6%80%EB%AA%85%EB%A0%B9%EC%96%B4/</url>
+      <content type="html"><![CDATA[<h3 id="외부명령어"><a href="#외부명령어" class="headerlink" title="외부명령어"></a>외부명령어</h3><p>외부 명령어는 명령라기 보다는 프로그램이라고 생각하는 것이 편합니다.<br>운영체제의 기본 기능을 프로그램으로 만들어서 실행 하는 겁니다.</p>
 <p>/bin 또는 /usr/bin에 들어 있습니다.</p>
 <p>파일관리 : 파일의 목록을 확인하고, 복사하고, 지우고, 링크걸고, 찾고 하는 프로그램등이 있습니다.</p>
 <p>보안관리 : 파일의 권한(읽기, 쓰기, 실행)을 바꾸거나 , 소유권을 바꾸는 프로그램이 있습니다.</p>
@@ -985,10 +985,10 @@ alias vi=gvim -v</code></p>
     
     <entry>
       <title><![CDATA[내부명령어]]></title>
-      <url>/2017/10/29/centos-%E1%84%82%E1%85%A2%E1%84%87%E1%85%AE%E1%84%86%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%A5/</url>
+      <url>/2017/10/29/centos-%EB%82%B4%EB%B6%80%EB%AA%85%EB%A0%B9%EC%96%B4/</url>
       <content type="html"><![CDATA[<div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
 <hr>
-<h1 id="내부명령어"><a href="#내부명령어" class="headerlink" title="내부명령어"></a>내부명령어</h1><p>내부명령은 Shell에 들어있고 별도 파일로 존재 하지 않는다고 했습니다. 내부명령어는 프로그램 언어 이기 때문에 당연히 변수, 상수, 조건문, 반복문, 배열,등이 있겠죠. 그걸 내부 명령어라고 합니다.</p>
+<h3 id="내부명령어"><a href="#내부명령어" class="headerlink" title="내부명령어"></a>내부명령어</h3><p>내부명령은 Shell에 들어있고 별도 파일로 존재 하지 않는다고 했습니다. 내부명령어는 프로그램 언어 이기 때문에 당연히 변수, 상수, 조건문, 반복문, 배열,등이 있겠죠. 그걸 내부 명령어라고 합니다.</p>
 <p>컴퓨터는 명령을 내리면 결과를 돌려 줍니다. 받은 결과를 다른 명령령의 인자로 돌려 줄 수 있다는 것도 꼭 기억하시기 바랍니다.</p>
 <p>Terminal에서</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># enable</span></div></pre></td></tr></table></figure>
@@ -1152,8 +1152,8 @@ alias vi=gvim -v</code></p>
 </tr>
 </tbody>
 </table>
-<h2 id="파이프라인과-리다이렉션"><a href="#파이프라인과-리다이렉션" class="headerlink" title="파이프라인과 리다이렉션"></a>파이프라인과 리다이렉션</h2><h3 id="파이프라인"><a href="#파이프라인" class="headerlink" title="파이프라인"></a>파이프라인</h3><p><code>|</code> 파이프라인 : 파이프라인을 기준으로 좌측 명령의 결과를 우측의 명령에 인자로 전달합니다.</p>
-<h3 id="리다이렉션"><a href="#리다이렉션" class="headerlink" title="리다이렉션"></a>리다이렉션</h3><p><code>&gt;</code> 리다이렉션 : 왼쪽 명령 처리 방향을 오른쪽 옵션으로 바꾸어 줍니다. 옵션은 파일 또는 장치(장치도 파일)<br><code>&gt;&gt;</code> 리다이렉션 : 왼쪽 명령 처리 방향을 오른쪽 옵션으로 추가해 바꾸어 줍니다. 옵션은 파일 또는 장치</p>
+<h4 id="파이프라인과-리다이렉션"><a href="#파이프라인과-리다이렉션" class="headerlink" title="파이프라인과 리다이렉션"></a>파이프라인과 리다이렉션</h4><h5 id="파이프라인"><a href="#파이프라인" class="headerlink" title="파이프라인"></a>파이프라인</h5><p><code>|</code> 파이프라인 : 파이프라인을 기준으로 좌측 명령의 결과를 우측의 명령에 인자로 전달합니다.</p>
+<h5 id="리다이렉션"><a href="#리다이렉션" class="headerlink" title="리다이렉션"></a>리다이렉션</h5><p><code>&gt;</code> 리다이렉션 : 왼쪽 명령 처리 방향을 오른쪽 옵션으로 바꾸어 줍니다. 옵션은 파일 또는 장치(장치도 파일)<br><code>&gt;&gt;</code> 리다이렉션 : 왼쪽 명령 처리 방향을 오른쪽 옵션으로 추가해 바꾸어 줍니다. 옵션은 파일 또는 장치</p>
 <ul>
 <li><p>처음엔 무슨 뜻인지 햇갈릴 겁니다.<br>  프로그램은 순차적으로 실행됩니다. 왼쪽에서 오른쪽으로.<br>  처음 실행되는 프로그램이 출력을 한다면 출력방향을 바꾸어 줍니다.<br>  처음 실행되는 프로그램 입력을 대기한다면 입력방향을 바꾸어 줍니다.</p>
 </li>
@@ -1170,7 +1170,7 @@ alias vi=gvim -v</code></p>
 <li><p>옵션이 파일명이면 파일로 만들어 주거나 파일에 덧붙여 줍니다. xNIX는 장치도 파일입니다. 파이프라인과 리다이렉션은 무척 중요합니다. 지금은 가볍게 이해 정도만 해주세요. 이해가 안되도 넘어 가도 됩니다. </p>
 </li>
 </ul>
-<h2 id="와일드카드"><a href="#와일드카드" class="headerlink" title="와일드카드"></a>와일드카드</h2><table>
+<h4 id="와일드카드"><a href="#와일드카드" class="headerlink" title="와일드카드"></a>와일드카드</h4><table>
 <thead>
 <tr>
 <th>문자</th>
@@ -1221,7 +1221,7 @@ alias vi=gvim -v</code></p>
 </tbody>
 </table>
 <p>와일드 카드도 너무 중요한 명령입니다. 지금은 이런것이 있다는 것만 너무 중요한데 그냥 넘어 가는구나 생각만 하세요. ls 명령에서 다시 알아 보겠습니다. </p>
-<h2 id="man-page-도움말-보기"><a href="#man-page-도움말-보기" class="headerlink" title="man page 도움말 보기"></a>man page 도움말 보기</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># man cd</span></div><div class="line"><span class="comment"># man pwd</span></div><div class="line"><span class="comment"># man bash</span></div></pre></td></tr></table></figure>
+<h4 id="man-page-도움말-보기"><a href="#man-page-도움말-보기" class="headerlink" title="man page 도움말 보기"></a>man page 도움말 보기</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># man cd</span></div><div class="line"><span class="comment"># man pwd</span></div><div class="line"><span class="comment"># man bash</span></div></pre></td></tr></table></figure>
 <p>man 명령을 이용해 도움말을 볼 수 있습니다.<br>man 도움말에서 h-key를 누르면 사용법을 볼수 있습니다.<br>q-key를 누르면 종료됩니다. 커서키를 이용해서 위, 아래로 이동하며 스크롤도 할 수 있고, 찾기도 할 수 있습니다.</p>
 <hr>
 <h1 id="BASH-BUILTIN-명령어-설명"><a href="#BASH-BUILTIN-명령어-설명" class="headerlink" title="BASH BUILTIN 명령어 설명"></a>BASH BUILTIN 명령어 설명</h1><ul>
@@ -1504,10 +1504,10 @@ alias vi=gvim -v</code></p>
     
     <entry>
       <title><![CDATA[내부명령어와 외부명령어]]></title>
-      <url>/2017/10/29/centos-%E1%84%82%E1%85%A2%E1%84%87%E1%85%AE%E1%84%86%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%A5%E1%84%8B%E1%85%AA-%E1%84%8B%E1%85%AC%E1%84%87%E1%85%AE%E1%84%86%E1%85%A7%E1%86%BC%E1%84%85%E1%85%A7%E1%86%BC%E1%84%8B%E1%85%A5/</url>
+      <url>/2017/10/29/centos-%EB%82%B4%EB%B6%80%EB%AA%85%EB%A0%B9%EC%96%B4%EC%99%80-%EC%99%B8%EB%B6%80%EB%AA%85%EB%A0%B9%EC%96%B4/</url>
       <content type="html"><![CDATA[<div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
 <hr>
-<h1 id="내부명령어와-외부명령어"><a href="#내부명령어와-외부명령어" class="headerlink" title="내부명령어와 외부명령어"></a>내부명령어와 외부명령어</h1><p>리눅스의 명령은 내부명령과 외부명령으로 나뉘어 집니다.</p>
+<h3 id="내부명령어와-외부명령어"><a href="#내부명령어와-외부명령어" class="headerlink" title="내부명령어와 외부명령어"></a>내부명령어와 외부명령어</h3><p>리눅스의 명령은 내부명령과 외부명령으로 나뉘어 집니다.</p>
 <p>내부명령은 별도의 파일이 존재 하지 않습니다.<br>Shell이라고 하는 인터프리터(명령해석기)에 명령이 들어 있습니다.<br>리눅스의 터미널을 실행하면 커서가 깜빡거립니다. 명령입력 대기를 하고있는 겁니다.<br>사용자가 명령을 내리면 Shell이 해석해서 Kernel에 전달하고<br>kernel은 cpu에 전달하고 cpu는 명령을 처리해서 다시<br>Kernel로 전달해 최종적으로 Shell에 돌려줍니다.</p>
 
 <p>외부명령은 OS가 갖추어야할 기본 프로그램이 존재하며 /bin 과 /usr/bin에 들어 있는 파일들이 외부명령 프로그램들입니다.</p>
@@ -1538,7 +1538,7 @@ alias vi=gvim -v</code></p>
     
     <entry>
       <title><![CDATA[디렉토리]]></title>
-      <url>/2017/10/29/centos-%E1%84%83%E1%85%B5%E1%84%85%E1%85%A6%E1%86%A8%E1%84%90%E1%85%A9%E1%84%85%E1%85%B5/</url>
+      <url>/2017/10/29/centos-%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC/</url>
       <content type="html"><![CDATA[<div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
 <hr>
 <p>/<br>최상위 디렉토리(root directory).</p>
@@ -1577,19 +1577,19 @@ alias vi=gvim -v</code></p>
     
     <entry>
       <title><![CDATA[부팅 순서]]></title>
-      <url>/2017/10/29/centos-%E1%84%87%E1%85%AE%E1%84%90%E1%85%B5%E1%86%BC-%E1%84%89%E1%85%AE%E1%86%AB%E1%84%89%E1%85%A5/</url>
+      <url>/2017/10/29/centos-%EB%B6%80%ED%8C%85-%EC%88%9C%EC%84%9C/</url>
       <content type="html"><![CDATA[<div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
 <hr>
-<h1 id="부팅순서"><a href="#부팅순서" class="headerlink" title="부팅순서"></a>부팅순서</h1>
-<h2 id="1-전원on"><a href="#1-전원on" class="headerlink" title="1. 전원on"></a>1. 전원on</h2><p>컴퓨터에 전원이 공급되면 제일 먼저 ROM BIOS의 프로그램들이 자동으로 실행됩니다.</p>
-<h2 id="2-BIOS-실행"><a href="#2-BIOS-실행" class="headerlink" title="2. BIOS 실행"></a>2. BIOS 실행</h2><p>BIOS가 실행되면, 컴퓨터가 구동되기 위한 최소한의 장치가 있는지, 이상은 없는지를 테스트하고, 이상이 있다면 Beep음으로 알려줍니다. 이상이 없다면 BIOS에 저장된 부팅장치로 부팅을 시작합니다.</p>
-<h2 id="3-부팅장치-선택"><a href="#3-부팅장치-선택" class="headerlink" title="3. 부팅장치 선택"></a>3. 부팅장치 선택</h2><p>부팅장치(CD-ROM, HDD…)로 부터 부트섹터를 읽어 메모리에 적재합니다. 이때 GRUB가 적재되는 겁니다.</p>
-<h2 id="4-부트로더-실행"><a href="#4-부트로더-실행" class="headerlink" title="4. 부트로더 실행"></a>4. 부트로더 실행</h2><p>GRUB가 실행되면 부트 메뉴를 보여주고 부팅할 커널을 선택합니다.</p>
-<h2 id="5-커널-이미지-적재"><a href="#5-커널-이미지-적재" class="headerlink" title="5. 커널 이미지 적재"></a>5. 커널 이미지 적재</h2><p>선택된 커널 이미지를 MEMORY에 적재합니다.</p>
-<h2 id="6-파일시스템-마운트"><a href="#6-파일시스템-마운트" class="headerlink" title="6. 파일시스템 마운트"></a>6. 파일시스템 마운트</h2><p>루트 파일시스템을 적재 합니다.</p>
-<h2 id="7-init-프로세스-실행"><a href="#7-init-프로세스-실행" class="headerlink" title="7. init 프로세스 실행"></a>7. init 프로세스 실행</h2><p>시스템을 초기화 하고 사용자가 시스템을 사용할 수 있도록 해줍니다.<br>이때 설정된 각종 DEAMON도 같이 실행 되어집니다.</p>
+<h3 id="부팅순서"><a href="#부팅순서" class="headerlink" title="부팅순서"></a>부팅순서</h3>
+<h4 id="1-전원on"><a href="#1-전원on" class="headerlink" title="1. 전원on"></a>1. 전원on</h4><p>컴퓨터에 전원이 공급되면 제일 먼저 ROM BIOS의 프로그램들이 자동으로 실행됩니다.</p>
+<h4 id="2-BIOS-실행"><a href="#2-BIOS-실행" class="headerlink" title="2. BIOS 실행"></a>2. BIOS 실행</h4><p>BIOS가 실행되면, 컴퓨터가 구동되기 위한 최소한의 장치가 있는지, 이상은 없는지를 테스트하고, 이상이 있다면 Beep음으로 알려줍니다. 이상이 없다면 BIOS에 저장된 부팅장치로 부팅을 시작합니다.</p>
+<h4 id="3-부팅장치-선택"><a href="#3-부팅장치-선택" class="headerlink" title="3. 부팅장치 선택"></a>3. 부팅장치 선택</h4><p>부팅장치(CD-ROM, HDD…)로 부터 부트섹터를 읽어 메모리에 적재합니다. 이때 GRUB가 적재되는 겁니다.</p>
+<h4 id="4-부트로더-실행"><a href="#4-부트로더-실행" class="headerlink" title="4. 부트로더 실행"></a>4. 부트로더 실행</h4><p>GRUB가 실행되면 부트 메뉴를 보여주고 부팅할 커널을 선택합니다.</p>
+<h4 id="5-커널-이미지-적재"><a href="#5-커널-이미지-적재" class="headerlink" title="5. 커널 이미지 적재"></a>5. 커널 이미지 적재</h4><p>선택된 커널 이미지를 MEMORY에 적재합니다.</p>
+<h4 id="6-파일시스템-마운트"><a href="#6-파일시스템-마운트" class="headerlink" title="6. 파일시스템 마운트"></a>6. 파일시스템 마운트</h4><p>루트 파일시스템을 적재 합니다.</p>
+<h4 id="7-init-프로세스-실행"><a href="#7-init-프로세스-실행" class="headerlink" title="7. init 프로세스 실행"></a>7. init 프로세스 실행</h4><p>시스템을 초기화 하고 사용자가 시스템을 사용할 수 있도록 해줍니다.<br>이때 설정된 각종 DEAMON도 같이 실행 되어집니다.</p>
 <p>DAEMON : 종료되지 않고 계속 실행되는 프로그램</p>
-<h2 id="8-로그인-및-사용"><a href="#8-로그인-및-사용" class="headerlink" title="8. 로그인 및 사용"></a>8. 로그인 및 사용</h2><p>리눅스시스템은 부팅이 완료되면 각종 설정및 SERVER등이 자동으로 실행 되어 스스로 설정된 명령에 의해 동작됩니다. 시스템에 허가된 사용자는 로그인을 이용해 컴퓨터에접속해서 컴퓨터 사용이 가능합니다.</p>
+<h4 id="8-로그인-및-사용"><a href="#8-로그인-및-사용" class="headerlink" title="8. 로그인 및 사용"></a>8. 로그인 및 사용</h4><p>리눅스시스템은 부팅이 완료되면 각종 설정및 SERVER등이 자동으로 실행 되어 스스로 설정된 명령에 의해 동작됩니다. 시스템에 허가된 사용자는 로그인을 이용해 컴퓨터에접속해서 컴퓨터 사용이 가능합니다.</p>
 <hr>
 <p>앞으로 위 [그림1]에서 NORTH BRIDGE 와 SOUTH BRIDGE, BIOS를 생략하고 아래 [그림2]로 시스템 설명을 설명할 겁니다. 메모리와 CPU사이에는 NB, SB가 있다는것을 잊으면 안됩니다.</p>
 <p>입력장치: RAM, HDD(각종저장장치), 마이크, 키보드, 마우스, 스케너<br>출력장치: RAM, HDD(각종저장장치), 모니터, 스피커, 프린터<br>처리장치: CPU<br></p>
@@ -1612,18 +1612,18 @@ alias vi=gvim -v</code></p>
     
     <entry>
       <title><![CDATA[리눅스의 특징]]></title>
-      <url>/2017/10/29/centos-%E1%84%85%E1%85%B5%E1%84%82%E1%85%AE%E1%86%A8%E1%84%89%E1%85%B3%E1%84%8B%E1%85%B4-%E1%84%90%E1%85%B3%E1%86%A8%E1%84%8C%E1%85%B5%E1%86%BC/</url>
+      <url>/2017/10/29/centos-%EB%A6%AC%EB%88%85%EC%8A%A4%EC%9D%98-%ED%8A%B9%EC%A7%95/</url>
       <content type="html"><![CDATA[<div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
 <hr>
-<h1 id="리눅스의-특징과-역할"><a href="#리눅스의-특징과-역할" class="headerlink" title="리눅스의 특징과 역할"></a>리눅스의 특징과 역할</h1><h2 id="특징"><a href="#특징" class="headerlink" title="특징"></a>특징</h2><ul>
+<h3 id="리눅스의-특징과-역할"><a href="#리눅스의-특징과-역할" class="headerlink" title="리눅스의 특징과 역할"></a>리눅스의 특징과 역할</h3><h4 id="특징"><a href="#특징" class="headerlink" title="특징"></a>특징</h4><ul>
 <li>멀티유저, 멀티태스킹, 멀티 프로세싱, 서버용 운영체제</li>
 <li>GUI 와 CUI 를 지원</li>
 <li>무료이며, 수많은 소스가 공개 되어 있다.</li>
 <li>안정성, 적은 리소스 점유로 mobile, embeded에서도 사용</li>
 </ul>
-<h2 id="운영체제-역할"><a href="#운영체제-역할" class="headerlink" title="운영체제 역할"></a>운영체제 역할</h2><p>리눅스는 많은 OS(Operating System) 운영체제중의 하나입니다.<br></p>
+<h4 id="운영체제-역할"><a href="#운영체제-역할" class="headerlink" title="운영체제 역할"></a>운영체제 역할</h4><p>리눅스는 많은 OS(Operating System) 운영체제중의 하나입니다.<br></p>
 <p>위에 보는 그림과 같이 컴퓨터는 많은 장치로 구성되어 있습니다. 운영체제는 각각의 장치를 유기적으로 연결해서 컴퓨터를 사용할 수 있도록 해줍니다. SB는 각종 입출력 장치를 제어하고, NB는 PCI BUS 와 SB를 제어 합니다. OS가 없으면 컴퓨터는 동작 하지 않습니다.</p>
-<h2 id="기능"><a href="#기능" class="headerlink" title="기능"></a>기능</h2><ul>
+<h4 id="기능"><a href="#기능" class="headerlink" title="기능"></a>기능</h4><ul>
 <li>파일(디렉토리)관리<ul>
 <li>파일생성, 이동, 삭제, 복사</li>
 </ul>
@@ -1664,9 +1664,9 @@ alias vi=gvim -v</code></p>
     
     <entry>
       <title><![CDATA[터미널 단축키]]></title>
-      <url>/2017/10/29/centos-%E1%84%90%E1%85%A5%E1%84%86%E1%85%B5%E1%84%82%E1%85%A5%E1%86%AF-%E1%84%83%E1%85%A1%E1%86%AB%E1%84%8E%E1%85%AE%E1%86%A8%E1%84%8F%E1%85%B5/</url>
+      <url>/2017/10/29/centos-%ED%84%B0%EB%AF%B8%EB%84%90-%EB%8B%A8%EC%B6%95%ED%82%A4/</url>
       <content type="html"><![CDATA[<div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
-<h1 id="터미널-단축키"><a href="#터미널-단축키" class="headerlink" title="터미널 단축키"></a>터미널 단축키</h1><p>xNIX 계열의 터미널에서 공통적으로 사용되는 단축키 입니다.<br>터미널과 shell에 따라 조금씩 다르고, 더많은 단축키가 있지만 아래 키는 대부분 공통적으로 동작 됩니다.</p>
+<h3 id="터미널-단축키"><a href="#터미널-단축키" class="headerlink" title="터미널 단축키"></a>터미널 단축키</h3><p>xNIX 계열의 터미널에서 공통적으로 사용되는 단축키 입니다.<br>터미널과 shell에 따라 조금씩 다르고, 더많은 단축키가 있지만 아래 키는 대부분 공통적으로 동작 됩니다.</p>
 <table>
 <thead>
 <tr>
@@ -1746,7 +1746,7 @@ alias vi=gvim -v</code></p>
 </tbody>
 </table>
 <p>터미널 단축키는 man page, sed, edlin, vim, python, perl, rube 에서도 동일하게 사용됩니다.</p>
-<h1 id="TAB-Ctrl-l-Ctrl-u-Ctrl-w-Ctrl-e-Ctrl-a-Ctrl-p-Ctrl-r"><a href="#TAB-Ctrl-l-Ctrl-u-Ctrl-w-Ctrl-e-Ctrl-a-Ctrl-p-Ctrl-r" class="headerlink" title="TAB, Ctrl+l, Ctrl+u, Ctrl+w, Ctrl+e, Ctrl+a, Ctrl+p, Ctrl+r"></a>TAB, Ctrl+l, Ctrl+u, Ctrl+w, Ctrl+e, Ctrl+a, Ctrl+p, Ctrl+r</h1><p>위 키는 반드시 손에 익히세요.</p>
+<h3 id="TAB-Ctrl-l-Ctrl-u-Ctrl-w-Ctrl-e-Ctrl-a-Ctrl-p-Ctrl-r"><a href="#TAB-Ctrl-l-Ctrl-u-Ctrl-w-Ctrl-e-Ctrl-a-Ctrl-p-Ctrl-r" class="headerlink" title="TAB, Ctrl+l, Ctrl+u, Ctrl+w, Ctrl+e, Ctrl+a, Ctrl+p, Ctrl+r"></a>TAB, Ctrl+l, Ctrl+u, Ctrl+w, Ctrl+e, Ctrl+a, Ctrl+p, Ctrl+r</h3><p>위 키는 반드시 손에 익히세요.</p>
 ]]></content>
       
         <categories>
@@ -1768,11 +1768,11 @@ alias vi=gvim -v</code></p>
     
     <entry>
       <title><![CDATA[Centos설치]]></title>
-      <url>/2017/10/28/centos-%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8E%E1%85%B5/</url>
-      <content type="html"><![CDATA[<h1 id="Centos설치"><a href="#Centos설치" class="headerlink" title="Centos설치"></a>Centos설치</h1><p>실습의 편의를 위해 VirtualBox에 Centos를 설치하겠습니다.</p>
-<h2 id="1-virtualbox-다운로드"><a href="#1-virtualbox-다운로드" class="headerlink" title="1. virtualbox 다운로드"></a>1. virtualbox 다운로드</h2><p><a href="http://virtualbox.org" target="_blank" rel="external">http://virtualbox.org</a> 사이트에서 자신의 운영체제에 맞는 최신 버전의 virtualbox를 다운로드 받습니다.</p>
-<h2 id="2-Centos-다운로드"><a href="#2-Centos-다운로드" class="headerlink" title="2. Centos 다운로드"></a>2. Centos 다운로드</h2><p><a href="http://centos.org" target="_blank" rel="external">http://centos.org</a> 에서 centos7 dvd iso 이미지를 다운로드 받습니다.</p>
-<h2 id="3-virtualbox-설치"><a href="#3-virtualbox-설치" class="headerlink" title="3. virtualbox 설치"></a>3. virtualbox 설치</h2><h2 id="4-virtualbox-실행-및-centos설치"><a href="#4-virtualbox-실행-및-centos설치" class="headerlink" title="4. virtualbox 실행 및 centos설치"></a>4. virtualbox 실행 및 centos설치</h2>]]></content>
+      <url>/2017/10/28/centos-%EC%84%A4%EC%B9%98/</url>
+      <content type="html"><![CDATA[<h3 id="Centos설치"><a href="#Centos설치" class="headerlink" title="Centos설치"></a>Centos설치</h3><p>실습의 편의를 위해 VirtualBox에 Centos를 설치하겠습니다.</p>
+<h4 id="1-virtualbox-다운로드"><a href="#1-virtualbox-다운로드" class="headerlink" title="1. virtualbox 다운로드"></a>1. virtualbox 다운로드</h4><p><a href="http://virtualbox.org" target="_blank" rel="external">http://virtualbox.org</a> 사이트에서 자신의 운영체제에 맞는 최신 버전의 virtualbox를 다운로드 받습니다.</p>
+<h4 id="2-Centos-다운로드"><a href="#2-Centos-다운로드" class="headerlink" title="2. Centos 다운로드"></a>2. Centos 다운로드</h4><p><a href="http://centos.org" target="_blank" rel="external">http://centos.org</a> 에서 centos7 dvd iso 이미지를 다운로드 받습니다.</p>
+<h4 id="3-virtualbox-설치"><a href="#3-virtualbox-설치" class="headerlink" title="3. virtualbox 설치"></a>3. virtualbox 설치</h4><h4 id="4-virtualbox-실행-및-centos설치"><a href="#4-virtualbox-실행-및-centos설치" class="headerlink" title="4. virtualbox 실행 및 centos설치"></a>4. virtualbox 실행 및 centos설치</h4>]]></content>
       
         <categories>
             
