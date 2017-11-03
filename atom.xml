@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://korcow.github.io/"/>
-  <updated>2017-11-03T08:21:02.553Z</updated>
+  <updated>2017-11-03T08:42:58.120Z</updated>
   <id>http://korcow.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://korcow.github.io/2017/11/03/%ED%95%9C%EA%B8%80-%ED%8C%8C%EC%9D%BC%EB%AA%85-%ED%85%8C%EC%8A%A4%ED%8A%B8/"/>
     <id>http://korcow.github.io/2017/11/03/한글-파일명-테스트/</id>
     <published>2017-11-03T08:20:26.000Z</published>
-    <updated>2017-11-03T08:21:02.553Z</updated>
+    <updated>2017-11-03T08:42:58.120Z</updated>
     
     <content type="html"><![CDATA[<p>한글파일명:w</p>]]></content>
     
@@ -35,6 +35,10 @@
     
     </summary>
     
+      <category term="Centos" scheme="http://korcow.github.io/categories/Centos/"/>
+    
+    
+      <category term="Centos" scheme="http://korcow.github.io/tags/Centos/"/>
     
   </entry>
   
