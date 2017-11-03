@@ -16,7 +16,7 @@
 <p><strong>삽질 경험담:</strong></p>
 <ul>
 <li>archive가 반영이 안될때는 파일명을 변경하면 된다.</li>
-<li>Post의 변경 반영이 안되는 경우<br><code>hexo n &quot;포스트명&quot;</code> 또는 <code>hexo new &quot;포스트명&quot;</code> 으로 포스트를 생성해서 사용하다 수정을 했음에도 반영이 안되는 경우가 종종 있다.<br>이때는 git의 캐시 때문일 수 있으니 5분 정도 기다려 보고, 그래도 안되면 아래처럼 적용을 해준다.<br><code>hexo clean</code>  /blog/Public 디렉토리 삭제<br><code>hexo g -d</code><br>하면 문제가 해결된다<br>그래도 안되는 경우 파일명을 바꾸어 준다. 탐색기나 finder에서 바꾸면 안됨(내 경험상)<br><code>mv 한글.md 한글x.md</code><br><code>hexo g -d</code><br>변경을 확인하고 변경이 잘 되면 원래대로 이름을 바꾸고 <code>hexo g -d</code><br>그래도 안되면 내용을 수정<br><code>hexo g -d</code><br>여기 까지 했는데도 안되면 최후의 수단<br>.deploy로 이동후<br><code>git rm -rf *</code><br><code>git commit -m &quot;삭제&quot;</code><br><code>git push</code><br>화일명을 변경, 내용도 수정<br><code>hexo g -d</code></li>
+<li>Post의 변경 반영이 안되는 경우<br><code>hexo n &quot;포스트명&quot;</code> 또는 <code>hexo new &quot;포스트명&quot;</code> 으로 포스트를 생성해서 사용하다 수정을 했음에도 반영이 안되는 경우가 종종 있다.<br>이때는 git의 캐시 때문일 수 있으니 5분 정도 기다려 보고, 그래도 안되면 아래처럼 적용을 해준다.<br><code>hexo clean</code>  /blog/Public 디렉토리 삭제<br><code>hexo g -d</code><br>하면 문제가 해결된다<br>그래도 안되는 경우 파일명을 바꾸어 준다. 탐색기나 finder에서 바꾸면 안됨(내 경험상)<br><code>mv 한글.md 한글x.md</code><br><code>hexo g -d</code><br>변경을 확인하고 변경이 잘 되면 원래대로 이름을 바꾸고 <code>hexo g -d</code><br>그래도 안되면 내용을 수정<br><code>hexo g -d</code><br>여기 까지 했는데도 안되면 최후의 수단<br>.deploy로 이동후<br><code>git rm -rf *</code><br><code>git commit -m &quot;삭제&quot;</code><br><code>git push</code><br>화일명을 변경, 내용도 수정<br><code>hexo g -d</code><br>영어의 대소문자가 혼재(윈도우와 맥에서는 오류가 날 수 있슴) 소문자로 바꾸길…</li>
 <li>Post가 2개로 보일때<br>이증상은 대부분 로컬서버에서 생기는 것 같다.<br><code>hexo clean</code><br><code>hexo g -d</code><br><code>hexo server -s</code></li>
 </ul>
 <hr>
