@@ -3,6 +3,27 @@
   
     
     <entry>
+      <title><![CDATA[d2coding font]]></title>
+      <url>/2017/11/04/hexo-d2coding/</url>
+      <content type="html"><![CDATA[<h3 id=""><a href="#" class="headerlink" title=" "></a> </h3><p>naver d2coding webfont 다운로드<br><a href="https://github.com/Joungkyun/font-d2coding" target="_blank" rel="external">https://github.com/Joungkyun/font-d2coding</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> font </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Hexo 한글파일명 문제점]]></title>
       <url>/2017/11/04/hexo-%ED%95%9C%EA%B8%80%ED%8C%8C%EC%9D%BC%EB%AA%85/</url>
       <content type="html"><![CDATA[<h3 id="Hexo-한글오류"><a href="#Hexo-한글오류" class="headerlink" title="Hexo 한글오류"></a>Hexo 한글오류</h3><p>이하 내용은 Hexo를 커스텀하다 꼬여서 발생한 문제를 해결하면서 얻은 경험입니다.( 정확하게 소스분석을 하지 않았다는 겁니다.)</p>

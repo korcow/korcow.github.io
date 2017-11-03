@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://korcow.github.io/"/>
-  <updated>2017-11-03T15:59:38.225Z</updated>
+  <updated>2017-11-03T18:36:37.486Z</updated>
   <id>http://korcow.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>d2coding font</title>
+    <link href="http://korcow.github.io/2017/11/04/hexo-d2coding/"/>
+    <id>http://korcow.github.io/2017/11/04/hexo-d2coding/</id>
+    <published>2017-11-03T18:36:37.486Z</published>
+    <updated>2017-11-03T18:36:37.486Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id=""><a href="#" class="headerlink" title=" "></a> </h3><p>naver d2coding webfont 다운로드<br><a href="https://github.com/Joungkyun/font-d2coding" target="_blank" rel="external">https://github.com/Joungkyun/font-d2coding</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot; &quot;&gt;&lt;/a&gt; &lt;/h3&gt;&lt;p&gt;naver d2coding webfont 다운로드&lt;br&gt;&lt;a href=&quot;https://github.com/Joungkyun/font-d2
+      
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://korcow.github.io/categories/Hexo/"/>
+    
+    
+      <category term="font" scheme="http://korcow.github.io/tags/font/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo 한글파일명 문제점</title>
@@ -546,31 +571,6 @@
     
     
       <category term="vim" scheme="http://korcow.github.io/tags/vim/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>외부명령어</title>
-    <link href="http://korcow.github.io/2017/10/29/centos-%EC%99%B8%EB%B6%80%EB%AA%85%EB%A0%B9%EC%96%B4/"/>
-    <id>http://korcow.github.io/2017/10/29/centos-외부명령어/</id>
-    <published>2017-10-29T10:47:23.000Z</published>
-    <updated>2017-11-03T12:12:15.804Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="외부명령어"><a href="#외부명령어" class="headerlink" title="외부명령어"></a>외부명령어</h3><p>외부 명령어는 명령라기 보다는 프로그램이라고 생각하는 것이 편합니다.<br>운영체제의 기본 기능을 프로그램으로 만들어서 실행 하는 겁니다.</p><p>/bin 또는 /usr/bin에 들어 있습니다.</p><p>파일관리 : 파일의 목록을 확인하고, 복사하고, 지우고, 링크걸고, 찾고 하는 프로그램등이 있습니다.</p><p>보안관리 : 파일의 권한(읽기, 쓰기, 실행)을 바꾸거나 , 소유권을 바꾸는 프로그램이 있습니다.</p><p>프로세스관리: 내부명령에 기본으로 포함되어 있고, 외부 명령으로 기능이 확장되거나 관리가 용이 하도록 만든 프로그램들이 있습니다.</p><p>서버관리 : ssh, web, ftp, dns, db 등 많은 서버 프로그램이 있으며, 이들 서버를 관리하는 프로그램이 있습니다.</p><p>응용프로그램 : 업무를 도와 줄수 있는 워드, 엑셀, 데이타베이스, 그래픽, 사운드 관련 프로그램이 있습니다.</p><p>프로그램의 종류가 워낙 많고 사용법 또한 외우기 쉽지 않기 때문에 최대한 man page를 사용하는 것을 추천 합니다.</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;외부명령어&quot;&gt;&lt;a href=&quot;#외부명령어&quot; class=&quot;headerlink&quot; title=&quot;외부명령어&quot;&gt;&lt;/a&gt;외부명령어&lt;/h3&gt;&lt;p&gt;외부 명령어는 명령라기 보다는 프로그램이라고 생각하는 것이 편합니다.&lt;br&gt;운영체제의 기본 기능을 프로그
-      
-    
-    </summary>
-    
-      <category term="Centos" scheme="http://korcow.github.io/categories/Centos/"/>
-    
-    
-      <category term="Centos" scheme="http://korcow.github.io/tags/Centos/"/>
     
   </entry>
   
