@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://korcow.github.io/"/>
-  <updated>2017-11-04T10:28:41.940Z</updated>
+  <updated>2017-11-04T14:02:11.925Z</updated>
   <id>http://korcow.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C언어 목차</title>
+    <link href="http://korcow.github.io/2017/11/04/c-%EB%AA%A9%EC%B0%A8/"/>
+    <id>http://korcow.github.io/2017/11/04/c-목차/</id>
+    <published>2017-11-04T14:02:11.924Z</published>
+    <updated>2017-11-04T14:02:11.925Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="목차"><a href="#목차" class="headerlink" title="목차"></a>목차</h3><h1 id="c언어-기초"><a href="#c언어-기초" class="headerlink" title="c언어 기초"></a>c언어 기초</h1><p>c언어는 가장 기초가 되는 프로그래밍 언어로 c++, objective c, java, python등의 언어로 접근하기 위한 필수 프로그램입니다. 가장 쉬운 언어 이면서, 가장 어려운 언어 기기도 합니다. 어렵다는 것은 시스템 제어를 새로 만들거나, os, 프로그램 language를 새로 만들때 해당 됩니다. 그외는 전혀 어렵지 않습니다. 이미 만들어져 있는 것을 응용해서 사용하면 됩니다.</p><p>shell 프로그래밍으로도 프로그램 작성이 가능하지만 c언어가 더 강력하고 빠릅니다. c언어가 빠르고 강력하지만 라이브러리가 많이 부족합니다. 그래서 python, c++, java를 사용하는 겁니다.</p><p>이번에 진행하는 c언어는 linux에서 gcc, vim, bash shell을 이용해 진행됩니다. 조금 산만 할 수도 있지만 난이도를 낮추고 모두를 설명하는 것이 프로그래밍의 숲을 볼 수 있는 방법인것 같습니다. 프로그래밍의 특성상 문법을 강조하면 무엇을 하는건지 어디에 써야 하는건지 무조건 외워야 하는건지 종잡을 수 없습니다. 쉽게 흥미를 잃어버릴 수 있습니다. </p><h2 id="실습환경-설정"><a href="#실습환경-설정" class="headerlink" title="실습환경 설정"></a>실습환경 설정</h2><ol><li>virtualbox에 centos설치 - Centos참조</li><li>gvim 설치및 vimrc 세팅 - vim참조</li><li>vim 기본 사용법 - vim참조</li></ol><h2 id="화면에-글자-출력하기"><a href="#화면에-글자-출력하기" class="headerlink" title="화면에 글자 출력하기"></a>화면에 글자 출력하기</h2><ol><li>putchar()</li><li>puts()</li><li>printf()</li></ol><h2 id="간단한-계산하기"><a href="#간단한-계산하기" class="headerlink" title="간단한 계산하기"></a>간단한 계산하기</h2><ol><li>printf 함수를 이용한 사칙연산</li><li>변수와 상수를 사용.</li><li>자료형, 연산자</li></ol><h2 id="키보드로-입력-받기"><a href="#키보드로-입력-받기" class="headerlink" title="키보드로 입력 받기"></a>키보드로 입력 받기</h2><ol><li>getchar()</li><li>gets()</li><li>scanf()</li></ol><h2 id="인자로-입력-받기"><a href="#인자로-입력-받기" class="headerlink" title="인자로 입력 받기"></a>인자로 입력 받기</h2><h2 id="if문-사용하기"><a href="#if문-사용하기" class="headerlink" title="if문 사용하기"></a>if문 사용하기</h2><h2 id="for-문"><a href="#for-문" class="headerlink" title="for 문"></a>for 문</h2><h2 id="배열"><a href="#배열" class="headerlink" title="배열"></a>배열</h2><h2 id="파일-입출력"><a href="#파일-입출력" class="headerlink" title="파일 입출력"></a>파일 입출력</h2><h2 id="switch-case-문-사용하기"><a href="#switch-case-문-사용하기" class="headerlink" title="switch case 문 사용하기"></a>switch case 문 사용하기</h2><h2 id="while-문"><a href="#while-문" class="headerlink" title="while 문"></a>while 문</h2><h2 id="do-while-문"><a href="#do-while-문" class="headerlink" title="do while 문"></a>do while 문</h2><h2 id="loop-문"><a href="#loop-문" class="headerlink" title="loop 문"></a>loop 문</h2><h2 id="함수-만들기"><a href="#함수-만들기" class="headerlink" title="함수 만들기"></a>함수 만들기</h2><h2 id="표준-라이브러리"><a href="#표준-라이브러리" class="headerlink" title="표준 라이브러리"></a>표준 라이브러리</h2><h2 id="구조체-사용하기"><a href="#구조체-사용하기" class="headerlink" title="구조체 사용하기"></a>구조체 사용하기</h2><h2 id="포인터"><a href="#포인터" class="headerlink" title="포인터"></a>포인터</h2><h2 id="유니온"><a href="#유니온" class="headerlink" title="유니온"></a>유니온</h2><h2 id="maloc"><a href="#maloc" class="headerlink" title="maloc"></a>maloc</h2><h2 id="curses"><a href="#curses" class="headerlink" title="curses"></a>curses</h2><h2 id="oracle-연결"><a href="#oracle-연결" class="headerlink" title="oracle 연결"></a>oracle 연결</h2><h2 id="주소록-만들기"><a href="#주소록-만들기" class="headerlink" title="주소록 만들기"></a>주소록 만들기</h2><h2 id="학사관리-만들기"><a href="#학사관리-만들기" class="headerlink" title="학사관리 만들기"></a>학사관리 만들기</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;목차&quot;&gt;&lt;a href=&quot;#목차&quot; class=&quot;headerlink&quot; title=&quot;목차&quot;&gt;&lt;/a&gt;목차&lt;/h3&gt;&lt;h1 id=&quot;c언어-기초&quot;&gt;&lt;a href=&quot;#c언어-기초&quot; class=&quot;headerlink&quot; title=&quot;c언어 기초&quot;&gt;&lt;/a&gt;c
+      
+    
+    </summary>
+    
+      <category term="C" scheme="http://korcow.github.io/categories/C/"/>
+    
+    
+      <category term="c" scheme="http://korcow.github.io/tags/c/"/>
+    
+  </entry>
   
   <entry>
     <title>간단한 계산하기</title>
@@ -83,31 +108,6 @@
       <category term="puts" scheme="http://korcow.github.io/tags/puts/"/>
     
       <category term="putchar" scheme="http://korcow.github.io/tags/putchar/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C언어 목차</title>
-    <link href="http://korcow.github.io/2017/11/04/c-%EB%AA%A9%EC%B0%A8/"/>
-    <id>http://korcow.github.io/2017/11/04/c-목차/</id>
-    <published>2017-11-04T06:16:35.255Z</published>
-    <updated>2017-11-04T06:16:35.255Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="목차"><a href="#목차" class="headerlink" title="목차"></a>목차</h3><h1 id="c언어-기초"><a href="#c언어-기초" class="headerlink" title="c언어 기초"></a>c언어 기초</h1><p>c언어는 가장 기초가 되는 프로그래밍 언어로 c++, objective c, java, python등의 언어로 접근하기 위한 필수 프로그램입니다. 가장 쉬운 언어 이면서, 가장 어려운 언어 기기도 합니다. 어렵다는 것은 시스템 제어를 새로 만들거나, os, 프로그램 language를 새로 만들때 해당 됩니다. 그외는 전혀 어렵지 않습니다. 이미 만들어져 있는 것을 응용해서 사용하면 됩니다.</p><p>이번에 진행하는 c언어는 linux에서 gcc, vim, bash shell을 이용해 진행됩니다. </p><h2 id="실습환경-설정"><a href="#실습환경-설정" class="headerlink" title="실습환경 설정"></a>실습환경 설정</h2><ol><li>virtualbox에 centos설치 - Centos참조</li><li>gvim 설치및 vimrc 세팅 - vim참조</li><li>vim 기본 사용법 - vim참조</li></ol><h2 id="화면에-글자-출력하기"><a href="#화면에-글자-출력하기" class="headerlink" title="화면에 글자 출력하기"></a>화면에 글자 출력하기</h2><ol><li>putchar()</li><li>puts()</li><li>printf()</li></ol><h2 id="간단한-계산하기"><a href="#간단한-계산하기" class="headerlink" title="간단한 계산하기"></a>간단한 계산하기</h2><ol><li>printf 함수를 이용한 사칙연산</li><li>변수와 상수를 사용.</li><li>자료형, 연산자</li></ol><h2 id="키보드로-입력-받기"><a href="#키보드로-입력-받기" class="headerlink" title="키보드로 입력 받기"></a>키보드로 입력 받기</h2><ol><li>getchar()</li><li>gets()</li><li>scanf()</li></ol><h2 id="인자로-입력-받기"><a href="#인자로-입력-받기" class="headerlink" title="인자로 입력 받기"></a>인자로 입력 받기</h2><h2 id="if문-사용하기"><a href="#if문-사용하기" class="headerlink" title="if문 사용하기"></a>if문 사용하기</h2><h2 id="for-문"><a href="#for-문" class="headerlink" title="for 문"></a>for 문</h2><h2 id="배열"><a href="#배열" class="headerlink" title="배열"></a>배열</h2><h2 id="파일-입출력"><a href="#파일-입출력" class="headerlink" title="파일 입출력"></a>파일 입출력</h2><h2 id="switch-case-문-사용하기"><a href="#switch-case-문-사용하기" class="headerlink" title="switch case 문 사용하기"></a>switch case 문 사용하기</h2><h2 id="while-문"><a href="#while-문" class="headerlink" title="while 문"></a>while 문</h2><h2 id="do-while-문"><a href="#do-while-문" class="headerlink" title="do while 문"></a>do while 문</h2><h2 id="loop-문"><a href="#loop-문" class="headerlink" title="loop 문"></a>loop 문</h2><h2 id="함수-만들기"><a href="#함수-만들기" class="headerlink" title="함수 만들기"></a>함수 만들기</h2><h2 id="표준-라이브러리"><a href="#표준-라이브러리" class="headerlink" title="표준 라이브러리"></a>표준 라이브러리</h2><h2 id="구조체-사용하기"><a href="#구조체-사용하기" class="headerlink" title="구조체 사용하기"></a>구조체 사용하기</h2><h2 id="포인터"><a href="#포인터" class="headerlink" title="포인터"></a>포인터</h2><h2 id="유니온"><a href="#유니온" class="headerlink" title="유니온"></a>유니온</h2><h2 id="maloc"><a href="#maloc" class="headerlink" title="maloc"></a>maloc</h2><h2 id="curses"><a href="#curses" class="headerlink" title="curses"></a>curses</h2><h2 id="oracle-연결"><a href="#oracle-연결" class="headerlink" title="oracle 연결"></a>oracle 연결</h2><h2 id="주소록-만들기"><a href="#주소록-만들기" class="headerlink" title="주소록 만들기"></a>주소록 만들기</h2><h2 id="학사관리-만들기"><a href="#학사관리-만들기" class="headerlink" title="학사관리 만들기"></a>학사관리 만들기</h2>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;목차&quot;&gt;&lt;a href=&quot;#목차&quot; class=&quot;headerlink&quot; title=&quot;목차&quot;&gt;&lt;/a&gt;목차&lt;/h3&gt;&lt;h1 id=&quot;c언어-기초&quot;&gt;&lt;a href=&quot;#c언어-기초&quot; class=&quot;headerlink&quot; title=&quot;c언어 기초&quot;&gt;&lt;/a&gt;c
-      
-    
-    </summary>
-    
-      <category term="C" scheme="http://korcow.github.io/categories/C/"/>
-    
-    
-      <category term="c" scheme="http://korcow.github.io/tags/c/"/>
     
   </entry>
   
