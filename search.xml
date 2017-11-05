@@ -70,7 +70,7 @@
 </ul>
 <p>이렇게 약속을 했는데 안지키면 안되겠죠.</p>
 <p>아래는 약속에 맞춰서 최소한의 코딩을 한겁니다.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;		//전처리 표준 출력을 위해 호출</span></span></div><div class="line">						<span class="comment">//구조체는 사용안하므로 안썼음.</span></div><div class="line">						<span class="comment">//함수선언 사용자 함수가 없으므로 안썼음.</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span>			<span class="comment">// 메인함수</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%s"</span>, <span class="string">"hello world!\n"</span>);		<span class="comment">//프로그램 작성 </span></div><div class="line">	<span class="comment">// 위 함수도 약속에 의해 작성함.</span></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;			<span class="comment">// 리턴값</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="토큰"><a href="#토큰" class="headerlink" title="토큰"></a>토큰</h3><p>토큰은 표식(징표, 표시)이라고 할 수 있습니다.<br>버스, 지하철을 탈때 토큰을 내고 타죠?.<br>상품을 구매할때 화패, 카드, 쿠폰을 내고 구매를 합니다. 이렇게 의미(가치)가 표시된 것들을 통틀어 영어로 토큰이라고 부릅니다.</p>
+<h3 id="토큰"><a href="#토큰" class="headerlink" title="토큰"></a>토큰</h3><p>토큰은 표식(징표, 표시)이라고 할 수 있습니다.<br>버스, 지하철을 탈때 토큰을 내고 타죠? (현금, 카드찍는 행위, 탑승티켓등…)<br>상품을 구매할때 화패, 카드, 쿠폰을 내고 구매를 합니다. 이렇게 의미(가치)가 표시된 것들을 통틀어 영어로 토큰이라고 부릅니다.</p>
 <p>C언어의 토큰은 keyword(예약어), 연산자, 구두점(부호), 식별자, 상수가 있습니다.<br>32개의 예약어, 40여개의 연산자, 10개의 구두점, 여러분이 생성하는 함수명, 변수명, 상수명이 다 입니다.<br>외울 필요도 없습니다. 쓰다 보면 저절로 외워집니다.<br>어떤것이 있는지 한번 훑어 보세요. </p>
 <h3 id="예약어"><a href="#예약어" class="headerlink" title="예약어"></a>예약어</h3><table>
 <thead>
@@ -119,7 +119,7 @@
 <tr>
 <td>8</td>
 <td>do</td>
-<td>while문과 함께 사용되는 순환명령.순환문은 최소한 한번 실행됨.</td>
+<td>while문과 함께 사용되는 순환명령. 순환문은 최소한 한번 실행됨.</td>
 </tr>
 <tr>
 <td>9</td>
@@ -129,7 +129,7 @@
 <tr>
 <td>10</td>
 <td>else</td>
-<td>if문이 FALSE로 평가될 때 실행되는 선택적인 문장을 나타내는 명령</td>
+<td>if문이 FALSE 때 실행되는 선택적인 문장을 나타내는 명령</td>
 </tr>
 <tr>
 <td>11</td>
@@ -179,7 +179,7 @@
 <tr>
 <td>20</td>
 <td>return</td>
-<td>현재의 함수를 마치고 호출한함수로 프로그램의 제어와 값을 반환 하는 명령. </td>
+<td>함수를 종료후 호출한함수로 프로그램의 제어와 값을 반환 하는 명령. </td>
 </tr>
 <tr>
 <td>21</td>
@@ -199,7 +199,7 @@
 <tr>
 <td>24</td>
 <td>static</td>
-<td>컴파일러가 변수의 값을 보존해야 한다는 것을 지정하는데 사용되는 지정자</td>
+<td>컴파일러가 변수의 값을 보존해야 한다는 것을 지정하는 지정자</td>
 </tr>
 <tr>
 <td>25</td>
@@ -214,17 +214,17 @@
 <tr>
 <td>27</td>
 <td>typedef</td>
-<td>이미 존재하는 변수와 함수의 형태를 새로운 이름으로 변경하는 데 사용되는 지정자</td>
+<td>이미 존재하는 변수와 함수의 형태를 새로운 변경하는 지정자</td>
 </tr>
 <tr>
 <td>28</td>
 <td>union</td>
-<td>여러 개의 변수가 동일한 메모리 영역을 공유하도록 해주는 데 사용되는 키워드</td>
+<td>여러 개의 변수가 동일한 메모리 영역을 공유하도록 해주는 키워드</td>
 </tr>
 <tr>
 <td>29</td>
 <td>unsigned</td>
-<td>변수가 양수값만으르 저장할 수 있다는 것을 지정하는 데 사용되는 지정자.</td>
+<td>변수가 양수값만 저장할 수 있다는 것을 지정하는 데 사용되는 지정자.</td>
 </tr>
 <tr>
 <td>30</td>
@@ -239,7 +239,7 @@
 <tr>
 <td>32</td>
 <td>while</td>
-<td>지정된 조건이 TRUE로 평가되는 한 계속해서 포함된 문장을 실행하는 순환문</td>
+<td>지정된 조건이 TRUE 한 계속해서 포함된 문장을 실행하는 순환문</td>
 </tr>
 </tbody>
 </table>
@@ -335,7 +335,7 @@
 <td>14</td>
 <td>←</td>
 <td><code>=</code>, <code>+-</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code>, <code>&lt;&lt;=</code>,<code>&gt;&gt;=</code>,<code>&amp;=</code>,<code>^=</code>,=&#124;</td>
-<td>할당연산자, 복합 할당연산자</td>
+<td>할당/복합 할당연산자</td>
 </tr>
 <tr>
 <td>15</td>
