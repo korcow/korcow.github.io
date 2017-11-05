@@ -3,11 +3,11 @@
 <p>기본적으로 알아두어야 할 것을 정리 해봤습니다.</p>
 <h3 id="C언어의-역사"><a href="#C언어의-역사" class="headerlink" title="C언어의 역사"></a>C언어의 역사</h3><ul>
 <li>72년에 데니스리치가 만들었 습니다.</li>
-<li><p>c언어로 UNIX를 만듬</p>
-</li>
-<li><p>c언어는 Asambler로 뼈대를 만듭니다.</p>
-<ul>
-<li>만들어진 기본 c언어로 각종 명령과 라이브러리를 만듭니다.</li>
+<li>c언어로 UNIX를 만들었습니다.</li>
+</ul>
+<h3 id="C언어는-모든-프로그램의-기본입니다"><a href="#C언어는-모든-프로그램의-기본입니다" class="headerlink" title="C언어는 모든 프로그램의 기본입니다."></a>C언어는 모든 프로그램의 기본입니다.</h3><ul>
+<li>c언어는 Asambler로 뼈대를 만듭니다.<ul>
+<li>만들어진 기본 c언어로 각종 명령과 라이브러리를 만들었습니다.</li>
 </ul>
 </li>
 <li>모든 프로그래밍 언어는 c언어로 만듭니다.<ul>
@@ -20,8 +20,33 @@
 <li>모든 os는 Asambler로 뼈대를 만들고 c언어로 만듭니다.</li>
 </ul>
 <h3 id="인간의-언어"><a href="#인간의-언어" class="headerlink" title="인간의 언어"></a>인간의 언어</h3><p>인간의 언어는 단어와 문장이 있습니다.<br>문장을 구성하는 요소도 있고 형식도 있습니다.<br>형식이란 말하는 순서를 뜻하죠.<br>순서를 틀리게 말해도 대부분은 무슨 뜻인지 이해 할 수 있습니다.<br>인간이기 때문에 상황을 파악하고, 오류를 수정해서 듣기 때문입니다. </p>
-<p>단어<br>명사   | 동사<br>—    | —<br>사과   | 먹다<br>apple  | eat<br>나     | 오다<br>I      | 입다</p>
-<p>문장의 형식<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">한국어	: 주어 + 목적어 + 동사</div><div class="line">형식      나(는)  사과(를) 먹(는)다</div><div class="line">(비형식)  나 먹다 사과</div><div class="line">(비형식)  몸짓으로 전달</div><div class="line"></div><div class="line">영어	: 주어 + 동사 + 목적어 </div><div class="line">형식      I  (am) eat(ing) (a) apple</div><div class="line">(비형식)  I apple eat</div></pre></td></tr></table></figure></p>
+<h3 id="단어"><a href="#단어" class="headerlink" title="단어"></a>단어</h3><table>
+<thead>
+<tr>
+<th>명사</th>
+<th>동사</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>사과</td>
+<td>먹다</td>
+</tr>
+<tr>
+<td>apple</td>
+<td>eat </td>
+</tr>
+<tr>
+<td>나</td>
+<td>오다</td>
+</tr>
+<tr>
+<td>I</td>
+<td>입다</td>
+</tr>
+</tbody>
+</table>
+<h3 id="문장의-형식"><a href="#문장의-형식" class="headerlink" title="문장의 형식"></a>문장의 형식</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">한국어	: 주어 + 목적어 + 동사</div><div class="line">형식      나(는)  사과(를) 먹(는)다</div><div class="line">(비형식)  나 먹다 사과</div><div class="line">(비형식)  몸짓으로 전달</div><div class="line"></div><div class="line">영어	: 주어 + 동사 + 목적어 </div><div class="line">형식      I  (am) eat(ing) (a) apple</div><div class="line">(비형식)  I apple eat</div></pre></td></tr></table></figure>
 <p>인간은 위와 같이 단어와 형식을 지키지 않은 비형식으로 말해도 이해 할 수 있습니다.</p>
 <p>하지만 프로그래밍 언어는 철저하게 형식과 문법을 지키지 않으면 오류가 납니다.</p>
 <h3 id="C-언어"><a href="#C-언어" class="headerlink" title="C 언어"></a>C 언어</h3><p>C 언어도 형식과 단어가 있습니다.<br>일반적으로 형식은 스트럭쳐(structure), 단어는 토큰(Token)라고 부릅니다.</p>
@@ -37,7 +62,7 @@
 <li>명령이 끝나면 반드시 <code>;</code>를 쓰자.</li>
 </ul>
 <p>이렇게 약속을 했는데 안지키면 안되겠죠.</p>
-<p>아래는 약속에 맞춰서 최소한의 코딩을 한겁니다.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%s"</span>, <span class="string">"hello world!\n"</span>);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>아래는 약속에 맞춰서 최소한의 코딩을 한겁니다.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%s"</span>, <span class="string">"hello world!\n"</span>);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h4 id="토큰"><a href="#토큰" class="headerlink" title="토큰"></a>토큰</h4><p>토큰은 표식(징표, 표시)이라고 할 수 있습니다.<br>버스, 지하철을 탈때 토큰을 내고 타죠?.<br>상품을 구매할때 화패, 카드, 쿠폰을 내고 구매를 합니다. 이렇게 의미(가치)가 표시된 것들을 통틀어 영어로 토큰이라고 부릅니다.</p>
 <p>C언어의 토큰은 keyword(예약어), 연산자, 구두점(부호), 식별자, 상수가 있습니다.<br>32개의 예약어, 40여개의 연산자, 10개의 구두점, 여러분이 생성하는 함수명, 변수명, 상수명이 다 입니다.<br>외울 필요도 없습니다. 쓰다 보면 저절로 외워집니다.<br>어떤것이 있는지 한번 훑어 보세요. </p>
 <h5 id="예약어"><a href="#예약어" class="headerlink" title="예약어"></a>예약어</h5><table>
@@ -157,7 +182,7 @@
 <tr>
 <td>22</td>
 <td>signed</td>
-<td>변수가 양수와 음수값을 모두 저장할 수 있다는 것을 지정하기 위해서 사용되는 지정자</td>
+<td>변수가 양수와 음수값을 모두 저장할 수 있음. </td>
 </tr>
 <tr>
 <td>23</td>
@@ -177,7 +202,7 @@
 <tr>
 <td>26</td>
 <td>switch</td>
-<td>여러 가지 조건을 통해서 프로그램의 흐름을 변경하는 데 사용되는 명령. case문과 함께 사용됨.</td>
+<td>여러 조건을 통해서 프로그램의 흐름을 변경하는 데 사용되는 명령. </td>
 </tr>
 <tr>
 <td>27</td>
@@ -197,7 +222,7 @@
 <tr>
 <td>30</td>
 <td>void</td>
-<td>함수의 반환값이 없거나, 또는 포인터가 범용 포인터이거나 모든 데이터형을 point할 수 있다는 것을 지정하는 데 사용되는 키워드</td>
+<td>함수의 반환값이 없는 것을 지정하는 데 사용되는 키워드</td>
 </tr>
 <tr>
 <td>31</td>
@@ -278,8 +303,7 @@
 <tr>
 <td>10</td>
 <td>→</td>
-<td>``</td>
-<td>``</td>
+<td>&#124;</td>
 <td>비트연산자</td>
 </tr>
 <tr>
@@ -291,9 +315,7 @@
 <tr>
 <td>12</td>
 <td>→</td>
-<td>``</td>
-<td></td>
-<td>``</td>
+<td>&#124;&#124;</td>
 <td>논리연산자</td>
 </tr>
 <tr>
@@ -305,8 +327,7 @@
 <tr>
 <td>14</td>
 <td>←</td>
-<td><code>=</code>, <code>+-</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code>, <code>&lt;&lt;=</code>,<code>&gt;&gt;=</code>,<code>&amp;=</code>,<code>^=</code>,``</td>
-<td>=``</td>
+<td><code>=</code>, <code>+-</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code>, <code>&lt;&lt;=</code>,<code>&gt;&gt;=</code>,<code>&amp;=</code>,<code>^=</code>,=&#124;</td>
 <td>할당연산자, 복합 할당연산자</td>
 </tr>
 <tr>
@@ -375,7 +396,7 @@
 <p>여러줄 주석은 위와 같이 사용합니다.<br>주석의 시작과 종료 부분에 /* 와 */ 을 써주면 됩니다.<br>주석의 중간에 설명을 추가하기는 편합니다만 한줄 주석을 권장합니다.</p>
 <p>vim 에디터를 실행합니다.</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vi print01.c</div></pre></td></tr></table></figure>
-</div><div class="tags"><a href="/tags/c/">c</a><a href="/tags/printf/">printf</a><a href="/tags/주석/">주석</a><a href="/tags/컴파일/">컴파일</a><a href="/tags/이스케이프문자/">이스케이프문자</a><a href="/tags/puts/">puts</a><a href="/tags/putchar/">putchar</a></div><div class="post-nav"><a href="/2017/11/05/c-간단한-계산하기/" class="next">간단한 계산하기</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论 「请确保 disqus.com 可以正常加载」</button></div><script>var disqus_shortname = 'korcow-github-io';
+</div><div class="tags"><a href="/tags/c/">c</a><a href="/tags/주석/">주석</a></div><div class="post-nav"><a href="/2017/11/05/c-간단한-계산하기/" class="next">간단한 계산하기</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论 「请确保 disqus.com 可以正常加载」</button></div><script>var disqus_shortname = 'korcow-github-io';
 var disqus_identifier = '2017/11/06/c-c언어를-시작하며/';
 var disqus_title = 'c언어를 시작하며';
 var disqus_url = 'http://korcow.github.io/2017/11/06/c-c언어를-시작하며/';
