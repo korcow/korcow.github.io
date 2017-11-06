@@ -857,17 +857,22 @@ figure.highlight,
 .highlight.apacheconf .code .tag {
   color: #63a35c; }
 
-.highlight.bash .code .shebang {
+.highlight.bash .code .shebang,
+.highlight.sh .code .shebang {
   color: #969896; }
 
 .highlight.bash .code .literal,
-.highlight.bash .code .built_in {
+.highlight.bash .code .built_in,
+.highlight.sh .code .literal,
+.highlight.sh .code .built_in {
   color: #0086b3; }
 
-.highlight.bash .code .variable {
+.highlight.bash .code .variable,
+.highlight.sh .code .variable {
   color: #333; }
 
-.highlight.bash .code .title {
+.highlight.bash .code .title,
+.highlight.sh .code .title {
   color: #795da3; }
 
 .highlight.coffeescript .code .title {
