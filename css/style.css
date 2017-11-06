@@ -233,7 +233,8 @@ div {
     clear: left;
     font-size: 15px;
     line-height: 1.77;
-    color: #444;
+    /*color: #444;*/
+    color: #DA4453;
     padding-top: 15px;
     text-align: justify;
     text-justify: distribute;
