@@ -924,55 +924,53 @@
       <title><![CDATA[외부명령어 요약]]></title>
       <url>/2017/11/02/centos-%EC%99%B8%EB%B6%80%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%9A%94%EC%95%BD/</url>
       <content type="html"><![CDATA[<h3 id="외부-명령어"><a href="#외부-명령어" class="headerlink" title="외부 명령어"></a>외부 명령어</h3><h4 id="파일-관리-명령어"><a href="#파일-관리-명령어" class="headerlink" title="파일 관리 명령어"></a>파일 관리 명령어</h4><ul>
-<li>ls        | 파일의 리스트를 보여줌.<ul>
-<li><code>ls -a</code> 모든파일을 보여줌</li>
-</ul>
-</li>
-<li>touch        | 파일의 생성일자를 변경. 파일이 없다면 새로운 파일을 만듦.<ul>
-<li>touch abc.txt | 파일이 없을경우 새로운 파일을 생성</li>
-<li>touch -t 200010100909 abc.txt | 입력한 시간으로 수정</li>
-<li>touch -c abc.txt | 현재 시간으로 수정</li>
-</ul>
-</li>
-<li>cat        | 파일의 내용을 보여줌.<ul>
-<li><code>cat abc.txt</code> abc.txt 파일의 내용을 출력</li>
-</ul>
-</li>
+<li>ls        | 파일의 리스트를 보여줌.</li>
+<li>touch        | 파일의 생성일자를 변경. 파일이 없다면 새로운 파일을 만듦.</li>
+<li>cat        | 파일의 내용을 보여줌.</li>
+<li>more        | 파일의 내용을 보여줌.(화면단위)</li>
+<li>head        | 파일의 내용을 파일의 처음을 기준으로 10줄 보여줌.</li>
+<li>tail        | 파일의 내용을 파일의 끝을 기준으로 10줄 보여줌.</li>
+<li>less        | 파일의 내용을 보여주는 프로그램. man page 기본프로그램</li>
 <li>which        | 명령어의 위치를 알려줌.(명령어가 어느것인지 <code>$PATH</code>에서만 찾음)</li>
 <li>whereis    | 명령어의 위치를 알려줌.(명령어가 어디에 있는지 <code>/bin;/etc;/man</code> 에서찾음)</li>
+<li>find        | 파일을 찾아줌.</li>
 <li>file        | 파일의 정보를 알려줌.</li>
 <li>cp        | 파일을 복사.</li>
 <li>rm        | 파일을 지움.</li>
 <li>mv        | 파일을 이동시킴.</li>
-<li>more        | 파일의 내용을 보여줌.</li>
 <li>grep        | 단어(키워드)를 찾아줌.</li>
-<li>find        | 파일을 찾아줌.</li>
 <li>ln        | 링크를 만들어줌.</li>
 <li>mkdir        | 디렉토리를 만들어줌.</li>
 <li>rmdir        | 디렉토리를 삭제해줌.</li>
 <li>wc        | 파일의 통계(라인수, 단어수, 문자수)를 보여줌.</li>
-<li>tail        |</li>
-<li>head        |</li>
-<li>less        |</li>
+<li>grep        | 패턴을 검색</li>
+<li>egrep        | 확장된 옵션으로 패턴을 검색</li>
+<li>fgrep        | 패턴을 검색(문자열로만)</li>
+<li>ed        | 라인 에디터</li>
+<li>sed        | 스트리밍 에디터</li>
+<li>vi        | 텍스트 편집 에디터</li>
+<li>df        | 디스크의 남은 용량을 보여줌.</li>
+<li>dd         | 지정한 블럭 크기만큼 파일을 복사한다.</li>
 </ul>
 <h4 id="권한-소유-관리"><a href="#권한-소유-관리" class="headerlink" title="권한 소유 관리"></a>권한 소유 관리</h4><ul>
-<li>id        |</li>
-<li>whoami    |</li>
-<li>finger    |</li>
-<li>chmod        |</li>
-<li>chown        |</li>
-<li>sudo        |</li>
-<li>passwd    |</li>
-<li>useradd    |</li>
-<li>w            |</li>
-<li>who        |</li>
-<li><h4 id="프로세스관리"><a href="#프로세스관리" class="headerlink" title="프로세스관리"></a>프로세스관리</h4></li>
-<li><p>top<br>-</p>
-<h4 id="기본-응용"><a href="#기본-응용" class="headerlink" title="기본 응용"></a>기본 응용</h4></li>
-<li><p>cal        | 달력을 보여줌.</p>
-</li>
-<li>time        |</li>
-<li>date        |</li>
+<li>id        | 사용자 모든 id 정보를 보여줌.</li>
+<li>whoami    | 사용자의 id를 보여줌</li>
+<li>finger    | 사용자의 시스템 사용 현황을 보여줌.</li>
+<li>chmod        | 파일의 권한을 수정함.</li>
+<li>chown        | 파일의 소유권을 수정함.</li>
+<li>sudo        | 다른 사용자로 실행 (옵션이 없으면 root)</li>
+<li>passwd    | 비밀번호를 수정</li>
+<li>useradd    | 사용자를 추가함.(사용 권한이 있어야 함.)</li>
+<li>w            | 시스템에 로그인된 사용자를 보여줌.</li>
+<li>who        | 현재 사용자의 사용정보를 보여줌.</li>
+</ul>
+<h4 id="프로세스관리"><a href="#프로세스관리" class="headerlink" title="프로세스관리"></a>프로세스관리</h4><ul>
+<li>top        | 시스템 사용 현황을 보여줌. </li>
+</ul>
+<h4 id="기본-응용"><a href="#기본-응용" class="headerlink" title="기본 응용"></a>기본 응용</h4><ul>
+<li>cal        | 달력을 보여줌.</li>
+<li>date        | 날짜와 시간을 보여줌.</li>
+<li>time         | 프로그램이 실행된 실간을 출력.</li>
 </ul>
 ]]></content>
       
@@ -1110,10 +1108,12 @@ g      변화  내용을 전체 이벤트 행에 적용하도록 한다.  ``:s``
 </ul>
 </li>
 </ul>
-<h4 id="경로에는-상대-경로와-절대-경로가-있습니다"><a href="#경로에는-상대-경로와-절대-경로가-있습니다" class="headerlink" title="경로에는 상대 경로와 절대 경로가 있습니다."></a>경로에는 상대 경로와 절대 경로가 있습니다.</h4><h4 id="상대경로"><a href="#상대경로" class="headerlink" title="상대경로"></a>상대경로</h4><p>현재 위치의 경로를 기준</p>
-<h4 id="절대경로"><a href="#절대경로" class="headerlink" title="절대경로"></a>절대경로</h4><p>/를 기준</p>
-<p>pushd</p>
-<p>popd</p>
+<h3 id="상대-경로와-절대-경로"><a href="#상대-경로와-절대-경로" class="headerlink" title="상대 경로와 절대 경로"></a>상대 경로와 절대 경로</h3><h4 id="상대경로"><a href="#상대경로" class="headerlink" title="상대경로"></a>상대경로</h4><ul>
+<li>현재 위치의 경로를 기준<br>../ 부모 경로로 이동</li>
+</ul>
+<h4 id="절대경로"><a href="#절대경로" class="headerlink" title="절대경로"></a>절대경로</h4><ul>
+<li>/를 기준</li>
+</ul>
 ]]></content>
       
         <categories>
