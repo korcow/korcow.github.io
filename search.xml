@@ -3,15 +3,22 @@
   
     
     <entry>
-      <title><![CDATA[실습 환경 설정]]></title>
-      <url>/2017/11/06/c-%EC%8B%A4%EC%8A%B5-%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95/</url>
-      <content type="html"><![CDATA[<h3 id="실습-환경-설정"><a href="#실습-환경-설정" class="headerlink" title="실습 환경 설정"></a>실습 환경 설정</h3><div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
-<hr>
-<ol>
-<li>virtualbox에 centos설치 - Centos참조</li>
-<li>gvim 설치및 vimrc 세팅 - vim참조</li>
-<li>vim 기본 사용법 - vim참조</li>
-</ol>
+      <title><![CDATA[if문 사용하기]]></title>
+      <url>/2017/11/07/c-if%EB%AC%B8/</url>
+      <content type="html"><![CDATA[<h3 id="if문"><a href="#if문" class="headerlink" title="if문"></a>if문</h3><p>if 명령은 조건을 판단해서 참일 경우 또는 거짓 일경우 분기를 하기 위해 사용하는 명령입니다.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 실행 명령이 1줄일 경우</span></div><div class="line"><span class="keyword">if</span> (조건)</div><div class="line">	참인 경우 실행 명령<span class="number">1</span>;</div></pre></td></tr></table></figure>
+<p>조건을 판단해서 참인 경우 다음 문장을 수행합니다.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">int</span> iNum1 = <span class="number">10</span>;</div><div class="line">	<span class="keyword">int</span> inum2 = <span class="number">20</span>;</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (iNum1 &gt; iNum2)</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d은 %d보다 큽니다.\n"</span>, iNum1, iNum2);</div><div class="line">	</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d은 %d보다 작습니다.\n"</span>, iNum1, iNum2);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">int</span> iNum1 = <span class="number">10</span>;</div><div class="line">	<span class="keyword">int</span> inum2 = <span class="number">20</span>;</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (iNum1 &gt; iNum2) <span class="built_in">printf</span>(<span class="string">"%d은 %d보다 큽니다."</span>, iNum1, iNum2); <span class="comment">// if문이 참인경우 실행</span></div><div class="line"></div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d은 %d보다 작습니다."</span>, iNum1, iNum2);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>위와 같이 같은 줄에 붙여 써도 됩니다.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">int</span> iNum1 = <span class="number">10</span>;</div><div class="line">	<span class="keyword">int</span> inum2 = <span class="number">20</span>;</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (iNum1 &gt; iNum2) </div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d은 %d보다 큽니다."</span>, iNum1, iNum2); <span class="comment">//if문이 참인경우 실행</span></div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d은 %d보다 작습니다."</span>, iNum1, iNum2); <span class="comment">//if문과 관계없이 실행</span></div><div class="line">	</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>위와 같이 사용해도 결과는 문제 없이 나옵니다. 문법적으로 오류가 없기 때문이죠. 참인 경우 다음 한줄을 실행한 다고 했습니다. 하지만 절대 위와 같이 사용하면 프로그램 분석 하는데 불편합니다. 들여쓰기를 잘해야 소스를 읽기가 편합니다. 오류를 찾기도 쉽구요. 아래와 같이 써도 전혀 문제 없습니다.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt; int main(int argc, const char *argv[]) &#123; int iNum1 = 10; int inum2 = 20; </span></span></div><div class="line"><span class="keyword">if</span> (iNum1 &gt; iNum2) <span class="built_in">printf</span>(<span class="string">"%d은 %d보다 큽니다."</span>, iNum1, iNum2); <span class="built_in">printf</span> (<span class="string">"%d은 %d보다 작습니다."</span>, </div><div class="line">iNum1, iNum2); <span class="keyword">return</span> <span class="number">0</span>; &#125;</div></pre></td></tr></table></figure></p>
+<p>읽기가 매우 힘들죠. ^^</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 실행 명령이 여러줄 일 경우</span></div><div class="line"><span class="keyword">if</span> (조건)&#123;</div><div class="line">	명령<span class="number">1</span>;</div><div class="line">	명령<span class="number">2</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>조건이 참일 경우 여러줄을 실행해야 한다면 위와 같이 사용할 수 있습니다.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">int</span> iNum1 = <span class="number">30</span>;</div><div class="line">	<span class="keyword">int</span> inum2 = <span class="number">20</span>;</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (iNum1 &gt; iNum2)&#123; </div><div class="line">		<span class="built_in">printf</span>(<span class="string">"30과 20을 비교하면: "</span>);</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d은 %d보다 큽니다."</span>, iNum1, iNum2);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// 조건이 참이 아닐 경우 else를 실행</div><div class="line">if (조건)&#123; //참인경우 실행</div><div class="line">	명령1; 	</div><div class="line">	명령2;</div><div class="line">&#125;</div><div class="line">else&#123; // 참인 아닌경우 실행</div><div class="line">	명령1;</div><div class="line">	명령2;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>위 문장은 if 조건이 참이 아닌경우 else문을 실행하도록 할 때 사용합니다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">// 다중 if ~ else</div><div class="line">if (조건)&#123;</div><div class="line">	명령1;</div><div class="line">	명령2;</div><div class="line">&#125;</div><div class="line">else if(조건)&#123;</div><div class="line">	명령1;</div><div class="line">	명령2;</div><div class="line">&#125;else&#123;</div><div class="line">	명령1;</div><div class="line">	명령2;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 ]]></content>
       
         <categories>
@@ -23,7 +30,7 @@
         
         <tags>
             
-            <tag> c, </tag>
+            <tag> c </tag>
             
         </tags>
         
@@ -59,7 +66,7 @@
 <li>scanf()</li>
 <li>getch()</li>
 </ol>
-<h3 id="while-문"><a href="#while-문" class="headerlink" title="while 문"></a>while 문</h3><h3 id="for-문"><a href="#for-문" class="headerlink" title="for 문"></a>for 문</h3><h3 id="배열"><a href="#배열" class="headerlink" title="배열"></a>배열</h3><h3 id="if문-사용하기"><a href="#if문-사용하기" class="headerlink" title="if문 사용하기"></a>if문 사용하기</h3><h3 id="인자로-입력-받기"><a href="#인자로-입력-받기" class="headerlink" title="인자로 입력 받기"></a>인자로 입력 받기</h3><h3 id="파일-입출력"><a href="#파일-입출력" class="headerlink" title="파일 입출력"></a>파일 입출력</h3><h3 id="switch-case-문-사용하기"><a href="#switch-case-문-사용하기" class="headerlink" title="switch case 문 사용하기"></a>switch case 문 사용하기</h3><h3 id="do-while-문"><a href="#do-while-문" class="headerlink" title="do while 문"></a>do while 문</h3><h3 id="loop-문"><a href="#loop-문" class="headerlink" title="loop 문"></a>loop 문</h3><h3 id="함수-만들기"><a href="#함수-만들기" class="headerlink" title="함수 만들기"></a>함수 만들기</h3><h3 id="표준-라이브러리"><a href="#표준-라이브러리" class="headerlink" title="표준 라이브러리"></a>표준 라이브러리</h3><h3 id="구조체-사용하기"><a href="#구조체-사용하기" class="headerlink" title="구조체 사용하기"></a>구조체 사용하기</h3><h3 id="포인터"><a href="#포인터" class="headerlink" title="포인터"></a>포인터</h3><h3 id="유니온"><a href="#유니온" class="headerlink" title="유니온"></a>유니온</h3><h3 id="maloc"><a href="#maloc" class="headerlink" title="maloc"></a>maloc</h3><h3 id="curses"><a href="#curses" class="headerlink" title="curses"></a>curses</h3><h3 id="oracle-연결"><a href="#oracle-연결" class="headerlink" title="oracle 연결"></a>oracle 연결</h3><h3 id="주소록-만들기"><a href="#주소록-만들기" class="headerlink" title="주소록 만들기"></a>주소록 만들기</h3><h3 id="학사관리-만들기"><a href="#학사관리-만들기" class="headerlink" title="학사관리 만들기"></a>학사관리 만들기</h3>]]></content>
+<h3 id="if문-사용하기"><a href="#if문-사용하기" class="headerlink" title="if문 사용하기"></a>if문 사용하기</h3><h3 id="while-문"><a href="#while-문" class="headerlink" title="while 문"></a>while 문</h3><h3 id="for-문"><a href="#for-문" class="headerlink" title="for 문"></a>for 문</h3><h3 id="배열"><a href="#배열" class="headerlink" title="배열"></a>배열</h3><h3 id="인자로-입력-받기"><a href="#인자로-입력-받기" class="headerlink" title="인자로 입력 받기"></a>인자로 입력 받기</h3><h3 id="파일-입출력"><a href="#파일-입출력" class="headerlink" title="파일 입출력"></a>파일 입출력</h3><h3 id="switch-case-문-사용하기"><a href="#switch-case-문-사용하기" class="headerlink" title="switch case 문 사용하기"></a>switch case 문 사용하기</h3><h3 id="do-while-문"><a href="#do-while-문" class="headerlink" title="do while 문"></a>do while 문</h3><h3 id="loop-문"><a href="#loop-문" class="headerlink" title="loop 문"></a>loop 문</h3><h3 id="함수-만들기"><a href="#함수-만들기" class="headerlink" title="함수 만들기"></a>함수 만들기</h3><h3 id="표준-라이브러리"><a href="#표준-라이브러리" class="headerlink" title="표준 라이브러리"></a>표준 라이브러리</h3><h3 id="구조체-사용하기"><a href="#구조체-사용하기" class="headerlink" title="구조체 사용하기"></a>구조체 사용하기</h3><h3 id="포인터"><a href="#포인터" class="headerlink" title="포인터"></a>포인터</h3><h3 id="유니온"><a href="#유니온" class="headerlink" title="유니온"></a>유니온</h3><h3 id="maloc"><a href="#maloc" class="headerlink" title="maloc"></a>maloc</h3><h3 id="curses"><a href="#curses" class="headerlink" title="curses"></a>curses</h3><h3 id="oracle-연결"><a href="#oracle-연결" class="headerlink" title="oracle 연결"></a>oracle 연결</h3><h3 id="주소록-만들기"><a href="#주소록-만들기" class="headerlink" title="주소록 만들기"></a>주소록 만들기</h3><h3 id="학사관리-만들기"><a href="#학사관리-만들기" class="headerlink" title="학사관리 만들기"></a>학사관리 만들기</h3>]]></content>
       
         <categories>
             
@@ -71,6 +78,33 @@
         <tags>
             
             <tag> c </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[실습 환경 설정]]></title>
+      <url>/2017/11/06/c-%EC%8B%A4%EC%8A%B5-%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95/</url>
+      <content type="html"><![CDATA[<h3 id="실습-환경-설정"><a href="#실습-환경-설정" class="headerlink" title="실습 환경 설정"></a>실습 환경 설정</h3><div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
+<hr>
+<ol>
+<li>virtualbox에 centos설치 - Centos참조</li>
+<li>gvim 설치및 vimrc 세팅 - vim참조</li>
+<li>vim 기본 사용법 - vim참조</li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> C언어기초 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> c, </tag>
             
         </tags>
         

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://korcow.github.io/"/>
-  <updated>2017-11-06T14:49:36.952Z</updated>
+  <updated>2017-11-07T03:03:39.741Z</updated>
   <id>http://korcow.github.io/</id>
   
   <author>
@@ -15,6 +15,57 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>if문 사용하기</title>
+    <link href="http://korcow.github.io/2017/11/07/c-if%EB%AC%B8/"/>
+    <id>http://korcow.github.io/2017/11/07/c-if문/</id>
+    <published>2017-11-07T03:03:39.741Z</published>
+    <updated>2017-11-07T03:03:39.741Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="if문"><a href="#if문" class="headerlink" title="if문"></a>if문</h3><p>if 명령은 조건을 판단해서 참일 경우 또는 거짓 일경우 분기를 하기 위해 사용하는 명령입니다.</p><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 실행 명령이 1줄일 경우</span></div><div class="line"><span class="keyword">if</span> (조건)</div><div class="line">참인 경우 실행 명령<span class="number">1</span>;</div></pre></td></tr></table></figure><p>조건을 판단해서 참인 경우 다음 문장을 수행합니다.</p><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line"><span class="keyword">int</span> iNum1 = <span class="number">10</span>;</div><div class="line"><span class="keyword">int</span> inum2 = <span class="number">20</span>;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (iNum1 &gt; iNum2)</div><div class="line"><span class="built_in">printf</span>(<span class="string">"%d은 %d보다 큽니다.\n"</span>, iNum1, iNum2);</div><div class="line"></div><div class="line"><span class="built_in">printf</span>(<span class="string">"%d은 %d보다 작습니다.\n"</span>, iNum1, iNum2);</div><div class="line"><span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line"><span class="keyword">int</span> iNum1 = <span class="number">10</span>;</div><div class="line"><span class="keyword">int</span> inum2 = <span class="number">20</span>;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (iNum1 &gt; iNum2) <span class="built_in">printf</span>(<span class="string">"%d은 %d보다 큽니다."</span>, iNum1, iNum2); <span class="comment">// if문이 참인경우 실행</span></div><div class="line"></div><div class="line"><span class="built_in">printf</span>(<span class="string">"%d은 %d보다 작습니다."</span>, iNum1, iNum2);</div><div class="line"><span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p>위와 같이 같은 줄에 붙여 써도 됩니다.</p><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line"><span class="keyword">int</span> iNum1 = <span class="number">10</span>;</div><div class="line"><span class="keyword">int</span> inum2 = <span class="number">20</span>;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (iNum1 &gt; iNum2) </div><div class="line"><span class="built_in">printf</span>(<span class="string">"%d은 %d보다 큽니다."</span>, iNum1, iNum2); <span class="comment">//if문이 참인경우 실행</span></div><div class="line"><span class="built_in">printf</span>(<span class="string">"%d은 %d보다 작습니다."</span>, iNum1, iNum2); <span class="comment">//if문과 관계없이 실행</span></div><div class="line"></div><div class="line"><span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p>위와 같이 사용해도 결과는 문제 없이 나옵니다. 문법적으로 오류가 없기 때문이죠. 참인 경우 다음 한줄을 실행한 다고 했습니다. 하지만 절대 위와 같이 사용하면 프로그램 분석 하는데 불편합니다. 들여쓰기를 잘해야 소스를 읽기가 편합니다. 오류를 찾기도 쉽구요. 아래와 같이 써도 전혀 문제 없습니다.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt; int main(int argc, const char *argv[]) &#123; int iNum1 = 10; int inum2 = 20; </span></span></div><div class="line"><span class="keyword">if</span> (iNum1 &gt; iNum2) <span class="built_in">printf</span>(<span class="string">"%d은 %d보다 큽니다."</span>, iNum1, iNum2); <span class="built_in">printf</span> (<span class="string">"%d은 %d보다 작습니다."</span>, </div><div class="line">iNum1, iNum2); <span class="keyword">return</span> <span class="number">0</span>; &#125;</div></pre></td></tr></table></figure></p><p>읽기가 매우 힘들죠. ^^</p><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 실행 명령이 여러줄 일 경우</span></div><div class="line"><span class="keyword">if</span> (조건)&#123;</div><div class="line">명령<span class="number">1</span>;</div><div class="line">명령<span class="number">2</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p>조건이 참일 경우 여러줄을 실행해야 한다면 위와 같이 사용할 수 있습니다.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line"><span class="keyword">int</span> iNum1 = <span class="number">30</span>;</div><div class="line"><span class="keyword">int</span> inum2 = <span class="number">20</span>;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (iNum1 &gt; iNum2)&#123; </div><div class="line"><span class="built_in">printf</span>(<span class="string">"30과 20을 비교하면: "</span>);</div><div class="line"><span class="built_in">printf</span>(<span class="string">"%d은 %d보다 큽니다."</span>, iNum1, iNum2);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// 조건이 참이 아닐 경우 else를 실행</div><div class="line">if (조건)&#123; //참인경우 실행</div><div class="line">명령1; </div><div class="line">명령2;</div><div class="line">&#125;</div><div class="line">else&#123; // 참인 아닌경우 실행</div><div class="line">명령1;</div><div class="line">명령2;</div><div class="line">&#125;</div></pre></td></tr></table></figure><p>위 문장은 if 조건이 참이 아닌경우 else문을 실행하도록 할 때 사용합니다.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">// 다중 if ~ else</div><div class="line">if (조건)&#123;</div><div class="line">명령1;</div><div class="line">명령2;</div><div class="line">&#125;</div><div class="line">else if(조건)&#123;</div><div class="line">명령1;</div><div class="line">명령2;</div><div class="line">&#125;else&#123;</div><div class="line">명령1;</div><div class="line">명령2;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;if문&quot;&gt;&lt;a href=&quot;#if문&quot; class=&quot;headerlink&quot; title=&quot;if문&quot;&gt;&lt;/a&gt;if문&lt;/h3&gt;&lt;p&gt;if 명령은 조건을 판단해서 참일 경우 또는 거짓 일경우 분기를 하기 위해 사용하는 명령입니다.&lt;/p&gt;
+&lt;figure 
+      
+    
+    </summary>
+    
+      <category term="C언어기초" scheme="http://korcow.github.io/categories/C%EC%96%B8%EC%96%B4%EA%B8%B0%EC%B4%88/"/>
+    
+    
+      <category term="c" scheme="http://korcow.github.io/tags/c/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C언어 목차</title>
+    <link href="http://korcow.github.io/2017/11/06/c-%EB%AA%A9%EC%B0%A8/"/>
+    <id>http://korcow.github.io/2017/11/06/c-목차/</id>
+    <published>2017-11-06T14:53:46.848Z</published>
+    <updated>2017-11-06T14:53:46.849Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="목차"><a href="#목차" class="headerlink" title="목차"></a>목차</h3><h3 id="c언어-기초"><a href="#c언어-기초" class="headerlink" title="c언어 기초"></a>c언어 기초</h3><p>c언어는 가장 기초가 되는 프로그래밍 언어로 c++, objective c, java, python등의 언어로 접근하기 위한 필수 프로그램입니다. 가장 쉬운 언어 이면서, 가장 어려운 언어 기기도 합니다. 어렵다는 것은 시스템 제어를 새로 만들거나, os, 프로그램 language를 새로 만들때 해당 됩니다. 그외는 전혀 어렵지 않습니다. 이미 만들어져 있는 것을 응용해서 사용하면 됩니다.</p><p>shell 프로그래밍으로도 프로그램 작성이 가능하지만 c언어가 더 강력하고 빠릅니다. c언어가 빠르고 강력하지만 라이브러리가 많이 부족한 편입니다. 직접 만들어야 하죠. 그래서 python, c++, java를 선호하는 겁니다. 필요하다고 생각되는건 누군가 이미 만들어 놨기 때문이죠.</p><p>이번에 진행하는 c언어는 linux에서 gcc, vim, bash shell을 이용해 진행됩니다. 조금 산만 할 수도 있지만 난이도를 낮추고 모두를 설명하는 것이 프로그래밍의 숲을 볼 수 있는 방법인것 같습니다. 프로그래밍의 특성상 문법을 강조하면 무엇을 하는건지, 어디에 써야 하는건지, 무조건 외워야 하는건지, 종잡을 수 없습니다. 쉽게 흥미를 잃어버릴 수 있습니다. 앏고 넓게 학습하는 것이 목표입니다. </p><h3 id="실습환경-설정"><a href="#실습환경-설정" class="headerlink" title="실습환경 설정"></a>실습환경 설정</h3><ol><li>virtualbox에 centos설치 - Centos참조</li><li>gvim 설치및 vimrc 세팅 - vim참조</li><li>vim 기본 사용법 - vim참조</li></ol><h3 id="c언어를-시작하며"><a href="#c언어를-시작하며" class="headerlink" title="c언어를 시작하며"></a>c언어를 시작하며</h3><ol><li>기본적으로 알아 두면 좋은 내용들을 정리 했습니다.</li></ol><h3 id="화면에-글자-출력하기"><a href="#화면에-글자-출력하기" class="headerlink" title="화면에 글자 출력하기"></a>화면에 글자 출력하기</h3><ol><li>putchar()</li><li>puts()</li><li>printf()</li></ol><h3 id="간단한-계산하기"><a href="#간단한-계산하기" class="headerlink" title="간단한 계산하기"></a>간단한 계산하기</h3><ol><li>printf 함수를 이용한 사칙연산</li><li>변수와 상수를 사용.</li><li>자료형, 연산자</li></ol><h3 id="키보드로-입력-받기"><a href="#키보드로-입력-받기" class="headerlink" title="키보드로 입력 받기"></a>키보드로 입력 받기</h3><ol><li>getchar()</li><li>gets()</li><li>scanf()</li><li>getch()</li></ol><h3 id="if문-사용하기"><a href="#if문-사용하기" class="headerlink" title="if문 사용하기"></a>if문 사용하기</h3><h3 id="while-문"><a href="#while-문" class="headerlink" title="while 문"></a>while 문</h3><h3 id="for-문"><a href="#for-문" class="headerlink" title="for 문"></a>for 문</h3><h3 id="배열"><a href="#배열" class="headerlink" title="배열"></a>배열</h3><h3 id="인자로-입력-받기"><a href="#인자로-입력-받기" class="headerlink" title="인자로 입력 받기"></a>인자로 입력 받기</h3><h3 id="파일-입출력"><a href="#파일-입출력" class="headerlink" title="파일 입출력"></a>파일 입출력</h3><h3 id="switch-case-문-사용하기"><a href="#switch-case-문-사용하기" class="headerlink" title="switch case 문 사용하기"></a>switch case 문 사용하기</h3><h3 id="do-while-문"><a href="#do-while-문" class="headerlink" title="do while 문"></a>do while 문</h3><h3 id="loop-문"><a href="#loop-문" class="headerlink" title="loop 문"></a>loop 문</h3><h3 id="함수-만들기"><a href="#함수-만들기" class="headerlink" title="함수 만들기"></a>함수 만들기</h3><h3 id="표준-라이브러리"><a href="#표준-라이브러리" class="headerlink" title="표준 라이브러리"></a>표준 라이브러리</h3><h3 id="구조체-사용하기"><a href="#구조체-사용하기" class="headerlink" title="구조체 사용하기"></a>구조체 사용하기</h3><h3 id="포인터"><a href="#포인터" class="headerlink" title="포인터"></a>포인터</h3><h3 id="유니온"><a href="#유니온" class="headerlink" title="유니온"></a>유니온</h3><h3 id="maloc"><a href="#maloc" class="headerlink" title="maloc"></a>maloc</h3><h3 id="curses"><a href="#curses" class="headerlink" title="curses"></a>curses</h3><h3 id="oracle-연결"><a href="#oracle-연결" class="headerlink" title="oracle 연결"></a>oracle 연결</h3><h3 id="주소록-만들기"><a href="#주소록-만들기" class="headerlink" title="주소록 만들기"></a>주소록 만들기</h3><h3 id="학사관리-만들기"><a href="#학사관리-만들기" class="headerlink" title="학사관리 만들기"></a>학사관리 만들기</h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;목차&quot;&gt;&lt;a href=&quot;#목차&quot; class=&quot;headerlink&quot; title=&quot;목차&quot;&gt;&lt;/a&gt;목차&lt;/h3&gt;&lt;h3 id=&quot;c언어-기초&quot;&gt;&lt;a href=&quot;#c언어-기초&quot; class=&quot;headerlink&quot; title=&quot;c언어 기초&quot;&gt;&lt;/a&gt;c
+      
+    
+    </summary>
+    
+      <category term="C언어기초" scheme="http://korcow.github.io/categories/C%EC%96%B8%EC%96%B4%EA%B8%B0%EC%B4%88/"/>
+    
+    
+      <category term="c" scheme="http://korcow.github.io/tags/c/"/>
+    
+  </entry>
   
   <entry>
     <title>실습 환경 설정</title>
@@ -38,31 +89,6 @@
     
     
       <category term="c," scheme="http://korcow.github.io/tags/c/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C언어 목차</title>
-    <link href="http://korcow.github.io/2017/11/06/c-%EB%AA%A9%EC%B0%A8/"/>
-    <id>http://korcow.github.io/2017/11/06/c-목차/</id>
-    <published>2017-11-06T14:46:29.310Z</published>
-    <updated>2017-11-06T14:46:29.310Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="목차"><a href="#목차" class="headerlink" title="목차"></a>목차</h3><h3 id="c언어-기초"><a href="#c언어-기초" class="headerlink" title="c언어 기초"></a>c언어 기초</h3><p>c언어는 가장 기초가 되는 프로그래밍 언어로 c++, objective c, java, python등의 언어로 접근하기 위한 필수 프로그램입니다. 가장 쉬운 언어 이면서, 가장 어려운 언어 기기도 합니다. 어렵다는 것은 시스템 제어를 새로 만들거나, os, 프로그램 language를 새로 만들때 해당 됩니다. 그외는 전혀 어렵지 않습니다. 이미 만들어져 있는 것을 응용해서 사용하면 됩니다.</p><p>shell 프로그래밍으로도 프로그램 작성이 가능하지만 c언어가 더 강력하고 빠릅니다. c언어가 빠르고 강력하지만 라이브러리가 많이 부족한 편입니다. 직접 만들어야 하죠. 그래서 python, c++, java를 선호하는 겁니다. 필요하다고 생각되는건 누군가 이미 만들어 놨기 때문이죠.</p><p>이번에 진행하는 c언어는 linux에서 gcc, vim, bash shell을 이용해 진행됩니다. 조금 산만 할 수도 있지만 난이도를 낮추고 모두를 설명하는 것이 프로그래밍의 숲을 볼 수 있는 방법인것 같습니다. 프로그래밍의 특성상 문법을 강조하면 무엇을 하는건지, 어디에 써야 하는건지, 무조건 외워야 하는건지, 종잡을 수 없습니다. 쉽게 흥미를 잃어버릴 수 있습니다. 앏고 넓게 학습하는 것이 목표입니다. </p><h3 id="실습환경-설정"><a href="#실습환경-설정" class="headerlink" title="실습환경 설정"></a>실습환경 설정</h3><ol><li>virtualbox에 centos설치 - Centos참조</li><li>gvim 설치및 vimrc 세팅 - vim참조</li><li>vim 기본 사용법 - vim참조</li></ol><h3 id="c언어를-시작하며"><a href="#c언어를-시작하며" class="headerlink" title="c언어를 시작하며"></a>c언어를 시작하며</h3><ol><li>기본적으로 알아 두면 좋은 내용들을 정리 했습니다.</li></ol><h3 id="화면에-글자-출력하기"><a href="#화면에-글자-출력하기" class="headerlink" title="화면에 글자 출력하기"></a>화면에 글자 출력하기</h3><ol><li>putchar()</li><li>puts()</li><li>printf()</li></ol><h3 id="간단한-계산하기"><a href="#간단한-계산하기" class="headerlink" title="간단한 계산하기"></a>간단한 계산하기</h3><ol><li>printf 함수를 이용한 사칙연산</li><li>변수와 상수를 사용.</li><li>자료형, 연산자</li></ol><h3 id="키보드로-입력-받기"><a href="#키보드로-입력-받기" class="headerlink" title="키보드로 입력 받기"></a>키보드로 입력 받기</h3><ol><li>getchar()</li><li>gets()</li><li>scanf()</li><li>getch()</li></ol><h3 id="while-문"><a href="#while-문" class="headerlink" title="while 문"></a>while 문</h3><h3 id="for-문"><a href="#for-문" class="headerlink" title="for 문"></a>for 문</h3><h3 id="배열"><a href="#배열" class="headerlink" title="배열"></a>배열</h3><h3 id="if문-사용하기"><a href="#if문-사용하기" class="headerlink" title="if문 사용하기"></a>if문 사용하기</h3><h3 id="인자로-입력-받기"><a href="#인자로-입력-받기" class="headerlink" title="인자로 입력 받기"></a>인자로 입력 받기</h3><h3 id="파일-입출력"><a href="#파일-입출력" class="headerlink" title="파일 입출력"></a>파일 입출력</h3><h3 id="switch-case-문-사용하기"><a href="#switch-case-문-사용하기" class="headerlink" title="switch case 문 사용하기"></a>switch case 문 사용하기</h3><h3 id="do-while-문"><a href="#do-while-문" class="headerlink" title="do while 문"></a>do while 문</h3><h3 id="loop-문"><a href="#loop-문" class="headerlink" title="loop 문"></a>loop 문</h3><h3 id="함수-만들기"><a href="#함수-만들기" class="headerlink" title="함수 만들기"></a>함수 만들기</h3><h3 id="표준-라이브러리"><a href="#표준-라이브러리" class="headerlink" title="표준 라이브러리"></a>표준 라이브러리</h3><h3 id="구조체-사용하기"><a href="#구조체-사용하기" class="headerlink" title="구조체 사용하기"></a>구조체 사용하기</h3><h3 id="포인터"><a href="#포인터" class="headerlink" title="포인터"></a>포인터</h3><h3 id="유니온"><a href="#유니온" class="headerlink" title="유니온"></a>유니온</h3><h3 id="maloc"><a href="#maloc" class="headerlink" title="maloc"></a>maloc</h3><h3 id="curses"><a href="#curses" class="headerlink" title="curses"></a>curses</h3><h3 id="oracle-연결"><a href="#oracle-연결" class="headerlink" title="oracle 연결"></a>oracle 연결</h3><h3 id="주소록-만들기"><a href="#주소록-만들기" class="headerlink" title="주소록 만들기"></a>주소록 만들기</h3><h3 id="학사관리-만들기"><a href="#학사관리-만들기" class="headerlink" title="학사관리 만들기"></a>학사관리 만들기</h3>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;목차&quot;&gt;&lt;a href=&quot;#목차&quot; class=&quot;headerlink&quot; title=&quot;목차&quot;&gt;&lt;/a&gt;목차&lt;/h3&gt;&lt;h3 id=&quot;c언어-기초&quot;&gt;&lt;a href=&quot;#c언어-기초&quot; class=&quot;headerlink&quot; title=&quot;c언어 기초&quot;&gt;&lt;/a&gt;c
-      
-    
-    </summary>
-    
-      <category term="C언어기초" scheme="http://korcow.github.io/categories/C%EC%96%B8%EC%96%B4%EA%B8%B0%EC%B4%88/"/>
-    
-    
-      <category term="c" scheme="http://korcow.github.io/tags/c/"/>
     
   </entry>
   
@@ -552,39 +578,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>solarized_theme적용하기</title>
-    <link href="http://korcow.github.io/2017/10/31/vim-solarized-theme%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0/"/>
-    <id>http://korcow.github.io/2017/10/31/vim-solarized-theme적용하기/</id>
-    <published>2017-10-30T18:01:54.000Z</published>
-    <updated>2017-11-03T11:53:18.581Z</updated>
-    
-    <content type="html"><![CDATA[<div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div><hr><h3 id="터미널-Solarized-Theme-적용"><a href="#터미널-Solarized-Theme-적용" class="headerlink" title="터미널 Solarized Theme 적용"></a>터미널 Solarized Theme 적용</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$mkdir</span> -p ~/.mysetting/Solarized</div><div class="line"><span class="variable">$cd</span> ~/.mysetting/Solarized</div><div class="line"><span class="variable">$git</span> <span class="built_in">clone</span> https://github.com/sigurdga/gnome-terminal-colors-solarized.git</div><div class="line"><span class="variable">$cd</span> gnome-terminal-colors-solarized</div><div class="line">$./install.sh</div><div class="line"></div><div class="line">그럼 다음과 같은 순서 대로 물어 물어 옵니다.</div><div class="line">색상 선택: 1번을 선택</div><div class="line">Please select a color scheme:</div><div class="line">1) dark</div><div class="line">2) dark_alternative</div><div class="line">3) light</div><div class="line"><span class="comment">#? 1</span></div><div class="line"></div><div class="line">프로파일 선택: 1번을 선택</div><div class="line">Please select a Gnome Terminal profile:</div><div class="line">1) 이름 없음</div><div class="line"><span class="comment">#? 1</span></div><div class="line"></div><div class="line">You have selected:</div><div class="line"></div><div class="line">  Scheme: dark</div><div class="line">  Profile: 이름 없음 (b1dcc9dd-5262-4d8d-a863-c897e6d979b9)</div><div class="line"></div><div class="line">프로파일을 덮어쓰겠냐고 물으면 yes를 입력</div><div class="line">Are you sure you want to overwrite the selected profile?</div><div class="line">(YES to <span class="built_in">continue</span>) yes</div><div class="line">Confirmation received -- applying settings</div><div class="line"></div><div class="line">A dircolors adapted to solarized can be automatically downloaded.</div><div class="line"></div><div class="line">1) Download seebi<span class="string">' dircolors-solarized: https://github.com/seebi/dircolors-solarized</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">2) [DEFAULT] I don'</span>t need any dircolors.</div><div class="line"></div><div class="line">디렉토리및파일 색상 변경을 설치하겠냐고 물으면 2번을 눌러 설치 안함을 선택.</div><div class="line">Enter your choice : [2] 2</div></pre></td></tr></table></figure><hr><p>터미널을 종료했다 다시 실행하면 됩니다.</p><h3 id="터미널-디렉토리및-파일-색상-설정-CentOS-만"><a href="#터미널-디렉토리및-파일-색상-설정-CentOS-만" class="headerlink" title="터미널 디렉토리및 파일 색상 설정(CentOS 만)"></a>터미널 디렉토리및 파일 색상 설정(CentOS 만)</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$cd</span> ~/.mysetting/solarized</div><div class="line"><span class="variable">$git</span> <span class="built_in">clone</span> https://github.com/seebi/dircolors-solarized</div><div class="line"></div><div class="line"><span class="variable">$vi</span> ~/.bash_profile</div></pre></td></tr></table></figure><p>맨밑에 아래 줄을 붙여 넣으세요.</p><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">eval</span> `dircolors ~/.mysetting/solarized/dircolors-solarized/dircolors.ansi`</div><div class="line"></div><div class="line">:<span class="keyword">wq</span></div></pre></td></tr></table></figure><p>터미널을 종료 하고 재실행하면 반영됩니다.<br>또는</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$suource</span> ~/.bash_profile</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;div class=&quot;video-container&quot;&gt;&lt;iframe src=&quot;//www.youtube.com/embed/SSu822Lgta8&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/div&gt;
-&lt;hr&gt;
-&lt;h3 id=&quot;
-      
-    
-    </summary>
-    
-      <category term="Vim" scheme="http://korcow.github.io/categories/Vim/"/>
-    
-    
-      <category term="Vim" scheme="http://korcow.github.io/tags/Vim/"/>
-    
-      <category term="vundle" scheme="http://korcow.github.io/tags/vundle/"/>
-    
-      <category term="solarized" scheme="http://korcow.github.io/tags/solarized/"/>
-    
-      <category term="theme" scheme="http://korcow.github.io/tags/theme/"/>
     
   </entry>
   
