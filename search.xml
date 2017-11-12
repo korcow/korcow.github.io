@@ -3,134 +3,204 @@
   
     
     <entry>
-      <title><![CDATA[함수 만들기]]></title>
-      <url>/2017/11/10/c-%ED%95%A8%EC%88%98/</url>
-      <content type="html"><![CDATA[<h3 id="함수만들기"><a href="#함수만들기" class="headerlink" title="함수만들기"></a>함수만들기</h3><p>함수는 모듈이라고 생각하면 됩니다.<br>지금 까지 main 함수에서만 코딩을 했는데요. 함수를 만들어 사용하면 메인 함수가 복잡해지는것을 막을 수 있고, 읽기도 쉬워 집니다.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt; // exit(), system()</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">myMenu</span><span class="params">(<span class="keyword">void</span>)</span></span>;  <span class="comment">//함수의 선언</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">scoreSearch</span><span class="params">(<span class="keyword">void</span>)</span></span>;  <span class="comment">//함수의 선언</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">inputScore</span><span class="params">(<span class="keyword">void</span>)</span></span>;  <span class="comment">//함수의 선언</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">int</span> selectMenu = <span class="number">0</span>;</div><div class="line">	<span class="keyword">while</span>(<span class="number">1</span>==<span class="number">1</span>)&#123; <span class="comment">// 무한 반복 종료는 exit()로 종료함.</span></div><div class="line"></div><div class="line">		myMenu(); <span class="comment">// 메뉴 출력 함수.</span></div><div class="line"></div><div class="line">		<span class="built_in">printf</span>(<span class="string">"실행할 번호를 입력: "</span>);</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;selectMenu);</div><div class="line"></div><div class="line">		<span class="keyword">if</span> (selectMenu == <span class="number">1</span>)&#123;</div><div class="line">			scoreSearch(); <span class="comment">// 조회 함수</span></div><div class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(selectMenu == <span class="number">2</span>)&#123;</div><div class="line">			inputScore(); <span class="comment">// 점수 입력 함수</span></div><div class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(selectMenu == <span class="number">3</span>)&#123;</div><div class="line">			<span class="built_in">exit</span>(<span class="number">0</span>);</div><div class="line">		&#125;<span class="keyword">else</span> &#123;</div><div class="line">			<span class="built_in">printf</span>(<span class="string">"잘못 입력했습니다.\n"</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">myMenu</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</div><div class="line">	system(<span class="string">"clear"</span>); <span class="comment">// 외부 명령을 실행(화면 지우기)</span></div><div class="line">	<span class="built_in">printf</span>(<span class="string">"     성적관리\n"</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"==================\n"</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"1. 성적조회\n"</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"2. 성적입력\n"</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"3. 프로그램종료\n"</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">scoreSearch</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"\n\n\n"</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"성적조회\n"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">inputScore</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"\n\n\n"</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"성적입력\n"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>위 프로그램에서 메인함수를 보면 대부분 제어만을 담당하고 있습니다. 조건문을 사용해서 각각의 함수를 호출하고 있죠. 오류가 있다면 해당 함수에서 수정하면 됩니다.</p>
-<h3 id="함수의-기본-사용법"><a href="#함수의-기본-사용법" class="headerlink" title="함수의 기본 사용법"></a>함수의 기본 사용법</h3><h4 id="기본-구문"><a href="#기본-구문" class="headerlink" title="기본 구문"></a>기본 구문</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">반환자료형 함수명([인자],...)&#123;</div><div class="line">	명령;</div><div class="line">	리턴값;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="반환자료형"><a href="#반환자료형" class="headerlink" title="반환자료형 :"></a>반환자료형 :</h4><p>함수가 종료할때 결과를 반환 해야 한다면 반환할 값의 자료형을 넣어 줍니다. 반환값이 없다면 void 를 입력합니다.</p>
-<h4 id="함수명"><a href="#함수명" class="headerlink" title="함수명 :"></a>함수명 :</h4><p>함수명은 식별자(변수명)를 만드는 규칙과 동일하게 생성 할 수 있습니다.</p>
-<h4 id="인자"><a href="#인자" class="headerlink" title="인자 :"></a>인자 :</h4><p>인자는 파라메터, 매개변수, 아규먼트로 불립니다. 함수를 호출하면서 함수에게 전달할 값을 넣어 줄수 있습니다. </p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">myAdd</span><span class="params">(<span class="keyword">int</span> iNum, <span class="keyword">int</span> iNum2)</span></span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="built_in">printf</span>(<span class="string">"10 + 20 = %d\n"</span>, mySum(<span class="number">10</span>, <span class="number">20</span>));</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">myAdd</span><span class="params">(<span class="keyword">int</span> iNum, <span class="keyword">int</span> iNum2)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="keyword">int</span> mySum;</div><div class="line">	mySum = iNum + myNum2;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> mySum;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>myAdd 함수는 2개의 정수를 입력받아 더해서 반환하는 함수 입니다.<br>반환값은 오로지 1개 밖에 반환할 수 없습니다. 여러개의 값을 반환하려면 포인터변수를 이용해야 합니다.<br>main 함수에서 myAdd 함수를 호출하면 결과를 리턴 받습니다. 리턴 받은 값은 변수에 저장하거나 바로 사용하지 않으면 사라집니다.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">myAdd</span><span class="params">(<span class="keyword">int</span> iNum, <span class="keyword">int</span> iNum2)</span></span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	myAdd(<span class="number">10</span>, <span class="number">20</span>);</div><div class="line">	myAdd(<span class="number">20</span>, <span class="number">23</span>);</div><div class="line">	myAdd(<span class="number">40</span>, <span class="number">10</span>);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">myAdd</span><span class="params">(<span class="keyword">int</span> iNum, <span class="keyword">int</span> iNum2)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="keyword">int</span> mySum;</div><div class="line">	mySum = iNum + iNum2;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d + %d = %d \n"</span>, iNum, iNum2, mySum);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>위 프로그램은 반환값이 없는 함수를 사용하는 예입니다.<br>myAdd 함수 자체에서 출력을 하고 종료합니다. </p>
-]]></content>
-      
-        <categories>
-            
-            <category> C언어기초 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 함수 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[변수와 메모리]]></title>
-      <url>/2017/11/10/c-%EB%B3%80%EC%88%98%EC%99%80%EB%A9%94%EB%AA%A8%EB%A6%AC/</url>
-      <content type="html"><![CDATA[<h3 id="변수"><a href="#변수" class="headerlink" title="변수"></a>변수</h3><p>변수는 메모리에 값을 담아 놓고 가져다 쓰기 위해서 사용합니다.<br>또한 어떤 값을 담을지에 따라 크기를 지정해서 사용합니다.<br>char는 1바이트의 크기를 갖고, int는 4바이트의 크기, long은 4바이트 혹은 8바이트의 크기를 갖습니다.<br>float은 4바이트, double은 8바이트, long double은 시스템마다 틀립니다.</p>
-<h3 id="메모리"><a href="#메모리" class="headerlink" title="메모리"></a>메모리</h3><p><img src="/c언어기초/2017-11-09_22-46-34.png" alt="Memory"><br>위 그림은 메모리 그림입니다. 폰노이만 아키텍쳐에서 주변 장치는 걷어내고 메모리만으로 설명하겠습니다. 메모리를 읽고 쓰는 장치는 좌우에 붙어 있다고 생각하세요.<br>RD에 신호를 주면 Read, WD에 신호를 주면 Write를 합니다.<br>A0~A7은 주소 영역이고, D0~D7은 data영역입니다.</p>
-<ol>
-<li>65를 메모리에 써보겠습니다. 1번핀 부터 다음과 전기 신호를 줍니다. 0 00001000 01000001 1 그럼 메모리 8번지에 65가 써진답니다.</li>
-<li>읽어 올땐 1 00001000 00000000 0 이렇게 신호를 주면 8번지의 데이터를 읽어 준답니다.<br>실제 메모리는 더 복잡하게 구동됩니다. </li>
-<li>os는 실시간으로 메모리의 사용 유무를 관리하고, 프로그램의 요청에 따라 메모리를 할당해주고 삭제해 줍니다.</li>
-</ol>
-<p><strong>중요한건 메모리에는 byte 마다 주소가 있다는걸 기억하세요.</strong></p>
-<p>메모리를 그림으로 표시할때 아래와 같이 많이 그립니다.<br><img src="/c언어기초/2017-11-09_01-08-34.png" alt="Memory map"><br>int iNum 은 4바이트의 크기로 10001번지 부터 4번지 까지 1이 저장되어 있습니다.<br>char ch 는 1바이트의 크기로 A가 10005번지에 저장되어 있습니다.<br>char ch2 는 1바이트의 크기로 B가 10006번지에 저장되어 있습니다.<br>int iNum2 는 4바이트의 크기로 10007번지 부터 a번지 까지 100이 저장되어 있습니다.<br>double dNum 은 8바이트의 크기로 b번지 부터 12번지 까지 3.14가 저장되어 있습니다.</p>
-]]></content>
-      
-        <categories>
-            
-            <category> C언어기초 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 변수 </tag>
-            
-            <tag> 메모리 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[간단한 계산하기]]></title>
-      <url>/2017/11/09/c-%EA%B0%84%EB%8B%A8%ED%95%9C-%EA%B3%84%EC%82%B0%ED%95%98%EA%B8%B0/</url>
-      <content type="html"><![CDATA[<h3 id="간단한-계산하기"><a href="#간단한-계산하기" class="headerlink" title="간단한 계산하기"></a>간단한 계산하기</h3><div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
-<hr>
-<p>이번에는 printf 문을 이용해서 간단한 계산을 해보겠습니다.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"10 + 3 = %d\n"</span>, <span class="number">10</span> + <span class="number">3</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"10 - 3 = %d\n"</span>, <span class="number">10</span> - <span class="number">3</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"10 / 3 = %d\n"</span>, <span class="number">10</span> / <span class="number">3</span>); <span class="comment">// 정수 / 정수 = 정수</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"10 / 3.0 = %.2f\n"</span>, <span class="number">10</span> / <span class="number">3.0</span>); <span class="comment">// 정수 / 실수 = 실수</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"10 * 3 = %d\n"</span>, <span class="number">10</span> * <span class="number">3</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"10 \% 3 = %d\n"</span>, <span class="number">10</span> % <span class="number">3</span>); <span class="comment">//나머지 연산</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"2 + 10 * 3 = %d\n"</span>, <span class="number">2</span> + <span class="number">10</span> * <span class="number">3</span>); <span class="comment">// 우선순위</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"(2 + 10) * 3 = %d\n"</span>, (<span class="number">2</span> + <span class="number">10</span>) * <span class="number">3</span>); <span class="comment">// 우선순위</span></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>우리가 알고 있는 간단한 수학 계산을 해보았습니다. 3을 2로 고쳐보세요.<br>복붙을 사용해도 됩니다. 불편하지 않나요. 그럼 변수라는 것을 사용해 봅시다.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">int</span> a, b, d; <span class="comment">// 정수형 변수 선언</span></div><div class="line">    <span class="keyword">float</span> c      <span class="comment">// 실수형 변수 선언</span></div><div class="line">    <span class="comment">// 초기값 입력</span></div><div class="line">    a = <span class="number">10</span>;</div><div class="line">    b = <span class="number">3</span>;</div><div class="line">    c = <span class="number">3.0</span>;</div><div class="line">    d = <span class="number">2</span>;</div><div class="line"></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d + %d = %d\n"</span>, a, b, a + b);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d - %d = %d\n"</span>, a, b, a - b);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d / %d = %d\n"</span>, a, b, a / b); <span class="comment">// 정수 / 정수 = 정수</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d / %.2f = %.2f\n"</span> a, c, a / c); <span class="comment">// 정수 / 실수 = 실수</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d * %d = %d\n"</span> a, b, a * b);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d \% %d = %d\n"</span> a, b, a % b); <span class="comment">//나머지 연산</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d + %d * %d = %d\n"</span> a, b, d + a * b); <span class="comment">// 우선순위</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"(%d + %d) * %d = %d\n"</span> a, b, (d + a) * b); <span class="comment">// 우선순위</span></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>변수를 이용해서 프로그램을 고쳤습니다. 이제 값을 바꾸어 보세요.<br>값을 바꿀때는 일일히 printf문에서 고치지 않아도 됩니다.<br>초기값 설정한 것을 고치면 됩니다. 훨씬 변경하기가 수월해 졌습니다.</p>
-<p>shell에서도 계산을 할 수 있습니다.<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">echo</span> $((2 + 3))</div><div class="line">$ <span class="built_in">echo</span> $((2 / 3))</div><div class="line">$ <span class="built_in">echo</span> $((2 - 3))</div><div class="line">$ <span class="built_in">echo</span> $((2 * 3))</div></pre></td></tr></table></figure></p>
-<p>bc라는 계산기도 있습니다 복잡한 수학, 과학용 계산이 가능합니다.<br>없다면 설치<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#Centos</span></div><div class="line">$ sudo yum install bc</div><div class="line"></div><div class="line"><span class="comment">#ubuntu</span></div><div class="line">$ sudo apt-get install bc</div><div class="line"></div><div class="line"><span class="comment">#macos</span></div><div class="line">$ brew install bc</div><div class="line"></div><div class="line">$ <span class="built_in">echo</span> <span class="string">" 1 + 2"</span> | bc</div><div class="line">$ man bc</div></pre></td></tr></table></figure></p>
-<p>vim도 인터프리터 입니다. 계산이 가능합니다. bc를 사용할 수도 있습니다.<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">:<span class="keyword">echo</span> <span class="number">1</span>+<span class="number">1</span></div><div class="line"></div><div class="line"><span class="number">2</span> + <span class="number">3</span> #계산식에 커서를 두고 </div><div class="line">:.!bc</div></pre></td></tr></table></figure></p>
-<h3 id="상수"><a href="#상수" class="headerlink" title="상수"></a>상수</h3><p>일반적인 수를 상수라고 합니다. </p>
-<h3 id="변수명-작성"><a href="#변수명-작성" class="headerlink" title="변수명 작성"></a>변수명 작성</h3><p>변수명을 작성하는 규칙이 있습니다.<br><code>_</code>를 제외한 특수문자가 있으면 안됩니다.<br>공백이 있으면 안됩니다.<br>의미 있는 단어로 작성해야 합니다.<br>위와 같이 a, b, c, 이런식으로 작성하면 안됩니다.<br>의미를 부여하기 힘들어도 최소한 iNum 정로로 만들어 줍니다.<br>소문자 i는 int를 의미 합니다. 정수형 숫자라는 것을 알 수 있습니다.<br>aNum은 배열 숫자, dNum은 더블형, fNum은 실수형 이런식으로 작성하면 좋습니다.<br>그럼 변수명을 바꾸어 보세요. iNum1, iNum2, iNum3, fNum1 </p>
-<p>프로그램 작성을 편하게 하려고 변수를 사용합니다.<br>변수는 몇가지 종류가 있습니다.</p>
-<ul>
-<li>문자1자를 담을 수 있는 변수</li>
-<li>정수를 담을 수 있는 정수형 변수</li>
-<li>실수를 담을 수 있는 실수형 변수</li>
-</ul>
+      <title><![CDATA[ASCII 문자]]></title>
+      <url>/2017/11/13/c-ascii%EB%AC%B8%EC%9E%90/</url>
+      <content type="html"><![CDATA[<h3 id="ASCII-문자"><a href="#ASCII-문자" class="headerlink" title="ASCII 문자"></a>ASCII 문자</h3><p>아스키 문자는 정수 0~127까지의 숫자를 문자로 대체해서 사용하는 약속 기호입니다.<br>0x0~1F 과 0x7F는 제어 문자가 들어있습니다.</p>
 <table>
 <thead>
 <tr>
-<th>변수형</th>
+<th>DEC</th>
+<th>HEX</th>
+<th>문자</th>
 <th>설명</th>
-<th>크기</th>
+<th>DEC</th>
+<th>HEX</th>
+<th>문자</th>
+<th>설명</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>문자형</td>
-<td>char</td>
-<td>1byte</td>
+<td>0</td>
+<td>0x00</td>
+<td>NUL</td>
+<td>NUl문자</td>
+<td>17</td>
+<td>0x11</td>
+<td>DC1</td>
+<td>device control 1 </td>
 </tr>
 <tr>
-<td>정수형</td>
-<td>boolean</td>
-<td>1bit</td>
+<td>1</td>
+<td>0x01</td>
+<td>SOH</td>
+<td>start of header</td>
+<td>18</td>
+<td>0x12</td>
+<td>DC2</td>
+<td>device control 2</td>
 </tr>
 <tr>
-<td>정수형</td>
-<td>int</td>
-<td>4byte</td>
+<td>2</td>
+<td>0x02</td>
+<td>STX</td>
+<td>start of text</td>
+<td>19</td>
+<td>0x13</td>
+<td>DC3</td>
+<td>device control 3</td>
 </tr>
 <tr>
-<td>정수형</td>
-<td>long</td>
-<td>8byte</td>
+<td>3</td>
+<td>0x03</td>
+<td>ETX</td>
+<td>end of text</td>
+<td>20</td>
+<td>0x14</td>
+<td>DC4</td>
+<td>device control 4</td>
 </tr>
 <tr>
-<td>실수형</td>
-<td>float</td>
-<td>4byte</td>
+<td>4</td>
+<td>0x04</td>
+<td>EOT</td>
+<td>end of transmission</td>
+<td>21</td>
+<td>0x15</td>
+<td>NAK</td>
+<td>negative ack</td>
 </tr>
 <tr>
-<td>실수형</td>
-<td>double</td>
-<td>8byte</td>
+<td>5</td>
+<td>0x05</td>
+<td>ENQ</td>
+<td>enquiry</td>
+<td>22</td>
+<td>0x16</td>
+<td>SYN</td>
+<td>synchronous idle</td>
+</tr>
+<tr>
+<td>6</td>
+<td>0x06</td>
+<td>ACK</td>
+<td>acknowlegment</td>
+<td>23</td>
+<td>0x17</td>
+<td>ETB</td>
+<td>end of Transmission block</td>
+</tr>
+<tr>
+<td>7</td>
+<td>0x07</td>
+<td>BEL</td>
+<td>bell</td>
+<td>24</td>
+<td>0x18</td>
+<td>CAN</td>
+<td>cancle</td>
+</tr>
+<tr>
+<td>8</td>
+<td>0x08</td>
+<td>BS</td>
+<td>backspace</td>
+<td>25</td>
+<td>0x19</td>
+<td>EM</td>
+<td>end of medium</td>
+</tr>
+<tr>
+<td>9</td>
+<td>0x09</td>
+<td>HT</td>
+<td>horizontal tab</td>
+<td>26</td>
+<td>0x1a</td>
+<td>SUB</td>
+<td>substitute</td>
+</tr>
+<tr>
+<td>10</td>
+<td>0x0a</td>
+<td>LF</td>
+<td>line feed</td>
+<td>27</td>
+<td>0x1b</td>
+<td>ESC</td>
+<td>escape</td>
+</tr>
+<tr>
+<td>11</td>
+<td>0x0b</td>
+<td>VT</td>
+<td>vertical tab</td>
+<td>28</td>
+<td>0x1c</td>
+<td>FS</td>
+<td>file separator</td>
+</tr>
+<tr>
+<td>12</td>
+<td>0x0c</td>
+<td>FF</td>
+<td>form feed</td>
+<td>29</td>
+<td>0x1d</td>
+<td>GS</td>
+<td>group separator</td>
+</tr>
+<tr>
+<td>13</td>
+<td>0x0d</td>
+<td>CR</td>
+<td>carriage return</td>
+<td>30</td>
+<td>0x1e</td>
+<td>RS</td>
+<td>record separator</td>
+</tr>
+<tr>
+<td>14</td>
+<td>0x0e</td>
+<td>SO</td>
+<td>shift out</td>
+<td>31</td>
+<td>0x1f</td>
+<td>US</td>
+<td>Unit Separator</td>
+</tr>
+<tr>
+<td>15</td>
+<td>0x0f</td>
+<td>SI</td>
+<td>shift in</td>
+<td>127</td>
+<td>0x7f</td>
+<td>DEL</td>
+<td>delete</td>
+</tr>
+<tr>
+<td>16</td>
+<td>0x10</td>
+<td>DLE</td>
+<td>data link escape</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<p>자료형은 각각 다른 크기를 가집니다. 변수를 선언 할때 자료형을 먼저 정하고 변수명을 써줍니다.<br>변수의 크기를 생각해서 자료형을 사용해야 합니다.<br>자주 사용하지 않는 자료형은 제외 했습니다. 배열과 포인터 변수는 뒤에 설명합니다.<br>다음은 정수형 자료가 표현 할 수 있는 크기를 확인 할 수 있는 프로그램입니다.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;limits.h&gt;    </span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">char</span> cNum = CHAR_MIN;</div><div class="line">    <span class="keyword">short</span> shNum = SHRT_MIN;</div><div class="line">    <span class="keyword">int</span> iNum = INT_MIN;</div><div class="line">    <span class="keyword">long</span> lNum = LONG_MIN;</div><div class="line">    <span class="keyword">long</span> <span class="keyword">long</span> llNum5 = LLONG_MIN;</div><div class="line"></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d %d %d %ld %lld\n"</span>, cNum, shNum, iNum, lNum, llNum);</div><div class="line"></div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%lu\n"</span>, <span class="keyword">sizeof</span>(cNum));</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%lu\n"</span>, <span class="keyword">sizeof</span>(shNum));</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%lu\n"</span>, <span class="keyword">sizeof</span>(iNum));</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%lu\n"</span>, <span class="keyword">sizeof</span>(lNum));</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%lu\n"</span>, <span class="keyword">sizeof</span>(llNum));</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>다음은 실수형 자료가 표현 할 수 있는 크기를 확인하는 프로그램입니다.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;float.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">float</span> fNum1 = FLT_MIN;</div><div class="line">    <span class="keyword">float</span> fNum2 = FLT_MAX;</div><div class="line">    <span class="keyword">double</span> dNum3 = DBL_MIN;</div><div class="line">    <span class="keyword">double</span> dNum4 = DBL_MAX;</div><div class="line">    <span class="keyword">long</span> <span class="keyword">double</span> ldNum5 = LDBL_MIN;</div><div class="line">    <span class="keyword">long</span> <span class="keyword">double</span> ldNum6 = LDBL_MAX;</div><div class="line"></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%.40f %.2f\n"</span>, fNum1);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%.40f %.2f\n"</span>, fNum2);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%e %e\n"</span>, dNum3, dNum4);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%Le %Le\n"</span>, ldNum5, ldNum6);</div><div class="line"> </div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>자료형은 시스템과 운영체제에 따라 크기가 다를 수 있습니다.<br>꼭 사용할 수 있는 크기를 확인하고 사용해야 합니다.</p>
-<h3 id="오버플로우-언더플로우"><a href="#오버플로우-언더플로우" class="headerlink" title="오버플로우/언더플로우"></a>오버플로우/언더플로우</h3><p>정수형 int 자료형은 -2,147,483,648 ~ 2,147,483,647 까지 표현가능 했습니다.<br>2,147,483,647 에 1을 더하면 어떻게 될까요. 반대로 -2,147,483,648에서 -1을 하면 어떻게 되는지 확인해 보세요.</p>
+<p>제어문자는 무척 많이 사용합니다. 설명을 영어 그대로 쓴건 검색시 사용하세요.<br>각종 통신시 전문을 주고 받을때, 키보드및 프린터 제어등등..</p>
+<p>0x30~0x39는 숫자<br>0x41~0x5A는 대문자<br>0x61~0x7A는 대문자<br>나머지는 특수문자가 들어 있습니다.<br>제어 문자는 출력할 수 없지만 나머지는 출력이 가능합니다.<br>참고로 0x20는 스페이스바(공백)이 출력되므로 아무것도 없는것 같이 보입니다.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">int</span> iNum = <span class="number">32</span>;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d\t0x%04X\t%c\n"</span>, iNum, iNum, iNum);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>위 예제는 10진수 32를 10진수, 16진수, 문자로 출력하는 프로그램입니다.<br>공백을 출력하기 때문에 문자는 보지지 않습니다. 반복문을 이용해 126까지 출력해 봅시다.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">32</span>; i &lt; <span class="number">127</span>; i++) &#123;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d\t0x%04X\t%c\n"</span>, i, i, i);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>제목도 달아 줄까요?</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"        ASCII Table"</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"==========================="</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"10진    16진    문자"</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"---------------------------"</span>);</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">32</span>; i &lt; <span class="number">127</span>; i++) &#123;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d\t0x%04X\t%c\n"</span>, i, i, i);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>너무 길게 나오니 한줄에 3개씩 나오게 찍읍시다.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"                            ASCII Table"</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"====================================================================="</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"10진    16진    문자    10진    16진    문자    10진    16진    문자"</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"---------------------------------------------------------------------"</span>);</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">32</span>; i &lt; <span class="number">127</span>; i++) &#123;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d\t0x%04X\t%c\t"</span>, i, i, i);</div><div class="line">		<span class="keyword">if</span> ((i%<span class="number">3</span>)==<span class="number">1</span>) &#123;</div><div class="line">				<span class="built_in">printf</span>(<span class="string">"\n"</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"                            ASCII Table"</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"====================================================================="</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"10진    16진    문자    10진    16진    문자    10진    16진    문자"</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"---------------------------------------------------------------------"</span>);</div><div class="line"></div><div class="line">	<span class="keyword">int</span> cnt = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">32</span>; i &lt; <span class="number">127</span>; i=i+<span class="number">32</span>) &#123;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d\t0x%04X\t%c\t"</span>, i, i, i);</div><div class="line">		cnt = cnt +<span class="number">1</span>;</div><div class="line">		<span class="keyword">if</span> (cnt == <span class="number">3</span>)&#123;</div><div class="line">			<span class="built_in">printf</span>(<span class="string">"\n"</span>);</div><div class="line">			cnt = <span class="number">0</span>;</div><div class="line">			i = i - <span class="number">95</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>요즘은 영문os와 windows를 제외한 한글 os는 unicode를 사용합니다.<br>unicode안에 ascii code도 포함되어 있지만 확장아스키는 사용하는 폰트에 따라 나오지 않을 수 있습니다.<br>unicode를 출력해 보고 싶으면 127을 16777216 로 바꿔 출력해 보세요.<br>스크롤이 많을 테니 꼭 <code>| less</code> 를 이용하세요. <code>Ctrl+c</code></p>
 ]]></content>
       
         <categories>
@@ -144,110 +214,14 @@
             
             <tag> c </tag>
             
-            <tag> 사칙연산 </tag>
-            
-            <tag> 자료형 </tag>
-            
-            <tag> 변수 </tag>
-            
-            <tag> 상수 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[while 문]]></title>
-      <url>/2017/11/09/c-while/</url>
-      <content type="html"><![CDATA[<h3 id="while문"><a href="#while문" class="headerlink" title="while문"></a>while문</h3><h4 id="기본구문"><a href="#기본구문" class="headerlink" title="기본구문"></a>기본구문</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span>(조건)&#123;</div><div class="line">	반복할 문장; <span class="comment">//조건이 참이면 수행</span></div><div class="line">&#125;</div><div class="line"><span class="comment">//조건이 거짓이면 수행</span></div></pre></td></tr></table></figure>
-<p><img src="/c언어기초/2017-11-08_00-15-50.png" alt="while 반복문"><br>while문은 조건이 참인동안 계반 반복합니다.<br>반복문에 조건이 거짓되는 수식을 만들지 않으면 무한 반복됩니다.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">int</span> iNum = <span class="number">0</span>;</div><div class="line"></div><div class="line">	<span class="keyword">while</span> (iNum &lt; <span class="number">10</span>)&#123;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d line\n"</span>, iNum);</div><div class="line">		iNum = inum + <span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>위 예제에서 참인 조건은 inum이 10보다 작으면 됩니다.<br>초깃값으로 0을 주었으니 inum이 10이 되면 거짓이 되므로 0부터 9까지 10번 출력을 하게됩니다.</p>
-<h3 id="do-while문"><a href="#do-while문" class="headerlink" title="do~while문"></a>do~while문</h3><h4 id="기본구문-1"><a href="#기본구문-1" class="headerlink" title="기본구문"></a>기본구문</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">do</span> &#123;</div><div class="line">	반복할 문장; <span class="comment">//최초 1번은 무조건 실행, 이후 조건이 참이면 수행</span></div><div class="line">&#125; <span class="keyword">while</span>(조건);</div></pre></td></tr></table></figure>
-<p><img src="/c언어기초/2017-11-08_00-16-03.png" alt="do~while 반복문"></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">int</span> iNum = <span class="number">0</span>;</div><div class="line"></div><div class="line">	<span class="keyword">do</span> &#123;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d line\n"</span>, iNum); <span class="comment">// 반복할 명령</span></div><div class="line">		iNum = inum + <span class="number">1</span>;           <span class="comment">// 반복할 조건을 변화시킬 식</span></div><div class="line">	&#125; <span class="keyword">while</span> (iNum &lt; <span class="number">10</span>);           <span class="comment">// 반복 조건식</span></div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>do~while문은 최초 한번은 무조건 실행되는 반복을 실행 할 때 사용합니다.</p>
-]]></content>
-      
-        <categories>
-            
-            <category> C언어기초 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> while </tag>
-            
-            <tag> dowhile </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[if문 사용하기]]></title>
-      <url>/2017/11/09/c-if%EB%AC%B8/</url>
-      <content type="html"><![CDATA[<h3 id="if문"><a href="#if문" class="headerlink" title="if문"></a>if문</h3><p>if 명령은 조건을 판단해서 참일 경우 또는 거짓 일경우 분기를 하기 위해 사용하는 명령입니다.</p>
-<h4 id="기본구문"><a href="#기본구문" class="headerlink" title="기본구문"></a>기본구문</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 실행 명령이 1줄일 경우</span></div><div class="line"><span class="keyword">if</span> (조건)</div><div class="line">	참인 경우 실행 명령<span class="number">1</span>;</div></pre></td></tr></table></figure>
-<p><img src="/c언어기초/2017-11-08_00-11-29.png" alt="if문 flowchart"></p>
-<p>조건을 판단해서 참인 경우 문장1을 실행하고 거짓인 경우 다음 문장을 수행합니다.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">int</span> iNum1 = <span class="number">10</span>;</div><div class="line">	<span class="keyword">int</span> inum2 = <span class="number">20</span>;</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (iNum1 &gt; iNum2)</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d은 %d보다 큽니다.\n"</span>, iNum1, iNum2);</div><div class="line">	</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d은 %d보다 작습니다.\n"</span>, iNum1, iNum2);</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>위 8행처럼 보기 좋게 if문 다음줄에 들여 쓰기후 적어 줍니다.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">int</span> iNum1 = <span class="number">10</span>;</div><div class="line">	<span class="keyword">int</span> inum2 = <span class="number">20</span>;</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (iNum1 &gt; iNum2) <span class="built_in">printf</span>(<span class="string">"%d은 %d보다 큽니다."</span>, iNum1, iNum2); <span class="comment">// if문이 참인경우 실행</span></div><div class="line"></div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d은 %d보다 작습니다."</span>, iNum1, iNum2);</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>위와 같이 같은 줄에 붙여 써도 됩니다만 가능한 보기 좋게 작성하는 것이 좋습니다.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">int</span> iNum1 = <span class="number">10</span>;</div><div class="line">	<span class="keyword">int</span> inum2 = <span class="number">20</span>;</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (iNum1 &gt; iNum2) </div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d은 %d보다 큽니다."</span>, iNum1, iNum2); <span class="comment">//if문이 참인경우 실행</span></div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d은 %d보다 작습니다."</span>, iNum1, iNum2); <span class="comment">//if문과 관계없이 실행</span></div><div class="line">	</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>위와 같이 사용해도 결과는 문제 없이 나옵니다. 문법적으로 오류가 없기 때문이죠. 참인 경우 다음 한줄을 실행한 다고 했습니다. 절대 위와 같이 사용하면 프로그램 분석 하는데 불편합니다. 들여쓰기를 잘해야 소스를 읽기가 편합니다. 오류를 찾기도 쉽구요. 아래와 같이 써도 전혀 문제 없습니다.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt; int main(int argc, const char *argv[]) &#123; int iNum1 = 10; int inum2 = 20; </span></span></div><div class="line"><span class="keyword">if</span> (iNum1 &gt; iNum2) <span class="built_in">printf</span>(<span class="string">"%d은 %d보다 큽니다."</span>, iNum1, iNum2); <span class="built_in">printf</span> (<span class="string">"%d은 %d보다 작습니다."</span>, </div><div class="line">iNum1, iNum2); <span class="keyword">return</span> <span class="number">0</span>; &#125;</div></pre></td></tr></table></figure>
-<p>읽기가 매우 힘들죠. ^^ 코딩은 읽기 좋게 예쁘게 하는게 좋습니다.</p>
-<hr>
-<h3 id="if-명령1-명령2…"><a href="#if-명령1-명령2…" class="headerlink" title="if {명령1;명령2…}"></a>if {명령1;명령2…}</h3><h4 id="기본구문-1"><a href="#기본구문-1" class="headerlink" title="기본구문"></a>기본구문</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 실행 명령이 여러줄 일 경우</span></div><div class="line"><span class="keyword">if</span> (조건)&#123;</div><div class="line">	명령<span class="number">1</span>;</div><div class="line">	명령<span class="number">2</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><img src="/c언어기초/2017-11-08_01-09-51.png" alt="if flowchart"></p>
-<p>조건이 참일 경우 여러줄을 실행해야 한다면 위와 같이 사용할 수 있습니다.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">int</span> iNum1 = <span class="number">30</span>;</div><div class="line">	<span class="keyword">int</span> inum2 = <span class="number">20</span>;</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (iNum1 &gt; iNum2)&#123; </div><div class="line">		<span class="built_in">printf</span>(<span class="string">"30과 20을 비교하면: "</span>);</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d은 %d보다 큽니다."</span>, iNum1, iNum2);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>참인 경우 실행할 문장이 1줄이어도 위와 같이 써주면 보기에 좋습니다. 가능한 if문은 위와 같이 쓰는 걸 추천합니다.</p>
-<hr>
-<h3 id="if-else"><a href="#if-else" class="headerlink" title="if ~ else"></a>if ~ else</h3><h4 id="기본구문-2"><a href="#기본구문-2" class="headerlink" title="기본구문"></a>기본구문</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 조건이 참이 아닐 경우 else를 실행</span></div><div class="line"><span class="keyword">if</span> (조건)&#123; <span class="comment">//참인경우 실행</span></div><div class="line">	명령<span class="number">1</span>; 	</div><div class="line">	명령<span class="number">2</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span>&#123; <span class="comment">// 참인 아닌경우 실행</span></div><div class="line">	명령<span class="number">1</span>;</div><div class="line">	명령<span class="number">2</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><img src="/c언어기초/2017-11-08_00-13-50.png" alt="if~else flowchart"><br>if~else 형식은 if 조건이 참인경우 문장1을 거짓인 경우 문장2문를 실행 하도록 할 때 사용합니다.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">int</span> iNum1 = <span class="number">30</span>;</div><div class="line">	<span class="keyword">int</span> inum2 = <span class="number">20</span>;</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (iNum1 &gt; iNum2)&#123; </div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d은 %d보다 큽니다."</span>, iNum1, iNum2);</div><div class="line">	&#125;<span class="keyword">else</span>&#123;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d은 %d보다 작습니다."</span>, iNum1, iNum2);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>위 code 처럼 참이 안닌경우 else구문을 실행 합니다.</p>
-<hr>
-<h3 id="if-else-if-else"><a href="#if-else-if-else" class="headerlink" title="if~else if~else"></a>if~else if~else</h3><h4 id="기본구문-3"><a href="#기본구문-3" class="headerlink" title="기본구문"></a>기본구문</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 다중 if ~ else if</span></div><div class="line"><span class="keyword">if</span> (조건)&#123;</div><div class="line">	명령<span class="number">1</span>;</div><div class="line">	명령<span class="number">2</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span> <span class="keyword">if</span>(조건)&#123;</div><div class="line">	명령<span class="number">1</span>;</div><div class="line">	명령<span class="number">2</span>;</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">	명령<span class="number">1</span>;</div><div class="line">	명령<span class="number">2</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><img src="/c언어기초/2017-11-08_00-15-00.png" alt="if~else if~else"></p>
-<p>[if~else if~else] 다중 if문은 여러번 비교를 해야 할때 사용합니다.<br>숫자를 비교할 때, 숫자가 클수도, 작을수도, 같을 수도 있습니다.<br>크다 작다만 판단한다면 논리적 오류가 생길 수도 있습니다. 이럴때 한번더 비교해서 같으면 같다라고 출력하고 같지 않으면 작다라고 출력해야 합니다.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">int</span> iNum1 = <span class="number">30</span>;</div><div class="line">	<span class="keyword">int</span> inum2 = <span class="number">20</span>;</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (iNum1 &gt; iNum2)&#123; </div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d은 %d보다 큽니다."</span>, iNum1, iNum2);</div><div class="line">	&#125;<span class="keyword">else</span> <span class="keyword">if</span>( iNum == iNum2)&#123;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d은 %d와 같습니다."</span>, iNum1, iNum2);</div><div class="line">	&#125;<span class="keyword">else</span>&#123;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d은 %d보다 작습니다."</span>, iNum1, iNum2);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<hr>
-]]></content>
-      
-        <categories>
-            
-            <category> C언어기초 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> if </tag>
-            
-            <tag> else </tag>
-            
-            <tag> if~else </tag>
-            
-            <tag> while </tag>
-            
-            <tag> do while </tag>
-            
-            <tag> for </tag>
-            
         </tags>
         
     </entry>
     
     <entry>
       <title><![CDATA[배열]]></title>
-      <url>/2017/11/09/c-%EB%B0%B0%EC%97%B4/</url>
-      <content type="html"><![CDATA[<h3 id="배열"><a href="#배열" class="headerlink" title="배열"></a>배열</h3><p>배열은 변수를 편하게 사용하기 위해 만들어 졌습니다.<br>배열의 인덱스는 0부터 시작합니다.</p>
+      <url>/2017/11/12/c-%EB%B0%B0%EC%97%B4/</url>
+      <content type="html"><![CDATA[<h3 id="배열과-포인터"><a href="#배열과-포인터" class="headerlink" title="배열과 포인터"></a>배열과 포인터</h3><p>배열은 변수를 편하게 사용하기 위해 만들어 졌습니다.<br>배열의 인덱스는 0부터 시작합니다.</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> iNum0 = <span class="number">0</span>;</div><div class="line">	<span class="keyword">int</span> iNum1 = <span class="number">10</span>;</div><div class="line">	<span class="keyword">int</span> iNum2 = <span class="number">20</span>;</div><div class="line">	<span class="keyword">int</span> iNum3 = <span class="number">30</span>;</div><div class="line">	<span class="keyword">int</span> iNum4 = <span class="number">40</span>;</div><div class="line"></div><div class="line">	<span class="built_in">printf</span>(<span class="string">"iNum0 = %d\n"</span>, iNum0);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"iNum1 = %d\n"</span>, iNum1);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"iNum2 = %d\n"</span>, iNum2);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"iNum3 = %d\n"</span>, iNum3);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"iNum4 = %d\n"</span>, iNum4);</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>위에서 변수를 5개를 만들었습니다. 변수의 이름이 틀리니 출력하려면 위와 같이 printf문을 5번을 사용해야 합니다. 변수명 뒤를 변수로 만들어 for 문으로 돌리면 되겠다 생각한 사람도 있을 겁니다. 하지만 그렇게 사용할 수 없습니다. 동적으로 변수명을 사용 하려고 배열을 만든겁니다.</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> inum[<span class="number">5</span>] = &#123;<span class="number">0</span>, <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>&#125;;</div><div class="line"></div><div class="line">	<span class="built_in">printf</span>(<span class="string">"iNum[0] = %d\n"</span>, iNum[<span class="number">0</span>]);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"iNum[1] = %d\n"</span>, iNum[<span class="number">1</span>]);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"iNum[2] = %d\n"</span>, iNum[<span class="number">2</span>]);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"iNum[3] = %d\n"</span>, iNum[<span class="number">3</span>]);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"iNum[4] = %d\n"</span>, iNum[<span class="number">4</span>]);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -277,51 +251,8 @@
     </entry>
     
     <entry>
-      <title><![CDATA[for 반복문]]></title>
-      <url>/2017/11/08/c-for%EB%AC%B8/</url>
-      <content type="html"><![CDATA[<h3 id="for문"><a href="#for문" class="headerlink" title="for문"></a>for문</h3><h4 id="기본구문"><a href="#기본구문" class="headerlink" title="기본구문"></a>기본구문</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">for (초기값; 조건문; 증가값)&#123;</div><div class="line">	반복할 명령1;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>특정한 횟수 만큼 반복해서 명령을 실행 할 때 사용합니다.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"hellow world"</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>위 예제는 helow world를 10번 반복 출력하는 예제 입니다.<br><code>i++</code>는 후행증가 연산자라고 부르는데 먼저 i값을 사용하고, 1을 증가 시킵니다.<br><code>++i</code>는 선행증가 연산자라고 합니다. 반대로 1을 증가시켜 사용합니다.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> iSum = <span class="number">0</span>;	<span class="comment">//1:</span></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;		<span class="comment">//2:</span></div><div class="line">		iSum = iSum + (i + <span class="number">1</span>);	<span class="comment">//3:</span></div><div class="line">	&#125;</div><div class="line"></div><div class="line">	print(<span class="string">"1 부터 10 까지 합계는 %d 입니다.\n"</span>, iSum);</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>위 예제는 1부터 10까지 더하는 프로그램 입니다.<br>1: 은 값을 누적하기 위한 변수 입니다.<br>2: 초깃값은 정수형 0 부터 시작하고, 조건은 10보다 작을때 까지, 증가는 1씩 증가합니다.<br>4: iSum과 (i+1)을 더해서 iSum에 누적을 합니다.<br>i의 시작값이 0이기 때문에 1을 더해 준겁니다.</p>
-<figure class="highlight plain"><figcaption><span>결과</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">55</div></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> iSum = <span class="number">0</span>;	<span class="comment">//1:</span></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">11</span>; i++) &#123;		<span class="comment">//2:</span></div><div class="line">	<span class="comment">//for (int i = 0; i &lt;= 10; i++) &#123;		//3:</span></div><div class="line">		iSum = iSum + i ;	<span class="comment">//4:</span></div><div class="line">	&#125;</div><div class="line"></div><div class="line">	print(<span class="string">"1 부터 10 까지 합계는 %d 입니다.\n"</span>, iSum);</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>위 프로그램도 1부터 10까지 10번 더하는 프로그램입니다.<br>2: 라인을 보세요. 초깃값, 수식, 증가값을 보고 한눈에 10번 실행 되겠군 하고 떠오르시나요 ? 아님 11-1=10, 10번하고 떠오르시나요. 3: 라인은 어떤가요? 작거나 같다. 같으니까 10도 포함되겠군. 한번더 생각해야 합니다. cpu도 한번 더 일을 하게 된답니다. 코딩은 한줄을 더 쓰더라도 읽기 쉬워야 합니다. 처음에 사용했던 <code>for (int i = 0; i &lt; 10; i++)</code> 를 사용하는게 직관적입니다. i의 값을 1부터 사용해야 한다면 실행 구문에서 <code>+ 1</code>을 해주면 됩니다. </p>
-<blockquote>
-<p>나중에 만개의 프로그램을 만들었는데, 이 프로그램이 동시에 실행해서 사용 해야 한다고 가정합니다.<br>컴퓨터의 속도가 너무 느려져서 고민을 하겠죠. 프로그램을 수정해서 속도를 빠르게 할지 아님 컴퓨터를 더 살지. 비용을 계산해 보세요. 만개의 소스를 수정하려면 시간이 얼마가 걸릴지. 컴퓨터를 1대를 더사면 비용이 얼마나 더들지.<br>컴퓨터 1대에 300만원이라고 가정하고, 소스를 수정하는데 직원 10명이 소스 1000개씩 수정한다면 하루 10개씩 수정한다 하더라도 100일이 걸립니다. 인건비만 9000만원정도 소요 될겁니다. 9000만원들여서 얼마나 빠르게 개선을 할 수 있을 까요?<br>50% 빠르게 개선 할 수 있다고 장담 할 수 있나요. ?<br>하지만 컴퓨터를 추가한다면 1대를 더 추가 하면 2배가 빨라지고, 2대를 추가하면 3배가 빨라집니다. 900만원 들여 3배 빠르게 사용할 수 있습니다.<br>이번엔 프로그램에 기능을 추가한다고 가정해 보겠습니다. 읽기 쉬운 프로그램은 다른 사람이 기능을 추가 한다 하더라도 빠른 시간내에 분석해서 기능을 추가 할 수 있습니다. 분석하는데 많은 시간을 들이지 않을 수 있습니다.<br>hello world를 3번 출력하는 프로그램을 만든다 가정해 보겠습니다.  for 문으로 만든 프로그램이 좋은 프로그램일까요 아님 3번 복사 붙여넣기 한 프로그램이 좋은 프로그램일까요?<br>hello world를 100번 출력한다고 가정 해보죠. for문으로 출력한 프로그램이 좋은 프로그램일까요. 아님 100번 복사 붙여 넣기 한 프로그램이 좋은 프로그램일까요 ?<br>다시한번 강조하지만 읽기 쉽고(덜 생각하게하고) 들여쓰기와 주석을 많이 사용한 프로그램이 좋은 프로그램입니다. </p>
-</blockquote>
-<p>10을 1000조로 바꾸어 계산해 보세요.<br>int는 21억 까지 밖에 계산을 못합니다. int를 long long 으로 바꾸어야 합니다.<br>프로그램 실행 시간도 체크 해보세요.<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:!time <span class="keyword">for</span>.<span class="keyword">o</span></div></pre></td></tr></table></figure></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> iSum = <span class="number">0</span>;	<span class="comment">//1:</span></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">1000000</span>; i++) &#123;		<span class="comment">//2:</span></div><div class="line">		iSum = iSum + i;	<span class="comment">//3:</span></div><div class="line">		print(<span class="string">"1 부터 10 까지 합계는 %d 입니다.\n"</span>, iSum);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>이번에는 출력문을 for문 안에 넣었습니다.<br>단연히 출력문도 조건만큼 출력 될겁니다.<br>100만번을 출력할 텐데 속도를 확인 해 보세요.<br>느려진 이유는 cpu만 사용한 것이 아니라 i/o장치(모니터)도 같이 사용했기 때문입니다.<br>cpu보다 i/o장치는 많이 느립니다. 하드디스크는 더 느리답니다.</p>
-<p>프로그램 실행 중간에 종료 하려면 Ctrl + c<br>vim에서 실수로 Ctrl + z를 눌렀다면 fg</p>
-<h3 id="for문의-중첩"><a href="#for문의-중첩" class="headerlink" title="for문의 중첩"></a>for문의 중첩</h3><h4 id="기본구문-1"><a href="#기본구문-1" class="headerlink" title="기본구문"></a>기본구문</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">for (초깃값; 조건; 증가값)&#123;</div><div class="line">	for (초깃값; 조건; 증가값)&#123;</div><div class="line"></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>for문은 중첩해서 사용하는 경우가 많습니다.</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; i++) &#123;</div><div class="line"></div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">10</span>; j++) &#123;</div><div class="line">			<span class="built_in">printf</span>(<span class="string">"*"</span>);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="built_in">printf</span>(<span class="string">"\n"</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><figcaption><span>결과</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">**********</div><div class="line">**********</div><div class="line">**********</div><div class="line">**********</div><div class="line">**********</div><div class="line">**********</div><div class="line">**********</div><div class="line">**********</div><div class="line">**********</div><div class="line">**********</div></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">10</span>; i &lt;= <span class="number">1</span>; i--) &#123;</div><div class="line"></div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i; j++) &#123;</div><div class="line">			<span class="built_in">printf</span>(<span class="string">"*"</span>);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="built_in">printf</span>(<span class="string">"\n"</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><figcaption><span>결과</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">*</div><div class="line">**</div><div class="line">***</div><div class="line">****</div><div class="line">*****</div><div class="line">******</div><div class="line">*******</div><div class="line">********</div><div class="line">*********</div><div class="line">**********</div></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">10</span>; i &gt;= <span class="number">1</span>; i--) &#123;</div><div class="line"></div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i; j++) &#123;</div><div class="line">			<span class="built_in">printf</span>(<span class="string">"*"</span>);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="built_in">printf</span>(<span class="string">"\n"</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><figcaption><span>결과</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">**********</div><div class="line">*********</div><div class="line">********</div><div class="line">*******</div><div class="line">******</div><div class="line">*****</div><div class="line">****</div><div class="line">***</div><div class="line">**</div><div class="line">*</div></pre></td></tr></table></figure>
-]]></content>
-      
-        <categories>
-            
-            <category> C언어기초 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> for </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[C언어 목차]]></title>
-      <url>/2017/11/08/c-%EB%AA%A9%EC%B0%A8/</url>
+      <url>/2017/11/12/c-%EB%AA%A9%EC%B0%A8/</url>
       <content type="html"><![CDATA[<h3 id="목차"><a href="#목차" class="headerlink" title="목차"></a>목차</h3><h3 id="c언어-기초"><a href="#c언어-기초" class="headerlink" title="c언어 기초"></a>c언어 기초</h3><p>c언어는 가장 기초가 되는 프로그래밍 언어로 c++, objective c, java, python등의 언어로 접근하기 위한 필수 프로그램입니다.</p>
 <p>shell 프로그래밍으로도 프로그램 작성이 가능하지만 c언어가 더 강력하고 빠릅니다. c언어가 빠르고 강력하지만 라이브러리가 많이 부족한 편입니다. 직접 만들어야 하죠. 그래서 python, c++, java를 선호하는 겁니다. 필요하다고 생각되는건 누군가 이미 만들어 놨기 때문이죠.</p>
 <p>이번에 진행하는 c언어는 linux에서 gcc, vim, bash shell을 이용해 진행됩니다. 조금 산만 할 수도 있지만 난이도를 낮추고 모두를 설명하는 것이 프로그래밍의 숲을 볼 수 있는 방법인것 같습니다. Terminal이 아닌 윈도우에서 GUI에디터로 프로그래밍을 하면 C언어의 본래 의미를 찾기 힘듭니다. 재미도 없구요. CUI의 못생긴 화면에서 프로그래밍의 재미를 느껴보세요. GUI보다 많은 자유도와 기능을 사용할 수 있습니다.</p>
@@ -347,9 +278,10 @@
 <h3 id="for-문"><a href="#for-문" class="headerlink" title="for 문"></a>for 문</h3><ol>
 <li>for</li>
 </ol>
-<h3 id="배열"><a href="#배열" class="headerlink" title="배열"></a>배열</h3><ol>
+<h3 id="배열과-포인터"><a href="#배열과-포인터" class="headerlink" title="배열과 포인터"></a>배열과 포인터</h3><ol>
 <li>배열</li>
 <li>문자열</li>
+<li>포인터</li>
 </ol>
 <h3 id="키보드로-입력-받기"><a href="#키보드로-입력-받기" class="headerlink" title="키보드로 입력 받기"></a>키보드로 입력 받기</h3><ol>
 <li>getchar()</li>
@@ -372,7 +304,7 @@
 <h3 id="파일-입출력"><a href="#파일-입출력" class="headerlink" title="파일 입출력"></a>파일 입출력</h3><ol>
 <li>fopen, fclose</li>
 </ol>
-<h3 id="함수-만들기"><a href="#함수-만들기" class="headerlink" title="함수 만들기"></a>함수 만들기</h3><h3 id="표준-라이브러리"><a href="#표준-라이브러리" class="headerlink" title="표준 라이브러리"></a>표준 라이브러리</h3><h3 id="구조체-사용하기"><a href="#구조체-사용하기" class="headerlink" title="구조체 사용하기"></a>구조체 사용하기</h3><h3 id="포인터"><a href="#포인터" class="headerlink" title="포인터"></a>포인터</h3><h3 id="유니온"><a href="#유니온" class="headerlink" title="유니온"></a>유니온</h3><h3 id="maloc"><a href="#maloc" class="headerlink" title="maloc"></a>maloc</h3><h3 id="curses"><a href="#curses" class="headerlink" title="curses"></a>curses</h3><h3 id="oracle-연결"><a href="#oracle-연결" class="headerlink" title="oracle 연결"></a>oracle 연결</h3><h3 id="주소록-만들기"><a href="#주소록-만들기" class="headerlink" title="주소록 만들기"></a>주소록 만들기</h3><h3 id="학사관리-만들기"><a href="#학사관리-만들기" class="headerlink" title="학사관리 만들기"></a>학사관리 만들기</h3>]]></content>
+<h3 id="함수-만들기"><a href="#함수-만들기" class="headerlink" title="함수 만들기"></a>함수 만들기</h3><h3 id="표준-라이브러리"><a href="#표준-라이브러리" class="headerlink" title="표준 라이브러리"></a>표준 라이브러리</h3><h3 id="구조체-사용하기"><a href="#구조체-사용하기" class="headerlink" title="구조체 사용하기"></a>구조체 사용하기</h3><h3 id="유니온"><a href="#유니온" class="headerlink" title="유니온"></a>유니온</h3><h3 id="maloc"><a href="#maloc" class="headerlink" title="maloc"></a>maloc</h3><h3 id="curses"><a href="#curses" class="headerlink" title="curses"></a>curses</h3><h3 id="oracle-연결"><a href="#oracle-연결" class="headerlink" title="oracle 연결"></a>oracle 연결</h3><h3 id="주소록-만들기"><a href="#주소록-만들기" class="headerlink" title="주소록 만들기"></a>주소록 만들기</h3><h3 id="학사관리-만들기"><a href="#학사관리-만들기" class="headerlink" title="학사관리 만들기"></a>학사관리 만들기</h3>]]></content>
       
         <categories>
             
@@ -390,83 +322,76 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Hexo 한글파일명 문제점]]></title>
-      <url>/2017/11/08/hexo-%ED%95%9C%EA%B8%80%ED%8C%8C%EC%9D%BC%EB%AA%85/</url>
-      <content type="html"><![CDATA[<h3 id="Hexo-한글오류"><a href="#Hexo-한글오류" class="headerlink" title="Hexo 한글오류"></a>Hexo 한글오류</h3><p>이하 내용은 Hexo를 수정하다 꼬여서 발생한 문제를 해결하면서 얻은 경험입니다.( 정확하게 소스분석을 하지 않았다는 겁니다.)</p>
-<p>Hexo에서 <code>_Post</code>의 관리는 generator가 md파일을 감시하고 있다 변경이 되면 변경 상태에 따라 html, category, tag, archives 다시 만들어주고 deploy는 .deploy디렉토리에 add, commit, push  동작을 하는것 같습니다. 추측이지만 generator가 임의로 만든 post의 한글파일의 감시를 제대로 못해주는 것 같습니다. 감시는 파일명, 내용수정에 따라 동작이 달라지는것 같습니다.</p>
-<p><strong>요점:</strong></p>
+      <title><![CDATA[약수와 배수]]></title>
+      <url>/2017/11/12/math-%EC%95%BD%EC%88%98%EC%99%80%EB%B0%B0%EC%88%98/</url>
+      <content type="html"><![CDATA[<h3 id="약수"><a href="#약수" class="headerlink" title="약수"></a>약수</h3><h4 id="약수란-나누어-떨어지게-하는-수를-말합니다"><a href="#약수란-나누어-떨어지게-하는-수를-말합니다" class="headerlink" title="약수란 나누어 떨어지게 하는 수를 말합니다."></a>약수란 나누어 떨어지게 하는 수를 말합니다.</h4><p>어떤 수를 나누어 0이 되는 수를 약수라고 합니다.</p>
 <ul>
-<li>404오류, archives, Tag, Category, Search, index.html에서 링크오류가 나온다면 파일명과 내용을 수정하고 <code>hexo g</code>하면  100% 해결 되었습니다.</li>
-<li>변경내용이 반영되지 않을 경우, 간혹 github이 바빠서 그럴 수 있으니 새로고침 몇번 해보고, 조금 기다려 보고 github에 해당 post가 업로드되었는지 확인. 업로드가 안됐을 경우 <code>hexo clean</code> 후 <code>hexo g -d</code> 하면 99%는 해결 됩니다. 1%는 삽질이 필요합니다. 1%의 빈도수는 거의 없으니 안심하시길…</li>
-<li>github.io는 무료이고 조금 느림을 항상 명심. </li>
+<li>4는 1로 나누어 떨어 집니다.</li>
+<li>1은 4의 약수 입니다.</li>
+<li>4는 2로 나누어 떨어 집니다.</li>
+<li>2는 4의 약수 입니다.</li>
+<li>4는 3으로 나누어 떨어지지 않습니다.</li>
+<li>3은 4의 약수가 아닙니다.</li>
+<li>4는 4로 나누어 떨어 집니다.</li>
+<li>4는 4의 약수입니다. </li>
+<li>따라서 1, 2, 4는 4의 약수 입니다. </li>
 </ul>
-<hr>
-<p><strong>삽질 경험담:</strong></p>
+<p>약수는 위와 같이 1부터 약수를 찾는 값까지 나누어 떨어지는지 확인후 나누어 떨어지는 수를 적어 줍니다.</p>
+<p>원리를 알았으니 컴퓨터에게 시켜 보죠.</p>
+<p>대충 프로그램 계획을 만들어 봅시다.</p>
+<p>먼저 값을 입력 받습니다.<br>나눌값 변수에 저장합니다.<br>나눌값이 나눌수와 같으면 빠져 나갑니다.<br>입력받은 수를 1부터 나누어서 몫이 0이면<br>약수이므로 출력하고 나눌수를 1증가시켜 반복<br>0이 아니면 입력받은수를 1증가시켜 반복<br>플로우 차트를 그려서 잘 돌아갈지 확인 합니다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">시작</div><div class="line">입력 입력값n, 나눌수i</div><div class="line"></div><div class="line">반복 조건 i=1;&lt;=n i++</div><div class="line">	조건 n % i== 0</div><div class="line">	출력i</div><div class="line">반복</div><div class="line">	출력</div><div class="line">종료</div></pre></td></tr></table></figure>
+<p>프로그램 언어로 코딩합니다.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> i,n;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"값을 입력하세요 : "</span>);</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</div><div class="line"></div><div class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;=n; i++)</div><div class="line">		<span class="keyword">if</span>(n%i==<span class="number">0</span>)</div><div class="line">			<span class="built_in">printf</span>(<span class="string">"%d "</span>, i);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>위 프로그램은 모든수를 나누어 약수인지 아닌지 확인을 합니다.</p>
+<p>컴퓨터로 계산하기 때문에 엄청 빠르기 때문에 1초도 걸리지 않지만 좀더 빠른 알고리즘을 적용할 수도 있습니다.</p>
 <ul>
-<li>archive가 반영이 안될때는 파일명을 변경하면 된다.</li>
-<li>Post의 변경 반영이 안되는 경우<br><code>hexo n &quot;포스트명&quot;</code> 또는 <code>hexo new &quot;포스트명&quot;</code> 으로 포스트를 생성해서 사용하다 수정을 했음에도 반영이 안되는 경우가 종종 있다.<br>이때는 git의 캐시 때문일 수 있으니 5분 정도 기다려 보고, 그래도 안되면 아래처럼 적용을 해준다.<br><code>hexo clean</code>  /blog/Public 디렉토리 삭제<br><code>hexo g -d</code><br>하면 문제가 해결된다<br>그래도 안되는 경우 파일명을 바꾸어 준다. 탐색기나 finder에서 바꾸면 안됨(내 경험상)<br><code>mv 한글.md 한글x.md</code><br><code>hexo g -d</code><br>변경을 확인하고 변경이 잘 되면 원래대로 이름을 바꾸고 <code>hexo g -d</code><br>그래도 안되면 내용을 수정<br><code>hexo g -d</code><br>여기 까지 했는데도 안되면 최후의 수단<br>.deploy로 이동후<br><code>git rm -rf *</code><br><code>git commit -m &quot;삭제&quot;</code><br><code>git push</code><br>화일명을 변경, 내용도 수정<br><code>hexo g -d</code><br>영어의 대소문자가 혼재(윈도우와 맥에서는 오류가 날 수 있음) 소문자로 바꾸길…</li>
-<li>Post가 2개로 보일때<br>이증상은 대부분 로컬서버에서 생기는 것 같습니다.<br>post명을 vim에서 Vim으로 바꾸었는데 post가 2개로 보였습니다.<br><code>hexo clean</code><br><code>hexo g -d</code><br><code>hexo server -s</code> or <code>hexo server</code></li>
+<li>12를 1로 나누어 떨어지면 1을 왼쪽에 몫12를 오른쪽에 적어 줍니다. 왼쪽 값에 1을 더하고 오른쪽 값 중에서 제일 작은 수와 비교해서 오른쪽 값이 크면 계속 진행합니다. 같으면 종료합니다.</li>
+<li>12를 2로 나누어 떨어지면 2를 왼쪽에 몫6을 오른쪽에 적어 줍니다.왼쪽 값에 1을 더하고 오른쪽 값 중에서 제일 작은 수와 비교해서 오른쪽 값이 크면 계속 진행합니다.같으면 종료합니다.</li>
+<li>12를 3으로 나누어 떨어지면 3을 왼쪽에 몫4를 오른쪽에 적어 줍니다.왼쪽 값에 1을 더하고 오른쪽 값 중에서 제일 작은 수와 비교해서 오른쪽 값이 크면 계속 진행합니다. 같으면 종료합니다. 3+1 = 4 같으니 종료합니다.</li>
+<li>왼쪽값과 오른쪽값을 합치고 중복된 수가 있다면 하나만 씁니다. </li>
+<li>작은 수 부터 출력합니다.</li>
 </ul>
-<hr>
-<ul>
-<li>오류없이 사용하려면 Post명을 영어로 사용을 권장.</li>
-<li>Hexo의 단점은 post가 많아 지면 관리가 힘듬.</li>
-<li>Hexo의 단점을 조금이라도 보완 하려면 vim과 ctrlP 사용이 정답.</li>
-<li>또는 파일명 앞에 카테고리 이름을 붙여주면 그나마 쓸만함.</li>
-</ul>
-<p><strong>참고 :</strong> </p>
-<ul>
-<li>windows와 macos는 기본적으로 대소문자를 구분하지 않습니다. </li>
-<li>linux와 Unix는 대소문자를 구분합니다. </li>
-<li>한글파일명은 공백없이 사용하는 것이 원칙, 공백을 사용하면 공백앞에 <code>\</code>가 자동으로 붙고 파일 시스템에서 <code>\</code>처리 때문에 문제가 발생할 수 있습니다. 설마 개발자가 파일명에 공백을 넣는 다면 os 공부가 필요 전산 전공을 하지 않은 개발자 일 수 있겠네요. 개발자가 아니라면 가능한 파일명에는 공백을 넣지 말고 <code>-</code> 또는 <code>_</code>를 넣으세요. 파일명에는 특수문자를 넣지 마세요. 한글 파일명을 사용해야 한다면 “한글파일명.md” 처럼 따옴표 안에 넣으세요.</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> Hexo </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> hexo </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[실습 환경 설정]]></title>
-      <url>/2017/11/06/c-%EC%8B%A4%EC%8A%B5-%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95/</url>
-      <content type="html"><![CDATA[<h3 id="실습-환경-설정"><a href="#실습-환경-설정" class="headerlink" title="실습 환경 설정"></a>실습 환경 설정</h3><div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
-<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1         12</div><div class="line">2         6</div><div class="line">3         4</div><div class="line"></div><div class="line">[1, 2, 3, 4, 6, 12]</div></pre></td></tr></table></figure>
+<p>12번 나누어야 할 것을 3번만에 끝냈습니다.</p>
+<p>프로그래밍 계획을 세워 봅시다.</p>
 <ol>
-<li>virtualbox에 centos설치 - Centos참조</li>
-<li>gvim 설치및 vimrc 세팅 - vim참조</li>
-<li>vim 기본 사용법 - vim참조</li>
+<li>먼저 값을 입력을 받습니다.</li>
+<li>입력받은 값을 1부터 나누어 떨어지면 나눈값을 배열1에 몫을 배열2에 저장합니다.</li>
+<li>나눈값에 1을 더해 배열2의 제일 작은값과 비교해서 같거나 배열2의 값이 크면 반복합니다.</li>
+<li>그렇지 않으면 배열1 과 배열2 값을 배열3에 합칩니다.</li>
+<li>배열3을 정렬합니다.</li>
+<li>배열3을 출력합니다.</li>
 </ol>
 ]]></content>
       
         <categories>
             
-            <category> C언어기초 </category>
+            <category> 전산수학기초 </category>
             
         </categories>
         
         
         <tags>
             
-            <tag> c, </tag>
+            <tag> 약수 </tag>
+            
+            <tag> 배수 </tag>
             
         </tags>
         
     </entry>
     
     <entry>
+      <title></title>
+      <url>/2017/11/11/python-%EC%84%A4%EC%B9%98/</url>
+      <content type="html"></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[c언어를 시작하며]]></title>
-      <url>/2017/11/06/c-c%EC%96%B8%EC%96%B4%EB%A5%BC-%EC%8B%9C%EC%9E%91%ED%95%98%EB%A9%B0/</url>
+      <url>/2017/11/11/c-c%EC%96%B8%EC%96%B4%EB%A5%BC-%EC%8B%9C%EC%9E%91%ED%95%98%EB%A9%B0/</url>
       <content type="html"><![CDATA[<div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
 <hr>
 <p>기본적으로 알아두어야 할 것을 정리 해봤습니다.</p>
@@ -498,14 +423,13 @@
 <h3 id="저급언어"><a href="#저급언어" class="headerlink" title="저급언어"></a>저급언어</h3><p>기계어<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">7F 45 4C 46 01 01 01 00 00 00 00 00 00 00 00 00 </div><div class="line">02 00 03 00 01 00 00 00 35 40 B3 04 2C 00 00 00 </div><div class="line">00 00 00 00 00 00 00 00 34 00 20 00 01 00 00 00 </div><div class="line">00 00 00 00 00 40 B3 04 B2 0C EB 1C 62 00 00 00 </div><div class="line">62 00 00 00 05 00 00 00 00 10 00 00 48 65 6C 6C </div><div class="line">6F 20 77 6F 72 6C 64 0A B9 4C 40 B3 04 93 CD 80 </div><div class="line">EB FB</div></pre></td></tr></table></figure></p>
 <p>위 소스는 리눅스x86 16bit cpu에서 hello world를 찍는 기계어입니다.<br>64bit cpu에서는 코딩 불가 위에처럼 528줄 이나 써야 되네요. ^^;</p>
 <div class="video-container"><iframe src="//www.youtube.com/embed/TgKgH5abLfg" frameborder="0" allowfullscreen></iframe></div>
-<p>8bit apple computer에서 기계어 코딩하는 동영상 입니다.<br>ascii와 hello world를 힘들게 찍네요.<br>appleII는 롬베이직이 바로 뜨는데…</p>
+<p>8bit apple computer에서 기계어 코딩하는 동영상 입니다.<br>ascii와 hello world를 힘들게 찍네요.<br>appleII는 롬베이직이 바로 떴었는데…</p>
 <p>어셈블리어</p>
 <figure class="highlight plain"><figcaption><span>어셈블리어 </span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">section     .text</div><div class="line">global      _start                 ;must be declared for linker (ld)</div><div class="line"></div><div class="line">_start:                            ;tell linker entry point</div><div class="line"></div><div class="line">    mov     edx,len                ;message length</div><div class="line">    mov     ecx,msg                ;message to write</div><div class="line">    mov     ebx,1                  ;file descriptor (stdout)</div><div class="line">    mov     eax,4                  ;system call number (sys_write)</div><div class="line">    int     0x80                   ;call kernel</div><div class="line"></div><div class="line">    mov     eax,1                  ;system call number (sys_exit)</div><div class="line">    int     0x80                   ;call kernel</div><div class="line"></div><div class="line">section     .data</div><div class="line"></div><div class="line">msg     db  &apos;Hello, world!&apos;,0xa    ;our dear string</div><div class="line">len     equ $ - msg                ;length of our dear string</div></pre></td></tr></table></figure>
 <p>위 소스는 hello world를 찍는 어셈블리어 소스 입니다.</p>
 <h3 id="고급언어"><a href="#고급언어" class="headerlink" title="고급언어"></a>고급언어</h3><p>algol<br>c<br>perl<br>c++<br>java<br>python</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;		//전처리 표준 출력을 위해 호출</span></span></div><div class="line">						<span class="comment">//구조체는 사용안하므로 안썼음.</span></div><div class="line">						<span class="comment">//함수선언 사용자 함수가 없으므로 안썼음.</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span>			<span class="comment">// 메인함수</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%s"</span>, <span class="string">"hello world!\n"</span>);		<span class="comment">//프로그램 작성 </span></div><div class="line">	<span class="comment">// 위 함수도 약속에 의해 작성함.</span></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;			<span class="comment">// 리턴값</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>c 언어로 hello world를 출력하는 소스<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">"hello world"</span>)</div></pre></td></tr></table></figure></p>
-<p>python으로 hello world를 출력하는 소스</p>
+<h3 id="c-언어로-hello-world를-출력하는-소스"><a href="#c-언어로-hello-world를-출력하는-소스" class="headerlink" title="c 언어로 hello world를 출력하는 소스"></a>c 언어로 hello world를 출력하는 소스</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;		//전처리 표준 출력을 위해 호출</span></span></div><div class="line">						<span class="comment">//구조체는 사용안하므로 안썼음.</span></div><div class="line">						<span class="comment">//함수선언 사용자 함수가 없으므로 안썼음.</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span>			<span class="comment">// 메인함수</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%s"</span>, <span class="string">"hello world!\n"</span>);		<span class="comment">//프로그램 작성 </span></div><div class="line">	<span class="comment">// 위 함수도 약속에 의해 작성함.</span></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;			<span class="comment">// 리턴값</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="python으로-hello-world를-출력하는-소스"><a href="#python으로-hello-world를-출력하는-소스" class="headerlink" title="python으로 hello world를 출력하는 소스"></a>python으로 hello world를 출력하는 소스</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">"hello world"</span>)</div></pre></td></tr></table></figure>
 <p><strong>발전된 고급언어 일수록 사용하기가 훨씬 쉽습니다.</strong></p>
 <h3 id="컴파일러와-인터프리터"><a href="#컴파일러와-인터프리터" class="headerlink" title="컴파일러와 인터프리터"></a>컴파일러와 인터프리터</h3><p>컴파일러는 소스 전체를 실행 가능한 기계어로 바꾸줍니다.<br>assmbly, c, java, c++ 등</p>
 <p>인터프리터는 소스를 실행시 인터프리터가 한줄씩 기계어로 번역하며 실행합니다.<br>perl, python, ruby, html, javascript 등</p>
@@ -901,6 +825,366 @@
             <tag> c </tag>
             
             <tag> 주석 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[함수 만들기]]></title>
+      <url>/2017/11/10/c-%ED%95%A8%EC%88%98/</url>
+      <content type="html"><![CDATA[<h3 id="함수만들기"><a href="#함수만들기" class="headerlink" title="함수만들기"></a>함수만들기</h3><p>함수는 모듈이라고 생각하면 됩니다.<br>지금 까지 main 함수에서만 코딩을 했는데요. 함수를 만들어 사용하면 메인 함수가 복잡해지는것을 막을 수 있고, 읽기도 쉬워 집니다.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt; // exit(), system()</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">myMenu</span><span class="params">(<span class="keyword">void</span>)</span></span>;  <span class="comment">//함수의 선언</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">scoreSearch</span><span class="params">(<span class="keyword">void</span>)</span></span>;  <span class="comment">//함수의 선언</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">inputScore</span><span class="params">(<span class="keyword">void</span>)</span></span>;  <span class="comment">//함수의 선언</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">int</span> selectMenu = <span class="number">0</span>;</div><div class="line">	<span class="keyword">while</span>(<span class="number">1</span>==<span class="number">1</span>)&#123; <span class="comment">// 무한 반복 종료는 exit()로 종료함.</span></div><div class="line"></div><div class="line">		myMenu(); <span class="comment">// 메뉴 출력 함수.</span></div><div class="line"></div><div class="line">		<span class="built_in">printf</span>(<span class="string">"실행할 번호를 입력: "</span>);</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;selectMenu);</div><div class="line"></div><div class="line">		<span class="keyword">if</span> (selectMenu == <span class="number">1</span>)&#123;</div><div class="line">			scoreSearch(); <span class="comment">// 조회 함수</span></div><div class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(selectMenu == <span class="number">2</span>)&#123;</div><div class="line">			inputScore(); <span class="comment">// 점수 입력 함수</span></div><div class="line">		&#125;<span class="keyword">else</span> <span class="keyword">if</span>(selectMenu == <span class="number">3</span>)&#123;</div><div class="line">			<span class="built_in">exit</span>(<span class="number">0</span>);</div><div class="line">		&#125;<span class="keyword">else</span> &#123;</div><div class="line">			<span class="built_in">printf</span>(<span class="string">"잘못 입력했습니다.\n"</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">myMenu</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</div><div class="line">	system(<span class="string">"clear"</span>); <span class="comment">// 외부 명령을 실행(화면 지우기)</span></div><div class="line">	<span class="built_in">printf</span>(<span class="string">"     성적관리\n"</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"==================\n"</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"1. 성적조회\n"</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"2. 성적입력\n"</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"3. 프로그램종료\n"</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">scoreSearch</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"\n\n\n"</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"성적조회\n"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">inputScore</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"\n\n\n"</span>);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"성적입력\n"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>위 프로그램에서 메인함수를 보면 대부분 제어만을 담당하고 있습니다. 조건문을 사용해서 각각의 함수를 호출하고 있죠. 오류가 있다면 해당 함수에서 수정하면 됩니다.</p>
+<h3 id="함수의-기본-사용법"><a href="#함수의-기본-사용법" class="headerlink" title="함수의 기본 사용법"></a>함수의 기본 사용법</h3><h4 id="기본-구문"><a href="#기본-구문" class="headerlink" title="기본 구문"></a>기본 구문</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">반환자료형 함수명([인자],...)&#123;</div><div class="line">	명령;</div><div class="line">	리턴값;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="반환자료형"><a href="#반환자료형" class="headerlink" title="반환자료형 :"></a>반환자료형 :</h4><p>함수가 종료할때 결과를 반환 해야 한다면 반환할 값의 자료형을 넣어 줍니다. 반환값이 없다면 void 를 입력합니다.</p>
+<h4 id="함수명"><a href="#함수명" class="headerlink" title="함수명 :"></a>함수명 :</h4><p>함수명은 식별자(변수명)를 만드는 규칙과 동일하게 생성 할 수 있습니다.</p>
+<h4 id="인자"><a href="#인자" class="headerlink" title="인자 :"></a>인자 :</h4><p>인자는 파라메터, 매개변수, 아규먼트로 불립니다. 함수를 호출하면서 함수에게 전달할 값을 넣어 줄수 있습니다. </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">myAdd</span><span class="params">(<span class="keyword">int</span> iNum, <span class="keyword">int</span> iNum2)</span></span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="built_in">printf</span>(<span class="string">"10 + 20 = %d\n"</span>, mySum(<span class="number">10</span>, <span class="number">20</span>));</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">myAdd</span><span class="params">(<span class="keyword">int</span> iNum, <span class="keyword">int</span> iNum2)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="keyword">int</span> mySum;</div><div class="line">	mySum = iNum + myNum2;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> mySum;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>myAdd 함수는 2개의 정수를 입력받아 더해서 반환하는 함수 입니다.<br>반환값은 오로지 1개 밖에 반환할 수 없습니다. 여러개의 값을 반환하려면 포인터변수를 이용해야 합니다.<br>main 함수에서 myAdd 함수를 호출하면 결과를 리턴 받습니다. 리턴 받은 값은 변수에 저장하거나 바로 사용하지 않으면 사라집니다.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">myAdd</span><span class="params">(<span class="keyword">int</span> iNum, <span class="keyword">int</span> iNum2)</span></span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	myAdd(<span class="number">10</span>, <span class="number">20</span>);</div><div class="line">	myAdd(<span class="number">20</span>, <span class="number">23</span>);</div><div class="line">	myAdd(<span class="number">40</span>, <span class="number">10</span>);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">myAdd</span><span class="params">(<span class="keyword">int</span> iNum, <span class="keyword">int</span> iNum2)</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="keyword">int</span> mySum;</div><div class="line">	mySum = iNum + iNum2;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d + %d = %d \n"</span>, iNum, iNum2, mySum);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>위 프로그램은 반환값이 없는 함수를 사용하는 예입니다.<br>myAdd 함수 자체에서 출력을 하고 종료합니다. </p>
+]]></content>
+      
+        <categories>
+            
+            <category> C언어기초 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 함수 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[변수와 메모리]]></title>
+      <url>/2017/11/10/c-%EB%B3%80%EC%88%98%EC%99%80%EB%A9%94%EB%AA%A8%EB%A6%AC/</url>
+      <content type="html"><![CDATA[<h3 id="변수"><a href="#변수" class="headerlink" title="변수"></a>변수</h3><p>변수는 메모리에 값을 담아 놓고 가져다 쓰기 위해서 사용합니다.<br>또한 어떤 값을 담을지에 따라 크기를 지정해서 사용합니다.<br>char는 1바이트의 크기를 갖고, int는 4바이트의 크기, long은 4바이트 혹은 8바이트의 크기를 갖습니다.<br>float은 4바이트, double은 8바이트, long double은 시스템마다 틀립니다.</p>
+<h3 id="메모리"><a href="#메모리" class="headerlink" title="메모리"></a>메모리</h3><p><img src="/c언어기초/2017-11-09_22-46-34.png" alt="Memory"><br>위 그림은 메모리 그림입니다. 폰노이만 아키텍쳐에서 주변 장치는 걷어내고 메모리만으로 설명하겠습니다. 메모리를 읽고 쓰는 장치는 좌우에 붙어 있다고 생각하세요.<br>RD에 신호를 주면 Read, WD에 신호를 주면 Write를 합니다.<br>A0~A7은 주소 영역이고, D0~D7은 data영역입니다.</p>
+<ol>
+<li>65를 메모리에 써보겠습니다. 1번핀 부터 다음과 전기 신호를 줍니다. 0 00001000 01000001 1 그럼 메모리 8번지에 65가 써진답니다.</li>
+<li>읽어 올땐 1 00001000 00000000 0 이렇게 신호를 주면 8번지의 데이터를 읽어 준답니다.<br>실제 메모리는 더 복잡하게 구동됩니다. </li>
+<li>os는 실시간으로 메모리의 사용 유무를 관리하고, 프로그램의 요청에 따라 메모리를 할당해주고 삭제해 줍니다.</li>
+</ol>
+<p><strong>중요한건 메모리에는 byte 마다 주소가 있다는걸 기억하세요.</strong></p>
+<p>메모리를 그림으로 표시할때 아래와 같이 많이 그립니다.<br><img src="/c언어기초/2017-11-09_01-08-34.png" alt="Memory map"><br>int iNum 은 4바이트의 크기로 10001번지 부터 4번지 까지 1이 저장되어 있습니다.<br>char ch 는 1바이트의 크기로 A가 10005번지에 저장되어 있습니다.<br>char ch2 는 1바이트의 크기로 B가 10006번지에 저장되어 있습니다.<br>int iNum2 는 4바이트의 크기로 10007번지 부터 a번지 까지 100이 저장되어 있습니다.<br>double dNum 은 8바이트의 크기로 b번지 부터 12번지 까지 3.14가 저장되어 있습니다.</p>
+]]></content>
+      
+        <categories>
+            
+            <category> C언어기초 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 변수 </tag>
+            
+            <tag> 메모리 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[간단한 계산하기]]></title>
+      <url>/2017/11/09/c-%EA%B0%84%EB%8B%A8%ED%95%9C-%EA%B3%84%EC%82%B0%ED%95%98%EA%B8%B0/</url>
+      <content type="html"><![CDATA[<h3 id="간단한-계산하기"><a href="#간단한-계산하기" class="headerlink" title="간단한 계산하기"></a>간단한 계산하기</h3><div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
+<hr>
+<p>이번에는 printf 문을 이용해서 간단한 계산을 해보겠습니다.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"10 + 3 = %d\n"</span>, <span class="number">10</span> + <span class="number">3</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"10 - 3 = %d\n"</span>, <span class="number">10</span> - <span class="number">3</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"10 / 3 = %d\n"</span>, <span class="number">10</span> / <span class="number">3</span>); <span class="comment">// 정수 / 정수 = 정수</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"10 / 3.0 = %.2f\n"</span>, <span class="number">10</span> / <span class="number">3.0</span>); <span class="comment">// 정수 / 실수 = 실수</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"10 * 3 = %d\n"</span>, <span class="number">10</span> * <span class="number">3</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"10 \% 3 = %d\n"</span>, <span class="number">10</span> % <span class="number">3</span>); <span class="comment">//나머지 연산</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"2 + 10 * 3 = %d\n"</span>, <span class="number">2</span> + <span class="number">10</span> * <span class="number">3</span>); <span class="comment">// 우선순위</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"(2 + 10) * 3 = %d\n"</span>, (<span class="number">2</span> + <span class="number">10</span>) * <span class="number">3</span>); <span class="comment">// 우선순위</span></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>우리가 알고 있는 간단한 수학 계산을 해보았습니다. 3을 2로 고쳐보세요.<br>복붙을 사용해도 됩니다. 불편하지 않나요. 그럼 변수라는 것을 사용해 봅시다.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">int</span> a, b, d; <span class="comment">// 정수형 변수 선언</span></div><div class="line">    <span class="keyword">float</span> c      <span class="comment">// 실수형 변수 선언</span></div><div class="line">    <span class="comment">// 초기값 입력</span></div><div class="line">    a = <span class="number">10</span>;</div><div class="line">    b = <span class="number">3</span>;</div><div class="line">    c = <span class="number">3.0</span>;</div><div class="line">    d = <span class="number">2</span>;</div><div class="line"></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d + %d = %d\n"</span>, a, b, a + b);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d - %d = %d\n"</span>, a, b, a - b);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d / %d = %d\n"</span>, a, b, a / b); <span class="comment">// 정수 / 정수 = 정수</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d / %.2f = %.2f\n"</span> a, c, a / c); <span class="comment">// 정수 / 실수 = 실수</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d * %d = %d\n"</span> a, b, a * b);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d \% %d = %d\n"</span> a, b, a % b); <span class="comment">//나머지 연산</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d + %d * %d = %d\n"</span> a, b, d + a * b); <span class="comment">// 우선순위</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"(%d + %d) * %d = %d\n"</span> a, b, (d + a) * b); <span class="comment">// 우선순위</span></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>변수를 이용해서 프로그램을 고쳤습니다. 이제 값을 바꾸어 보세요.<br>값을 바꿀때는 일일히 printf문에서 고치지 않아도 됩니다.<br>초기값 설정한 것을 고치면 됩니다. 훨씬 변경하기가 수월해 졌습니다.</p>
+<p>shell에서도 계산을 할 수 있습니다.<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">echo</span> $((2 + 3))</div><div class="line">$ <span class="built_in">echo</span> $((2 / 3))</div><div class="line">$ <span class="built_in">echo</span> $((2 - 3))</div><div class="line">$ <span class="built_in">echo</span> $((2 * 3))</div></pre></td></tr></table></figure></p>
+<p>bc라는 계산기도 있습니다 복잡한 수학, 과학용 계산이 가능합니다.<br>없다면 설치<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#Centos</span></div><div class="line">$ sudo yum install bc</div><div class="line"></div><div class="line"><span class="comment">#ubuntu</span></div><div class="line">$ sudo apt-get install bc</div><div class="line"></div><div class="line"><span class="comment">#macos</span></div><div class="line">$ brew install bc</div><div class="line"></div><div class="line">$ <span class="built_in">echo</span> <span class="string">" 1 + 2"</span> | bc</div><div class="line">$ man bc</div></pre></td></tr></table></figure></p>
+<p>vim도 인터프리터 입니다. 계산이 가능합니다. bc를 사용할 수도 있습니다.<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">:<span class="keyword">echo</span> <span class="number">1</span>+<span class="number">1</span></div><div class="line"></div><div class="line"><span class="number">2</span> + <span class="number">3</span> #계산식에 커서를 두고 </div><div class="line">:.!bc</div></pre></td></tr></table></figure></p>
+<h3 id="상수"><a href="#상수" class="headerlink" title="상수"></a>상수</h3><p>일반적인 수를 상수라고 합니다. </p>
+<h3 id="변수명-작성"><a href="#변수명-작성" class="headerlink" title="변수명 작성"></a>변수명 작성</h3><p>변수명을 작성하는 규칙이 있습니다.<br><code>_</code>를 제외한 특수문자가 있으면 안됩니다.<br>공백이 있으면 안됩니다.<br>의미 있는 단어로 작성해야 합니다.<br>위와 같이 a, b, c, 이런식으로 작성하면 안됩니다.<br>의미를 부여하기 힘들어도 최소한 iNum 정로로 만들어 줍니다.<br>소문자 i는 int를 의미 합니다. 정수형 숫자라는 것을 알 수 있습니다.<br>aNum은 배열 숫자, dNum은 더블형, fNum은 실수형 이런식으로 작성하면 좋습니다.<br>그럼 변수명을 바꾸어 보세요. iNum1, iNum2, iNum3, fNum1 </p>
+<p>프로그램 작성을 편하게 하려고 변수를 사용합니다.<br>변수는 몇가지 종류가 있습니다.</p>
+<ul>
+<li>문자1자를 담을 수 있는 변수</li>
+<li>정수를 담을 수 있는 정수형 변수</li>
+<li>실수를 담을 수 있는 실수형 변수</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>변수형</th>
+<th>설명</th>
+<th>크기</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>문자형</td>
+<td>char</td>
+<td>1byte</td>
+</tr>
+<tr>
+<td>정수형</td>
+<td>boolean</td>
+<td>1bit</td>
+</tr>
+<tr>
+<td>정수형</td>
+<td>int</td>
+<td>4byte</td>
+</tr>
+<tr>
+<td>정수형</td>
+<td>long</td>
+<td>8byte</td>
+</tr>
+<tr>
+<td>실수형</td>
+<td>float</td>
+<td>4byte</td>
+</tr>
+<tr>
+<td>실수형</td>
+<td>double</td>
+<td>8byte</td>
+</tr>
+</tbody>
+</table>
+<p>자료형은 각각 다른 크기를 가집니다. 변수를 선언 할때 자료형을 먼저 정하고 변수명을 써줍니다.<br>변수의 크기를 생각해서 자료형을 사용해야 합니다.<br>자주 사용하지 않는 자료형은 제외 했습니다. 배열과 포인터 변수는 뒤에 설명합니다.<br>다음은 정수형 자료가 표현 할 수 있는 크기를 확인 할 수 있는 프로그램입니다.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;limits.h&gt;    </span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">char</span> cNum = CHAR_MIN;</div><div class="line">    <span class="keyword">short</span> shNum = SHRT_MIN;</div><div class="line">    <span class="keyword">int</span> iNum = INT_MIN;</div><div class="line">    <span class="keyword">long</span> lNum = LONG_MIN;</div><div class="line">    <span class="keyword">long</span> <span class="keyword">long</span> llNum5 = LLONG_MIN;</div><div class="line"></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d %d %d %ld %lld\n"</span>, cNum, shNum, iNum, lNum, llNum);</div><div class="line"></div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%lu\n"</span>, <span class="keyword">sizeof</span>(cNum));</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%lu\n"</span>, <span class="keyword">sizeof</span>(shNum));</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%lu\n"</span>, <span class="keyword">sizeof</span>(iNum));</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%lu\n"</span>, <span class="keyword">sizeof</span>(lNum));</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%lu\n"</span>, <span class="keyword">sizeof</span>(llNum));</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>다음은 실수형 자료가 표현 할 수 있는 크기를 확인하는 프로그램입니다.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;float.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="keyword">float</span> fNum1 = FLT_MIN;</div><div class="line">    <span class="keyword">float</span> fNum2 = FLT_MAX;</div><div class="line">    <span class="keyword">double</span> dNum3 = DBL_MIN;</div><div class="line">    <span class="keyword">double</span> dNum4 = DBL_MAX;</div><div class="line">    <span class="keyword">long</span> <span class="keyword">double</span> ldNum5 = LDBL_MIN;</div><div class="line">    <span class="keyword">long</span> <span class="keyword">double</span> ldNum6 = LDBL_MAX;</div><div class="line"></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%.40f %.2f\n"</span>, fNum1);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%.40f %.2f\n"</span>, fNum2);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%e %e\n"</span>, dNum3, dNum4);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%Le %Le\n"</span>, ldNum5, ldNum6);</div><div class="line"> </div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>자료형은 시스템과 운영체제에 따라 크기가 다를 수 있습니다.<br>꼭 사용할 수 있는 크기를 확인하고 사용해야 합니다.</p>
+<h3 id="오버플로우-언더플로우"><a href="#오버플로우-언더플로우" class="headerlink" title="오버플로우/언더플로우"></a>오버플로우/언더플로우</h3><p>정수형 int 자료형은 -2,147,483,648 ~ 2,147,483,647 까지 표현가능 했습니다.<br>2,147,483,647 에 1을 더하면 어떻게 될까요. 반대로 -2,147,483,648에서 -1을 하면 어떻게 되는지 확인해 보세요.</p>
+]]></content>
+      
+        <categories>
+            
+            <category> C언어기초 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> c </tag>
+            
+            <tag> 사칙연산 </tag>
+            
+            <tag> 자료형 </tag>
+            
+            <tag> 변수 </tag>
+            
+            <tag> 상수 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[while 문]]></title>
+      <url>/2017/11/09/c-while/</url>
+      <content type="html"><![CDATA[<h3 id="while문"><a href="#while문" class="headerlink" title="while문"></a>while문</h3><h4 id="기본구문"><a href="#기본구문" class="headerlink" title="기본구문"></a>기본구문</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span>(조건)&#123;</div><div class="line">	반복할 문장; <span class="comment">//조건이 참이면 수행</span></div><div class="line">&#125;</div><div class="line"><span class="comment">//조건이 거짓이면 수행</span></div></pre></td></tr></table></figure>
+<p><img src="/c언어기초/2017-11-08_00-15-50.png" alt="while 반복문"><br>while문은 조건이 참인동안 계반 반복합니다.<br>반복문에 조건이 거짓되는 수식을 만들지 않으면 무한 반복됩니다.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">int</span> iNum = <span class="number">0</span>;</div><div class="line"></div><div class="line">	<span class="keyword">while</span> (iNum &lt; <span class="number">10</span>)&#123;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d line\n"</span>, iNum);</div><div class="line">		iNum = inum + <span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>위 예제에서 참인 조건은 inum이 10보다 작으면 됩니다.<br>초깃값으로 0을 주었으니 inum이 10이 되면 거짓이 되므로 0부터 9까지 10번 출력을 하게됩니다.</p>
+<h3 id="do-while문"><a href="#do-while문" class="headerlink" title="do~while문"></a>do~while문</h3><h4 id="기본구문-1"><a href="#기본구문-1" class="headerlink" title="기본구문"></a>기본구문</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">do</span> &#123;</div><div class="line">	반복할 문장; <span class="comment">//최초 1번은 무조건 실행, 이후 조건이 참이면 수행</span></div><div class="line">&#125; <span class="keyword">while</span>(조건);</div></pre></td></tr></table></figure>
+<p><img src="/c언어기초/2017-11-08_00-16-03.png" alt="do~while 반복문"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">int</span> iNum = <span class="number">0</span>;</div><div class="line"></div><div class="line">	<span class="keyword">do</span> &#123;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d line\n"</span>, iNum); <span class="comment">// 반복할 명령</span></div><div class="line">		iNum = inum + <span class="number">1</span>;           <span class="comment">// 반복할 조건을 변화시킬 식</span></div><div class="line">	&#125; <span class="keyword">while</span> (iNum &lt; <span class="number">10</span>);           <span class="comment">// 반복 조건식</span></div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>do~while문은 최초 한번은 무조건 실행되는 반복을 실행 할 때 사용합니다.</p>
+]]></content>
+      
+        <categories>
+            
+            <category> C언어기초 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> while </tag>
+            
+            <tag> dowhile </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[if문 사용하기]]></title>
+      <url>/2017/11/09/c-if%EB%AC%B8/</url>
+      <content type="html"><![CDATA[<h3 id="if문"><a href="#if문" class="headerlink" title="if문"></a>if문</h3><p>if 명령은 조건을 판단해서 참일 경우 또는 거짓 일경우 분기를 하기 위해 사용하는 명령입니다.</p>
+<h4 id="기본구문"><a href="#기본구문" class="headerlink" title="기본구문"></a>기본구문</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 실행 명령이 1줄일 경우</span></div><div class="line"><span class="keyword">if</span> (조건)</div><div class="line">	참인 경우 실행 명령<span class="number">1</span>;</div></pre></td></tr></table></figure>
+<p><img src="/c언어기초/2017-11-08_00-11-29.png" alt="if문 flowchart"></p>
+<p>조건을 판단해서 참인 경우 문장1을 실행하고 거짓인 경우 다음 문장을 수행합니다.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">int</span> iNum1 = <span class="number">10</span>;</div><div class="line">	<span class="keyword">int</span> inum2 = <span class="number">20</span>;</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (iNum1 &gt; iNum2)</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d은 %d보다 큽니다.\n"</span>, iNum1, iNum2);</div><div class="line">	</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d은 %d보다 작습니다.\n"</span>, iNum1, iNum2);</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>위 8행처럼 보기 좋게 if문 다음줄에 들여 쓰기후 적어 줍니다.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">int</span> iNum1 = <span class="number">10</span>;</div><div class="line">	<span class="keyword">int</span> inum2 = <span class="number">20</span>;</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (iNum1 &gt; iNum2) <span class="built_in">printf</span>(<span class="string">"%d은 %d보다 큽니다."</span>, iNum1, iNum2); <span class="comment">// if문이 참인경우 실행</span></div><div class="line"></div><div class="line">	<span class="built_in">printf</span>(<span class="string">"%d은 %d보다 작습니다."</span>, iNum1, iNum2);</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>위와 같이 같은 줄에 붙여 써도 됩니다만 가능한 보기 좋게 작성하는 것이 좋습니다.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">int</span> iNum1 = <span class="number">10</span>;</div><div class="line">	<span class="keyword">int</span> inum2 = <span class="number">20</span>;</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (iNum1 &gt; iNum2) </div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d은 %d보다 큽니다."</span>, iNum1, iNum2); <span class="comment">//if문이 참인경우 실행</span></div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d은 %d보다 작습니다."</span>, iNum1, iNum2); <span class="comment">//if문과 관계없이 실행</span></div><div class="line">	</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>위와 같이 사용해도 결과는 문제 없이 나옵니다. 문법적으로 오류가 없기 때문이죠. 참인 경우 다음 한줄을 실행한 다고 했습니다. 절대 위와 같이 사용하면 프로그램 분석 하는데 불편합니다. 들여쓰기를 잘해야 소스를 읽기가 편합니다. 오류를 찾기도 쉽구요. 아래와 같이 써도 전혀 문제 없습니다.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt; int main(int argc, const char *argv[]) &#123; int iNum1 = 10; int inum2 = 20; </span></span></div><div class="line"><span class="keyword">if</span> (iNum1 &gt; iNum2) <span class="built_in">printf</span>(<span class="string">"%d은 %d보다 큽니다."</span>, iNum1, iNum2); <span class="built_in">printf</span> (<span class="string">"%d은 %d보다 작습니다."</span>, </div><div class="line">iNum1, iNum2); <span class="keyword">return</span> <span class="number">0</span>; &#125;</div></pre></td></tr></table></figure>
+<p>읽기가 매우 힘들죠. ^^ 코딩은 읽기 좋게 예쁘게 하는게 좋습니다.</p>
+<hr>
+<h3 id="if-명령1-명령2…"><a href="#if-명령1-명령2…" class="headerlink" title="if {명령1;명령2…}"></a>if {명령1;명령2…}</h3><h4 id="기본구문-1"><a href="#기본구문-1" class="headerlink" title="기본구문"></a>기본구문</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 실행 명령이 여러줄 일 경우</span></div><div class="line"><span class="keyword">if</span> (조건)&#123;</div><div class="line">	명령<span class="number">1</span>;</div><div class="line">	명령<span class="number">2</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="/c언어기초/2017-11-08_01-09-51.png" alt="if flowchart"></p>
+<p>조건이 참일 경우 여러줄을 실행해야 한다면 위와 같이 사용할 수 있습니다.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">int</span> iNum1 = <span class="number">30</span>;</div><div class="line">	<span class="keyword">int</span> inum2 = <span class="number">20</span>;</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (iNum1 &gt; iNum2)&#123; </div><div class="line">		<span class="built_in">printf</span>(<span class="string">"30과 20을 비교하면: "</span>);</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d은 %d보다 큽니다."</span>, iNum1, iNum2);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>참인 경우 실행할 문장이 1줄이어도 위와 같이 써주면 보기에 좋습니다. 가능한 if문은 위와 같이 쓰는 걸 추천합니다.</p>
+<hr>
+<h3 id="if-else"><a href="#if-else" class="headerlink" title="if ~ else"></a>if ~ else</h3><h4 id="기본구문-2"><a href="#기본구문-2" class="headerlink" title="기본구문"></a>기본구문</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 조건이 참이 아닐 경우 else를 실행</span></div><div class="line"><span class="keyword">if</span> (조건)&#123; <span class="comment">//참인경우 실행</span></div><div class="line">	명령<span class="number">1</span>; 	</div><div class="line">	명령<span class="number">2</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span>&#123; <span class="comment">// 참인 아닌경우 실행</span></div><div class="line">	명령<span class="number">1</span>;</div><div class="line">	명령<span class="number">2</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="/c언어기초/2017-11-08_00-13-50.png" alt="if~else flowchart"><br>if~else 형식은 if 조건이 참인경우 문장1을 거짓인 경우 문장2문를 실행 하도록 할 때 사용합니다.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">int</span> iNum1 = <span class="number">30</span>;</div><div class="line">	<span class="keyword">int</span> inum2 = <span class="number">20</span>;</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (iNum1 &gt; iNum2)&#123; </div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d은 %d보다 큽니다."</span>, iNum1, iNum2);</div><div class="line">	&#125;<span class="keyword">else</span>&#123;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d은 %d보다 작습니다."</span>, iNum1, iNum2);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>위 code 처럼 참이 안닌경우 else구문을 실행 합니다.</p>
+<hr>
+<h3 id="if-else-if-else"><a href="#if-else-if-else" class="headerlink" title="if~else if~else"></a>if~else if~else</h3><h4 id="기본구문-3"><a href="#기본구문-3" class="headerlink" title="기본구문"></a>기본구문</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 다중 if ~ else if</span></div><div class="line"><span class="keyword">if</span> (조건)&#123;</div><div class="line">	명령<span class="number">1</span>;</div><div class="line">	명령<span class="number">2</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">else</span> <span class="keyword">if</span>(조건)&#123;</div><div class="line">	명령<span class="number">1</span>;</div><div class="line">	명령<span class="number">2</span>;</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">	명령<span class="number">1</span>;</div><div class="line">	명령<span class="number">2</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="/c언어기초/2017-11-08_00-15-00.png" alt="if~else if~else"></p>
+<p>[if~else if~else] 다중 if문은 여러번 비교를 해야 할때 사용합니다.<br>숫자를 비교할 때, 숫자가 클수도, 작을수도, 같을 수도 있습니다.<br>크다 작다만 판단한다면 논리적 오류가 생길 수도 있습니다. 이럴때 한번더 비교해서 같으면 같다라고 출력하고 같지 않으면 작다라고 출력해야 합니다.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">int</span> iNum1 = <span class="number">30</span>;</div><div class="line">	<span class="keyword">int</span> inum2 = <span class="number">20</span>;</div><div class="line"></div><div class="line">	<span class="keyword">if</span> (iNum1 &gt; iNum2)&#123; </div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d은 %d보다 큽니다."</span>, iNum1, iNum2);</div><div class="line">	&#125;<span class="keyword">else</span> <span class="keyword">if</span>( iNum == iNum2)&#123;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d은 %d와 같습니다."</span>, iNum1, iNum2);</div><div class="line">	&#125;<span class="keyword">else</span>&#123;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d은 %d보다 작습니다."</span>, iNum1, iNum2);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+]]></content>
+      
+        <categories>
+            
+            <category> C언어기초 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> if </tag>
+            
+            <tag> else </tag>
+            
+            <tag> if~else </tag>
+            
+            <tag> while </tag>
+            
+            <tag> do while </tag>
+            
+            <tag> for </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[for 반복문]]></title>
+      <url>/2017/11/08/c-for%EB%AC%B8/</url>
+      <content type="html"><![CDATA[<h3 id="for문"><a href="#for문" class="headerlink" title="for문"></a>for문</h3><h4 id="기본구문"><a href="#기본구문" class="headerlink" title="기본구문"></a>기본구문</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">for (초기값; 조건문; 증가값)&#123;</div><div class="line">	반복할 명령1;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>특정한 횟수 만큼 반복해서 명령을 실행 할 때 사용합니다.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"hellow world"</span>);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>위 예제는 helow world를 10번 반복 출력하는 예제 입니다.<br><code>i++</code>는 후행증가 연산자라고 부르는데 먼저 i값을 사용하고, 1을 증가 시킵니다.<br><code>++i</code>는 선행증가 연산자라고 합니다. 반대로 1을 증가시켜 사용합니다.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> iSum = <span class="number">0</span>;	<span class="comment">//1:</span></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;		<span class="comment">//2:</span></div><div class="line">		iSum = iSum + (i + <span class="number">1</span>);	<span class="comment">//3:</span></div><div class="line">	&#125;</div><div class="line"></div><div class="line">	print(<span class="string">"1 부터 10 까지 합계는 %d 입니다.\n"</span>, iSum);</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>위 예제는 1부터 10까지 더하는 프로그램 입니다.<br>1: 은 값을 누적하기 위한 변수 입니다.<br>2: 초깃값은 정수형 0 부터 시작하고, 조건은 10보다 작을때 까지, 증가는 1씩 증가합니다.<br>4: iSum과 (i+1)을 더해서 iSum에 누적을 합니다.<br>i의 시작값이 0이기 때문에 1을 더해 준겁니다.</p>
+<figure class="highlight plain"><figcaption><span>결과</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">55</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> iSum = <span class="number">0</span>;	<span class="comment">//1:</span></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">11</span>; i++) &#123;		<span class="comment">//2:</span></div><div class="line">	<span class="comment">//for (int i = 0; i &lt;= 10; i++) &#123;		//3:</span></div><div class="line">		iSum = iSum + i ;	<span class="comment">//4:</span></div><div class="line">	&#125;</div><div class="line"></div><div class="line">	print(<span class="string">"1 부터 10 까지 합계는 %d 입니다.\n"</span>, iSum);</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>위 프로그램도 1부터 10까지 10번 더하는 프로그램입니다.<br>2: 라인을 보세요. 초깃값, 수식, 증가값을 보고 한눈에 10번 실행 되겠군 하고 떠오르시나요 ? 아님 11-1=10, 10번하고 떠오르시나요. 3: 라인은 어떤가요? 작거나 같다. 같으니까 10도 포함되겠군. 한번더 생각해야 합니다. cpu도 한번 더 일을 하게 된답니다. 코딩은 한줄을 더 쓰더라도 읽기 쉬워야 합니다. 처음에 사용했던 <code>for (int i = 0; i &lt; 10; i++)</code> 를 사용하는게 직관적입니다. i의 값을 1부터 사용해야 한다면 실행 구문에서 <code>+ 1</code>을 해주면 됩니다. </p>
+<blockquote>
+<p>나중에 만개의 프로그램을 만들었는데, 이 프로그램이 동시에 실행해서 사용 해야 한다고 가정합니다.<br>컴퓨터의 속도가 너무 느려져서 고민을 하겠죠. 프로그램을 수정해서 속도를 빠르게 할지 아님 컴퓨터를 더 살지. 비용을 계산해 보세요. 만개의 소스를 수정하려면 시간이 얼마가 걸릴지. 컴퓨터를 1대를 더사면 비용이 얼마나 더들지.<br>컴퓨터 1대에 300만원이라고 가정하고, 소스를 수정하는데 직원 10명이 소스 1000개씩 수정한다면 하루 10개씩 수정한다 하더라도 100일이 걸립니다. 인건비만 9000만원정도 소요 될겁니다. 9000만원들여서 얼마나 빠르게 개선을 할 수 있을 까요?<br>50% 빠르게 개선 할 수 있다고 장담 할 수 있나요. ?<br>하지만 컴퓨터를 추가한다면 1대를 더 추가 하면 2배가 빨라지고, 2대를 추가하면 3배가 빨라집니다. 900만원 들여 3배 빠르게 사용할 수 있습니다.<br>이번엔 프로그램에 기능을 추가한다고 가정해 보겠습니다. 읽기 쉬운 프로그램은 다른 사람이 기능을 추가 한다 하더라도 빠른 시간내에 분석해서 기능을 추가 할 수 있습니다. 분석하는데 많은 시간을 들이지 않을 수 있습니다.<br>hello world를 3번 출력하는 프로그램을 만든다 가정해 보겠습니다.  for 문으로 만든 프로그램이 좋은 프로그램일까요 아님 3번 복사 붙여넣기 한 프로그램이 좋은 프로그램일까요?<br>hello world를 100번 출력한다고 가정 해보죠. for문으로 출력한 프로그램이 좋은 프로그램일까요. 아님 100번 복사 붙여 넣기 한 프로그램이 좋은 프로그램일까요 ?<br>다시한번 강조하지만 읽기 쉽고(덜 생각하게하고) 들여쓰기와 주석을 많이 사용한 프로그램이 좋은 프로그램입니다. </p>
+</blockquote>
+<p>10을 1000조로 바꾸어 계산해 보세요.<br>int는 21억 까지 밖에 계산을 못합니다. int를 long long 으로 바꾸어야 합니다.<br>프로그램 실행 시간도 체크 해보세요.<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:!time <span class="keyword">for</span>.<span class="keyword">o</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> iSum = <span class="number">0</span>;	<span class="comment">//1:</span></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">1000000</span>; i++) &#123;		<span class="comment">//2:</span></div><div class="line">		iSum = iSum + i;	<span class="comment">//3:</span></div><div class="line">		print(<span class="string">"1 부터 10 까지 합계는 %d 입니다.\n"</span>, iSum);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>이번에는 출력문을 for문 안에 넣었습니다.<br>단연히 출력문도 조건만큼 출력 될겁니다.<br>100만번을 출력할 텐데 속도를 확인 해 보세요.<br>느려진 이유는 cpu만 사용한 것이 아니라 i/o장치(모니터)도 같이 사용했기 때문입니다.<br>cpu보다 i/o장치는 많이 느립니다. 하드디스크는 더 느리답니다.</p>
+<p>프로그램 실행 중간에 종료 하려면 Ctrl + c<br>vim에서 실수로 Ctrl + z를 눌렀다면 fg</p>
+<h3 id="for문의-중첩"><a href="#for문의-중첩" class="headerlink" title="for문의 중첩"></a>for문의 중첩</h3><h4 id="기본구문-1"><a href="#기본구문-1" class="headerlink" title="기본구문"></a>기본구문</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">for (초깃값; 조건; 증가값)&#123;</div><div class="line">	for (초깃값; 조건; 증가값)&#123;</div><div class="line"></div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>for문은 중첩해서 사용하는 경우가 많습니다.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; i++) &#123;</div><div class="line"></div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">10</span>; j++) &#123;</div><div class="line">			<span class="built_in">printf</span>(<span class="string">"*"</span>);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="built_in">printf</span>(<span class="string">"\n"</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>결과</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">**********</div><div class="line">**********</div><div class="line">**********</div><div class="line">**********</div><div class="line">**********</div><div class="line">**********</div><div class="line">**********</div><div class="line">**********</div><div class="line">**********</div><div class="line">**********</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">10</span>; i &lt;= <span class="number">1</span>; i--) &#123;</div><div class="line"></div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i; j++) &#123;</div><div class="line">			<span class="built_in">printf</span>(<span class="string">"*"</span>);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="built_in">printf</span>(<span class="string">"\n"</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>결과</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">*</div><div class="line">**</div><div class="line">***</div><div class="line">****</div><div class="line">*****</div><div class="line">******</div><div class="line">*******</div><div class="line">********</div><div class="line">*********</div><div class="line">**********</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">10</span>; i &gt;= <span class="number">1</span>; i--) &#123;</div><div class="line"></div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i; j++) &#123;</div><div class="line">			<span class="built_in">printf</span>(<span class="string">"*"</span>);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="built_in">printf</span>(<span class="string">"\n"</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>결과</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">**********</div><div class="line">*********</div><div class="line">********</div><div class="line">*******</div><div class="line">******</div><div class="line">*****</div><div class="line">****</div><div class="line">***</div><div class="line">**</div><div class="line">*</div></pre></td></tr></table></figure>
+]]></content>
+      
+        <categories>
+            
+            <category> C언어기초 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> for </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hexo 한글파일명 문제점]]></title>
+      <url>/2017/11/08/hexo-%ED%95%9C%EA%B8%80%ED%8C%8C%EC%9D%BC%EB%AA%85/</url>
+      <content type="html"><![CDATA[<h3 id="Hexo-한글오류"><a href="#Hexo-한글오류" class="headerlink" title="Hexo 한글오류"></a>Hexo 한글오류</h3><p>이하 내용은 Hexo를 수정하다 꼬여서 발생한 문제를 해결하면서 얻은 경험입니다.( 정확하게 소스분석을 하지 않았다는 겁니다.)</p>
+<p>Hexo에서 <code>_Post</code>의 관리는 generator가 md파일을 감시하고 있다 변경이 되면 변경 상태에 따라 html, category, tag, archives 다시 만들어주고 deploy는 .deploy디렉토리에 add, commit, push  동작을 하는것 같습니다. 추측이지만 generator가 임의로 만든 post의 한글파일의 감시를 제대로 못해주는 것 같습니다. 감시는 파일명, 내용수정에 따라 동작이 달라지는것 같습니다.</p>
+<p><strong>요점:</strong></p>
+<ul>
+<li>404오류, archives, Tag, Category, Search, index.html에서 링크오류가 나온다면 파일명과 내용을 수정하고 <code>hexo g</code>하면  100% 해결 되었습니다.</li>
+<li>변경내용이 반영되지 않을 경우, 간혹 github이 바빠서 그럴 수 있으니 새로고침 몇번 해보고, 조금 기다려 보고 github에 해당 post가 업로드되었는지 확인. 업로드가 안됐을 경우 <code>hexo clean</code> 후 <code>hexo g -d</code> 하면 99%는 해결 됩니다. 1%는 삽질이 필요합니다. 1%의 빈도수는 거의 없으니 안심하시길…</li>
+<li>github.io는 무료이고 조금 느림을 항상 명심. </li>
+</ul>
+<hr>
+<p><strong>삽질 경험담:</strong></p>
+<ul>
+<li>archive가 반영이 안될때는 파일명을 변경하면 된다.</li>
+<li>Post의 변경 반영이 안되는 경우<br><code>hexo n &quot;포스트명&quot;</code> 또는 <code>hexo new &quot;포스트명&quot;</code> 으로 포스트를 생성해서 사용하다 수정을 했음에도 반영이 안되는 경우가 종종 있다.<br>이때는 git의 캐시 때문일 수 있으니 5분 정도 기다려 보고, 그래도 안되면 아래처럼 적용을 해준다.<br><code>hexo clean</code>  /blog/Public 디렉토리 삭제<br><code>hexo g -d</code><br>하면 문제가 해결된다<br>그래도 안되는 경우 파일명을 바꾸어 준다. 탐색기나 finder에서 바꾸면 안됨(내 경험상)<br><code>mv 한글.md 한글x.md</code><br><code>hexo g -d</code><br>변경을 확인하고 변경이 잘 되면 원래대로 이름을 바꾸고 <code>hexo g -d</code><br>그래도 안되면 내용을 수정<br><code>hexo g -d</code><br>여기 까지 했는데도 안되면 최후의 수단<br>.deploy로 이동후<br><code>git rm -rf *</code><br><code>git commit -m &quot;삭제&quot;</code><br><code>git push</code><br>화일명을 변경, 내용도 수정<br><code>hexo g -d</code><br>영어의 대소문자가 혼재(윈도우와 맥에서는 오류가 날 수 있음) 소문자로 바꾸길…</li>
+<li>Post가 2개로 보일때<br>이증상은 대부분 로컬서버에서 생기는 것 같습니다.<br>post명을 vim에서 Vim으로 바꾸었는데 post가 2개로 보였습니다.<br><code>hexo clean</code><br><code>hexo g -d</code><br><code>hexo server -s</code> or <code>hexo server</code></li>
+</ul>
+<hr>
+<ul>
+<li>오류없이 사용하려면 Post명을 영어로 사용을 권장.</li>
+<li>Hexo의 단점은 post가 많아 지면 관리가 힘듬.</li>
+<li>Hexo의 단점을 조금이라도 보완 하려면 vim과 ctrlP 사용이 정답.</li>
+<li>또는 파일명 앞에 카테고리 이름을 붙여주면 그나마 쓸만함.</li>
+</ul>
+<p><strong>참고 :</strong> </p>
+<ul>
+<li>windows와 macos는 기본적으로 대소문자를 구분하지 않습니다. </li>
+<li>linux와 Unix는 대소문자를 구분합니다. </li>
+<li>한글파일명은 공백없이 사용하는 것이 원칙, 공백을 사용하면 공백앞에 <code>\</code>가 자동으로 붙고 파일 시스템에서 <code>\</code>처리 때문에 문제가 발생할 수 있습니다. 설마 개발자가 파일명에 공백을 넣는 다면 os 공부가 필요 전산 전공을 하지 않은 개발자 일 수 있겠네요. 개발자가 아니라면 가능한 파일명에는 공백을 넣지 말고 <code>-</code> 또는 <code>_</code>를 넣으세요. 파일명에는 특수문자를 넣지 마세요. 한글 파일명을 사용해야 한다면 “한글파일명.md” 처럼 따옴표 안에 넣으세요.</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[실습 환경 설정]]></title>
+      <url>/2017/11/06/c-%EC%8B%A4%EC%8A%B5-%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95/</url>
+      <content type="html"><![CDATA[<h3 id="실습-환경-설정"><a href="#실습-환경-설정" class="headerlink" title="실습 환경 설정"></a>실습 환경 설정</h3><div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
+<hr>
+<ol>
+<li>virtualbox에 centos설치 - Centos참조</li>
+<li>gvim 설치및 vimrc 세팅 - vim참조</li>
+<li>vim 기본 사용법 - vim참조</li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> C언어기초 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> c, </tag>
             
         </tags>
         
@@ -2121,7 +2405,9 @@ g      변화  내용을 전체 이벤트 행에 적용하도록 한다.  ``:s``
 <h4 id="시작과-종료하기"><a href="#시작과-종료하기" class="headerlink" title="시작과 종료하기"></a>시작과 종료하기</h4><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">텍스트를 입력하세요.</div><div class="line">백스페이스는 누르면 글자가 지워집니다.</div><div class="line">마우스나 방향키나 마우스로 커서를 이동할 수 있습니다.</div><div class="line"></div><div class="line"><span class="comment">"Ctrl+[ or ``Esc key`` 입력하면 명령모드</span></div><div class="line">:<span class="keyword">w</span> <span class="keyword">abc</span>.txt	<span class="comment">"abc.txt로 저장, 저장하지 않고 종료하려면 :q!</span></div><div class="line">:q			<span class="comment">"종료</span></div></pre></td></tr></table></figure>
 <h4 id="수정하기"><a href="#수정하기" class="headerlink" title="수정하기"></a>수정하기</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$vi</span> abc.txt</div></pre></td></tr></table></figure>
 <p>바로 전에 작성한 파일이 열립니다. </p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">텍스트를 입력하세요.</div><div class="line">백스페이스는 누르면 글자가 지워집니다.</div><div class="line">마우스나 방향키나 마우스로 커서를 이동할 수 있습니다.</div><div class="line"></div><div class="line">텍스트를 추가하거나 수정해 보세요.</div><div class="line">종료 하는 방법은 똑같습니다.</div><div class="line"></div><div class="line"><span class="comment">"Ctrl+[ or ``Esc key`` 입력하면 명령모드</span></div><div class="line">:<span class="keyword">w</span> <span class="keyword">abc</span>.txt	<span class="comment">"abc.txt로 저장, 저장하지 않고 종료하려면 :q!</span></div><div class="line">:q			<span class="comment">"종료</span></div></pre></td></tr></table></figure>
+<p>``` vim<br>텍스트를 입력하세요.<br>백스페이스는 누르면 글자가 지워집니다.<br>마우스나 방향키나 마우스로 커서를 이동할 수 있습니다.</p>
+<p>텍스트를 추가하거나 수정해 보세요.<br>종료 하는 방법은 똑같습니다.</p>
+<p>“Ctrl+[ or <code>Esc key</code> 입력하면 명령모드<br>:w abc.txt    “abc.txt로 저장, 저장하지 않고 종료하려면 :q!<br>:q            “종료<br>``</p>
 ]]></content>
       
         <categories>
