@@ -3,6 +3,81 @@
   
     
     <entry>
+      <title><![CDATA[약수와 배수]]></title>
+      <url>/2017/11/13/math-%EC%95%BD%EC%88%98%EC%99%80%EB%B0%B0%EC%88%98/</url>
+      <content type="html"><![CDATA[<h3 id="약수"><a href="#약수" class="headerlink" title="약수"></a>약수</h3><h4 id="약수란-나누어-떨어지게-하는-수를-말합니다"><a href="#약수란-나누어-떨어지게-하는-수를-말합니다" class="headerlink" title="약수란 나누어 떨어지게 하는 수를 말합니다."></a>약수란 나누어 떨어지게 하는 수를 말합니다.</h4><p>어떤 수를 나누어 0이 되는 수를 약수라고 합니다.</p>
+<ul>
+<li>4는 1로 나누어 떨어 집니다.<ul>
+<li>1은 4의 약수 입니다.</li>
+</ul>
+</li>
+<li>4는 2로 나누어 떨어 집니다.<ul>
+<li>2는 4의 약수 입니다.</li>
+</ul>
+</li>
+<li>4는 3으로 나누어 떨어지지 않습니다.<ul>
+<li>3은 4의 약수가 아닙니다.</li>
+</ul>
+</li>
+<li>4는 4로 나누어 떨어 집니다.<ul>
+<li>4는 4의 약수입니다. </li>
+</ul>
+</li>
+<li>따라서 1, 2, 4는 4의 약수 입니다. </li>
+</ul>
+<p>약수는 위와 같이 1부터 약수를 찾는 값까지 나누어 떨어지는지 확인후 나누어 떨어지는 수를 적어 줍니다.</p>
+<p>원리를 알았으니 컴퓨터에게 시켜 보죠.</p>
+<p>대충 프로그램 계획을 만들어 봅시다.</p>
+<p>먼저 값을 입력 받습니다.<br>나눌값 변수에 저장합니다.<br>나눌값이 나눌수와 같으면 빠져 나갑니다.<br>입력받은 수를 1부터 나누어서 몫이 0이면<br>약수이므로 출력하고 나눌수를 1증가시켜 반복<br>0이 아니면 입력받은수를 1증가시켜 반복<br>플로우 차트를 그려서 잘 돌아갈지 확인 합니다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">시작</div><div class="line">입력 입력값n, 나눌수i</div><div class="line"></div><div class="line">반복 조건 i=1;&lt;=n i++</div><div class="line">	조건 n % i== 0</div><div class="line">	출력i</div><div class="line">반복</div><div class="line">	출력</div><div class="line">종료</div></pre></td></tr></table></figure>
+<p>프로그램 언어로 코딩합니다.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> i,n;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"값을 입력하세요 : "</span>);</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</div><div class="line"></div><div class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;=n; i++)</div><div class="line">		<span class="keyword">if</span>(n%i==<span class="number">0</span>)</div><div class="line">			<span class="built_in">printf</span>(<span class="string">"%d "</span>, i);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>위 프로그램은 모든수를 나누어 약수인지 아닌지 확인을 합니다.</p>
+<p>컴퓨터로 계산하기 때문에 엄청 빠릅니다. 1초도 걸리지 않지만 좀더 빠른 알고리즘을 적용할 수도 있습니다.</p>
+<ul>
+<li>12를 1로 나누어 떨어지면 1을 왼쪽에 몫12를 오른쪽에 적어 줍니다. 왼쪽 값에 1을 더하고 오른쪽 값 중에서 제일 작은 수와 비교해서 오른쪽 값이 크면 계속 진행합니다. 같으면 종료합니다.</li>
+<li>12를 2로 나누어 떨어지면 2를 왼쪽에 몫6을 오른쪽에 적어 줍니다.왼쪽 값에 1을 더하고 오른쪽 값 중에서 제일 작은 수와 비교해서 오른쪽 값이 크면 계속 진행합니다.같으면 종료합니다.</li>
+<li>12를 3으로 나누어 떨어지면 3을 왼쪽에 몫4를 오른쪽에 적어 줍니다.왼쪽 값에 1을 더하고 오른쪽 값 중에서 제일 작은 수와 비교해서 오른쪽 값이 크면 계속 진행합니다. 같으면 종료합니다. 3+1 = 4 같으니 종료합니다.</li>
+<li>왼쪽값과 오른쪽값을 합치고 중복된 수가 있다면 하나만 씁니다. </li>
+<li>작은 수 부터 출력합니다.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1         12</div><div class="line">2         6</div><div class="line">3         4</div><div class="line"></div><div class="line">[1, 2, 3, 4, 6, 12]</div></pre></td></tr></table></figure>
+<p>12번 나누어야 할 것을 3번만에 끝냈습니다.</p>
+<p>프로그래밍 계획을 세워 봅시다.</p>
+<ol>
+<li>먼저 값을 입력을 받습니다.</li>
+<li>입력받은 값을 1부터 나누어 떨어지면 나눈값을 배열1에 몫을 배열2에 저장합니다.<ul>
+<li>배열은 여러개의 값을 저장할 수 있는 변수입니다. 수학에서 집합과 같습니다.</li>
+</ul>
+</li>
+<li>나눈값에 1을 더해 배열2의 제일 작은값과 비교해서 같거나 배열2의 값이 크면 반복합니다.</li>
+<li>그렇지 않으면 배열1 과 배열2 값을 배열3에 합칩니다.</li>
+<li>배열3을 정렬합니다.</li>
+<li>배열3을 출력합니다.</li>
+</ol>
+<h3 id="배수"><a href="#배수" class="headerlink" title="배수"></a>배수</h3><p>배수는 한배, 두배할 때 수의 배를 말합니다.</p>
+<p>2의 1배는 2입니다.<br>2의 2배는 2가 둘이므로 2 X 2 = 4입니다.<br>2의 3배는 2가 셋이므로 2 X 2 X 2= 8입니다.</p>
+<p>3은 3배는 얼마일까요?<br>3 X 3 X 3 = 27입니다.</p>
+<p>배수가 많을땐 이렇게 표기 합니다.<br>2 X 2 X 2 X 2 X 2 X 2 = 2의 6승이라 부르고 <code>2^6</code> \( ax^2 + \sqrt{bx} + c = 0 \)</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 전산수학기초 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 약수 </tag>
+            
+            <tag> 배수 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[ASCII 문자]]></title>
       <url>/2017/11/13/c-ascii%EB%AC%B8%EC%9E%90/</url>
       <content type="html"><![CDATA[<h3 id="ASCII-문자"><a href="#ASCII-문자" class="headerlink" title="ASCII 문자"></a>ASCII 문자</h3><p>아스키 문자는 정수 0~127까지의 숫자를 문자로 대체해서 사용하는 약속 기호입니다.<br>0x0~1F 과 0x7F는 제어 문자가 들어있습니다.</p>
@@ -316,66 +391,6 @@
         <tags>
             
             <tag> c </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[약수와 배수]]></title>
-      <url>/2017/11/12/math-%EC%95%BD%EC%88%98%EC%99%80%EB%B0%B0%EC%88%98/</url>
-      <content type="html"><![CDATA[<h3 id="약수"><a href="#약수" class="headerlink" title="약수"></a>약수</h3><h4 id="약수란-나누어-떨어지게-하는-수를-말합니다"><a href="#약수란-나누어-떨어지게-하는-수를-말합니다" class="headerlink" title="약수란 나누어 떨어지게 하는 수를 말합니다."></a>약수란 나누어 떨어지게 하는 수를 말합니다.</h4><p>어떤 수를 나누어 0이 되는 수를 약수라고 합니다.</p>
-<ul>
-<li>4는 1로 나누어 떨어 집니다.</li>
-<li>1은 4의 약수 입니다.</li>
-<li>4는 2로 나누어 떨어 집니다.</li>
-<li>2는 4의 약수 입니다.</li>
-<li>4는 3으로 나누어 떨어지지 않습니다.</li>
-<li>3은 4의 약수가 아닙니다.</li>
-<li>4는 4로 나누어 떨어 집니다.</li>
-<li>4는 4의 약수입니다. </li>
-<li>따라서 1, 2, 4는 4의 약수 입니다. </li>
-</ul>
-<p>약수는 위와 같이 1부터 약수를 찾는 값까지 나누어 떨어지는지 확인후 나누어 떨어지는 수를 적어 줍니다.</p>
-<p>원리를 알았으니 컴퓨터에게 시켜 보죠.</p>
-<p>대충 프로그램 계획을 만들어 봅시다.</p>
-<p>먼저 값을 입력 받습니다.<br>나눌값 변수에 저장합니다.<br>나눌값이 나눌수와 같으면 빠져 나갑니다.<br>입력받은 수를 1부터 나누어서 몫이 0이면<br>약수이므로 출력하고 나눌수를 1증가시켜 반복<br>0이 아니면 입력받은수를 1증가시켜 반복<br>플로우 차트를 그려서 잘 돌아갈지 확인 합니다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">시작</div><div class="line">입력 입력값n, 나눌수i</div><div class="line"></div><div class="line">반복 조건 i=1;&lt;=n i++</div><div class="line">	조건 n % i== 0</div><div class="line">	출력i</div><div class="line">반복</div><div class="line">	출력</div><div class="line">종료</div></pre></td></tr></table></figure>
-<p>프로그램 언어로 코딩합니다.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> i,n;</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"값을 입력하세요 : "</span>);</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</div><div class="line"></div><div class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;=n; i++)</div><div class="line">		<span class="keyword">if</span>(n%i==<span class="number">0</span>)</div><div class="line">			<span class="built_in">printf</span>(<span class="string">"%d "</span>, i);</div><div class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>위 프로그램은 모든수를 나누어 약수인지 아닌지 확인을 합니다.</p>
-<p>컴퓨터로 계산하기 때문에 엄청 빠르기 때문에 1초도 걸리지 않지만 좀더 빠른 알고리즘을 적용할 수도 있습니다.</p>
-<ul>
-<li>12를 1로 나누어 떨어지면 1을 왼쪽에 몫12를 오른쪽에 적어 줍니다. 왼쪽 값에 1을 더하고 오른쪽 값 중에서 제일 작은 수와 비교해서 오른쪽 값이 크면 계속 진행합니다. 같으면 종료합니다.</li>
-<li>12를 2로 나누어 떨어지면 2를 왼쪽에 몫6을 오른쪽에 적어 줍니다.왼쪽 값에 1을 더하고 오른쪽 값 중에서 제일 작은 수와 비교해서 오른쪽 값이 크면 계속 진행합니다.같으면 종료합니다.</li>
-<li>12를 3으로 나누어 떨어지면 3을 왼쪽에 몫4를 오른쪽에 적어 줍니다.왼쪽 값에 1을 더하고 오른쪽 값 중에서 제일 작은 수와 비교해서 오른쪽 값이 크면 계속 진행합니다. 같으면 종료합니다. 3+1 = 4 같으니 종료합니다.</li>
-<li>왼쪽값과 오른쪽값을 합치고 중복된 수가 있다면 하나만 씁니다. </li>
-<li>작은 수 부터 출력합니다.</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1         12</div><div class="line">2         6</div><div class="line">3         4</div><div class="line"></div><div class="line">[1, 2, 3, 4, 6, 12]</div></pre></td></tr></table></figure>
-<p>12번 나누어야 할 것을 3번만에 끝냈습니다.</p>
-<p>프로그래밍 계획을 세워 봅시다.</p>
-<ol>
-<li>먼저 값을 입력을 받습니다.</li>
-<li>입력받은 값을 1부터 나누어 떨어지면 나눈값을 배열1에 몫을 배열2에 저장합니다.</li>
-<li>나눈값에 1을 더해 배열2의 제일 작은값과 비교해서 같거나 배열2의 값이 크면 반복합니다.</li>
-<li>그렇지 않으면 배열1 과 배열2 값을 배열3에 합칩니다.</li>
-<li>배열3을 정렬합니다.</li>
-<li>배열3을 출력합니다.</li>
-</ol>
-]]></content>
-      
-        <categories>
-            
-            <category> 전산수학기초 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 약수 </tag>
-            
-            <tag> 배수 </tag>
             
         </tags>
         
