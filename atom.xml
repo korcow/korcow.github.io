@@ -299,6 +299,8 @@
       <category term="C언어기초" scheme="http://korcow.github.io/categories/C%EC%96%B8%EC%96%B4%EA%B8%B0%EC%B4%88/"/>
     
     
+      <category term="for" scheme="http://korcow.github.io/tags/for/"/>
+    
       <category term="if" scheme="http://korcow.github.io/tags/if/"/>
     
       <category term="else" scheme="http://korcow.github.io/tags/else/"/>
@@ -308,8 +310,6 @@
       <category term="while" scheme="http://korcow.github.io/tags/while/"/>
     
       <category term="do while" scheme="http://korcow.github.io/tags/do-while/"/>
-    
-      <category term="for" scheme="http://korcow.github.io/tags/for/"/>
     
   </entry>
   

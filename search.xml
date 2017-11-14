@@ -1115,6 +1115,8 @@
         
         <tags>
             
+            <tag> for </tag>
+            
             <tag> if </tag>
             
             <tag> else </tag>
@@ -1124,8 +1126,6 @@
             <tag> while </tag>
             
             <tag> do while </tag>
-            
-            <tag> for </tag>
             
         </tags>
         
