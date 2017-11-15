@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://korcow.github.io/"/>
-  <updated>2017-11-15T20:59:49.084Z</updated>
+  <updated>2017-11-15T21:07:30.965Z</updated>
   <id>http://korcow.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>목차</title>
+    <link href="http://korcow.github.io/2017/11/16/%EC%A0%84%EA%B8%B0%EC%A0%84%EC%9E%90-%EB%AA%A9%EC%B0%A8/"/>
+    <id>http://korcow.github.io/2017/11/16/전기전자-목차/</id>
+    <published>2017-11-15T21:07:30.965Z</published>
+    <updated>2017-11-15T21:07:30.965Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="목차"><a href="#목차" class="headerlink" title="목차"></a>목차</h3><p>양과 단위<br>저압, 전류, 저항<br>옴의 법칙, 에너이와 전력<br>직렬회로<br>병렬회로<br>직렬-병렬 회로<br>교류전류와 전압<br>캐피시터<br>RC회로<br>인턱터<br>RL 회로<br>RLC 회로와 공진<br>변압기<br>다이오드<br>트랜지스터<br>증폭기</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;목차&quot;&gt;&lt;a href=&quot;#목차&quot; class=&quot;headerlink&quot; title=&quot;목차&quot;&gt;&lt;/a&gt;목차&lt;/h3&gt;&lt;p&gt;양과 단위&lt;br&gt;저압, 전류, 저항&lt;br&gt;옴의 법칙, 에너이와 전력&lt;br&gt;직렬회로&lt;br&gt;병렬회로&lt;br&gt;직렬-병렬 회로&lt;br&gt;교
+      
+    
+    </summary>
+    
+      <category term="전기전자" scheme="http://korcow.github.io/categories/%EC%A0%84%EA%B8%B0%EC%A0%84%EC%9E%90/"/>
+    
+    
+      <category term="목차" scheme="http://korcow.github.io/tags/%EB%AA%A9%EC%B0%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>실습 환경 설정</title>
@@ -548,35 +573,6 @@
       <category term="tail" scheme="http://korcow.github.io/tags/tail/"/>
     
       <category term="less" scheme="http://korcow.github.io/tags/less/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>파일및디렉토리삭제</title>
-    <link href="http://korcow.github.io/2017/11/02/centos-%ED%8C%8C%EC%9D%BC%EB%B0%8F%EB%94%94%EB%A0%89%ED%86%A0%EB%A6%AC%EC%82%AD%EC%A0%9C/"/>
-    <id>http://korcow.github.io/2017/11/02/centos-파일및디렉토리삭제/</id>
-    <published>2017-11-02T13:29:56.000Z</published>
-    <updated>2017-11-14T15:19:50.086Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="파일-및-디렉토리-삭제"><a href="#파일-및-디렉토리-삭제" class="headerlink" title="파일 및 디렉토리 삭제"></a>파일 및 디렉토리 삭제</h2><h3 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h3><p>파일을 삭제하는 명령입니다.<br>파일을 삭제하는 것은 꼭 필요하지만 위험을 초례 할 수 있는 명령입니다.</p><p>추천하는 방법은 ls로 확인후 rm명령과 혼합해서 사용하는 방법을 추천합니다.<br>파일을 지울 때는 파일의 소유권과 권한에 따라 지울 수 없는 경우도 있습니다.<br>이때는 sudo 를 사용하거나 소유권을 또는 권한을 이양 받아 사용해야 합니다.</p><ul><li><code>pwd</code> 현재의 경로를 확인 합니다.</li><li><code>ls *.txt</code> 지울 파일을 확인합니다.</li><li><code>rm !!</code> 바로전 ls명을 덧붙여 사용합니다.</li><li><code>rm -rf</code> 디렉토리와 그안에 있는 파일도 삭제 합니다.<ul><li>-r 옵션은 하위에 디렉토리가 있어도 모두 지움니다.</li><li>-f 옵션은 지울때 확인하는 메시지 없이 지워 버립니다.</li></ul></li></ul><h3 id="rmdir"><a href="#rmdir" class="headerlink" title="rmdir"></a>rmdir</h3><p>디렉토리를 삭제하는 명령입니다.</p><ul><li><code>rmdir deldir</code> 반드시 디렉토리가 비워져 있어야 지울 수 있습니다. </li></ul><h3 id="man-page"><a href="#man-page" class="headerlink" title="man page"></a>man page</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line">이름</div><div class="line">       rm - 파일 지우기</div><div class="line"></div><div class="line">사용법</div><div class="line">       rm [-dfirvR] [--directory] [--force] [--interactive] </div><div class="line">       [--recursive] [--help] [--version] [--verbose] name...</div><div class="line"></div><div class="line">설명</div><div class="line">       이 문서는 더이상 최신 정보를 담고 있지않다.  그래서,  몇몇 틀릴  경우도  </div><div class="line">       있고,  부족한  경우도  있을  것이다.  완전한 매뉴얼을 원하면, Texinfo </div><div class="line">       문서를 참조하기 바란다.</div><div class="line"></div><div class="line">       이 매뉴얼 페이지는 rm 명령의 GNU  버전에  대한  것이다.  rm 명령은 지정한 </div><div class="line">       파일을 지운다. 초기값으로는 경로는 지우지 않는다.</div><div class="line"></div><div class="line">       만약에  파일  모드가  읽기  전용이고,  표준 입력이 tty이고, -f나 --force </div><div class="line">       옵션이 지정되지 않으면, rm 명령은 사용자에게 지정한 파일을 정말 지울것인지 </div><div class="line">       물어본다.  이때, `y&apos;나 `Y&apos;를 입력해 주어야지만 그 파일을 지운다.</div><div class="line"></div><div class="line">       GNU rm 명령과 같이 getopt(3) 함수를 사용하는 모든 풀그림에서는 </div><div class="line">       -- 옵션 다음에 오는 것은 옵션이 아닌 것으로 인식한다.  즉 파일 이름이 </div><div class="line">       `-f&apos;  라는  파일을  지우고자  한다면, 다음 두 방법을 사용한다.</div><div class="line">              rm -- -f</div><div class="line">       또는</div><div class="line">              rm ./-f</div><div class="line">       유닉스 rm 명령의 `-&apos; 문자로 시작하는 옵션들 때문에 이런 기능들이 고안된 것이다.</div><div class="line"></div><div class="line">옵션</div><div class="line">       -d, --directory</div><div class="line">              `rmdir&apos;  명령  대신에  `unlink&apos;와 함께 경로를 지운다.  </div><div class="line">              unlink하기 전에 그 경로가 비어있는지 확인하지 않고, 그냥 unlink </div><div class="line">              해버린다.  이렇기 때문에, 만약에 그 지워지는 경로 안에 파일 </div><div class="line">              있다면, 그 파일들의 종속성문제가 생길 수 있다.(접근 불가능 현상, </div><div class="line">              미아 파일.)  이 옵션을 사용 한 후에서는 fsck(8)로 파일  </div><div class="line">              시스템을  검사하기  바란다.</div><div class="line">              이 옵션은 시스템 관리자만이 사용할 수 있다.</div><div class="line"></div><div class="line">       -f, --force</div><div class="line">              지울 파일이 없을 경우에 아무런 메시지를 보여주지 않고 그냥 넘어간다.</div><div class="line">              이 옵션은 쉘 스크립트 안에서 사용될 때 유용하게 쓰인다.</div><div class="line"></div><div class="line">       -i, --interactive</div><div class="line">              각 파일을 하나씩 지울 것인지 사용자에게 일일이 물어본다.  이때 </div><div class="line">              `y&apos; 나 `Y&apos;를 눌러야지만 파일이 지워진다.</div><div class="line"></div><div class="line">       -r, -R, --recursive</div><div class="line">              일반 파일이면 그냥 지우고, 경로면, 그 하위 경로와 파일을 모두 지운다.</div><div class="line"></div><div class="line">       -v, --verbose</div><div class="line">              각각의 파일 지우는 정보를 자세하게 모두 보여준다.</div><div class="line"></div><div class="line">       --help 도움말을 보여주고 마친다.</div><div class="line"></div><div class="line">       --version</div><div class="line">              버전 정보를 보여주고 마친다.</div><div class="line"></div><div class="line">번역</div><div class="line">       한글 Manpage 프로젝트 (http://man.kldp.org) 2005년 2월 14일</div><div class="line"></div><div class="line">FSF                                                                             GNU File Utilities                                                                          RM(1)</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;파일-및-디렉토리-삭제&quot;&gt;&lt;a href=&quot;#파일-및-디렉토리-삭제&quot; class=&quot;headerlink&quot; title=&quot;파일 및 디렉토리 삭제&quot;&gt;&lt;/a&gt;파일 및 디렉토리 삭제&lt;/h2&gt;&lt;h3 id=&quot;rm&quot;&gt;&lt;a href=&quot;#rm&quot; class=&quot;
-      
-    
-    </summary>
-    
-      <category term="Centos" scheme="http://korcow.github.io/categories/Centos/"/>
-    
-    
-      <category term="Centos" scheme="http://korcow.github.io/tags/Centos/"/>
-    
-      <category term="rm" scheme="http://korcow.github.io/tags/rm/"/>
-    
-      <category term="rmdir" scheme="http://korcow.github.io/tags/rmdir/"/>
     
   </entry>
   
