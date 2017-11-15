@@ -3,6 +3,447 @@
   
     
     <entry>
+      <title><![CDATA[키보드로 입력받기]]></title>
+      <url>/2017/11/16/c-%ED%82%A4%EB%B3%B4%EB%93%9C%EB%A1%9C-%EC%9E%85%EB%A0%A5%EB%B0%9B%EA%B8%B0/</url>
+      <content type="html"><![CDATA[<h3 id="getchar"><a href="#getchar" class="headerlink" title="getchar()"></a>getchar()</h3><p>1문자를 입력 받을 수 있습니다. 엔터를 누를때까지 입력을 받습니다.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 파일명 : 006-getchar-01.c</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line">    </div><div class="line">    <span class="keyword">char</span> chAlpha = getchar();</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%c\n"</span>, chAlpha);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>위 프로그램은 1문자를 입력받아서 출력하는 프로그램입니다.<br>1문자만 입력받는 다면 문제가 없습니다.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 파일명 : 006-getchar-02.c</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line">    </div><div class="line">    <span class="keyword">char</span> chAlpha1 = getchar();</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%c\n"</span>, chAlpha1);</div><div class="line">    <span class="keyword">char</span> chAlpha2 = getchar();</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%c\n"</span>, chAlpha2);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>위 프로그램은 2문자를 입력을 받을 겁니다. 의도는 1번째 문자 입력받고 출력 2번째 문자 입력받고 출력 할 겁니다.<br><figure class="highlight plain"><figcaption><span>결과</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a</div><div class="line">a</div></pre></td></tr></table></figure></p>
+<p>의도와 다르게 a입력하고 엔터을 쳤는데 그냥 끝나 버립니다.<br>이유는 엔터도 문자로 인식 해버렸기 때문입니다.<br>getchar() 함수는 i/o 버퍼라는 것을 사용합니다.<br>키보드로 문자를 입력 받을때 i/o버퍼에 문자를 담습니다.<br>getchar()함수는 제일 먼저 i/o 버퍼에 문자가 있는지 확인하고 문자가 없으면 입력을 대기하고 문자가 있으면 버퍼에서 문자를 가져옵니다.<br>a만 나온 이유는 키보드를 입력했을때 a와 엔터가 버퍼에 있었기 때문에 a 한문자 엔터 한문자를 가져와 출력했기 때문에 a만 입력받아 출력한것 처럼 보인 겁니다. 다시 확인 해보면 2줄이 개행 된것을 확인 할 수 있습니다.<br>위와 같이 1문자를 입력받고 사용하고, 또 한문자를 입력 받고자 하면 사용후 한번더 getchar()를 하면 엔터를 꺼내옵니다. 사용하지 않으면 그냥 없어져 버립니다.<br>windows에서 fflush(stdin)을 사용하는데 비표준입니다. fflush(stdout)은 표준.<br>입력버퍼를 지워야 할 일이 있다면<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">clear_stdin</span><span class="params">()</span> </span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">	<span class="keyword">int</span> ch;</div><div class="line">	<span class="keyword">while</span> ((ch = getchar()) != EOF &amp;&amp; ch != <span class="string">'\n'</span>) &#123;&#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>위와 같이 함수로 만들어 호출하세요.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 파일명 : 006-getchar-03.c</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line">    </div><div class="line">    <span class="keyword">char</span> chAlpha1 = getchar();</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%c\n"</span>, chAlpha1);</div><div class="line">    getchar();<span class="comment">// i/o버퍼에서 엔터를 꺼내옴.</span></div><div class="line">    <span class="keyword">char</span> chAlpha2 = getchar();</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%c\n"</span>, chAlpha2);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 파일명 : 006-getchar-04.c</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">clear_stdin</span><span class="params">()</span></span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line">    </div><div class="line">    <span class="keyword">char</span> chStr[<span class="number">10</span>] = &#123;<span class="string">' '</span>,&#125;;</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)&#123;</div><div class="line">        chStr[i] = getchar();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    clear_stdin();</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)&#123;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%c"</span>, chStr[i]);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)&#123;</div><div class="line">        chStr[i] = getchar();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    clear_stdin();</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)&#123;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%c"</span>, chStr[i]);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">clear_stdin</span><span class="params">()</span> </span>&#123;</div><div class="line">	<span class="keyword">int</span> ch;</div><div class="line">	<span class="keyword">while</span> ((ch = getchar()) != EOF &amp;&amp; ch != <span class="string">'\n'</span>) &#123;&#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="gets"><a href="#gets" class="headerlink" title="gets()"></a>gets()</h3><p>문자열을 입력받습니다. 보안상 사용 금지.<br>overflow가 발행할 수 있음.<br>warning: this program uses gets(), which is unsafe.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 006-gets-01.c</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line">    <span class="keyword">char</span> cTemp[<span class="number">5</span>];</div><div class="line">    gets(cTemp);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, cTemp);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="fgets"><a href="#fgets" class="headerlink" title="fgets()"></a>fgets()</h3><p>문자열을 입력 받습니다. gets함수의 overflow 문제를 보완</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 006-fgets-01.c</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line">    <span class="keyword">char</span> cTemp[<span class="number">5</span>];</div><div class="line">    fgets(cTemp, <span class="keyword">sizeof</span>(cTemp), <span class="built_in">stdin</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, cTemp);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="scanf"><a href="#scanf" class="headerlink" title="scanf()"></a>scanf()</h3><p>형식에 따라 문자열을 입력받습니다.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 006-scanf-01.c</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line">    <span class="keyword">char</span> sName[<span class="number">10</span>];</div><div class="line">    <span class="keyword">int</span> iNum;</div><div class="line">    <span class="keyword">double</span> dHeight;</div><div class="line"></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s"</span>,<span class="string">"나이를 입력하세요. : "</span>);</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;iNum); <span class="comment">// 정수를 입력받음</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s"</span>,<span class="string">"이름을 입력하세요. : "</span>);</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%s"</span>,sName);  <span class="comment">// 문자열을 입력받음</span></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s"</span>,<span class="string">"키를 입력하세요. : "</span>);</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%lf"</span>,&amp;dHeight);  <span class="comment">// 실수를 입력받음</span></div><div class="line"></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"나이는 %d 이고 이름은 %s 입니다.\n"</span>, iNum, sName);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"키는 %.1f\n"</span>, dHeight);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 006-scanf-02.c</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line">    <span class="keyword">char</span> sTemp[<span class="number">1000</span>];</div><div class="line"></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s"</span>,<span class="string">"문장을  입력하세요. : "</span>);</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%s"</span>,sTemp);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"입력한 문장은:\n%s\n"</span>, sTemp);</div><div class="line"></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s"</span>,<span class="string">"문장을  입력하세요. : "</span>);</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%s"</span>,sTemp);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"입력한 문장은:\n%s\n"</span>, sTemp);</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>scanf()도 getchar()와 같이 버퍼에서 데이터를 읽어 오기 때문에 getchar()와 동일한 문제가 발생 되며 getchar()와 동일하게  버퍼 문제를 처리 할수 있습니다. 또한 <code>%[^\n]s</code> 포멧으로 공백으로 분리하지 않도록 할 수 도 있습니다.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 006-scanf-03.c</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> iKor;</div><div class="line">    <span class="keyword">int</span> iEng;</div><div class="line">    <span class="keyword">int</span> iMath;</div><div class="line">    <span class="keyword">int</span> iSum;</div><div class="line"></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s"</span>,<span class="string">"국어, 영어, 수학 점수를 순서대로 입력해 주세요. :"</span>);</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;iKor, &amp;iEng, &amp;iMath);</div><div class="line"></div><div class="line">    iSum = iKor + iEng + iMath;</div><div class="line"></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"국어: %d\n"</span>, iKor);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"영어: %d\n"</span>, iEng);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"수학: %d\n"</span>, iMath);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"총점: %d\n"</span>, iSum);</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>입력을 위와 같이 받게 되면 스페이스와 엔터가 입력 구분자가 됩니다.<br>구분된 값을 입력 받을 때는 명확하게 엔터로 입력받을수 있게 하는 것이 좋습니다.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 006-scanf-04.c</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> iKor;</div><div class="line">    <span class="keyword">int</span> iEng;</div><div class="line">    <span class="keyword">int</span> iMath;</div><div class="line">    <span class="keyword">int</span> iSum;</div><div class="line"></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s"</span>,<span class="string">"국어 :"</span>);</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;iKor);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s"</span>,<span class="string">"영어 :"</span>);</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;iEng);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s"</span>,<span class="string">"수학 :"</span>);</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;iMath);</div><div class="line"></div><div class="line">    iSum = iKor + iEng + iMath;</div><div class="line"></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"==================\n"</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"국어: %d\n"</span>, iKor);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"영어: %d\n"</span>, iEng);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"수학: %d\n"</span>, iMath);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"총점: %d\n"</span>, iSum);</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="getch"><a href="#getch" class="headerlink" title="getch()"></a>getch()</h3><p>getchar()동일하게 1문자를 입력받지만 입력버퍼를 사용하지 않습니다. 엔터를 입력할때까지 입력받는 것이 아니라 키보드를 누르는 순간 처리를 합니다.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 006-getch-01.c</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line">    </div><div class="line">    <span class="keyword">char</span> cTemp;</div><div class="line"></div><div class="line">    cTemp = getch();</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%c\n"</span>, cTemp);</div><div class="line">    cTemp = getch();</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%c\n"</span>, cTemp);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>getchar()와 같은 버퍼문제가 발생하지 않는다.</p>
+<h3 id="getche"><a href="#getche" class="headerlink" title="getche()"></a>getche()</h3><p>문자를 입력받되 출력을 하지 않습니다.(비밀번호)</p>
+<p><conio.h>에 들어 있습니다.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 006-getche-01.c</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line">    </div><div class="line">    <span class="keyword">char</span> cTemp;</div><div class="line"></div><div class="line">    cTemp = getche();</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%c\n"</span>, cTemp);</div><div class="line">    cTemp = getche();</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%c\n"</span>, cTemp);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></conio.h></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 006-getche-02.c</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line">    </div><div class="line">    <span class="keyword">char</span> sId[<span class="number">8</span>] = &#123;<span class="string">' '</span>,&#125;;</div><div class="line">    <span class="keyword">char</span> sPw[<span class="number">8</span>] = &#123;<span class="string">' '</span>,&#125;;</div><div class="line">    <span class="keyword">char</span> ch = <span class="string">' '</span>;</div><div class="line"></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s"</span>, <span class="string">"아이디 : "</span>);</div><div class="line">    <span class="keyword">while</span> ( (ch = getch()) !=<span class="string">'\n'</span>)&#123;</div><div class="line">        ch = getch()</div><div class="line">        sId[i] = ch;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s"</span>, <span class="string">"비밀번호 : "</span>);</div><div class="line"></div><div class="line">    <span class="keyword">while</span> ( (ch = getche()) !=<span class="string">'\n'</span>)&#123;</div><div class="line">        ch = getche()</div><div class="line">        sId[i] = ch;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, sId);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, sPw);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+      
+        <categories>
+            
+            <category> C언어기초 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> getchar </tag>
+            
+            <tag> gets </tag>
+            
+            <tag> scanf </tag>
+            
+            <tag> getch </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[ASCII 문자]]></title>
+      <url>/2017/11/15/c-ascii%EB%AC%B8%EC%9E%90/</url>
+      <content type="html"><![CDATA[<h3 id="ASCII-문자"><a href="#ASCII-문자" class="headerlink" title="ASCII 문자"></a>ASCII 문자</h3><p>아스키 문자는 정수 0~127까지의 숫자를 문자로 대체해서 사용하는 약속 기호입니다.<br>0x0~1F 과 0x7F는 제어 문자가 들어있습니다.</p>
+<h3 id="제어문자"><a href="#제어문자" class="headerlink" title="제어문자"></a>제어문자</h3><table>
+<thead>
+<tr>
+<th>DEC</th>
+<th>HEX</th>
+<th>문자</th>
+<th>설명</th>
+<th>DEC</th>
+<th>HEX</th>
+<th>문자</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0x00</td>
+<td>NUL</td>
+<td>NUl문자</td>
+<td>17</td>
+<td>0x11</td>
+<td>DC1</td>
+<td>device control 1 </td>
+</tr>
+<tr>
+<td>1</td>
+<td>0x01</td>
+<td>SOH</td>
+<td>start of header</td>
+<td>18</td>
+<td>0x12</td>
+<td>DC2</td>
+<td>device control 2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0x02</td>
+<td>STX</td>
+<td>start of text</td>
+<td>19</td>
+<td>0x13</td>
+<td>DC3</td>
+<td>device control 3</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0x03</td>
+<td>ETX</td>
+<td>end of text</td>
+<td>20</td>
+<td>0x14</td>
+<td>DC4</td>
+<td>device control 4</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0x04</td>
+<td>EOT</td>
+<td>end of transmission</td>
+<td>21</td>
+<td>0x15</td>
+<td>NAK</td>
+<td>negative ack</td>
+</tr>
+<tr>
+<td>5</td>
+<td>0x05</td>
+<td>ENQ</td>
+<td>enquiry</td>
+<td>22</td>
+<td>0x16</td>
+<td>SYN</td>
+<td>synchronous idle</td>
+</tr>
+<tr>
+<td>6</td>
+<td>0x06</td>
+<td>ACK</td>
+<td>acknowlegment</td>
+<td>23</td>
+<td>0x17</td>
+<td>ETB</td>
+<td>end of Transmission block</td>
+</tr>
+<tr>
+<td>7</td>
+<td>0x07</td>
+<td>BEL</td>
+<td>bell</td>
+<td>24</td>
+<td>0x18</td>
+<td>CAN</td>
+<td>cancle</td>
+</tr>
+<tr>
+<td>8</td>
+<td>0x08</td>
+<td>BS</td>
+<td>backspace</td>
+<td>25</td>
+<td>0x19</td>
+<td>EM</td>
+<td>end of medium</td>
+</tr>
+<tr>
+<td>9</td>
+<td>0x09</td>
+<td>HT</td>
+<td>horizontal tab</td>
+<td>26</td>
+<td>0x1a</td>
+<td>SUB</td>
+<td>substitute</td>
+</tr>
+<tr>
+<td>10</td>
+<td>0x0a</td>
+<td>LF</td>
+<td>line feed</td>
+<td>27</td>
+<td>0x1b</td>
+<td>ESC</td>
+<td>escape</td>
+</tr>
+<tr>
+<td>11</td>
+<td>0x0b</td>
+<td>VT</td>
+<td>vertical tab</td>
+<td>28</td>
+<td>0x1c</td>
+<td>FS</td>
+<td>file separator</td>
+</tr>
+<tr>
+<td>12</td>
+<td>0x0c</td>
+<td>FF</td>
+<td>form feed</td>
+<td>29</td>
+<td>0x1d</td>
+<td>GS</td>
+<td>group separator</td>
+</tr>
+<tr>
+<td>13</td>
+<td>0x0d</td>
+<td>CR</td>
+<td>carriage return</td>
+<td>30</td>
+<td>0x1e</td>
+<td>RS</td>
+<td>record separator</td>
+</tr>
+<tr>
+<td>14</td>
+<td>0x0e</td>
+<td>SO</td>
+<td>shift out</td>
+<td>31</td>
+<td>0x1f</td>
+<td>US</td>
+<td>Unit Separator</td>
+</tr>
+<tr>
+<td>15</td>
+<td>0x0f</td>
+<td>SI</td>
+<td>shift in</td>
+<td>127</td>
+<td>0x7f</td>
+<td>DEL</td>
+<td>delete</td>
+</tr>
+<tr>
+<td>16</td>
+<td>0x10</td>
+<td>DLE</td>
+<td>data link escape</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>제어문자는 무척 많이 사용합니다. 설명을 영어 그대로 쓴건 검색시 사용하세요.<br>각종 통신시 전문을 주고 받을때, 키보드및 프린터 제어등등..</p>
+<ul>
+<li>0x30~0x39는 숫자</li>
+<li>0x41~0x5A는 대문자</li>
+<li>0x61~0x7A는 대문자</li>
+<li>나머지는 특수문자가 들어 있습니다.<br>제어 문자는 출력할 수 없지만 나머지는 출력이 가능합니다.<br>참고로 0x20는 스페이스바(공백)이 출력되므로 아무것도 없는것 같이 보입니다.</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">int</span> iNum = <span class="number">32</span>;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\t0x%04X\t%c\n"</span>, iNum, iNum, iNum);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>위 예제는 10진수 32를 10진수, 16진수, 문자로 출력하는 프로그램입니다.<br>공백을 출력하기 때문에 문자는 보지지 않습니다. 반복문을 이용해 126까지 출력해 봅시다.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">32</span>; i &lt; <span class="number">127</span>; i++) &#123;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%d\t0x%04X\t%c\n"</span>, i, i, i);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>제목도 달아 줄까요?</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"        ASCII Table"</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"==========================="</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"10진    16진    문자"</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"---------------------------"</span>);</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">32</span>; i &lt; <span class="number">127</span>; i++) &#123;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%d\t0x%04X\t%c\n"</span>, i, i, i);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>너무 길게 나오니 한줄에 3개씩 나오게 찍어보죠.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"                            ASCII Table"</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"====================================================================="</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"10진    16진    문자    10진    16진    문자    10진    16진    문자"</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"---------------------------------------------------------------------"</span>);</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">32</span>; i &lt; <span class="number">127</span>; i++) &#123;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%d\t0x%04X\t%c\t"</span>, i, i, i);</div><div class="line">        <span class="keyword">if</span> ((i%<span class="number">3</span>)==<span class="number">1</span>) &#123;</div><div class="line">                <span class="built_in">printf</span>(<span class="string">"\n"</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"                            ASCII Table"</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"====================================================================="</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"10진    16진    문자    10진    16진    문자    10진    16진    문자"</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"---------------------------------------------------------------------"</span>);</div><div class="line"></div><div class="line">    <span class="keyword">int</span> cnt = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">32</span>; i &lt; <span class="number">127</span>; i=i+<span class="number">32</span>) &#123;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%d\t0x%04X\t%c\t"</span>, i, i, i);</div><div class="line">        cnt = cnt +<span class="number">1</span>;</div><div class="line">        <span class="keyword">if</span> (cnt == <span class="number">3</span>)&#123;</div><div class="line">            <span class="built_in">printf</span>(<span class="string">"\n"</span>);</div><div class="line">            cnt = <span class="number">0</span>;</div><div class="line">            i = i - <span class="number">95</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>요즘은 영문os와 windows를 제외한 한글 os는 unicode를 사용합니다.<br>unicode안에 ascii code도 포함되어 있지만 확장아스키는 사용하는 폰트에 따라 나오지 않을 수 있습니다.<br>unicode를 출력해 보고 싶으면 127을 16777216 로 바꿔 출력해 보세요.<br>스크롤이 많을 테니 꼭 <code>| less</code> 를 이용하세요. <code>Ctrl+c</code></p>
+]]></content>
+      
+        <categories>
+            
+            <category> C언어기초 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> c </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[화면에 글자 출력하기]]></title>
+      <url>/2017/11/15/c-%ED%99%94%EB%A9%B4%EC%97%90-%EA%B8%80%EC%9E%90-%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0/</url>
+      <content type="html"><![CDATA[<div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
+<hr>
+<h2 id="화면에-글자-출력하기"><a href="#화면에-글자-출력하기" class="headerlink" title="화면에 글자 출력하기"></a>화면에 글자 출력하기</h2><p>c언어는 함수로 시작해서 함수로 끝납니다. 모든 부품들이 함수로 만들어 져있습니다. </p>
+<p>c언어에서 화면에 출력을 하는 함수는 다음과 같습니다. </p>
+<ul>
+<li>putchar() 영문 1문자를 출력(한글 1문자는 영어 3문자와 같음. ms-windows는 2문자)</li>
+<li>puts() 문자열을 출력</li>
+<li>printf() 문자열을 출력(출력포맷을 정할 수 있음)</li>
+</ul>
+<h3 id="1문자-출력"><a href="#1문자-출력" class="headerlink" title="1문자 출력"></a>1문자 출력</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 파일명: 001-putchar-01.c</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="built_in">putchar</span>(<span class="string">'a'</span>); <span class="comment">// 한문자를 출력합니다. </span></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>1행은 선언문이라고 하는데 무언가를 화면에 출력할때, 입력받을때 반드시 사용해야합니다.<br>위와 같이 프로그램을 작성했으면 저장을 하고 실행이 되도록 컴파일을 합니다.<br><code>&lt;Esc&gt;:w&lt;Enter&gt;</code> 저장<br><code>&lt;Esc&gt;:q&lt;Enter&gt;</code> vim종료</p>
+<h3 id="컴파일하고-실행하기"><a href="#컴파일하고-실행하기" class="headerlink" title="컴파일하고 실행하기"></a>컴파일하고 실행하기</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ gcc 001-putchar-01.c -o 001-putchar-01.o   <span class="comment"># 컴파일</span></div><div class="line">$ ./001-putchar-01.o                         <span class="comment"># 실행</span></div></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>결과</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a%</div></pre></td></tr></table></figure>
+<p>터미널에서 1행 처럼 컴파일 하고<br>2행 처럼 실행을 하는 겁니다.</p>
+<p>우리가 원하는데로 a가 잘 출력 되었습니다만 마지막에 %가 붙었습니다. 실제로 %가 붙은건 아니고 제어문자와 겹쳐서 그렇게 보이는것 뿐입니다. 흔히 깨져 보인다고 하죠.</p>
+<h3 id="출력하고-줄바꾸기"><a href="#출력하고-줄바꾸기" class="headerlink" title="출력하고 줄바꾸기"></a>출력하고 줄바꾸기</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//파일명 : 001-putchar-02.c</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="built_in">putchar</span>(<span class="string">'a'</span>);</div><div class="line">    <span class="built_in">putchar</span>(<span class="string">'\n'</span>); <span class="comment">// 줄을 바꾸어주는 문자입니다.</span></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$gcc</span> 001-putchar-02.c -o 001-putchar-02.o</div><div class="line">$./001-putchar-02.o</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>결과</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a</div></pre></td></tr></table></figure>
+<p>이번에는 6행을 보면 <code>\n</code>을 추가했습니다. putchar는 1문자만 출력한다고 했는데. 두글자를 입력했습니다. <code>\n</code>은 c언어가 1문자로 인식합니다. 줄을 바꾸어 주는 역할을 합니다. 이런 문자가 몇가지 더있는데 이를 이스케이프문자 라고 합니다.</p>
+<table>
+<thead>
+<tr>
+<th>esc문자</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\a</code></td>
+<td>beep음</td>
+</tr>
+<tr>
+<td><code>\b</code></td>
+<td>백스페이스</td>
+</tr>
+<tr>
+<td><code>\f</code></td>
+<td>폼 피드</td>
+</tr>
+<tr>
+<td><code>\n</code></td>
+<td>줄바꿈</td>
+</tr>
+<tr>
+<td><code>\r</code></td>
+<td>리턴(커서를 맨앞으로 이동)</td>
+</tr>
+<tr>
+<td><code>\t</code></td>
+<td>수평탭</td>
+</tr>
+<tr>
+<td><code>\v</code></td>
+<td>수직탭</td>
+</tr>
+<tr>
+<td><code>\\</code></td>
+<td>\출력</td>
+</tr>
+<tr>
+<td><code>\&#39;</code></td>
+<td>작은따옴표(‘)</td>
+</tr>
+<tr>
+<td><code>\&quot;</code></td>
+<td>큰타옴표(“)</td>
+</tr>
+<tr>
+<td><code>\?</code></td>
+<td>물음표(?)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Hello-World-출력하기"><a href="#Hello-World-출력하기" class="headerlink" title="Hello World 출력하기"></a>Hello World 출력하기</h3><p>이번에는 putchar()를 가지고 Hello World를 출력해 볼까요.?<br>복사와 붙여넣기는 코딩의 필수<br>우리는 vim을 사용하니까 vim의 신공으로<br><code>i&#39;h&#39;&lt;Esc&gt;yy15p</code><br>커서를 맨앞에 놓고 <code>&lt;C-v&gt;15jIputchar(&lt;Esc&gt;</code><br>커서를 첫줄 p에 놓고 <code>&lt;S-v&gt;15j:s/$/);/g&lt;Enter&gt;</code></p>
+<p>이런 신공이 불편하다면 <code>yy15p</code> 하고 문자를 수정<br>설마 블로그에서 복사를… ^^; 해도 됩니다. 코딩은 그렇게 편하게 하는 겁니다.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 파일명 : 001-putchar-03.c</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="built_in">putchar</span>(<span class="string">'H'</span>);</div><div class="line">    <span class="built_in">putchar</span>(<span class="string">'e'</span>);</div><div class="line">    <span class="built_in">putchar</span>(<span class="string">'l'</span>);</div><div class="line">    <span class="built_in">putchar</span>(<span class="string">'l'</span>);</div><div class="line">    <span class="built_in">putchar</span>(<span class="string">'o'</span>);</div><div class="line">    <span class="built_in">putchar</span>(<span class="string">' '</span>);</div><div class="line">    <span class="built_in">putchar</span>(<span class="string">'W'</span>);</div><div class="line">    <span class="built_in">putchar</span>(<span class="string">'o'</span>);</div><div class="line">    <span class="built_in">putchar</span>(<span class="string">'r'</span>);</div><div class="line">    <span class="built_in">putchar</span>(<span class="string">'l'</span>);</div><div class="line">    <span class="built_in">putchar</span>(<span class="string">'d'</span>);</div><div class="line">    <span class="built_in">putchar</span>(<span class="string">'\n'</span>);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><figcaption><span>결과</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hellow World</div></pre></td></tr></table></figure>
+<p>스스로 컴파일하고 실행해 보세요.<br>vim에서 컴파일 하고 실행하기<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">:<span class="keyword">w</span> 파일명.<span class="keyword">c</span></div><div class="line">:!gcc 파일명.<span class="keyword">c</span> -<span class="keyword">o</span> 파일명.<span class="keyword">o</span></div><div class="line">:!./파일명.<span class="keyword">o</span></div></pre></td></tr></table></figure></p>
+<p>vim 세팅을 했다면 <code>&lt;F5&gt;</code> 누르면 자동으로 컴파일하고 실행하도록 했습니다.</p>
+<h3 id="puts"><a href="#puts" class="headerlink" title="puts"></a>puts</h3><p>putchar()를 갖이고 문장을 입력하려면 무척 불편합니다. 그래서 문장을 출력하기 위해서 puts() 함수를 사용합니다. puts함수는 putchar() 함수로 만들어졌습니다. </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 파일명 : 001-puts-01.c</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="built_in">puts</span>(<span class="string">"Hello World"</span>);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>결과</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hellow World</div></pre></td></tr></table></figure>
+<p>puts()는 명령이 끝나면 자동으로 줄을 바꾸어 줍니다. <code>\n</code>을 넣을 필요가 없습니다. 줄을 바꾸지 않고 싶을 때는 printf()를 사용합니다.</p>
+<h3 id="printf"><a href="#printf" class="headerlink" title="printf"></a>printf</h3><p>printf()는 출력형식을 사용자가 자유롭게 지정할 수 있습니다. </p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 파일명 : 001-printf-01.c</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s"</span>, <span class="string">"Hello World\n"</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%c"</span>, <span class="number">65</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%c%c"</span>, <span class="string">'A'</span>, <span class="string">'\n'</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>, <span class="number">65</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%f"</span>, <span class="number">3.14</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"내이름은 %s이고 나이는 %d살 입니다.\n"</span>, <span class="string">"홍길동"</span>, <span class="number">16</span>);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>결과</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">A</div><div class="line">A</div><div class="line">65</div><div class="line">3.140000</div><div class="line">Hello World</div><div class="line">내이름은 홍길동이고 나이는 16살 입니다.</div></pre></td></tr></table></figure>
+<p>위 프로그램에서 6행에 문자를 출력하는데 65란 숫자를 써도 문자가 출력되는 것을 볼 수 있습니다.<br>컴퓨터는 문자를 인식 하지 못합니다. 오직 0, 1의 2진수만 알죠.<br>ASCII 문자라는 것이 있습니다. 숫자를 문자로 표현 하는 약속이죠. 모호스 부호처럼요.<br>%c 는 숫자를 문자로 변경해서 출력해 주는 기능을 가지고 있습니다.<br>당연히 문자는 문자로 출력합니다. 오직 1문자만. 한글은 문자가 될수 없습니다. 한글은 3byte 초성,중성,종성으로 된 문자열 입니다.</p>
+<table>
+<thead>
+<tr>
+<th>출력형식 문자</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%c</td>
+<td>문자하나를 출력, 상수가 숫자일경우 ascii로 문자로 대체</td>
+</tr>
+<tr>
+<td>%s</td>
+<td>문자열을 출력</td>
+</tr>
+<tr>
+<td>%Nf</td>
+<td>10진 실수를 N안에 출력 예)10.2f 전체소수점 포함 10자리, 소수점이하 2자리</td>
+</tr>
+<tr>
+<td>%Nd</td>
+<td>10진 정수를 N안에 출력</td>
+</tr>
+</tbody>
+</table>
+<p>출력형식은 위에 있는것 말고도 조금 더있지만 자료형에서 다루겠습니다. </p>
+<h3 id="박스-그리기"><a href="#박스-그리기" class="headerlink" title="박스 그리기"></a>박스 그리기</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 파일명 : mybox.c</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"================"</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"|              |"</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"================"</span>);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>결과</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">================</div><div class="line">|              |</div><div class="line">================</div></pre></td></tr></table></figure>
+<p>선문자를 이용하면 더 예쁘게 그릴수 있습니다.<br>이걸 왜 만들었을 까요?<br>vim에서 <code>:r!./box.o</code> 해보세요.<br>printf까지 출력되도록 만들어도 보세요.<br>응용해서 자신의 명함도 만들어 보세요.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">회사명 : (주)대한민국     이름 : 홍길동</div><div class="line">                          직책 : 사원</div><div class="line">주소: 서울시 뭐뭐구 뭐뭐동</div><div class="line">Tel : 000.0000.0000  H.P 000.0000.0000</div></pre></td></tr></table></figure></p>
+<p>어디에 사용할지 생각도 해보구요. 메일과 문서에도 사용할 수 있습니다.<br>텍스트 리더인 macos용 say나 google tts와 연동해서 사용할 수 있습니다.<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#macos</span></div><div class="line">$ 프로그램명 | say</div><div class="line">$ say <span class="string">"안녕 say 야!"</span></div><div class="line">$ man say</div></pre></td></tr></table></figure></p>
+<p>google tts가 궁금하면  <a href="https://github.com/glutanimate/simple-google-tts" target="_blank" rel="external">https://github.com/glutanimate/simple-google-tts</a><br>linux에서는 fastival이 있는데 한글이 안됨.</p>
+<h3 id="코미디언-이름-출력하기"><a href="#코미디언-이름-출력하기" class="headerlink" title="코미디언 이름 출력하기"></a>코미디언 이름 출력하기</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 파일명 : mycomedyname.c</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"유재석, 강호동, 박명수, 신동엽, 박미선"</span>);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>결과</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">유재석, 강호동, 박명수, 신동엽, 박미선</div></pre></td></tr></table></figure>
+<p>이건 나중에 배열 배울때 써먹을 겁니다. 우선 연습 삼아 만들어 놓으세요. 아래 색상도<br>vim에 snippet에 등록해서 사용해도 되지만 우리는 c언어 연습중…</p>
+<h3 id="색상-이름-출력하기"><a href="#색상-이름-출력하기" class="headerlink" title="색상 이름 출력하기"></a>색상 이름 출력하기</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 파일명 : mycolorname.c</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"빨강, 주황, 노랑, 초록, 파랑, 남, 보라"</span>);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>결과</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">빨강, 주황, 노랑, 초록, 파랑, 남, 보라</div></pre></td></tr></table></figure>
+<p>컴퓨터를 사용하는 이유는 복사와 붙여넣기가 가능하기 때문입니다.<br>많이 할수록 컴퓨터를 잘 쓰는 겁니다. </p>
+<hr>
+<p>참고로 cowsay, figlet, boxes, fortune 프로그램을 설치해서 사용 해보세요.<br>지금배운 출력문에 살을 조금만 붙이면 만들 수 있습니다.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Centos</span></div><div class="line"><span class="variable">$sudo</span> yum install cowsay</div><div class="line"><span class="variable">$sudo</span> yum install figlet</div><div class="line"><span class="variable">$sudo</span> yum install boxes</div><div class="line"><span class="variable">$sudo</span> yum install fortune</div><div class="line"></div><div class="line"><span class="comment"># macos</span></div><div class="line"><span class="variable">$brew</span> install cowsay</div><div class="line"><span class="variable">$brew</span> install figlet</div><div class="line"><span class="variable">$brew</span> install boxes</div><div class="line"><span class="variable">$brew</span> install forturne</div><div class="line"></div><div class="line"><span class="comment">#ubuntu</span></div><div class="line"><span class="variable">$sudo</span> apt-get install cowsay</div><div class="line"><span class="variable">$sudo</span> apt-get install figlet</div><div class="line"><span class="variable">$sudo</span> apt-get install boxes</div><div class="line"><span class="variable">$sudo</span> apt-get install fortune</div></pre></td></tr></table></figure>
+<p>텍스트 파일을 하나 만들어서 hello world 저장하고, 크기를 확인해 보세요.<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">echo</span> <span class="string">"hello world"</span> &gt; abc.txt</div><div class="line">$ ls -al abc.txt</div></pre></td></tr></table></figure></p>
+<p>그리고 putchar(), puts(), printf()로 hello world를 출력하는 프로그램을 각각 만들어서 파일의 크기를 비교해 보세요.</p>
+<blockquote>
+<ul>
+<li>텍스트 파일보다 실행파일이 크기가 큰 이유는 뭘까요. 또 컴파일 된 실행파일의 크기가 같은 이유는 뭘까요. 이유를 인터넷 검색해 보세요. </li>
+<li>실행파일은 기본 출력 명령을 포함하고 있고 똑같은 hello world 11자+ 줄바꿈(1자) 총12자를 출력합니다. </li>
+<li>영문1글자는 1바이트 총12자 12바이트 </li>
+<li>또 100번씩 출력하게 만들어서 크기를 비교해 보세요. </li>
+<li>복사 붙여 넣기 신공을 사용해서 200번 출력하게 만드세요. </li>
+<li>실행파일은 기본 출력 버퍼 사이즈를 가집니다. 실행 파일내 출력버퍼가 다차면 일정 크기만큼 자동으로 버퍼를 확장합니다.</li>
+<li>출력문을 여러번 사용해도 실행파일의 크기가 갑자기 커지지는 않는다는 것을 확인 했습니다. 그러나 프로그램의 규모가 크다면 메뉴나, 설명등의 출력은 data파일에 저장한후 불러오는 구조로 많이 만듭니다. </li>
+<li>64비트운영체제는 4메가, 32비트는 2메가, 16비트는 1메가바이트,  처리 비트가 클수록 낭비되는 부분도 커집니다. </li>
+<li>임베디드 개발이 아닌 이상은 모두 무시하고 printf() 쓰세요. 컴퓨터 성능과 자원은 남아 돕니다. </li>
+</ul>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> C언어기초 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> c </tag>
+            
+            <tag> printf </tag>
+            
+            <tag> 컴파일 </tag>
+            
+            <tag> 이스케이프문자 </tag>
+            
+            <tag> puts </tag>
+            
+            <tag> putchar </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[약수와 배수]]></title>
       <url>/2017/11/15/math-%EC%95%BD%EC%88%98%EC%99%80%EB%B0%B0%EC%88%98/</url>
       <content type="html"><![CDATA[<h3 id="약수"><a href="#약수" class="headerlink" title="약수"></a>약수</h3><h4 id="약수란-나누어-떨어지게-하는-수를-말합니다"><a href="#약수란-나누어-떨어지게-하는-수를-말합니다" class="headerlink" title="약수란 나누어 떨어지게 하는 수를 말합니다."></a>약수란 나누어 떨어지게 하는 수를 말합니다.</h4><p>어떤 수를 나누어 0이 되는 수를 약수라고 합니다.</p>
@@ -179,36 +620,6 @@
         <tags>
             
             <tag> 함수 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[키보드로 입력받기]]></title>
-      <url>/2017/11/15/c-%ED%82%A4%EB%B3%B4%EB%93%9C%EB%A1%9C-%EC%9E%85%EB%A0%A5%EB%B0%9B%EA%B8%B0/</url>
-      <content type="html"><![CDATA[<h3 id="getchar"><a href="#getchar" class="headerlink" title="getchar"></a>getchar</h3><p>1문자를 입력받습니다.</p>
-<h3 id="gets"><a href="#gets" class="headerlink" title="gets"></a>gets</h3><p>문자열을 입력받습니다.</p>
-<h3 id="scanf"><a href="#scanf" class="headerlink" title="scanf"></a>scanf</h3><p>형식에 따라 문자열을 입력받습니다.</p>
-<h3 id="getch"><a href="#getch" class="headerlink" title="getch"></a>getch</h3><p>문자를 입력받되 출력을 하지 않습니다.(비밀번호)</p>
-]]></content>
-      
-        <categories>
-            
-            <category> C언어기초 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> getchar </tag>
-            
-            <tag> gets </tag>
-            
-            <tag> scanf </tag>
-            
-            <tag> getch </tag>
             
         </tags>
         
@@ -585,8 +996,6 @@
         
         <tags>
             
-            <tag> for </tag>
-            
             <tag> if </tag>
             
             <tag> else </tag>
@@ -596,6 +1005,8 @@
             <tag> while </tag>
             
             <tag> do while </tag>
+            
+            <tag> for </tag>
             
         </tags>
         
@@ -1086,397 +1497,10 @@
     </entry>
     
     <entry>
-      <title><![CDATA[ASCII 문자]]></title>
-      <url>/2017/11/15/c-ascii%EB%AC%B8%EC%9E%90/</url>
-      <content type="html"><![CDATA[<h3 id="ASCII-문자"><a href="#ASCII-문자" class="headerlink" title="ASCII 문자"></a>ASCII 문자</h3><p>아스키 문자는 정수 0~127까지의 숫자를 문자로 대체해서 사용하는 약속 기호입니다.<br>0x0~1F 과 0x7F는 제어 문자가 들어있습니다.</p>
-<h3 id="제어문자"><a href="#제어문자" class="headerlink" title="제어문자"></a>제어문자</h3><table>
-<thead>
-<tr>
-<th>DEC</th>
-<th>HEX</th>
-<th>문자</th>
-<th>설명</th>
-<th>DEC</th>
-<th>HEX</th>
-<th>문자</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>0x00</td>
-<td>NUL</td>
-<td>NUl문자</td>
-<td>17</td>
-<td>0x11</td>
-<td>DC1</td>
-<td>device control 1 </td>
-</tr>
-<tr>
-<td>1</td>
-<td>0x01</td>
-<td>SOH</td>
-<td>start of header</td>
-<td>18</td>
-<td>0x12</td>
-<td>DC2</td>
-<td>device control 2</td>
-</tr>
-<tr>
-<td>2</td>
-<td>0x02</td>
-<td>STX</td>
-<td>start of text</td>
-<td>19</td>
-<td>0x13</td>
-<td>DC3</td>
-<td>device control 3</td>
-</tr>
-<tr>
-<td>3</td>
-<td>0x03</td>
-<td>ETX</td>
-<td>end of text</td>
-<td>20</td>
-<td>0x14</td>
-<td>DC4</td>
-<td>device control 4</td>
-</tr>
-<tr>
-<td>4</td>
-<td>0x04</td>
-<td>EOT</td>
-<td>end of transmission</td>
-<td>21</td>
-<td>0x15</td>
-<td>NAK</td>
-<td>negative ack</td>
-</tr>
-<tr>
-<td>5</td>
-<td>0x05</td>
-<td>ENQ</td>
-<td>enquiry</td>
-<td>22</td>
-<td>0x16</td>
-<td>SYN</td>
-<td>synchronous idle</td>
-</tr>
-<tr>
-<td>6</td>
-<td>0x06</td>
-<td>ACK</td>
-<td>acknowlegment</td>
-<td>23</td>
-<td>0x17</td>
-<td>ETB</td>
-<td>end of Transmission block</td>
-</tr>
-<tr>
-<td>7</td>
-<td>0x07</td>
-<td>BEL</td>
-<td>bell</td>
-<td>24</td>
-<td>0x18</td>
-<td>CAN</td>
-<td>cancle</td>
-</tr>
-<tr>
-<td>8</td>
-<td>0x08</td>
-<td>BS</td>
-<td>backspace</td>
-<td>25</td>
-<td>0x19</td>
-<td>EM</td>
-<td>end of medium</td>
-</tr>
-<tr>
-<td>9</td>
-<td>0x09</td>
-<td>HT</td>
-<td>horizontal tab</td>
-<td>26</td>
-<td>0x1a</td>
-<td>SUB</td>
-<td>substitute</td>
-</tr>
-<tr>
-<td>10</td>
-<td>0x0a</td>
-<td>LF</td>
-<td>line feed</td>
-<td>27</td>
-<td>0x1b</td>
-<td>ESC</td>
-<td>escape</td>
-</tr>
-<tr>
-<td>11</td>
-<td>0x0b</td>
-<td>VT</td>
-<td>vertical tab</td>
-<td>28</td>
-<td>0x1c</td>
-<td>FS</td>
-<td>file separator</td>
-</tr>
-<tr>
-<td>12</td>
-<td>0x0c</td>
-<td>FF</td>
-<td>form feed</td>
-<td>29</td>
-<td>0x1d</td>
-<td>GS</td>
-<td>group separator</td>
-</tr>
-<tr>
-<td>13</td>
-<td>0x0d</td>
-<td>CR</td>
-<td>carriage return</td>
-<td>30</td>
-<td>0x1e</td>
-<td>RS</td>
-<td>record separator</td>
-</tr>
-<tr>
-<td>14</td>
-<td>0x0e</td>
-<td>SO</td>
-<td>shift out</td>
-<td>31</td>
-<td>0x1f</td>
-<td>US</td>
-<td>Unit Separator</td>
-</tr>
-<tr>
-<td>15</td>
-<td>0x0f</td>
-<td>SI</td>
-<td>shift in</td>
-<td>127</td>
-<td>0x7f</td>
-<td>DEL</td>
-<td>delete</td>
-</tr>
-<tr>
-<td>16</td>
-<td>0x10</td>
-<td>DLE</td>
-<td>data link escape</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>제어문자는 무척 많이 사용합니다. 설명을 영어 그대로 쓴건 검색시 사용하세요.<br>각종 통신시 전문을 주고 받을때, 키보드및 프린터 제어등등..</p>
-<ul>
-<li>0x30~0x39는 숫자</li>
-<li>0x41~0x5A는 대문자</li>
-<li>0x61~0x7A는 대문자</li>
-<li>나머지는 특수문자가 들어 있습니다.<br>제어 문자는 출력할 수 없지만 나머지는 출력이 가능합니다.<br>참고로 0x20는 스페이스바(공백)이 출력되므로 아무것도 없는것 같이 보입니다.</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">int</span> iNum = <span class="number">32</span>;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\t0x%04X\t%c\n"</span>, iNum, iNum, iNum);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>위 예제는 10진수 32를 10진수, 16진수, 문자로 출력하는 프로그램입니다.<br>공백을 출력하기 때문에 문자는 보지지 않습니다. 반복문을 이용해 126까지 출력해 봅시다.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">32</span>; i &lt; <span class="number">127</span>; i++) &#123;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%d\t0x%04X\t%c\n"</span>, i, i, i);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>제목도 달아 줄까요?</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"        ASCII Table"</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"==========================="</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"10진    16진    문자"</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"---------------------------"</span>);</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">32</span>; i &lt; <span class="number">127</span>; i++) &#123;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%d\t0x%04X\t%c\n"</span>, i, i, i);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>너무 길게 나오니 한줄에 3개씩 나오게 찍읍시다.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"                            ASCII Table"</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"====================================================================="</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"10진    16진    문자    10진    16진    문자    10진    16진    문자"</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"---------------------------------------------------------------------"</span>);</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">32</span>; i &lt; <span class="number">127</span>; i++) &#123;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%d\t0x%04X\t%c\t"</span>, i, i, i);</div><div class="line">        <span class="keyword">if</span> ((i%<span class="number">3</span>)==<span class="number">1</span>) &#123;</div><div class="line">                <span class="built_in">printf</span>(<span class="string">"\n"</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"                            ASCII Table"</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"====================================================================="</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"10진    16진    문자    10진    16진    문자    10진    16진    문자"</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, <span class="string">"---------------------------------------------------------------------"</span>);</div><div class="line"></div><div class="line">    <span class="keyword">int</span> cnt = <span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">32</span>; i &lt; <span class="number">127</span>; i=i+<span class="number">32</span>) &#123;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%d\t0x%04X\t%c\t"</span>, i, i, i);</div><div class="line">        cnt = cnt +<span class="number">1</span>;</div><div class="line">        <span class="keyword">if</span> (cnt == <span class="number">3</span>)&#123;</div><div class="line">            <span class="built_in">printf</span>(<span class="string">"\n"</span>);</div><div class="line">            cnt = <span class="number">0</span>;</div><div class="line">            i = i - <span class="number">95</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>요즘은 영문os와 windows를 제외한 한글 os는 unicode를 사용합니다.<br>unicode안에 ascii code도 포함되어 있지만 확장아스키는 사용하는 폰트에 따라 나오지 않을 수 있습니다.<br>unicode를 출력해 보고 싶으면 127을 16777216 로 바꿔 출력해 보세요.<br>스크롤이 많을 테니 꼭 <code>| less</code> 를 이용하세요. <code>Ctrl+c</code></p>
-]]></content>
-      
-        <categories>
-            
-            <category> C언어기초 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> c </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title></title>
       <url>/2017/11/11/python-%EC%84%A4%EC%B9%98/</url>
       <content type="html"></content>
       
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[화면에 글자 출력하기]]></title>
-      <url>/2017/11/05/c-%ED%99%94%EB%A9%B4%EC%97%90-%EA%B8%80%EC%9E%90-%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0/</url>
-      <content type="html"><![CDATA[<div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div>
-<hr>
-<h2 id="화면에-글자-출력하기"><a href="#화면에-글자-출력하기" class="headerlink" title="화면에 글자 출력하기"></a>화면에 글자 출력하기</h2><p>c언어는 함수로 시작해서 함수로 끝납니다. 모든 부품들이 함수로 만들어 져있습니다. </p>
-<p>c언어에서 화면에 출력을 하는 함수는 다음과 같습니다. </p>
-<ul>
-<li>putchar() 영문 1문자를 출력(한글 1문자는 영어 3문자와 같음. ms-windows는 2문자)</li>
-<li>puts() 문자열을 출력</li>
-<li>prinf() 문자열을 출력(출력포맷을 정할 수 있음)</li>
-</ul>
-<h3 id="1문자-출력"><a href="#1문자-출력" class="headerlink" title="1문자 출력"></a>1문자 출력</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="built_in">putchar</span>(<span class="string">'a'</span>); <span class="comment">// 한문자를 출력합니다. </span></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>1행은 선언문이라고 하는데 무언가를 화면에 출력할때, 입력받을때 반드시 사용한다고 알고 있으면 됩니다.<br>위와 같이 프로그램을 작성했으면 저장을 하고 실행이 되도록 컴파일을 합니다.<br><code>&lt;Esc&gt;:w&lt;Enter&gt;</code> 저장<br><code>&lt;Esc&gt;:q&lt;Enter&gt;</code> vim종료</p>
-<h3 id="컴파일하고-실행하기"><a href="#컴파일하고-실행하기" class="headerlink" title="컴파일하고 실행하기"></a>컴파일하고 실행하기</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ gcc print01.c -o print01.o   <span class="comment"># 컴파일</span></div><div class="line">$ ./print01.o                  <span class="comment"># 실행</span></div></pre></td></tr></table></figure>
-<p>터미널에서 1행 처럼 컴파일 하고<br>2행 처럼 실행을 하는 겁니다.</p>
-<p>우리가 원하는데로 a가 잘 출력 되었습니다만 마지막에 %가 붙었습니다. 실제로 %가 붙은건 아니고 프롬프트와 겹쳐서 그렇게 보이는것 뿐입니다. 흔히 깨져 보인다고 하죠.</p>
-<h3 id="출력하고-줄바꾸기"><a href="#출력하고-줄바꾸기" class="headerlink" title="출력하고 줄바꾸기"></a>출력하고 줄바꾸기</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="built_in">putchar</span>(<span class="string">'a'</span>);</div><div class="line">    <span class="built_in">putchar</span>(<span class="string">'\n'</span>); <span class="comment">// 줄을 바꾸어주는 문자입니다.</span></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$gcc</span> 01_a.c -o 01_a.o</div><div class="line">$./01_a.o</div></pre></td></tr></table></figure>
-<p>이번에는 6행을 보면 <code>\n</code>을 추가했습니다. putchar는 1문자만 출력한다고 했는데. 두글자를 입력했습니다. <code>\n</code>은 c언어가 1문자로 인식합니다. 줄을 바꾸어 주는 역할을 합니다. 이런 문자가 몇가지 더있는데 이를 이스케이프문자 라고 합니다.</p>
-<table>
-<thead>
-<tr>
-<th>esc문자</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>\a</code></td>
-<td>beep음</td>
-</tr>
-<tr>
-<td><code>\b</code></td>
-<td>백스페이스</td>
-</tr>
-<tr>
-<td><code>\f</code></td>
-<td>폼 피드</td>
-</tr>
-<tr>
-<td><code>\n</code></td>
-<td>줄바꿈</td>
-</tr>
-<tr>
-<td><code>\r</code></td>
-<td>리턴(커서를 맨앞으로 이동)</td>
-</tr>
-<tr>
-<td><code>\t</code></td>
-<td>수평탭</td>
-</tr>
-<tr>
-<td><code>\v</code></td>
-<td>수직탭</td>
-</tr>
-<tr>
-<td><code>\\</code></td>
-<td>\출력</td>
-</tr>
-<tr>
-<td><code>\&#39;</code></td>
-<td>작은따옴표(‘)</td>
-</tr>
-<tr>
-<td><code>\&quot;</code></td>
-<td>큰타옴표(“)</td>
-</tr>
-<tr>
-<td><code>\?</code></td>
-<td>물음표(?)</td>
-</tr>
-</tbody>
-</table>
-<p>프로그래밍언어는 외우는게 아닙니다. 익히는 겁니다. 한번 봤으니 잊으세요.<br>많이 쓰면 익혀 지니 걱정하지 마세요.</p>
-<h2 id="Hello-World-출력하기"><a href="#Hello-World-출력하기" class="headerlink" title="Hello World 출력하기"></a>Hello World 출력하기</h2><p>이번에는 putchar()를 가지고 Hello World를 출력해 볼까요.?<br>복사와 붙여넣기는 코딩의 필수<br>우리는 vim을 사용하니까 vim의 신공으로<br><code>i&#39;h&#39;&lt;Esc&gt;yy15p</code><br>커서를 맨앞에 놓고 <code>&lt;C-v&gt;15jIputchar(&lt;Esc&gt;</code><br>커서를 첫줄 p에 놓고 <code>&lt;S-v&gt;15j:s/$/);/g&lt;Enter&gt;</code></p>
-<p>이런 신공이 불편하다면 <code>yy15p</code> 하고 문자를 수정<br>설마 블로그에서 복사를… ^^; 해도 됩니다. 코딩은 그렇게 편하게 하는 겁니다.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="built_in">putchar</span>(<span class="string">'H'</span>);</div><div class="line">    <span class="built_in">putchar</span>(<span class="string">'e'</span>);</div><div class="line">    <span class="built_in">putchar</span>(<span class="string">'l'</span>);</div><div class="line">    <span class="built_in">putchar</span>(<span class="string">'l'</span>);</div><div class="line">    <span class="built_in">putchar</span>(<span class="string">'o'</span>);</div><div class="line">    <span class="built_in">putchar</span>(<span class="string">' '</span>);</div><div class="line">    <span class="built_in">putchar</span>(<span class="string">'W'</span>);</div><div class="line">    <span class="built_in">putchar</span>(<span class="string">'o'</span>);</div><div class="line">    <span class="built_in">putchar</span>(<span class="string">'r'</span>);</div><div class="line">    <span class="built_in">putchar</span>(<span class="string">'l'</span>);</div><div class="line">    <span class="built_in">putchar</span>(<span class="string">'d'</span>);</div><div class="line">    <span class="built_in">putchar</span>(<span class="string">'\n'</span>);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>스스로 컴파일하고 실행해 보세요.<br>vim에서 컴파일 하고 실행하기<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">:<span class="keyword">w</span> 파일명.<span class="keyword">c</span></div><div class="line">:!gcc 파일명.<span class="keyword">c</span> -<span class="keyword">o</span> 파일명.<span class="keyword">o</span></div><div class="line">:!./파일명.<span class="keyword">o</span></div></pre></td></tr></table></figure></p>
-<p>vim 세팅을 했다면 <code>&lt;F5&gt;</code> 누르면 자동으로 컴파일하고 실행하도록 했습니다.</p>
-<h2 id="puts"><a href="#puts" class="headerlink" title="puts"></a>puts</h2><p>putchar()를 갖이고 문장을 입력하려면 무척 불편합니다. 그래서 문장을 출력하기 위해서 puts() 함수를 사용합니다. puts함수는 putchar() 함수로 만들어졌습니다. </p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="built_in">puts</span>(<span class="string">"Hello World"</span>);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>puts()는 명령이 끝나면 자동으로 줄을 바꾸어 줍니다. <code>\n</code>을 넣을 필요가 없습니다. 줄을 바꾸지 않고 싶을 때는 printf()를 사용합니다.</p>
-<h2 id="printf"><a href="#printf" class="headerlink" title="printf"></a>printf</h2><p>printf()는 출력형식을 사용자가 자유롭게 지정할 수 있습니다. </p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s"</span>, <span class="string">"Hello World\n"</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%c"</span>, <span class="number">65</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%c%c"</span>, <span class="string">'A'</span>, <span class="string">'\n'</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>, <span class="number">65</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%f"</span>, <span class="number">3.14</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"Hello World\n"</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"내이름은 %s이고 나이는 %d살 입니다.\n"</span>, <span class="string">"홍길동"</span>, <span class="number">16</span>);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>위 프로그램에서 6행에 문자를 출력하는데 65란 숫자를 써도 문자가 출력되는 것을 볼 수 있습니다.<br>컴퓨터는 문자를 인식 하지 못합니다. 오직 0, 1의 2진수만 알죠.<br>ASCII 문자라는 것이 있습니다. 숫자를 문자로 표현 하는 약속이죠. 모호스 부호처럼요.<br>%c 는 숫자를 문자로 변경해서 출력해 주는 기능을 가지고 있습니다.<br>당연히 문자는 문자로 출력합니다. 오직 1문자만. 한글은 문자가 될수 없습니다. 한글은 3byte 초성,중성,종성으로 된 문자열 입니다.</p>
-<table>
-<thead>
-<tr>
-<th>출력형식 문자</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>%c</td>
-<td>문자하나를 출력, 상수가 숫자일경우 ascii로 문자로 대체</td>
-</tr>
-<tr>
-<td>%s</td>
-<td>문자열을 출력</td>
-</tr>
-<tr>
-<td>%Nf</td>
-<td>10진 실수를 N안에 출력 예)10.2f 전체소수점 포함 10자리, 소수점이하 2자리</td>
-</tr>
-<tr>
-<td>%Nd</td>
-<td>10진 정수를 N안에 출력</td>
-</tr>
-</tbody>
-</table>
-<p>출력형식은 위에 있는것 말고도 조금 더있지만 자료형에서 다루겠습니다. </p>
-<h2 id="박스-그리기"><a href="#박스-그리기" class="headerlink" title="박스 그리기"></a>박스 그리기</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"================"</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"|              |"</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"================"</span>);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>선문자를 이용하면 더 예쁘게 그릴수 있습니다.<br>이걸 왜 만들었을 까요?<br>vim에서 <code>:r!./box.o</code> 해보세요.<br>printf까지 출력되도록 만들어도 보세요.<br>응용해서 자신의 명함도 만들어 보세요.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">회사명 : (주)대한민국     이름 : 홍길동</div><div class="line">                          직책 : 사원</div><div class="line">주소: 서울시 뭐뭐구 뭐뭐동</div><div class="line">Tel : 000.0000.0000  H.P 000.0000.0000</div></pre></td></tr></table></figure></p>
-<p>어디에 사용할지 생각도 해보구요. 저는 메일과 문서에 사용합니다.<br>텍스트 리더인 macos용 say나 google tts와 연동해서 사용할 수 있습니다.<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#macos</span></div><div class="line">$ 프로그램명 | say</div><div class="line">$ say <span class="string">"안녕 say 야!"</span></div><div class="line">$ man say</div></pre></td></tr></table></figure></p>
-<p>google tts가 궁금하면  <a href="https://github.com/glutanimate/simple-google-tts" target="_blank" rel="external">https://github.com/glutanimate/simple-google-tts</a><br>linux에서는 fastival이 있는데 한글이 안됨.</p>
-<h2 id="코미디언-이름-출력하기"><a href="#코미디언-이름-출력하기" class="headerlink" title="코미디언 이름 출력하기"></a>코미디언 이름 출력하기</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"유재석, 강호동, 박명수, 신동엽, 박미선"</span>);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>이건 나중에 배열 배울때 써먹을 겁니다. 우선 연습 삼아 만들어 놓으세요. 아래 색상도<br>vim에 snippet에 등록해서 사용해도 되지만 우리는 c언어 연습중…</p>
-<h2 id="색상-이름-출력하기"><a href="#색상-이름-출력하기" class="headerlink" title="색상 이름 출력하기"></a>색상 이름 출력하기</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span></span></div><div class="line"><span class="function"></span>&#123;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"빨강, 주황, 노랑, 초록, 파랑, 남, 보라"</span>);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>컴퓨터를 사용하는 이유는 복사와 붙여넣기가 가능하기 때문입니다.<br>많이 할수록 컴퓨터를 잘 쓰는 겁니다. </p>
-<hr>
-<p>참고로 cowsay, figlet, boxes란 프로그램을 설치해서 사용 해보세요.<br>지금배운 출력문에 살을 조금만 붙이면 만들 수 있습니다.</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Centos</span></div><div class="line"><span class="variable">$sudo</span> yum install cowsay</div><div class="line"><span class="variable">$sudo</span> yum install figlet</div><div class="line"><span class="variable">$sudo</span> yum install boxes</div><div class="line"></div><div class="line"><span class="comment"># macos</span></div><div class="line"><span class="variable">$brew</span> install cowsay</div><div class="line"><span class="variable">$brew</span> install figlet</div><div class="line"><span class="variable">$brew</span> install boxes</div><div class="line"></div><div class="line"><span class="comment">#ubuntu</span></div><div class="line"><span class="variable">$sudo</span> apt-get install cowsay</div><div class="line"><span class="variable">$sudo</span> apt-get install figlet</div><div class="line"><span class="variable">$sudo</span> apt-get install boxes</div></pre></td></tr></table></figure>
-<p>####<br>printf() 함수만 쓰면 안되나? </p>
-<p>puts(), putchar()는 기능도 없고, 불편한데…<br>문제되지 않습니다. printf()는 프로그램 크기가 커서 상대적으로 컴파일 속도가 느립니다.<br>아두이노, 라즈베리파이나 arm 등 모바일 cpu에서는 컴파일 속도가 더 느려지겠죠.<br>하지만 무시해도 됩니다. 체감하기 힘듭니다. </p>
-<p>텍스트 파일을 하나 만들어서 hello world 저장하세요.<br>크기를 확인해 보세요.</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">echo</span> <span class="string">"hello world"</span> &gt; abc.txt</div><div class="line">$ ls -al abc.txt</div></pre></td></tr></table></figure>
-<p>그리고 putchar(), puts(), printf()로 hello world를 출력하는 프로그램을 각각 만들어서 파일의 크기를 비교해 보세요.</p>
-<ul>
-<li>텍스트 파일보다 실행파일이 크기가 큰 이유는 뭘까요. 또 컴파일 된 실행파일의 크기가 같은 이유는 뭘까요. 이유를 인터넷 검색해 보세요. </li>
-<li>실행파일은 기본 출력 명령을 포함하고 있고 똑같은 hello world 11자+ 줄바꿈(1자) 총12자를 출력합니다. </li>
-<li>영문1글자는 1바이트 총12자 니까 12바이트 </li>
-<li>또 100번씩 출력하게 만들어서 크기를 비교해 보세요. </li>
-<li>복사 붙여 넣기 신공을 사용해서 200번 출력하게 만드세요. </li>
-<li>실행파일은 기본 출력 버퍼 사이즈를 가집니다. 실행 파일내 출력버퍼가 다차면 일정 크기만큼 자동으로 버퍼를 확장합니다.</li>
-<li>출력문을 여러번 사용해도 실행파일의 크기가 갑자기 커지지는 않는다는 것을 확인 했습니다. 그러나 프로그램의 규모가 크다면 메뉴나, 설명등의 출력은 data파일에 저장한후 불러오는 구조로 많이 만듭니다. </li>
-<li>64비트운영체제는 4메가, 32비트는 2메가, 16비트는 1메가바이트,  처리 비트가 클수록 낭비되는 부분도 커집니다. </li>
-<li>임베디드 개발이 아닌 이상은 모두 무시하고 printf() 쓰세요. 컴퓨터 성능과 자원은 남아 돕니다. </li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> C언어기초 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> c </tag>
-            
-            <tag> printf </tag>
-            
-            <tag> 컴파일 </tag>
-            
-            <tag> 이스케이프문자 </tag>
-            
-            <tag> puts </tag>
-            
-            <tag> putchar </tag>
-            
-        </tags>
         
     </entry>
     
