@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://korcow.github.io/"/>
-  <updated>2017-11-15T20:57:49.493Z</updated>
+  <updated>2017-11-15T20:59:49.084Z</updated>
   <id>http://korcow.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>실습 환경 설정</title>
+    <link href="http://korcow.github.io/2017/11/16/c-%EC%8B%A4%EC%8A%B5-%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95/"/>
+    <id>http://korcow.github.io/2017/11/16/c-실습-환경-설정/</id>
+    <published>2017-11-15T20:59:49.084Z</published>
+    <updated>2017-11-15T20:59:49.084Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="실습-환경-설정"><a href="#실습-환경-설정" class="headerlink" title="실습 환경 설정"></a>실습 환경 설정</h3><div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div><hr><ol><li>virtualbox에 centos설치 - Centos참조</li><li>gvim 설치및 vimrc 세팅 - vim참조</li><li>vim 기본 사용법 - vim참조</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;실습-환경-설정&quot;&gt;&lt;a href=&quot;#실습-환경-설정&quot; class=&quot;headerlink&quot; title=&quot;실습 환경 설정&quot;&gt;&lt;/a&gt;실습 환경 설정&lt;/h3&gt;&lt;div class=&quot;video-container&quot;&gt;&lt;iframe src=&quot;//www.y
+      
+    
+    </summary>
+    
+      <category term="C언어기초" scheme="http://korcow.github.io/categories/C%EC%96%B8%EC%96%B4%EA%B8%B0%EC%B4%88/"/>
+    
+    
+      <category term="c" scheme="http://korcow.github.io/tags/c/"/>
+    
+  </entry>
   
   <entry>
     <title>목차</title>
@@ -284,31 +309,6 @@
     
     
       <category term="함수" scheme="http://korcow.github.io/tags/%ED%95%A8%EC%88%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>실습 환경 설정</title>
-    <link href="http://korcow.github.io/2017/11/15/c-%EC%8B%A4%EC%8A%B5-%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95/"/>
-    <id>http://korcow.github.io/2017/11/15/c-실습-환경-설정/</id>
-    <published>2017-11-14T15:14:30.963Z</published>
-    <updated>2017-11-14T15:14:30.963Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="실습-환경-설정"><a href="#실습-환경-설정" class="headerlink" title="실습 환경 설정"></a>실습 환경 설정</h3><div class="video-container"><iframe src="//www.youtube.com/embed/SSu822Lgta8" frameborder="0" allowfullscreen></iframe></div><hr><ol><li>virtualbox에 centos설치 - Centos참조</li><li>gvim 설치및 vimrc 세팅 - vim참조</li><li>vim 기본 사용법 - vim참조</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;실습-환경-설정&quot;&gt;&lt;a href=&quot;#실습-환경-설정&quot; class=&quot;headerlink&quot; title=&quot;실습 환경 설정&quot;&gt;&lt;/a&gt;실습 환경 설정&lt;/h3&gt;&lt;div class=&quot;video-container&quot;&gt;&lt;iframe src=&quot;//www.y
-      
-    
-    </summary>
-    
-      <category term="C언어기초" scheme="http://korcow.github.io/categories/C%EC%96%B8%EC%96%B4%EA%B8%B0%EC%B4%88/"/>
-    
-    
-      <category term="c," scheme="http://korcow.github.io/tags/c/"/>
     
   </entry>
   
