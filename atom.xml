@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://korcow.github.io/"/>
-  <updated>2017-11-15T20:17:48.954Z</updated>
+  <updated>2017-11-15T20:50:29.323Z</updated>
   <id>http://korcow.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python 설치</title>
+    <link href="http://korcow.github.io/2017/11/16/python-%EC%84%A4%EC%B9%98/"/>
+    <id>http://korcow.github.io/2017/11/16/python-설치/</id>
+    <published>2017-11-15T20:50:29.323Z</published>
+    <updated>2017-11-15T20:50:29.323Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="파이썬의-설치"><a href="#파이썬의-설치" class="headerlink" title="파이썬의 설치"></a>파이썬의 설치</h3><h4 id="윈도우"><a href="#윈도우" class="headerlink" title="윈도우"></a>윈도우</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python.org 사이트에서 python3를 다운 받아 설치</div></pre></td></tr></table></figure><h4 id="맥"><a href="#맥" class="headerlink" title="맥"></a>맥</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install python3</div></pre></td></tr></table></figure><h4 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install python3</div><div class="line">apt-get install python3</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;파이썬의-설치&quot;&gt;&lt;a href=&quot;#파이썬의-설치&quot; class=&quot;headerlink&quot; title=&quot;파이썬의 설치&quot;&gt;&lt;/a&gt;파이썬의 설치&lt;/h3&gt;&lt;h4 id=&quot;윈도우&quot;&gt;&lt;a href=&quot;#윈도우&quot; class=&quot;headerlink&quot; title=
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="http://korcow.github.io/categories/Python/"/>
+    
+    
+      <category term="python 설치" scheme="http://korcow.github.io/tags/python-%EC%84%A4%EC%B9%98/"/>
+    
+  </entry>
   
   <entry>
     <title>C언어 목차</title>
@@ -465,20 +490,6 @@
       <category term="c" scheme="http://korcow.github.io/tags/c/"/>
     
       <category term="주석" scheme="http://korcow.github.io/tags/%EC%A3%BC%EC%84%9D/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://korcow.github.io/2017/11/11/python-%EC%84%A4%EC%B9%98/"/>
-    <id>http://korcow.github.io/2017/11/11/python-설치/</id>
-    <published>2017-11-11T11:49:53.478Z</published>
-    <updated>2017-11-11T11:49:53.478Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
     
   </entry>
   

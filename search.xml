@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title><![CDATA[python 설치]]></title>
+      <url>/2017/11/16/python-%EC%84%A4%EC%B9%98/</url>
+      <content type="html"><![CDATA[<h3 id="파이썬의-설치"><a href="#파이썬의-설치" class="headerlink" title="파이썬의 설치"></a>파이썬의 설치</h3><h4 id="윈도우"><a href="#윈도우" class="headerlink" title="윈도우"></a>윈도우</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python.org 사이트에서 python3를 다운 받아 설치</div></pre></td></tr></table></figure>
+<h4 id="맥"><a href="#맥" class="headerlink" title="맥"></a>맥</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install python3</div></pre></td></tr></table></figure>
+<h4 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install python3</div><div class="line">apt-get install python3</div></pre></td></tr></table></figure>
+]]></content>
+      
+        <categories>
+            
+            <category> Python </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> python 설치 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[C언어 목차]]></title>
       <url>/2017/11/16/c-%EB%AA%A9%EC%B0%A8/</url>
       <content type="html"><![CDATA[<h3 id="목차"><a href="#목차" class="headerlink" title="목차"></a>목차</h3><h3 id="c언어-기초"><a href="#c언어-기초" class="headerlink" title="c언어 기초"></a>c언어 기초</h3><p>c언어는 가장 기초가 되는 프로그래밍 언어로 c++, objective c, java, python등의 언어로 접근하기 위한 필수 프로그램입니다.</p>
@@ -1526,14 +1549,6 @@
             <tag> 주석 </tag>
             
         </tags>
-        
-    </entry>
-    
-    <entry>
-      <title></title>
-      <url>/2017/11/11/python-%EC%84%A4%EC%B9%98/</url>
-      <content type="html"></content>
-      
         
     </entry>
     
