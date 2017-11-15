@@ -3,9 +3,29 @@
   
     
     <entry>
+      <title><![CDATA[목차]]></title>
+      <url>/2017/11/16/python-%EB%AA%A9%EC%B0%A8/</url>
+      <content type="html"><![CDATA[<h3 id="목차"><a href="#목차" class="headerlink" title="목차"></a>목차</h3><h4 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h4><h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><h4 id="사칙연산"><a href="#사칙연산" class="headerlink" title="사칙연산"></a>사칙연산</h4><h4 id="변수"><a href="#변수" class="headerlink" title="변수"></a>변수</h4><h4 id="상수"><a href="#상수" class="headerlink" title="상수"></a>상수</h4><h4 id="출력하기"><a href="#출력하기" class="headerlink" title="출력하기"></a>출력하기</h4><h4 id="list"><a href="#list" class="headerlink" title="list"></a>list</h4><h4 id="tuple"><a href="#tuple" class="headerlink" title="tuple"></a>tuple</h4><h4 id="dictionary"><a href="#dictionary" class="headerlink" title="dictionary"></a>dictionary</h4><h4 id="입력받기"><a href="#입력받기" class="headerlink" title="입력받기"></a>입력받기</h4><h4 id="조건문"><a href="#조건문" class="headerlink" title="조건문"></a>조건문</h4><h4 id="반복문"><a href="#반복문" class="headerlink" title="반복문"></a>반복문</h4>]]></content>
+      
+        <categories>
+            
+            <category> Python </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> python 목차 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[python 설치]]></title>
       <url>/2017/11/16/python-%EC%84%A4%EC%B9%98/</url>
-      <content type="html"><![CDATA[<h3 id="파이썬의-설치"><a href="#파이썬의-설치" class="headerlink" title="파이썬의 설치"></a>파이썬의 설치</h3><h4 id="윈도우"><a href="#윈도우" class="headerlink" title="윈도우"></a>윈도우</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python.org 사이트에서 python3를 다운 받아 설치</div></pre></td></tr></table></figure>
+      <content type="html"><![CDATA[<h3 id="파이썬의-설치"><a href="#파이썬의-설치" class="headerlink" title="파이썬의 설치"></a>파이썬의 설치</h3><h4 id="윈도우"><a href="#윈도우" class="headerlink" title="윈도우"></a>윈도우</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">python.org 사이트에서 자신의 윈도우 버젼에 맞는 python3를 다운 받아 설치</div></pre></td></tr></table></figure>
 <h4 id="맥"><a href="#맥" class="headerlink" title="맥"></a>맥</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install python3</div></pre></td></tr></table></figure>
 <h4 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install python3</div><div class="line">apt-get install python3</div></pre></td></tr></table></figure>
 ]]></content>
