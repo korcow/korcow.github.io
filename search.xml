@@ -3,12 +3,9 @@
   
     
     <entry>
-      <title><![CDATA[python 설치]]></title>
-      <url>/2017/11/17/python-%EC%84%A4%EC%B9%98/</url>
-      <content type="html"><![CDATA[<h3 id="파이썬의-설치"><a href="#파이썬의-설치" class="headerlink" title="파이썬의 설치"></a>파이썬의 설치</h3><p>파이썬은 버젼이 2와 3가 있습니다.<br>우리는 3를 사용할 겁니다.</p>
-<h4 id="윈도우"><a href="#윈도우" class="headerlink" title="윈도우"></a>윈도우</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">python.org 사이트에서 자신의 윈도우 버젼에 맞는 python3를 다운 받아 설치합니다.</div><div class="line">설치 완료후 터미널을 열어 아래처럼 실행합니다.</div><div class="line">c:\&gt;pip install jupyter</div></pre></td></tr></table></figure>
-<h4 id="맥"><a href="#맥" class="headerlink" title="맥"></a>맥</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># brew 설치</span></div><div class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></div><div class="line">brew install python3</div><div class="line">pip3 instll --upgrade pip</div><div class="line">pip3 install jupyter</div></pre></td></tr></table></figure>
-<h4 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install python3</div><div class="line">apt-get install python3</div><div class="line">pip3 install --upgrade pip</div><div class="line">pip3 install jupyter</div></pre></td></tr></table></figure>
+      <title><![CDATA[jupyter notebook 사용하기]]></title>
+      <url>/2017/11/17/python-jupyter-notebook-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</url>
+      <content type="html"><![CDATA[<h3 id="jupyter-notebook-사용하기"><a href="#jupyter-notebook-사용하기" class="headerlink" title="jupyter notebook 사용하기"></a>jupyter notebook 사용하기</h3><p>지난 시간에 주피터 노트북을 실행해 봤습니다.</p>
 ]]></content>
       
         <categories>
@@ -20,7 +17,7 @@
         
         <tags>
             
-            <tag> python 설치 </tag>
+            <tag> jupyter </tag>
             
         </tags>
         
@@ -134,6 +131,12 @@
 <p>파이썬은 클래스로 시작해서 클래스로 끝납니다.<br>클래스에는 메쏘드와 데이터가 있습니다.<br>클래스로 찍어낸 것을 오브젝트라고 합니다.<br>오브젝트는 클래스로부터 상속받은 메쏘드와 데이터를 사용할 수 있습니다.</p>
 <p>iSum은 int클래스가 생성한 Object이니 int클래스의 메쏘드를 물려 받은 겁니다.</p>
 <p>이제 모두 잊어 버리세요. 이런거 외우는거 아닙니다. 쓰면서 느끼면 됩니다.</p>
+<h3 id="ipython"><a href="#ipython" class="headerlink" title="ipython"></a>ipython</h3><p>기본 REPL은 기능이 없어 많이 불편합니다.<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ipython</div></pre></td></tr></table></figure></p>
+<p>프롬프트가 좀 바뀌긴 했지만 그냥 한번 써보세요.<br>색깔도 변한것 같습니다. 자동완성도 지원하고, 명령을 입력하다 잘 모르겠으면 Tab을 누르세요.<br>파일저장, 읽어오기등 부족하지만 ide처럼 사용할 수 있습니다.</p>
+<p>종료는 똑같이 quit()</p>
+<p>시작할때 각종 도움말 보는 법 나와 있으니 참고 하세요. 이것도 안쓸 겁니다.</p>
+<h3 id="jupyter-notebook"><a href="#jupyter-notebook" class="headerlink" title="jupyter notebook"></a>jupyter notebook</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ jupyter notebook</div></pre></td></tr></table></figure>
+<p>뭔가 이것저것 실행 되고 브라우저가 열립니다.<br>이놈이 앞으로 우리가 사용할 python 입니다.<br>종료하려면 브라우저 닫고 터미널에서는 Ctrl+c 누르면 종료 됩니다.</p>
 ]]></content>
       
         <categories>
@@ -146,6 +149,57 @@
         <tags>
             
             <tag> python REPL </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[실행하기]]></title>
+      <url>/2017/11/17/python-%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0/</url>
+      <content type="html"><![CDATA[<h3 id="실행하기"><a href="#실행하기" class="headerlink" title="실행하기"></a>실행하기</h3><p>파이썬을 실행하는 방법은 2가지 가 있습니다.<br>터미널에서 python3 하면 python intepretor가 실행됩니다.<br><code>&gt;&gt;&gt;</code> 이렇게 프롬프트가 나오면 이곳에 명령어를 입력하면 됩니다.<br>모든 인터프리터는 이렇게 프롬프트가 나오고 명령을 입력하면 한줄씩 번역하고 실행하게 됩니다. REPL(Read Eval Print Loop) 이라고 부릅니다. bash shell은 <code>$</code>  이렇게 프롬프트가 나오는 것과 동일합니다.<br>xNix를 사용해 보지 않은 사람은 생소하고 불편할 겁니다.<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; 1 + 1</div><div class="line">2</div><div class="line">&gt;&gt;&gt; <span class="built_in">print</span>(<span class="string">"Hello World"</span>)</div><div class="line">Hello World</div></pre></td></tr></table></figure></p>
+<p>위와 같이 1 + 1을 입력하고 엔터를 치면 바로 결과를 보여 줍니다.<br><code>print(&quot;Hello World&quot;)</code> 라고 입력하고 엔터를 치면 Hello World를 출력해 줍니다.<br>또 한 가지 방법은 IDLE이라는 내장 IDE를 사용할 수 있습니다.<br>윈도우즈에서는 문제가 없지만 mac에서는 한글 입력이 안됩니다. Tcl/Tk를 다운받아 설치하면 문제 없이 사용할 수 있지만 그렇게 까지 하면서 쓸 필요 없습니다. idle은 속도도 느리고 불편합니다. 그냥 REPL(ipython)을 사용하거나 vim 에디터가 더 편합니다. 꼭 idle을 사용하겠다 하는 사람은 처음 나온 주의 url을 복사해 링크를 따라가면 설치 파일을 받을 수 있습니다. macos버젼에 맞는 ActiveTcl버전을 다운받아 설치 하면 됩니다. 다른 버전을 받으면 안됩니다.</p>
+<h3 id="종료하기"><a href="#종료하기" class="headerlink" title="종료하기"></a>종료하기</h3><p>종료는 Ctrl + D 키를 누르면 REPL을 종료합니다.</p>
+<h3 id="vim에서-파이썬-사용하기"><a href="#vim에서-파이썬-사용하기" class="headerlink" title="vim에서 파이썬 사용하기"></a>vim에서 파이썬 사용하기</h3><p>vim에서 파이썬을 사용하는 방법은 무척 쉽습니다.<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vi helloworld.py</div></pre></td></tr></table></figure></p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">print</span>(<span class="string">"hello world"</span>)</div><div class="line"><span class="keyword">print</span>(<span class="string">"안녕하세요."</span>)</div><div class="line"><span class="keyword">print</span>(<span class="number">1</span> + <span class="number">1</span>)</div><div class="line">:<span class="keyword">w</span></div><div class="line">:!python3 %</div></pre></td></tr></table></figure>
+<p>위와 같이 입력하고 실행 하면 됩니다.</p>
+<p>한글도 잘 되고 vim보다 더 좋은 에디터는 없답니다. ^^;</p>
+]]></content>
+      
+        <categories>
+            
+            <category> python </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[python 설치]]></title>
+      <url>/2017/11/17/python-%EC%84%A4%EC%B9%98/</url>
+      <content type="html"><![CDATA[<h3 id="파이썬의-설치"><a href="#파이썬의-설치" class="headerlink" title="파이썬의 설치"></a>파이썬의 설치</h3><p>파이썬은 버젼이 2와 3가 있습니다.<br>우리는 3를 사용할 겁니다.</p>
+<h4 id="윈도우"><a href="#윈도우" class="headerlink" title="윈도우"></a>윈도우</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">python.org 사이트에서 자신의 윈도우 버젼에 맞는 python3를 다운 받아 설치합니다.</div><div class="line">설치 완료후 터미널을 열어 아래처럼 실행합니다.</div><div class="line">c:\&gt;pip install jupyter</div></pre></td></tr></table></figure>
+<h4 id="맥"><a href="#맥" class="headerlink" title="맥"></a>맥</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># brew 설치 설치되어 있으면 통과</span></div><div class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></div><div class="line">brew install python3</div><div class="line">pip3 instll --upgrade pip</div><div class="line">pip3 install jupyter</div></pre></td></tr></table></figure>
+<h4 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install python3</div><div class="line">apt-get install python3</div><div class="line">pip3 install --upgrade pip</div><div class="line">pip3 install jupyter</div></pre></td></tr></table></figure>
+]]></content>
+      
+        <categories>
+            
+            <category> python </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> python 설치 </tag>
             
         </tags>
         
@@ -166,33 +220,6 @@
         <tags>
             
             <tag> python 목차 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[실행하기]]></title>
-      <url>/2017/11/16/python-%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0/</url>
-      <content type="html"><![CDATA[<h3 id="실행하기"><a href="#실행하기" class="headerlink" title="실행하기"></a>실행하기</h3><p>파이썬을 실행하는 방법은 2가지 가 있습니다.<br>터미널에서 python3 하면 python intepretor가 실행됩니다.<br><code>&gt;&gt;&gt;</code> 이렇게 프롬프트가 나오면 이곳에 명령어를 입력하면 됩니다.<br>모든 인터프리터는 이렇게 프롬프트가 나오고 명령을 입력하면 한줄씩 번역하고 실행하게 됩니다. REPL(Read Eval Print Loop) 이라고 부릅니다. bash shell은 <code>$</code>  이렇게 프롬프트가 나오는 것과 동일합니다.<br>xNix를 사용해 보지 않은 사람은 생소하고 불편할 겁니다.<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; 1 + 1</div><div class="line">2</div><div class="line">&gt;&gt;&gt; <span class="built_in">print</span>(<span class="string">"Hello World"</span>)</div><div class="line">Hello World</div></pre></td></tr></table></figure></p>
-<p>위와 같이 1 + 1을 입력하고 엔터를 치면 바로 결과를 보여 줍니다.<br><code>print(&quot;Hello World&quot;)</code> 라고 입력하고 엔터를 치면 Hello World를 출력해 줍니다.<br>또 한 가지 방법은 IDLE이라는 내장 IDE를 사용할 수 있습니다.<br>윈도우즈에서는 문제가 없지만 mac에서는 한글 입력이 안됩니다. Tcl/Tk를 다운받아 설치하면 문제 없이 사용할 수 있지만 그렇게 까지 하면서 쓸 필요 없습니다. idle은 속도도 느리고 불편합니다. 그냥 REPL을 사용하거나 vim 에디터가 더 편합니다. 꼭 idle을 사용하겠다 하는 사람은 처음 나온 주의 url을 복사해 링크를 따라가면 설치 파일을 받을 수 있습니다. macos버젼에 맞는 ActiveTcl버전을 다운받아 설치 하면 됩니다. 다른 버전을 받으면 안됩니다.</p>
-<h3 id="종료하기"><a href="#종료하기" class="headerlink" title="종료하기"></a>종료하기</h3><p>종료는 Ctrl + D 키를 누르면 REPL을 종료합니다.</p>
-<h3 id="vim에서-파이썬-사용하기"><a href="#vim에서-파이썬-사용하기" class="headerlink" title="vim에서 파이썬 사용하기"></a>vim에서 파이썬 사용하기</h3><p>vim에서 파이썬을 사용하는 방법은 무척 쉽습니다.<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vi helloworld.py</div></pre></td></tr></table></figure></p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">print</span>(<span class="string">"hello world"</span>)</div><div class="line"><span class="keyword">print</span>(<span class="string">"안녕하세요."</span>)</div><div class="line"><span class="keyword">print</span>(<span class="number">1</span> + <span class="number">1</span>)</div><div class="line">:<span class="keyword">w</span></div><div class="line">:!python3 %</div></pre></td></tr></table></figure>
-<p>위와 같이 입력하고 실행 하면 됩니다.</p>
-<p>한글도 잘 되고 vim보다 더 좋은 에디터는 없답니다. ^^;</p>
-]]></content>
-      
-        <categories>
-            
-            <category> python </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> python </tag>
             
         </tags>
         
