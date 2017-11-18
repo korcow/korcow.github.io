@@ -181,7 +181,7 @@ div {
     margin: 0;
     color: #555;
     text-align: left;
-    font: bold 25px/1.1 "ff-tisa-web-pro", Cambria, "Times New Roman", Georgia, Times, sans-serif; }
+    font: bold 25px/1.1 D2Coding, "D2 coding", "ff-tisa-web-pro", Cambria, "Times New Roman", Georgia, Times, sans-serif; }
     .post .post-title a {
       color: #555; }
   .post .post-meta {
@@ -366,7 +366,7 @@ div {
   padding-bottom: .8em; }
   .post-archive h2 {
     margin: 0;
-    font: bold 25px / 1.1 "ff-tisa-web-pro", Cambria, "Times New Roman", Georgia, Times, sans-serif; }
+    font: bold 25px / 1.1 D2Coding, "D2 coding", "ff-tisa-web-pro", Cambria, "Times New Roman", Georgia, Times, sans-serif; }
   .post-archive .date {
     padding-right: .7em; }
 
