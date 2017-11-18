@@ -3,6 +3,55 @@
   
     
     <entry>
+      <title><![CDATA[실행하기]]></title>
+      <url>/2017/11/18/python-%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0/</url>
+      <content type="html"><![CDATA[<h3 id="실행하기"><a href="#실행하기" class="headerlink" title="실행하기"></a>실행하기</h3><p>파이썬을 실행하는 방법은 2가지 가 있습니다.<br>터미널에서 python3 하면 python intepretor가 실행됩니다.<br><code>&gt;&gt;&gt;</code> 이렇게 프롬프트가 나오면 이곳에 명령어를 입력하면 됩니다.<br>모든 인터프리터는 이렇게 프롬프트가 나오고 명령을 입력하면 한줄씩 번역하고 실행하게 됩니다. REPL(Read Eval Print Loop) 이라고 부릅니다. bash shell은 <code>$</code>  이렇게 프롬프트가 나오는 것과 동일합니다.<br>xNix를 사용해 보지 않은 사람은 생소하고 불편할 겁니다.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; 1 + 1</div><div class="line">2</div><div class="line">&gt;&gt;&gt; <span class="built_in">print</span>(<span class="string">"Hello World"</span>)</div><div class="line">Hello World</div></pre></td></tr></table></figure>
+<p>위와 같이 1 + 1을 입력하고 엔터를 치면 바로 결과를 보여 줍니다.<br><code>print(&quot;Hello World&quot;)</code> 라고 입력하고 엔터를 치면 Hello World를 출력해 줍니다.<br>또 한 가지 방법은 IDLE이라는 내장 IDE를 사용할 수 있습니다.<br>윈도우즈에서는 문제가 없지만 mac에서는 한글 입력이 안됩니다. Tcl/Tk를 다운받아 설치하면 문제 없이 사용할 수 있지만 그렇게 까지 하면서 쓸 필요 없습니다. idle은 속도도 느리고 불편합니다. 그냥 REPL(ipython)을 사용하거나 vim 에디터가 더 편합니다. 꼭 idle을 사용하겠다 하는 사람은 처음 나온 주의 url을 복사해 링크를 따라가면 설치 파일을 받을 수 있습니다. macos버젼에 맞는 ActiveTcl버전을 다운받아 설치 하면 됩니다. 다른 버전을 받으면 안됩니다.</p>
+<h3 id="종료하기"><a href="#종료하기" class="headerlink" title="종료하기"></a>종료하기</h3><p>종료는 Ctrl + D 키를 누르면 REPL을 종료합니다.</p>
+<h3 id="vim에서-파이썬-사용하기"><a href="#vim에서-파이썬-사용하기" class="headerlink" title="vim에서 파이썬 사용하기"></a>vim에서 파이썬 사용하기</h3><p>vim에서 파이썬을 사용하는 방법은 무척 쉽습니다.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vi helloworld.py</div></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">print</span>(<span class="string">"hello world"</span>)</div><div class="line"><span class="keyword">print</span>(<span class="string">"안녕하세요."</span>)</div><div class="line"><span class="keyword">print</span>(<span class="number">1</span> + <span class="number">1</span>)</div><div class="line">:<span class="keyword">w</span></div><div class="line">:!python3 %</div></pre></td></tr></table></figure>
+<p>위와 같이 입력하고 실행 하면 됩니다.</p>
+<p>한글도 잘 되고 vim보다 더 좋은 에디터는 없답니다. ^^;</p>
+]]></content>
+      
+        <categories>
+            
+            <category> python </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[목차]]></title>
+      <url>/2017/11/18/python-%EB%AA%A9%EC%B0%A8/</url>
+      <content type="html"><![CDATA[<h3 id="python-목차-md"><a href="#python-목차-md" class="headerlink" title="python-목차.md"></a>python-목차.md</h3><h4 id="python-설치-md"><a href="#python-설치-md" class="headerlink" title="python-설치.md"></a>python-설치.md</h4><h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><h4 id="REPL-사용하기-md"><a href="#REPL-사용하기-md" class="headerlink" title="REPL-사용하기.md"></a>REPL-사용하기.md</h4><h4 id="사칙연산"><a href="#사칙연산" class="headerlink" title="사칙연산"></a>사칙연산</h4><h4 id="변수"><a href="#변수" class="headerlink" title="변수"></a>변수</h4><h4 id="상수"><a href="#상수" class="headerlink" title="상수"></a>상수</h4><h4 id="출력하기"><a href="#출력하기" class="headerlink" title="출력하기"></a>출력하기</h4><h4 id="list"><a href="#list" class="headerlink" title="list"></a>list</h4><h4 id="tuple"><a href="#tuple" class="headerlink" title="tuple"></a>tuple</h4><h4 id="dictionary"><a href="#dictionary" class="headerlink" title="dictionary"></a>dictionary</h4><h4 id="입력받기"><a href="#입력받기" class="headerlink" title="입력받기"></a>입력받기</h4><h4 id="조건문"><a href="#조건문" class="headerlink" title="조건문"></a>조건문</h4><h4 id="반복문"><a href="#반복문" class="headerlink" title="반복문"></a>반복문</h4>]]></content>
+      
+        <categories>
+            
+            <category> python </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> python 목차 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[jupyter 사용법]]></title>
       <url>/2017/11/18/python-jupyter-%EC%82%AC%EC%9A%A9%EB%B2%95/</url>
       <content type="html"><![CDATA[<h3 id="주피터-사용법"><a href="#주피터-사용법" class="headerlink" title="주피터 사용법"></a>주피터 사용법</h3><p><img src="/python/2017-11-18_09-11-11.png" alt="초기화면"></p>
@@ -283,55 +332,6 @@
         <tags>
             
             <tag> python REPL </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[실행하기]]></title>
-      <url>/2017/11/17/python-%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0/</url>
-      <content type="html"><![CDATA[<h3 id="실행하기"><a href="#실행하기" class="headerlink" title="실행하기"></a>실행하기</h3><p>파이썬을 실행하는 방법은 2가지 가 있습니다.<br>터미널에서 python3 하면 python intepretor가 실행됩니다.<br><code>&gt;&gt;&gt;</code> 이렇게 프롬프트가 나오면 이곳에 명령어를 입력하면 됩니다.<br>모든 인터프리터는 이렇게 프롬프트가 나오고 명령을 입력하면 한줄씩 번역하고 실행하게 됩니다. REPL(Read Eval Print Loop) 이라고 부릅니다. bash shell은 <code>$</code>  이렇게 프롬프트가 나오는 것과 동일합니다.<br>xNix를 사용해 보지 않은 사람은 생소하고 불편할 겁니다.</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; 1 + 1</div><div class="line">2</div><div class="line">&gt;&gt;&gt; <span class="built_in">print</span>(<span class="string">"Hello World"</span>)</div><div class="line">Hello World</div></pre></td></tr></table></figure>
-<p>위와 같이 1 + 1을 입력하고 엔터를 치면 바로 결과를 보여 줍니다.<br><code>print(&quot;Hello World&quot;)</code> 라고 입력하고 엔터를 치면 Hello World를 출력해 줍니다.<br>또 한 가지 방법은 IDLE이라는 내장 IDE를 사용할 수 있습니다.<br>윈도우즈에서는 문제가 없지만 mac에서는 한글 입력이 안됩니다. Tcl/Tk를 다운받아 설치하면 문제 없이 사용할 수 있지만 그렇게 까지 하면서 쓸 필요 없습니다. idle은 속도도 느리고 불편합니다. 그냥 REPL(ipython)을 사용하거나 vim 에디터가 더 편합니다. 꼭 idle을 사용하겠다 하는 사람은 처음 나온 주의 url을 복사해 링크를 따라가면 설치 파일을 받을 수 있습니다. macos버젼에 맞는 ActiveTcl버전을 다운받아 설치 하면 됩니다. 다른 버전을 받으면 안됩니다.</p>
-<h3 id="종료하기"><a href="#종료하기" class="headerlink" title="종료하기"></a>종료하기</h3><p>종료는 Ctrl + D 키를 누르면 REPL을 종료합니다.</p>
-<h3 id="vim에서-파이썬-사용하기"><a href="#vim에서-파이썬-사용하기" class="headerlink" title="vim에서 파이썬 사용하기"></a>vim에서 파이썬 사용하기</h3><p>vim에서 파이썬을 사용하는 방법은 무척 쉽습니다.</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vi helloworld.py</div></pre></td></tr></table></figure>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">print</span>(<span class="string">"hello world"</span>)</div><div class="line"><span class="keyword">print</span>(<span class="string">"안녕하세요."</span>)</div><div class="line"><span class="keyword">print</span>(<span class="number">1</span> + <span class="number">1</span>)</div><div class="line">:<span class="keyword">w</span></div><div class="line">:!python3 %</div></pre></td></tr></table></figure>
-<p>위와 같이 입력하고 실행 하면 됩니다.</p>
-<p>한글도 잘 되고 vim보다 더 좋은 에디터는 없답니다. ^^;</p>
-]]></content>
-      
-        <categories>
-            
-            <category> python </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> python </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[목차]]></title>
-      <url>/2017/11/16/python-%EB%AA%A9%EC%B0%A8/</url>
-      <content type="html"><![CDATA[<h3 id="python-목차-md"><a href="#python-목차-md" class="headerlink" title="python-목차.md"></a>python-목차.md</h3><h4 id="python-설치-md"><a href="#python-설치-md" class="headerlink" title="python-설치.md"></a>python-설치.md</h4><h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><h4 id="REPL-사용하기-md"><a href="#REPL-사용하기-md" class="headerlink" title="REPL-사용하기.md"></a>REPL-사용하기.md</h4><h4 id="사칙연산"><a href="#사칙연산" class="headerlink" title="사칙연산"></a>사칙연산</h4><h4 id="변수"><a href="#변수" class="headerlink" title="변수"></a>변수</h4><h4 id="상수"><a href="#상수" class="headerlink" title="상수"></a>상수</h4><h4 id="출력하기"><a href="#출력하기" class="headerlink" title="출력하기"></a>출력하기</h4><h4 id="list"><a href="#list" class="headerlink" title="list"></a>list</h4><h4 id="tuple"><a href="#tuple" class="headerlink" title="tuple"></a>tuple</h4><h4 id="dictionary"><a href="#dictionary" class="headerlink" title="dictionary"></a>dictionary</h4><h4 id="입력받기"><a href="#입력받기" class="headerlink" title="입력받기"></a>입력받기</h4><h4 id="조건문"><a href="#조건문" class="headerlink" title="조건문"></a>조건문</h4><h4 id="반복문"><a href="#반복문" class="headerlink" title="반복문"></a>반복문</h4>]]></content>
-      
-        <categories>
-            
-            <category> Python </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> python 목차 </tag>
             
         </tags>
         
