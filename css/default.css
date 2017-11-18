@@ -624,7 +624,7 @@ a.gitment-editor-footer-tip:hover {
 .gitment-markdown code,
 .gitment-markdown kbd,
 .gitment-markdown pre {
-  font-family: monospace, monospace;
+  font-family: D2Coding, "D2 coding",monospace, monospace;
   font-size: 1em;
 }
 
@@ -774,14 +774,14 @@ a.gitment-editor-footer-tip:hover {
 }
 
 .gitment-markdown code {
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-family: D2Coding, "D2 coding","SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 12px;
 }
 
 .gitment-markdown pre {
   margin-top: 0;
   margin-bottom: 0;
-  font: 12px "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font: 12px D2Coding, "D2 coding","SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
 
 .gitment-markdown .octicon {
@@ -1111,7 +1111,7 @@ a.gitment-editor-footer-tip:hover {
 .gitment-markdown kbd {
   display: inline-block;
   padding: 3px 5px;
-  font: 11px "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font: 11px D2Coding, "D2 coding","SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
   line-height: 10px;
   color: #444d56;
   vertical-align: middle;
