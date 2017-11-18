@@ -167,6 +167,30 @@
     </entry>
     
     <entry>
+      <title><![CDATA[python 설치]]></title>
+      <url>/2017/11/18/python-%EC%84%A4%EC%B9%98/</url>
+      <content type="html"><![CDATA[<h3 id="파이썬의-설치"><a href="#파이썬의-설치" class="headerlink" title="파이썬의 설치"></a>파이썬의 설치</h3><p>파이썬은 버젼이 2와 3가 있습니다.<br>우리는 3를 사용할 겁니다.</p>
+<h4 id="윈도우"><a href="#윈도우" class="headerlink" title="윈도우"></a>윈도우</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">python.org 사이트에서 자신의 윈도우 버젼에 맞는 python3를 다운 받아 설치합니다.</div><div class="line">설치 완료후 터미널을 열어 아래처럼 실행합니다.</div><div class="line">c:\&gt;pip install jupyter</div></pre></td></tr></table></figure>
+<h4 id="맥"><a href="#맥" class="headerlink" title="맥"></a>맥</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># brew 설치 설치되어 있으면 통과</span></div><div class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></div><div class="line">brew install python3</div><div class="line">pip3 instll --upgrade pip</div><div class="line">pip3 install jupyter</div></pre></td></tr></table></figure>
+<h4 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install python3</div><div class="line">apt-get install python3</div><div class="line">pip3 install --upgrade pip</div><div class="line">pip3 install jupyter</div></pre></td></tr></table></figure>
+]]></content>
+      
+        <categories>
+            
+            <category> python </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> python 설치 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[목차]]></title>
       <url>/2017/11/18/python-%EB%AA%A9%EC%B0%A8/</url>
       <content type="html"><![CDATA[<h3 id="python-목차-md"><a href="#python-목차-md" class="headerlink" title="python-목차.md"></a>python-목차.md</h3><h4 id="python-설치-md"><a href="#python-설치-md" class="headerlink" title="python-설치.md"></a>python-설치.md</h4><h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><h4 id="REPL-사용하기-md"><a href="#REPL-사용하기-md" class="headerlink" title="REPL-사용하기.md"></a>REPL-사용하기.md</h4><h4 id="사칙연산"><a href="#사칙연산" class="headerlink" title="사칙연산"></a>사칙연산</h4><h4 id="변수"><a href="#변수" class="headerlink" title="변수"></a>변수</h4><h4 id="상수"><a href="#상수" class="headerlink" title="상수"></a>상수</h4><h4 id="출력하기"><a href="#출력하기" class="headerlink" title="출력하기"></a>출력하기</h4><h4 id="list"><a href="#list" class="headerlink" title="list"></a>list</h4><h4 id="tuple"><a href="#tuple" class="headerlink" title="tuple"></a>tuple</h4><h4 id="dictionary"><a href="#dictionary" class="headerlink" title="dictionary"></a>dictionary</h4><h4 id="입력받기"><a href="#입력받기" class="headerlink" title="입력받기"></a>입력받기</h4><h4 id="조건문"><a href="#조건문" class="headerlink" title="조건문"></a>조건문</h4><h4 id="반복문"><a href="#반복문" class="headerlink" title="반복문"></a>반복문</h4>]]></content>
@@ -308,30 +332,6 @@
             <tag> 약수 </tag>
             
             <tag> 배수 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[python 설치]]></title>
-      <url>/2017/11/17/python-%EC%84%A4%EC%B9%98/</url>
-      <content type="html"><![CDATA[<h3 id="파이썬의-설치"><a href="#파이썬의-설치" class="headerlink" title="파이썬의 설치"></a>파이썬의 설치</h3><p>파이썬은 버젼이 2와 3가 있습니다.<br>우리는 3를 사용할 겁니다.</p>
-<h4 id="윈도우"><a href="#윈도우" class="headerlink" title="윈도우"></a>윈도우</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">python.org 사이트에서 자신의 윈도우 버젼에 맞는 python3를 다운 받아 설치합니다.</div><div class="line">설치 완료후 터미널을 열어 아래처럼 실행합니다.</div><div class="line">c:\&gt;pip install jupyter</div></pre></td></tr></table></figure>
-<h4 id="맥"><a href="#맥" class="headerlink" title="맥"></a>맥</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># brew 설치 설치되어 있으면 통과</span></div><div class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></div><div class="line">brew install python3</div><div class="line">pip3 instll --upgrade pip</div><div class="line">pip3 install jupyter</div></pre></td></tr></table></figure>
-<h4 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install python3</div><div class="line">apt-get install python3</div><div class="line">pip3 install --upgrade pip</div><div class="line">pip3 install jupyter</div></pre></td></tr></table></figure>
-]]></content>
-      
-        <categories>
-            
-            <category> python </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> python 설치 </tag>
             
         </tags>
         
@@ -3764,6 +3764,34 @@ alias vi=gvim -v</code></p>
     
     <entry>
       <title></title>
+      <url>/font/readme.html</url>
+      <content type="html"><![CDATA[<h1 id="D2Coding-Web-Fonts"><a href="#D2Coding-Web-Fonts" class="headerlink" title="D2Coding Web Fonts"></a>D2Coding Web Fonts</h1><p><a href="https://raw.githubusercontent.com/Joungkyun/font-d2coding/master/license" target="_blank" rel="external"><img src="https://img.shields.io/badge/License-OFL-blue.svg" alt="D2Coding license"></a></p>
+<p>D2Coding Web Font who careted by <a href="http://dev.naver.com/projects/d2coding" target="_blank" rel="external">NAVER Corp</a>.</p>
+<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>Copyright &copy; NAVER Copr. All Rights Reserved.</p>
+<p>OFL(Open Font License)</p>
+<p>THE FONT SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND,<br>EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF<br>MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT<br>OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE<br>COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,<br>INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL<br>DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING<br>FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM<br>OTHER DEALINGS IN THE FONT SOFTWARE.</p>
+<h2 id="Font-information"><a href="#Font-information" class="headerlink" title="Font information"></a>Font information</h2><h3 id="Weights"><a href="#Weights" class="headerlink" title="Weights"></a>Weights</h3><ul>
+<li>Bold (700)</li>
+<li>Normal (400)</li>
+</ul>
+<h3 id="Support-type"><a href="#Support-type" class="headerlink" title="Support type"></a>Support type</h3><ul>
+<li>eot</li>
+<li>woff</li>
+<li>woff2</li>
+<li>ttf</li>
+</ul>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>Insert d2coding.css or create @font-face css to HTML:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"/path/d2coding.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>or</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">font-face</span> &#123;</div><div class="line">  <span class="attribute">font-family</span>: <span class="string">'D2 coding'</span>;</div><div class="line">  <span class="attribute">font-style</span>: normal;</div><div class="line">  <span class="attribute">font-weight</span>: <span class="number">700</span>;</div><div class="line">  <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">'/path/d2codingbold.eot'</span>);</div><div class="line">  <span class="attribute">src</span>: <span class="built_in">local</span>(<span class="string">'※'</span>), <span class="built_in">local</span>(<span class="string">'D2Coding Bold'</span>),</div><div class="line">       <span class="built_in">url</span>(<span class="string">'/path/d2codingbold.eot?#iefix'</span>) <span class="built_in">format</span>(<span class="string">'embedded-opentype'</span>),</div><div class="line">       <span class="built_in">url</span>(<span class="string">'/path/d2codingbold.woff2'</span>) <span class="built_in">format</span>(<span class="string">'x-woff2'</span>),</div><div class="line">       <span class="built_in">url</span>(<span class="string">'/path/d2codingbold.woff'</span>) <span class="built_in">format</span>(<span class="string">'woff'</span>),</div><div class="line">       <span class="built_in">url</span>(<span class="string">'/path/d2codingbold.ttf'</span>) <span class="built_in">format</span>(<span class="string">'truetype'</span>),</div><div class="line">       <span class="built_in">url</span>(<span class="string">'/path/d2codingbold.svg'</span>) <span class="built_in">format</span>(<span class="string">'svg'</span>);</div><div class="line">&#125;</div><div class="line">@<span class="keyword">font-face</span> &#123;</div><div class="line">  <span class="attribute">font-family</span>: <span class="string">'D2 coding'</span>;</div><div class="line">  <span class="attribute">font-style</span>: normal;</div><div class="line">  <span class="attribute">font-weight</span>: <span class="number">400</span>;</div><div class="line">  <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">'/path/d2coding.eot'</span>);</div><div class="line">  <span class="attribute">src</span>: <span class="built_in">local</span>(<span class="string">'※'</span>), <span class="built_in">local</span>(<span class="string">'D2Coding'</span>),</div><div class="line">       <span class="built_in">url</span>(<span class="string">'/path/d2coding.eot?#iefix'</span>) <span class="built_in">format</span>(<span class="string">'embedded-opentype'</span>),</div><div class="line">       <span class="built_in">url</span>(<span class="string">'/path/d2coding.woff2'</span>) <span class="built_in">format</span>(<span class="string">'x-woff2'</span>),</div><div class="line">       <span class="built_in">url</span>(<span class="string">'/path/d2coding.woff'</span>) <span class="built_in">format</span>(<span class="string">'woff'</span>),</div><div class="line">       <span class="built_in">url</span>(<span class="string">'/path/d2coding.ttf'</span>) <span class="built_in">format</span>(<span class="string">'truetype'</span>),</div><div class="line">       <span class="built_in">url</span>(<span class="string">'/path/d2coding.svg'</span>) <span class="built_in">format</span>(<span class="string">'svg'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Adding to CSS:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">	<span class="attribute">font-family</span>: D2Coding, <span class="string">'D2 coding'</span>, monosapce;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>first, search local D2Coding font and next call D2 conding web font, and last load monospace</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title></title>
       <url>/font/d2coding.css</url>
       <content type="html"><![CDATA[/* 
  * D2 coding (Korean) http://dev.naver.com/projects/d2coding/
@@ -3792,34 +3820,6 @@ alias vi=gvim -v</code></p>
        url('d2coding.ttf') format('truetype'),
        url('d2coding.svg') format('svg');
 }
-]]></content>
-    </entry>
-    
-    <entry>
-      <title></title>
-      <url>/font/readme.html</url>
-      <content type="html"><![CDATA[<h1 id="D2Coding-Web-Fonts"><a href="#D2Coding-Web-Fonts" class="headerlink" title="D2Coding Web Fonts"></a>D2Coding Web Fonts</h1><p><a href="https://raw.githubusercontent.com/Joungkyun/font-d2coding/master/license" target="_blank" rel="external"><img src="https://img.shields.io/badge/License-OFL-blue.svg" alt="D2Coding license"></a></p>
-<p>D2Coding Web Font who careted by <a href="http://dev.naver.com/projects/d2coding" target="_blank" rel="external">NAVER Corp</a>.</p>
-<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>Copyright &copy; NAVER Copr. All Rights Reserved.</p>
-<p>OFL(Open Font License)</p>
-<p>THE FONT SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND,<br>EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF<br>MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT<br>OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE<br>COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,<br>INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL<br>DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING<br>FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM<br>OTHER DEALINGS IN THE FONT SOFTWARE.</p>
-<h2 id="Font-information"><a href="#Font-information" class="headerlink" title="Font information"></a>Font information</h2><h3 id="Weights"><a href="#Weights" class="headerlink" title="Weights"></a>Weights</h3><ul>
-<li>Bold (700)</li>
-<li>Normal (400)</li>
-</ul>
-<h3 id="Support-type"><a href="#Support-type" class="headerlink" title="Support type"></a>Support type</h3><ul>
-<li>eot</li>
-<li>woff</li>
-<li>woff2</li>
-<li>ttf</li>
-</ul>
-<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>Insert d2coding.css or create @font-face css to HTML:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"/path/d2coding.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>or</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">font-face</span> &#123;</div><div class="line">  <span class="attribute">font-family</span>: <span class="string">'D2 coding'</span>;</div><div class="line">  <span class="attribute">font-style</span>: normal;</div><div class="line">  <span class="attribute">font-weight</span>: <span class="number">700</span>;</div><div class="line">  <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">'/path/d2codingbold.eot'</span>);</div><div class="line">  <span class="attribute">src</span>: <span class="built_in">local</span>(<span class="string">'※'</span>), <span class="built_in">local</span>(<span class="string">'D2Coding Bold'</span>),</div><div class="line">       <span class="built_in">url</span>(<span class="string">'/path/d2codingbold.eot?#iefix'</span>) <span class="built_in">format</span>(<span class="string">'embedded-opentype'</span>),</div><div class="line">       <span class="built_in">url</span>(<span class="string">'/path/d2codingbold.woff2'</span>) <span class="built_in">format</span>(<span class="string">'x-woff2'</span>),</div><div class="line">       <span class="built_in">url</span>(<span class="string">'/path/d2codingbold.woff'</span>) <span class="built_in">format</span>(<span class="string">'woff'</span>),</div><div class="line">       <span class="built_in">url</span>(<span class="string">'/path/d2codingbold.ttf'</span>) <span class="built_in">format</span>(<span class="string">'truetype'</span>),</div><div class="line">       <span class="built_in">url</span>(<span class="string">'/path/d2codingbold.svg'</span>) <span class="built_in">format</span>(<span class="string">'svg'</span>);</div><div class="line">&#125;</div><div class="line">@<span class="keyword">font-face</span> &#123;</div><div class="line">  <span class="attribute">font-family</span>: <span class="string">'D2 coding'</span>;</div><div class="line">  <span class="attribute">font-style</span>: normal;</div><div class="line">  <span class="attribute">font-weight</span>: <span class="number">400</span>;</div><div class="line">  <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">'/path/d2coding.eot'</span>);</div><div class="line">  <span class="attribute">src</span>: <span class="built_in">local</span>(<span class="string">'※'</span>), <span class="built_in">local</span>(<span class="string">'D2Coding'</span>),</div><div class="line">       <span class="built_in">url</span>(<span class="string">'/path/d2coding.eot?#iefix'</span>) <span class="built_in">format</span>(<span class="string">'embedded-opentype'</span>),</div><div class="line">       <span class="built_in">url</span>(<span class="string">'/path/d2coding.woff2'</span>) <span class="built_in">format</span>(<span class="string">'x-woff2'</span>),</div><div class="line">       <span class="built_in">url</span>(<span class="string">'/path/d2coding.woff'</span>) <span class="built_in">format</span>(<span class="string">'woff'</span>),</div><div class="line">       <span class="built_in">url</span>(<span class="string">'/path/d2coding.ttf'</span>) <span class="built_in">format</span>(<span class="string">'truetype'</span>),</div><div class="line">       <span class="built_in">url</span>(<span class="string">'/path/d2coding.svg'</span>) <span class="built_in">format</span>(<span class="string">'svg'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>Adding to CSS:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">	<span class="attribute">font-family</span>: D2Coding, <span class="string">'D2 coding'</span>, monosapce;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>first, search local D2Coding font and next call D2 conding web font, and last load monospace</p>
 ]]></content>
     </entry>
     

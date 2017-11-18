@@ -68,6 +68,32 @@
   </entry>
   
   <entry>
+    <title>python 설치</title>
+    <link href="http://korcow.github.io/2017/11/18/python-%EC%84%A4%EC%B9%98/"/>
+    <id>http://korcow.github.io/2017/11/18/python-설치/</id>
+    <published>2017-11-18T01:40:56.769Z</published>
+    <updated>2017-11-18T01:40:56.769Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="파이썬의-설치"><a href="#파이썬의-설치" class="headerlink" title="파이썬의 설치"></a>파이썬의 설치</h3><p>파이썬은 버젼이 2와 3가 있습니다.<br>우리는 3를 사용할 겁니다.</p><h4 id="윈도우"><a href="#윈도우" class="headerlink" title="윈도우"></a>윈도우</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">python.org 사이트에서 자신의 윈도우 버젼에 맞는 python3를 다운 받아 설치합니다.</div><div class="line">설치 완료후 터미널을 열어 아래처럼 실행합니다.</div><div class="line">c:\&gt;pip install jupyter</div></pre></td></tr></table></figure><h4 id="맥"><a href="#맥" class="headerlink" title="맥"></a>맥</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># brew 설치 설치되어 있으면 통과</span></div><div class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></div><div class="line">brew install python3</div><div class="line">pip3 instll --upgrade pip</div><div class="line">pip3 install jupyter</div></pre></td></tr></table></figure><h4 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install python3</div><div class="line">apt-get install python3</div><div class="line">pip3 install --upgrade pip</div><div class="line">pip3 install jupyter</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;파이썬의-설치&quot;&gt;&lt;a href=&quot;#파이썬의-설치&quot; class=&quot;headerlink&quot; title=&quot;파이썬의 설치&quot;&gt;&lt;/a&gt;파이썬의 설치&lt;/h3&gt;&lt;p&gt;파이썬은 버젼이 2와 3가 있습니다.&lt;br&gt;우리는 3를 사용할 겁니다.&lt;/p&gt;
+&lt;h4 id
+      
+    
+    </summary>
+    
+      <category term="python" scheme="http://korcow.github.io/categories/python/"/>
+    
+    
+      <category term="python 설치" scheme="http://korcow.github.io/tags/python-%EC%84%A4%EC%B9%98/"/>
+    
+  </entry>
+  
+  <entry>
     <title>목차</title>
     <link href="http://korcow.github.io/2017/11/18/python-%EB%AA%A9%EC%B0%A8/"/>
     <id>http://korcow.github.io/2017/11/18/python-목차/</id>
@@ -141,32 +167,6 @@
       <category term="약수" scheme="http://korcow.github.io/tags/%EC%95%BD%EC%88%98/"/>
     
       <category term="배수" scheme="http://korcow.github.io/tags/%EB%B0%B0%EC%88%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python 설치</title>
-    <link href="http://korcow.github.io/2017/11/17/python-%EC%84%A4%EC%B9%98/"/>
-    <id>http://korcow.github.io/2017/11/17/python-설치/</id>
-    <published>2017-11-17T13:00:42.747Z</published>
-    <updated>2017-11-17T13:00:42.747Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="파이썬의-설치"><a href="#파이썬의-설치" class="headerlink" title="파이썬의 설치"></a>파이썬의 설치</h3><p>파이썬은 버젼이 2와 3가 있습니다.<br>우리는 3를 사용할 겁니다.</p><h4 id="윈도우"><a href="#윈도우" class="headerlink" title="윈도우"></a>윈도우</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">python.org 사이트에서 자신의 윈도우 버젼에 맞는 python3를 다운 받아 설치합니다.</div><div class="line">설치 완료후 터미널을 열어 아래처럼 실행합니다.</div><div class="line">c:\&gt;pip install jupyter</div></pre></td></tr></table></figure><h4 id="맥"><a href="#맥" class="headerlink" title="맥"></a>맥</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># brew 설치 설치되어 있으면 통과</span></div><div class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></div><div class="line">brew install python3</div><div class="line">pip3 instll --upgrade pip</div><div class="line">pip3 install jupyter</div></pre></td></tr></table></figure><h4 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install python3</div><div class="line">apt-get install python3</div><div class="line">pip3 install --upgrade pip</div><div class="line">pip3 install jupyter</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;파이썬의-설치&quot;&gt;&lt;a href=&quot;#파이썬의-설치&quot; class=&quot;headerlink&quot; title=&quot;파이썬의 설치&quot;&gt;&lt;/a&gt;파이썬의 설치&lt;/h3&gt;&lt;p&gt;파이썬은 버젼이 2와 3가 있습니다.&lt;br&gt;우리는 3를 사용할 겁니다.&lt;/p&gt;
-&lt;h4 id
-      
-    
-    </summary>
-    
-      <category term="python" scheme="http://korcow.github.io/categories/python/"/>
-    
-    
-      <category term="python 설치" scheme="http://korcow.github.io/tags/python-%EC%84%A4%EC%B9%98/"/>
     
   </entry>
   
