@@ -4,7 +4,7 @@
     
     <entry>
       <title><![CDATA[인자로 입력 받기]]></title>
-      <url>/2017/11/21/c-%EC%9D%B8%EC%9E%90%EB%A1%9C-%EC%9E%85%EB%A0%A5-%EB%B0%9B%EA%B8%B0/</url>
+      <url>/2017/11/22/c-%EC%9D%B8%EC%9E%90%EB%A1%9C-%EC%9E%85%EB%A0%A5-%EB%B0%9B%EA%B8%B0/</url>
       <content type="html"><![CDATA[<h3 id="인자로-입력받기"><a href="#인자로-입력받기" class="headerlink" title="인자로 입력받기"></a>인자로 입력받기</h3><p>리눅스 명령은 프로그램 실행시 옵션으로 인자를 입력받아 처리를 할 수 있게 만듭니다.<br>입력되는 인자에 따라 루틴을 바꾸어 준다든지, 인자를 매개변수로 사용할 수 있도록 해보겠습니다.</p>
 <p>먼저 간단한 계산기를 만들어 보죠.<br>프로그램 이름은 mycalc로 할겁니다.<br>mycalc 인자1, 인자2, 인자3을 입력받을 겁니다.<br>인자1은 num1, 인자2는 연산자, 인자3은 num3로 구분을 할 겁니다.<br>인자의 구분은 스페이스로 할겁니다.</p>
 <p>``` c</p>
@@ -15,7 +15,7 @@
       
         <categories>
             
-            <category> C언어 기초 </category>
+            <category> C언어기초 </category>
             
         </categories>
         
