@@ -1,0 +1,170 @@
+<!DOCTYPE html><html lang="ko"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="테스트"><title>파일 입출력 | KORCOW</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">파일 입출력</h1><a id="logo" href="/.">KORCOW</a><p class="description">HANS</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 홈</i></a><a href="/archives/"><i class="fa fa-archive"> 아카이브</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">파일 입출력</h1><div class="post-meta">Nov 24, 2017<span> | </span><span class="category"><a href="/categories/C언어기초/">C언어기초</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> Hits</span></span></div><a data-disqus-identifier="2017/11/24/c-파일-입출력/" href="/2017/11/24/c-파일-입출력/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><h3 id="파일-입출력"><a href="#파일-입출력" class="headerlink" title="파일 입출력"></a>파일 입출력</h3><h4 id="파일-저장하기"><a href="#파일-저장하기" class="headerlink" title="파일 저장하기"></a>파일 저장하기</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;  //fopen(), fclose(), fprintf()</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line">    </div><div class="line">    FILE *fp = fopen(<span class="string">"mynewfile.txt"</span>, <span class="string">"w"</span>);</div><div class="line"></div><div class="line">    <span class="comment">// 서식 문자열 파일로 출력</span></div><div class="line">    <span class="built_in">fprintf</span>(fp, <span class="string">"%s\n"</span>, <span class="string">"hello world"</span>);</div><div class="line"></div><div class="line">    fclose(fp);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="파일-읽기"><a href="#파일-읽기" class="headerlink" title="파일 읽기"></a>파일 읽기</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;  //fopen(), fclose(), fprintf()</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">char</span> sp[<span class="number">30</span>];</div><div class="line">    FILE *fp = fopen(<span class="string">"mynewfile.txt"</span>, <span class="string">"r"</span>);</div><div class="line"></div><div class="line">    <span class="comment">// 서식 문자열 읽기</span></div><div class="line">    <span class="built_in">fscanf</span>(fp, <span class="string">"%s"</span>, sp);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>,sp );</div><div class="line">    </div><div class="line">    <span class="built_in">fscanf</span>(fp, <span class="string">"%s"</span>, sp);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>,sp );</div><div class="line"></div><div class="line">    fclose(fp);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="파일모드"><a href="#파일모드" class="headerlink" title="파일모드"></a>파일모드</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">파일 모드</th>
+<th style="text-align:center">기능</th>
+<th style="text-align:left">설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">“r”</td>
+<td style="text-align:center">읽기 전용</td>
+<td style="text-align:left">파일을 읽기 전용으로 엽니다. 단, 파일이 반드시 있어야 합니다.</td>
+</tr>
+<tr>
+<td style="text-align:center">“w”</td>
+<td style="text-align:center">쓰기 전용</td>
+<td style="text-align:left">새 파일을 생성합니다. 만약 파일이 있으면 내용을 덮어씁니다.</td>
+</tr>
+<tr>
+<td style="text-align:center">“a”</td>
+<td style="text-align:center">추가</td>
+<td style="text-align:left">파일을 열어 파일 끝에 값을 이어 씁니다. 만약 파일이 없으면 파일을 생성합니다.</td>
+</tr>
+<tr>
+<td style="text-align:center">“r+”</td>
+<td style="text-align:center">읽기/쓰기</td>
+<td style="text-align:left">파일을 읽기/쓰기용으로 엽니다. 단, 파일이 반드시 있어야 하며 파일이 없으면 NULL을 반환합니다.</td>
+</tr>
+<tr>
+<td style="text-align:center">“w+”</td>
+<td style="text-align:center">읽기/쓰기</td>
+<td style="text-align:left">파일을 읽기/쓰기용으로 엽니다. 파일이 없으면 파일을 생성하고, 파일이 있으면 내용을 덮어씁니다.</td>
+</tr>
+<tr>
+<td style="text-align:center">“a+”</td>
+<td style="text-align:center">추가(읽기/쓰기)</td>
+<td style="text-align:left">파일을 열어 파일 끝에 값을 이어 씁니다. 만약 파일이 없으면 파일을 생성합니다. 읽기는 파일의 모든 구간에서 가능하지만, 쓰기는 파일의 끝에서만 가능합니다.</td>
+</tr>
+<tr>
+<td style="text-align:center">t</td>
+<td style="text-align:center">텍스트 모드</td>
+<td style="text-align:left">파일을 읽거나 쓸 때 개행문자 \n와 \r\n을 서로 변환합니다.^Z 파일의 끝으로 인식하므로 ^Z까지만 파일을 읽습니다(^Z는 Ctrl+Z 입력을 뜻합니다).</td>
+</tr>
+<tr>
+<td style="text-align:center">b</td>
+<td style="text-align:center">바이너리 모드</td>
+<td style="text-align:left">파일의 내용을 그대로 읽고, 값을 그대로 씁니다.</td>
+</tr>
+<tr>
+<td style="text-align:center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td style="text-align:center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<p>스트림에서 데이터를 특정한 형식으로 읽어온다.<br>스트림에서 형식 문자열에서 지정한 방식대로 데이터를 읽어온 후, 형식 문자열의 각각의 형식 지정자에 대응하는 인자가 가리키는 메모리 공간에 그 데이터를 집어 넣는다. </p>
+<p>인자</p>
+<p>stream</p>
+<p>데이터를 읽어올 스트림의 FILE 객체를 가리키는 포인터</p>
+<p>format</p>
+<p>C 형식 문자열로 다음의 것들을 포함하고 있다</p>
+<ul>
+<li>공백 문자 (Whitespace character  개행 문자<code>\n</code>, 탭 문자<code>\t</code>, 공백)  : fscanf 함수는 비-공백 문자를 읽어들이기 전까지 읽혀지는 모든 공백 문자들을 무시한다. </li>
+<li>비-공백 문자 (Non whitespcae character), 단 % 를 제외한다 : 공백 문자가 아니거나 형식 지정자에 포함되지 않는 것들은 함수로 하여금 다음 문자를 스트림에서 읽어 들이고 이와 이 비-공백 문자와 비교하여 같다면 버리고 다음 문자와 형식으로 진행한다. 만일 다르다면 함수가 종료되고, 스트림에서 읽혀지지 않은 다른 문자들은 모두 남아있게 된다.</li>
+<li>형식 지정자 : 이는 % 로 지정되는 것들로 스트림에서 어떠한 형식으로 데이터를 읽어오고, 또 각각의 형식 지정자에 대응되는 인자에 어떠한 형식으로 저장할 지에 대해 결정한다. 형식 지정자는 아래와 같은 꼴로 생겼다.</li>
+</ul>
+<blockquote>
+<p>%[*][폭(width)][한정자(modifiers)]타입(type)</p>
+</blockquote>
+<ul>
+<li><code>*</code> :데이터를 스트림에서 받아들이지만 무시된다. 물론, 이에 대응되는 인자에는 받아들인 데이터가 저장되지 않고 이 인자는 다음 형식 태그에 대응된다.<br>예를 들어 <code>fscanf(fp, &quot;%*d%d&quot;, i,j);</code> 의 경우 먼저 수를 입력하더라도 %*d 형식이므로 무시 된다. 그 다음 수를 입력하면 %d 형식 태그가 j 가 아닌 i 에 대응되어 i 에 그 다음 입력한 수가 들어가게 된다. 이 때 j 에는 아무런 값도 들어가지 않는다.</li>
+<li>폭: 스트림에서 읽어들일 최대 문자 수를 지정한다.<br>예를 들어 <code>fscanf(fp, &quot;%10s&quot;, str);</code> 로 했을 경우 스트림에서 최대 10 문자를 읽어와 str 에 저장한다. 이 때 주의할 점은 str 에는 NULL 문자가 들어갈 수 있는 충분한 공간이 남아 있어야 한다. </li>
+<li>한정자:입력받는 데이터의 크기를 지정한다. int (d, i, n), unsigned int (o, u, x) float (e, f, g) 형에 대해 입력받는 데이터의 크기를 설정할 수 있다. <ul>
+<li>h : short int (d, i, n 의 경우) 혹은 unsigned short int (o, u, x 일 경우)</li>
+<li>l : long int (d, i, n 의 경우) 혹은 unsigned long int (o, u, x 일 경우), 혹은 double (e,f, g 일 경우)</li>
+<li>L : long double (e, f, g 일 경우)</li>
+</ul>
+</li>
+<li>타입: 데이터를 어떠한 형식으로 혹은 어떠한 값만을 읽어들어야 할 지에 대해 지정해준다. 아래 표를 참고.</li>
+</ul>
+<h4 id="fscanf-함수의-타입-지정자들"><a href="#fscanf-함수의-타입-지정자들" class="headerlink" title="fscanf 함수의 타입 지정자들"></a>fscanf 함수의 타입 지정자들</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">타입</th>
+<th>대응되는 입력 방식</th>
+<th style="text-align:center">대응되는 인자의 형태</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">c</td>
+<td>단일 문자: 하나의 문자를 읽어들인다. 만일 폭에 1 이 아닌 값으로 지정되어 있다면 (기본값은 1) 함수는 폭 만큼의 문자를 읽어들인 후 이에 대응하는 인자가 가리키는 메모리 공간에 저장한다. 이 때 마지막에는 널 문자를 붙이지 않는다.</td>
+<td style="text-align:center">char *</td>
+</tr>
+<tr>
+<td style="text-align:center">d</td>
+<td>십진법으로 표현된 정수: 말그대로 십진법으로 쓰인 정수로, + 나 - 기호로 시작할 수도 있다.</td>
+<td style="text-align:center">int *</td>
+</tr>
+<tr>
+<td style="text-align:center">e,E,f,g,G</td>
+<td>부동 소수점: 소수점을 포함하고 있는 소수(decimal number) 로 + 나 - 기호로 시작할 수도 있으며, e 나 E 문자(10 의 지수를 나타내기 위해)를 포함할 수 도 있다. -732.103 , 12e-4, +123.10 은 모두 올바른 입력이다.</td>
+<td style="text-align:center">float *</td>
+</tr>
+<tr>
+<td style="text-align:center">o</td>
+<td>8진법으로 표현된 정수</td>
+<td style="text-align:center">int *</td>
+</tr>
+<tr>
+<td style="text-align:center">s</td>
+<td>문자열:  공백문자를 찾을 때 까지 문자들을 읽어들인다.</td>
+<td style="text-align:center">char *</td>
+</tr>
+<tr>
+<td style="text-align:center">u</td>
+<td>부호가 없는 십진법으로 표현된 정수</td>
+<td style="text-align:center">unsigned int *</td>
+</tr>
+<tr>
+<td style="text-align:center">x,X</td>
+<td>16진법으로 표현된 정수</td>
+<td style="text-align:center">int *</td>
+</tr>
+<tr>
+<td style="text-align:center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td></td>
+<td style="text-align:center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="부수적-인자"><a href="#부수적-인자" class="headerlink" title="부수적 인자"></a>부수적 인자</h4><p>형식 문자열의 정의된 순서대로 각 형식 지정자는 이에 대응하는 인자가 가리키는 메모리 공간에 데이터를 집어넣는다. 이 때, 부수적 인자들은 모두 포인터의 형태 (주소값) 여야 한다. 예를 들어서 i 라는 변수에 값을 대입하려면 인자로 &amp;i 를 전달해야 한다. 절대로 i 를 전달하면 안된다. </p>
+<p>에를 들면 아래와 같다.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">FILE *fp = fopen(<span class="string">"out.txt"</span>, <span class="string">"w"</span>);</div><div class="line"><span class="keyword">int</span> i;</div><div class="line"><span class="built_in">fscanf</span>(fp, <span class="string">"%d"</span>, &amp;i); <span class="comment">/* 꼭 주소값을 전달해야 된다는 점에 유의! */</span></div></pre></td></tr></table></figure>
+<h4 id="리턴값"><a href="#리턴값" class="headerlink" title="리턴값"></a>리턴값</h4><p>성공할 경우, fscanf 함수는 읽어들인 데이터의 수를 리턴한다. 만일 어떠한 데이터도 형식 지정자와 일치하는 것이 없다면 0 이 될 수 도 있다.<br>만일 어떠한 데이터도 성공적으로 읽어들이기 전에 입력이 실패한다면 EOF 가 리턴된다.</p>
+</div><div class="tags"><a href="/tags/fopen/">fopen</a><a href="/tags/fclose/">fclose</a><a href="/tags/fprintf/">fprintf</a><a href="/tags/fscanf/">fscanf</a></div><div class="post-nav"><a href="/2017/11/23/c-continue-기타제어문/" class="next">continue, break, goto, label</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论 「请确保 disqus.com 可以正常加载」</button></div><script>var disqus_shortname = 'korcow-github-io';
+var disqus_identifier = '2017/11/24/c-파일-입출력/';
+var disqus_title = '파일 입출력';
+var disqus_url = 'http://korcow.github.io/2017/11/24/c-파일-입출력/';
+$('.btn_click_load').click(function() {
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+  $('.btn_click_load').css('display','none');
+});
+$.ajax({
+  url: 'https://disqus.com/next/config.json',
+  timeout: 3000,
+  type: 'GET',
+  success: (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    $('.btn_click_load').css('display','none');
+  })(),
+  error: function() {
+    $('.btn_click_load').css('display','block');
+  }
+});</script><script id="dsq-count-scr" src="//korcow-github-io.disqus.com/count.js" async></script></div></div></div></div><div class="pure-u-1 pure-u-md-1-4"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"/><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 카테고리</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Centos/">Centos</a><span class="category-list-count">18</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/C언어기초/">C언어기초</a><span class="category-list-count">19</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/vim/">vim</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/아두이노/">아두이노</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/전기전자/">전기전자</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/전산수학기초/">전산수학기초</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 태그</i></div><div class="tagcloud"><a href="/tags/source/" style="font-size: 13px;">source</a> <a href="/tags/c/" style="font-size: 13px;">c</a> <a href="/tags/for/" style="font-size: 13px;">for</a> <a href="/tags/if/" style="font-size: 13px;">if</a> <a href="/tags/else/" style="font-size: 13px;">else</a> <a href="/tags/if-else/" style="font-size: 13px;">if~else</a> <a href="/tags/while/" style="font-size: 13px;">while</a> <a href="/tags/do-while/" style="font-size: 13px;">do while</a> <a href="/tags/dowhile/" style="font-size: 13px;">dowhile</a> <a href="/tags/사칙연산/" style="font-size: 13px;">사칙연산</a> <a href="/tags/자료형/" style="font-size: 13px;">자료형</a> <a href="/tags/변수/" style="font-size: 13px;">변수</a> <a href="/tags/상수/" style="font-size: 13px;">상수</a> <a href="/tags/배열/" style="font-size: 13px;">배열</a> <a href="/tags/포인터/" style="font-size: 13px;">포인터</a> <a href="/tags/문자열/" style="font-size: 13px;">문자열</a> <a href="/tags/메모리/" style="font-size: 13px;">메모리</a> <a href="/tags/getchar/" style="font-size: 13px;">getchar</a> <a href="/tags/gets/" style="font-size: 13px;">gets</a> <a href="/tags/scanf/" style="font-size: 13px;">scanf</a> <a href="/tags/getch/" style="font-size: 13px;">getch</a> <a href="/tags/함수/" style="font-size: 13px;">함수</a> <a href="/tags/printf/" style="font-size: 13px;">printf</a> <a href="/tags/컴파일/" style="font-size: 13px;">컴파일</a> <a href="/tags/이스케이프문자/" style="font-size: 13px;">이스케이프문자</a> <a href="/tags/puts/" style="font-size: 13px;">puts</a> <a href="/tags/putchar/" style="font-size: 13px;">putchar</a> <a href="/tags/Centos/" style="font-size: 13px;">Centos</a> <a href="/tags/ls/" style="font-size: 13px;">ls</a> <a href="/tags/외부명령어/" style="font-size: 13px;">외부명령어</a> <a href="/tags/shell/" style="font-size: 13px;">shell</a> <a href="/tags/cd/" style="font-size: 13px;">cd</a> <a href="/tags/pushd/" style="font-size: 13px;">pushd</a> <a href="/tags/popd/" style="font-size: 13px;">popd</a> <a href="/tags/내부명령어/" style="font-size: 13px;">내부명령어</a> <a href="/tags/directory/" style="font-size: 13px;">directory</a> <a href="/tags/디렉토리/" style="font-size: 13px;">디렉토리</a> <a href="/tags/pwd/" style="font-size: 13px;">pwd</a> <a href="/tags/bg/" style="font-size: 13px;">bg</a> <a href="/tags/fg/" style="font-size: 13px;">fg</a> <a href="/tags/fc/" style="font-size: 13px;">fc</a> <a href="/tags/echo/" style="font-size: 13px;">echo</a> <a href="/tags/exec/" style="font-size: 13px;">exec</a> <a href="/tags/kill/" style="font-size: 13px;">kill</a> <a href="/tags/umask/" style="font-size: 13px;">umask</a> <a href="/tags/export/" style="font-size: 13px;">export</a> <a href="/tags/주석/" style="font-size: 13px;">주석</a> <a href="/tags/logout/" style="font-size: 13px;">logout</a> <a href="/tags/리다이렉션/" style="font-size: 13px;">리다이렉션</a> <a href="/tags/파이프라인/" style="font-size: 13px;">파이프라인</a> <a href="/tags/cp/" style="font-size: 13px;">cp</a> <a href="/tags/centos/" style="font-size: 13px;">centos</a> <a href="/tags/virtualbox/" style="font-size: 13px;">virtualbox</a> <a href="/tags/리눅스설치/" style="font-size: 13px;">리눅스설치</a> <a href="/tags/와일드카드/" style="font-size: 13px;">와일드카드</a> <a href="/tags/terminal/" style="font-size: 13px;">terminal</a> <a href="/tags/cat/" style="font-size: 13px;">cat</a> <a href="/tags/head/" style="font-size: 13px;">head</a> <a href="/tags/tail/" style="font-size: 13px;">tail</a> <a href="/tags/less/" style="font-size: 13px;">less</a> <a href="/tags/rm/" style="font-size: 13px;">rm</a> <a href="/tags/rmdir/" style="font-size: 13px;">rmdir</a> <a href="/tags/font/" style="font-size: 13px;">font</a> <a href="/tags/history/" style="font-size: 13px;">history</a> <a href="/tags/약수/" style="font-size: 13px;">약수</a> <a href="/tags/배수/" style="font-size: 13px;">배수</a> <a href="/tags/hexo/" style="font-size: 13px;">hexo</a> <a href="/tags/jupyter/" style="font-size: 13px;">jupyter</a> <a href="/tags/python-REPL/" style="font-size: 13px;">python REPL</a> <a href="/tags/계산하기/" style="font-size: 13px;">계산하기</a> <a href="/tags/python-목차/" style="font-size: 13px;">python 목차</a> <a href="/tags/python-설치/" style="font-size: 13px;">python 설치</a> <a href="/tags/python/" style="font-size: 13px;">python</a> <a href="/tags/vim/" style="font-size: 13px;">vim</a> <a href="/tags/vundle/" style="font-size: 13px;">vundle</a> <a href="/tags/ctrlp/" style="font-size: 13px;">ctrlp</a> <a href="/tags/solarized/" style="font-size: 13px;">solarized</a> <a href="/tags/theme/" style="font-size: 13px;">theme</a> <a href="/tags/bundle/" style="font-size: 13px;">bundle</a> <a href="/tags/목차/" style="font-size: 13px;">목차</a> <a href="/tags/bash/" style="font-size: 13px;">bash</a> <a href="/tags/표준라이브러리/" style="font-size: 13px;">표준라이브러리</a> <a href="/tags/maloc/" style="font-size: 13px;">maloc</a> <a href="/tags/switch/" style="font-size: 13px;">switch</a> <a href="/tags/continue/" style="font-size: 13px;">continue</a> <a href="/tags/break/" style="font-size: 13px;">break</a> <a href="/tags/goto/" style="font-size: 13px;">goto</a> <a href="/tags/label/" style="font-size: 13px;">label</a> <a href="/tags/fopen/" style="font-size: 13px;">fopen</a> <a href="/tags/fclose/" style="font-size: 13px;">fclose</a> <a href="/tags/fprintf/" style="font-size: 13px;">fprintf</a> <a href="/tags/fscanf/" style="font-size: 13px;">fscanf</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 과거</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/11/24/c-파일-입출력/">파일 입출력</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/23/c-continue-기타제어문/">continue, break, goto, label</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/23/c-switch-case/">switch case</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/23/c-인자로-입력-받기/">인자로 입력 받기</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/23/c-malloc/">malloc</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/21/c-화면에-글자-출력하기/">화면에 글자 출력하기</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/20/c-표준라이브러리/">표준라이브러리</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/20/c-배열과포인터/">배열과 포인터</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/20/전기전자-목차/">목차</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/19/c-목차/">C언어 목차</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-comment-o"> 최근 댓글</i></div><script type="text/javascript" src="//korcow-github-io.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 블로그롤</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2017 <a href="/." rel="nofollow">KORCOW.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.css"><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+   search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
