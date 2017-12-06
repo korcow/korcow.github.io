@@ -3,10 +3,315 @@
   
     
     <entry>
+      <title><![CDATA[유니온]]></title>
+      <url>/2017/12/04/c-%EC%9C%A0%EB%8B%88%EC%98%A8/</url>
+      <content type="html"><![CDATA[<h3 id="유니온"><a href="#유니온" class="headerlink" title="유니온"></a>유니온</h3><img src="/c언어기초/2017-12-02_19-30-05.png" width="500" title="구조체그림1">
+<p>선언 방법은 구조체와 동일합니다. 사용하는 용도와 내부적으로 처리하는 방식이 다릅니다. 또한 단독으로 사용하는 경우는 거의 없읍니다.<br>구조체 안에 포함 시켜 사용합니다.</p>
+<h3 id="선언-및-사용"><a href="#선언-및-사용" class="headerlink" title="선언 및 사용"></a>선언 및 사용</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt; // strcpy()</span></span></div><div class="line"></div><div class="line"><span class="keyword">union</span> _Score&#123;</div><div class="line">    <span class="keyword">char</span> name[<span class="number">20</span>];</div><div class="line">    <span class="keyword">int</span> kor;</div><div class="line">    <span class="keyword">int</span> eng;</div><div class="line">    <span class="keyword">int</span> math;</div><div class="line">    <span class="keyword">int</span> sum;</div><div class="line">    <span class="keyword">double</span> avg;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line">    </div><div class="line">    <span class="keyword">union</span> _Score score;</div><div class="line"></div><div class="line">    <span class="built_in">strcpy</span>(score.name, <span class="string">"유재석"</span>);</div><div class="line">    score.kor = <span class="number">90</span>;</div><div class="line">    score.eng = <span class="number">95</span>;</div><div class="line">    score.math = <span class="number">100</span>;</div><div class="line">    score.sum = score.kor + score.eng + score.math;</div><div class="line">    score.avg = score.sum / <span class="number">3</span>;</div><div class="line"></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s%d\n"</span>, <span class="string">"국어 점수: "</span>, score.kor);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s%d\n"</span>, <span class="string">"영어 점수: "</span>, score.eng);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s%d\n"</span>, <span class="string">"수학 점수: "</span>, score.math);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s%d\n"</span>, <span class="string">"총점 점수: "</span>, score.sum);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s%f\n"</span>, <span class="string">"평균 점수: "</span>, score.avg);</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">국어 점수: 0</div><div class="line">영어 점수: 0</div><div class="line">수학 점수: 0</div><div class="line">총점 점수: 0</div><div class="line">평균 점수: 100.000000</div></pre></td></tr></table></figure>
+<p>위와 같은 결과가 나왔습니다. 이유는 공용체는 자료형중에서 가장큰 자료형을 공유해서 사용합니다. 따라서 바로 자료값을 사용하지 않으면 다음 자료값으로 덮어 써지기 때문에 원하는 값을 얻지 못한겁니다. 값을 다음 값이 써지기 전까지만 기억 되므로 국, 영, 수 값을 저장할 수 없습니다.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt; // strcpy()</span></span></div><div class="line"></div><div class="line"><span class="keyword">union</span> _Score&#123;</div><div class="line">    <span class="keyword">int</span> a;</div><div class="line">    <span class="keyword">short</span> b;</div><div class="line">    <span class="keyword">char</span> c;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line">    </div><div class="line">    <span class="keyword">union</span> _Score score;</div><div class="line"></div><div class="line">    score.a = <span class="number">655236</span>;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s%d\n"</span>, <span class="string">"a : "</span>, score.a);</div><div class="line">    score.b = <span class="number">256</span>;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s%d\n"</span>, <span class="string">"b : "</span>, score.b);</div><div class="line">    score.c = <span class="string">'c'</span>;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s%c\n"</span>, <span class="string">"c : "</span>, score.c);</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt; // strcpy()</span></span></div><div class="line"></div><div class="line"><span class="keyword">union</span> _BankNo&#123;</div><div class="line">    <span class="keyword">char</span> shinhan[<span class="number">12</span>];</div><div class="line">    <span class="keyword">char</span> kukmin[<span class="number">10</span>];</div><div class="line">    <span class="keyword">char</span> seoul[<span class="number">9</span>];</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line">    </div><div class="line">    <span class="keyword">union</span> _BankNo bankno;</div><div class="line"></div><div class="line">    <span class="built_in">strcpy</span>(bankno.a , <span class="string">"122236553236"</span>);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s%s\n"</span>, <span class="string">"a : "</span>, bankno.a);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s%s\n"</span>, <span class="string">"b : "</span>, bankno.b);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s%s\n"</span>, <span class="string">"c : "</span>, bankno.c);</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+      
+        <categories>
+            
+            <category> C언어기초 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 유니온 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[구조체]]></title>
+      <url>/2017/12/03/c-%EA%B5%AC%EC%A1%B0%EC%B2%B4/</url>
+      <content type="html"><![CDATA[<h3 id="구조체"><a href="#구조체" class="headerlink" title="구조체"></a>구조체</h3><p>서로 다른 형식의 자료의 집합</p>
+<img src="/c언어기초/2017-12-02_19-30-05.png" width="500" title="구조체그림1">
+<p>지금까지는 변수를 선언 할 때 문자형, 정수형, 실수형 자료를 별도로 선언해서 사용했습니다. 구조체는 이런 자료형을 모아서 사용자가 원하는 자료형으로 만들어 줍니다.</p>
+<h3 id="선언-및-사용"><a href="#선언-및-사용" class="headerlink" title="선언 및 사용"></a>선언 및 사용</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt; // strcpy()</span></span></div><div class="line"></div><div class="line"><span class="class"><span class="keyword">struct</span> _<span class="title">Score</span>&#123;</span></div><div class="line">    <span class="keyword">char</span> name[<span class="number">20</span>];</div><div class="line">    <span class="keyword">int</span> kor;</div><div class="line">    <span class="keyword">int</span> eng;</div><div class="line">    <span class="keyword">int</span> math;</div><div class="line">    <span class="keyword">int</span> sum;</div><div class="line">    <span class="keyword">double</span> avg;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line">    </div><div class="line">    <span class="class"><span class="keyword">struct</span> _<span class="title">Score</span> <span class="title">score</span>;</span></div><div class="line"></div><div class="line">    <span class="built_in">strcpy</span>(score.name, <span class="string">"유재석"</span>);</div><div class="line">    score.kor = <span class="number">90</span>;</div><div class="line">    score.eng = <span class="number">95</span>;</div><div class="line">    score.math = <span class="number">100</span>;</div><div class="line">    score.sum = score.kor + score.eng + score.math;</div><div class="line">    score.avg = score.sum / <span class="number">3</span>;</div><div class="line"></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s%d\n"</span>, <span class="string">"국어 점수: "</span>, score.kor);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s%d\n"</span>, <span class="string">"영어 점수: "</span>, score.eng);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s%d\n"</span>, <span class="string">"수학 점수: "</span>, score.math);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s%d\n"</span>, <span class="string">"총점 점수: "</span>, score.sum);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s%f\n"</span>, <span class="string">"평균 점수: "</span>, score.avg);</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="typedef"><a href="#typedef" class="headerlink" title="typedef"></a>typedef</h3><p>typedef는 자료형을 재정의하는 기능입니다. 단순히 이름을 변경하는 기능입니다.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">typedef</span> <span class="keyword">int</span> I;</div><div class="line"></div><div class="line">    I iNum;</div><div class="line">    iNum = <span class="number">100</span>;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s%d\n"</span>, <span class="string">"값은:"</span>, iNum);</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>구조체도 자료형이기 때문에 typedef를 이용해 별칭을 만들 수 있습니다.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt; // strcpy()</span></span></div><div class="line"></div><div class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">Score</span>&#123;</span></div><div class="line">    <span class="keyword">char</span> name[<span class="number">20</span>];</div><div class="line">    <span class="keyword">int</span> kor;</div><div class="line">    <span class="keyword">int</span> eng;</div><div class="line">    <span class="keyword">int</span> math;</div><div class="line">    <span class="keyword">int</span> sum;</div><div class="line">    <span class="keyword">double</span> avg;</div><div class="line">&#125; Score;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> *argv[])</span> </span>&#123;</div><div class="line">    </div><div class="line">    Score score;</div><div class="line"></div><div class="line">    <span class="built_in">strcpy</span>(score.name, <span class="string">"유재석"</span>);</div><div class="line">    score.kor = <span class="number">90</span>;</div><div class="line">    score.eng = <span class="number">95</span>;</div><div class="line">    score.math = <span class="number">100</span>;</div><div class="line">    score.sum = score.kor + score.eng + score.math;</div><div class="line">    score.avg = score.sum / <span class="number">3</span>;</div><div class="line"></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s%d\n"</span>, <span class="string">"국어 점수: "</span>, score.kor);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s%d\n"</span>, <span class="string">"영어 점수: "</span>, score.eng);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s%d\n"</span>, <span class="string">"수학 점수: "</span>, score.math);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s%d\n"</span>, <span class="string">"총점 점수: "</span>, score.sum);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%s%f\n"</span>, <span class="string">"평균 점수: "</span>, score.avg);</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+      
+        <categories>
+            
+            <category> C언어기초 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 구조체 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[REPL 사용하기]]></title>
+      <url>/2017/12/02/python-repl-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</url>
+      <content type="html"><![CDATA[<h3 id="REPL"><a href="#REPL" class="headerlink" title="REPL"></a>REPL</h3><p>파이썬의 REPL은 기본적으로 readline api를 사용하기 때문에 키보드 단축키 사용법이 terminal 과 거의 같습니다. </p>
+<h4 id="단축키"><a href="#단축키" class="headerlink" title="단축키"></a>단축키</h4><table>
+<thead>
+<tr>
+<th>단축키</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TAB</code></td>
+<td>자동완성(파일및디렉토리, 명령을 자동완성)</td>
+</tr>
+<tr>
+<td><code>Ctrl+h</code></td>
+<td>백스페이와 같습니다.(더 편합니다.)</td>
+</tr>
+<tr>
+<td><code>Ctrl+a</code></td>
+<td>처음으로 이동</td>
+</tr>
+<tr>
+<td><code>Ctrl+e</code></td>
+<td>행 끝으로 이동</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td>한 문자 뒤로 이동</td>
+</tr>
+<tr>
+<td><code>Alt+b</code></td>
+<td>한 단어 뒤로 이동</td>
+</tr>
+<tr>
+<td><code>Ctrl+f</code></td>
+<td>한 문자 앞으로 이동</td>
+</tr>
+<tr>
+<td><code>Alt+f</code></td>
+<td>한 단어 앞으로 이동</td>
+</tr>
+<tr>
+<td><code>Ctrl+u</code></td>
+<td>현재줄을 삭제합니다.</td>
+</tr>
+<tr>
+<td><code>Ctrl+k</code></td>
+<td>커서 위치에서 행 끝까지 삭제합니다.</td>
+</tr>
+<tr>
+<td><code>Ctrl+w</code></td>
+<td>커서앞 한단어를 삭제합니다.</td>
+</tr>
+<tr>
+<td><code>Esc+Backspace</code></td>
+<td>이전 단어 삭제</td>
+</tr>
+<tr>
+<td><code>Ctrl+y</code></td>
+<td>클립보드에서 텍스트를 붙여넣습니다.</td>
+</tr>
+<tr>
+<td><code>Ctrl+l</code></td>
+<td>화면 상단에 현재 줄을 남겨두고 화면을 지웁니다.</td>
+</tr>
+<tr>
+<td><code>Ctrl+r</code></td>
+<td>증분 검색 기록 을 역순으로 추적</td>
+</tr>
+<tr>
+<td><code>Alt+p</code></td>
+<td>비 증분 검색 기록을 역순으로 추적</td>
+</tr>
+<tr>
+<td><code>Ctrl+p</code></td>
+<td>비 증분 검색 기록을 역순으로 추적</td>
+</tr>
+</tbody>
+</table>
+<h4 id="help"><a href="#help" class="headerlink" title="help"></a>help</h4><p>프롬프트에서 help()를 입력합니다.<br>도움말 유틸리티로 들어가게 되는데 이때 topics를 입력합니다.<br>도움말 목차가 리스트되고 원하는 타이틀을 입력하면 도움말을 보여줍니다.<br>사용법은 less와 동일합니다. 종료는 quit 또는 q<br>modules, keywords, symbols 동일하게 사용할 수 있습니다.<br>symbols 는 예약된 표시문자를 확인 할 수 있습니다.<br>keywords 는 예약어를 볼수 있습니다.<br>modules는 클래스 리스트를 볼수 있습니다.</p>
+<h4 id="dir"><a href="#dir" class="headerlink" title="dir"></a>dir</h4><p>python은 c언어와 다르게 한번에 컴파일해서 사용하는 것이 아니라 스크립트를 한줄씩 인터프리터가 처리하는 방식으로 구동됩니다.<br>처음에 실행된 인터프리터의 머리는 텅 비어있습니다.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;dir()</div><div class="line">[<span class="string">'__annotations__'</span>, <span class="string">'__builtins__'</span>, <span class="string">'__doc__'</span>, <span class="string">'__loader__'</span></div><div class="line">, <span class="string">'__name__'</span>, <span class="string">'__package__'</span>, <span class="string">'__spec__'</span>]</div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure></p>
+<p>언더바 2개로 감싸저 있는 것을 모듈이라고 합니다. 클래스의 집합이라고 생각하면 됩니다.<br>클래스는 변수의 집합이구요.<br>각각의 모듈이 궁금하면 help(“모듈명”) 하면 됩니다.<br>위에 리스트된 모듈이 파이썬기 동작되기 위한 기본 모듈입니다. 이 모듈들이 메모리에 적재되어 있는 겁니다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>iKor = <span class="number">100</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>iEng = <span class="number">90</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>iMath = <span class="number">90</span></div></pre></td></tr></table></figure>
+<p>위와 같이 입력하고 dir() 해보세요.<br>변수를 선언 한겁니다. 변수는 메모리의 스택영역에 적재 됩니다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>dir()</div><div class="line">[<span class="string">'__annotations__'</span>, <span class="string">'__builtins__'</span>, <span class="string">'__doc__'</span>, <span class="string">'__loader__'</span></div><div class="line">, <span class="string">'__name__'</span>, <span class="string">'__package__'</span>, <span class="string">'__spec__'</span>, <span class="string">'iEng'</span>, <span class="string">'iMath'</span>, <span class="string">'ikor'</span>]</div></pre></td></tr></table></figure>
+<p>그럼 메모리 속을 들여다 봅시다. 처음에 있는 모듈 부터 차례로 입력하세요.<br>잠깐 REPL는 shell과 사용법이 똑같다고 했습니다. 전부 입력하지 말고 tab자동완성을 쓰세요.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>__annotations__</div><div class="line">&#123;&#125;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>__builtins__</div><div class="line">&lt;module <span class="string">'builtins'</span> (built-<span class="keyword">in</span>)&gt;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>__doc__</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>__loader__</div><div class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">_frozen_importlib</span>.<span class="title">BuiltinImporter</span>'&gt;</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">__name__</span></span></div><div class="line"><span class="class">'<span class="title">__main__</span>'</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">__package__</span></span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">__spec__</span></span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">iEng</span></span></div><div class="line"><span class="class">90</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">iMath</span></span></div><div class="line"><span class="class">90</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">iKor</span></span></div><div class="line"><span class="class">100</span></div><div class="line"><span class="class">&gt;&gt;&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li><code>__annotations__</code>은 주석입니다. 우리가 주석을 사용하지 않았으니 아무것도 없네요.</li>
+<li><code>__builtins__</code>은 내장객체입니다. 자동완성하면 괄호가 나왔을 겁니다. 뭔가 많이 있는데 우리가 지정하지 않은 겁니다.</li>
+<li><code>__doc__</code>는 설명서입니다. 우리가 설명서를 만들지 않았으니 아무것도 없는 겁니다.</li>
+<li><code>__loader__</code>는 뭔가 많이 있는데 우리가 호출하지 않은 겁니다. 모듈이름이 뭔가 읽어 온다는 느낌만 갖이면 됩니다.</li>
+<li><code>__name__</code>은 우리가 만들고 있는 클래스 이름입니다. 기본이 main입니다.</li>
+<li><code>__package__</code>는 여러 프로그램을 합칠때 호출하는 건데 이것도 사용하지 않았으니 비어 있네요.</li>
+<li><code>__spec__</code>는 파이썬의 기본 설정값을 세팅하는 겁니다. 이것도 설정하지 않았으니 비어 있습니다.</li>
+<li>iEng 이건 우리가 iEng라는 변수를 생성했기 때문에 90 이라는 값이 나왔습니다. iMath, iKor동일 합니다.</li>
+</ul>
+<p>변수를 하나 더 만들고 dir() 해보세요. 이번에는 iSum = 0 으로 만드세요.<br>국, 영, 수 점수를 더해서 iSum에 넣을 겁니다. 자동완성 잊지마세요.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>iSum = iKor + iEng + iMath</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>iSum</div><div class="line"><span class="number">280</span></div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure>
+<p>이번에는 프롬프트에서 dir(iSum) 해보세요.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>dir(iSum)</div><div class="line">[<span class="string">'__abs__'</span>, <span class="string">'__add__'</span>, <span class="string">'__and__'</span>, <span class="string">'__bool__'</span>, <span class="string">'__ceil__'</span></div><div class="line">, <span class="string">'__class__'</span>, <span class="string">'__delattr__'</span>, <span class="string">'__dir__'</span>, <span class="string">'__divmod__'</span>, <span class="string">'__doc__'</span></div><div class="line">, <span class="string">'__eq__'</span>, <span class="string">'__float__'</span>, <span class="string">'__floor__'</span>, <span class="string">'__floordiv__'</span>, <span class="string">'__format__'</span></div><div class="line">, <span class="string">'__ge__'</span>, <span class="string">'__getattribute__'</span>, <span class="string">'__getnewargs__'</span>, <span class="string">'__gt__'</span>, <span class="string">'__hash__'</span></div><div class="line">, <span class="string">'__index__'</span>, <span class="string">'__init__'</span>, <span class="string">'__init_subclass__'</span>, <span class="string">'__int__'</span>, <span class="string">'__invert__'</span></div><div class="line">, <span class="string">'__le__'</span>, <span class="string">'__lshift__'</span>, <span class="string">'__lt__'</span>, <span class="string">'__mod__'</span>, <span class="string">'__mul__'</span></div><div class="line">, <span class="string">'__ne__'</span>, <span class="string">'__neg__'</span>, <span class="string">'__new__'</span>, <span class="string">'__or__'</span>, <span class="string">'__pos__'</span></div><div class="line">, <span class="string">'__pow__'</span>, <span class="string">'__radd__'</span>, <span class="string">'__rand__'</span>, <span class="string">'__rdivmod__'</span>, <span class="string">'__reduce__'</span></div><div class="line">, <span class="string">'__reduce_ex__'</span>, <span class="string">'__repr__'</span>, <span class="string">'__rfloordiv__'</span>, <span class="string">'__rlshift__'</span> , <span class="string">'__rmod__'</span></div><div class="line">, <span class="string">'__rmul__'</span>, <span class="string">'__ror__'</span>, <span class="string">'__round__'</span>, <span class="string">'__rpow__'</span> , <span class="string">'__rrshift__'</span></div><div class="line">, <span class="string">'__rshift__'</span>, <span class="string">'__rsub__'</span>, <span class="string">'__rtruediv__'</span> , <span class="string">'__rxor__'</span> , <span class="string">'__setattr__'</span></div><div class="line">, <span class="string">'__sizeof__'</span>, <span class="string">'__str__'</span> , <span class="string">'__sub__'</span>, <span class="string">'__subclasshook__'</span> , <span class="string">'__truediv__'</span> </div><div class="line">, <span class="string">'__trunc__'</span>, <span class="string">'__xor__'</span>, <span class="string">'bit_length'</span>, <span class="string">'conjugate'</span> , <span class="string">'denominator'</span> </div><div class="line">, <span class="string">'from_bytes'</span>, <span class="string">'imag'</span>, <span class="string">'numerator'</span>, <span class="string">'real'</span> , <span class="string">'to_bytes'</span>]</div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure>
+<p>iSum은 정수형 변수가 생성되면서 상속받는 속성들 입니다.</p>
+<p>우리는 국,영,수 점수만 더해서 저장했는데 뭔가 많이 들어있네요.<br>int class에서 상속받아 기본으로 사용할 수 있는 객체들입니다.<br>용어를 처음 듣는다고 해서 어려워 하지 말고 그냥 받아 들이세요.<br>부모님이 재산이 많으면 자식에게 상속하듯 파이썬도 정수형 변수를 찍어 낼때 정수형 클래스의 속성을 iSum 변수에 상속해 준겁니다.</p>
+<p>c언어는 함수로 시작해서 함수로 끝납니다.<br>python은 클래스로 시작해서 클래스로 끝납니다.<br>c언어는 모든 것을 만들어야 하는데, 파이썬은 상속 받아 쓰기만 하면 됩니다.</p>
+<p>클래스, 객체(Object), 속성(Method), 데이터(Data)는 많이 나오는 단어이니 간단히 이해 하고 있으면 됩니다.</p>
+<p>클래스는 객체를 구분하는 단위, 클래스로 찍어 낸것을 객체라고 합니다. 클래스가 자식 객체에게 속성과 데이터를 쓸수 있게 해주는 것을 상속이라 합니다. </p>
+<p>정리하면 클래스는 객체를 찍어 낼수 있고 객체는 속성과 DATA가 있다 라고 합니다. 한번더 헛갈리게 할 께요. 영어와 한글을 혼용해서 사용하는데, 속성은 메쏘드라고 부르고 메쏘드는 함수라고 부릅니다. 객체는 object라고 부릅니다. 마지막으로 정리 해볼께요.</p>
+<p>파이썬은 클래스로 시작해서 클래스로 끝납니다.<br>클래스에는 메쏘드와 데이터가 있습니다.<br>클래스로 찍어낸 것을 오브젝트라고 합니다.<br>오브젝트는 클래스로부터 상속받은 메쏘드와 데이터를 사용할 수 있습니다.</p>
+<p>iSum은 int클래스가 생성한 Object이니 int클래스의 메쏘드를 물려 받은 겁니다.</p>
+<p>이제 모두 잊어 버리세요. 이런거 외우는거 아닙니다. 쓰면서 느끼면 됩니다.</p>
+<h3 id="ipython"><a href="#ipython" class="headerlink" title="ipython"></a>ipython</h3><p>기본 REPL은 기능이 없어 많이 불편합니다. </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ipython</div></pre></td></tr></table></figure>
+<p>프롬프트가 좀 바뀌긴 했지만 그냥 한번 써보세요.<br>색깔도 변한것 같습니다. 자동완성도 지원하고, 명령을 입력하다 잘 모르겠으면 Tab을 누르세요.<br>파일저장, 읽어오기등 부족하지만 ide처럼 사용할 수 있습니다.</p>
+<p>종료는 똑같이 quit()</p>
+<p>시작할때 각종 도움말 보는 법 나와 있으니 참고 하세요. 이것도 안쓸 겁니다.</p>
+<h3 id="jupyter-notebook"><a href="#jupyter-notebook" class="headerlink" title="jupyter notebook"></a>jupyter notebook</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ jupyter notebook</div></pre></td></tr></table></figure>
+<p>뭔가 이것저것 실행 되고 브라우저가 열립니다.<br>이놈이 앞으로 우리가 사용할 python 입니다.<br>종료하려면 브라우저 닫고 터미널에서는 Ctrl+c 누르면 종료 됩니다.</p>
+]]></content>
+      
+        <categories>
+            
+            <category> python </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> python REPL </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[설치]]></title>
+      <url>/2017/12/01/mysql-%EC%84%A4%EC%B9%98/</url>
+      <content type="html"><![CDATA[<h4 id="mysql-설치"><a href="#mysql-설치" class="headerlink" title="mysql 설치"></a>mysql 설치</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install mysql</div></pre></td></tr></table></figure>
+<h4 id="mysql-시작"><a href="#mysql-시작" class="headerlink" title="mysql 시작"></a>mysql 시작</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql.server start</div></pre></td></tr></table></figure>
+<h4 id="보안-설정"><a href="#보안-설정" class="headerlink" title="보안 설정"></a>보안 설정</h4><p>비밀번호 및 각종 보안 관련 설정</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql_secure_installation</div></pre></td></tr></table></figure>
+<ul>
+<li>Would you like to setup VALIDATE PASSWORD plugin? : 복잡한 비밀번호를 사용하도록 제한해주는 플러그인을 사용하려면 yes, 비밀번호 제한받지 않고 쓰고 싶다면 no.</li>
+<li>Remove anonymous users? : 익명사용자 삭제 여부. no 하면 <code>$ mysql -u root</code>가 아니라 <code>$ mysql</code>만으로도 접속 가능. yes하면 -u 옵션 필수.</li>
+<li>Disallow root login remotely? : localhost외에 다른 ip에서 root 아이디로 원격접속 가능하게 할지. yes하면 원겹접속 불가.</li>
+<li>Remove test database and access to it? : mysql에 기본적으로 설정된 test 디비 삭제 여부.</li>
+<li>Reload privilege tables now? : 권한 갱신. </li>
+</ul>
+<h4 id="blew-service-설치"><a href="#blew-service-설치" class="headerlink" title="blew service 설치"></a>blew service 설치</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">brew tap homebrew/services</div><div class="line"></div><div class="line">brew services start mysql</div><div class="line">brew services restart mysql</div><div class="line">brew services list</div><div class="line">brew services cleanup</div></pre></td></tr></table></figure>
+<h4 id="로그인시-데몬-자동-실행"><a href="#로그인시-데몬-자동-실행" class="headerlink" title="로그인시 데몬 자동 실행"></a>로그인시 데몬 자동 실행</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ln -sfv /usr/<span class="built_in">local</span>/opt/mysql/*.plist ~/Library/LaunchAgents</div></pre></td></tr></table></figure>
+]]></content>
+      
+        <categories>
+            
+            <category> Mysql </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 설치 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[commnet 설정 및 조회]]></title>
+      <url>/2017/12/01/mysql-comment/</url>
+      <content type="html"><![CDATA[<h3 id="Table-정보조회-with-comment"><a href="#Table-정보조회-with-comment" class="headerlink" title="Table 정보조회 (with comment)"></a>Table 정보조회 (with comment)</h3><h4 id="명령어를-통한-테이블정보-조회"><a href="#명령어를-통한-테이블정보-조회" class="headerlink" title="명령어를 통한 테이블정보 조회"></a>명령어를 통한 테이블정보 조회</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SHOW</span> <span class="keyword">TABLE</span> <span class="keyword">STATUS</span>;</div></pre></td></tr></table></figure>
+<h4 id="Query를-통한-테이블정보-조회"><a href="#Query를-통한-테이블정보-조회" class="headerlink" title="Query를 통한 테이블정보 조회"></a>Query를 통한 테이블정보 조회</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> *</div><div class="line"><span class="keyword">FROM</span> INFORMATION_SCHEMA.TABLES</div><div class="line"><span class="keyword">WHERE</span> TABLE_SCHEMA=<span class="string">'database_name'</span>;</div><div class="line"></div><div class="line"><span class="keyword">SELECT</span> TABLE_SCHEMA,TABLE_NAME,AUTO_INCREMENT,TABLE_COMMENT</div><div class="line"><span class="keyword">FROM</span> INFORMATION_SCHEMA.TABLES</div><div class="line"><span class="keyword">WHERE</span> TABLE_SCHEMA=<span class="string">'database_name'</span>;</div></pre></td></tr></table></figure>
+<h3 id="COLUMN-정보조회-with-comment"><a href="#COLUMN-정보조회-with-comment" class="headerlink" title="COLUMN 정보조회 (with comment)"></a>COLUMN 정보조회 (with comment)</h3><h4 id="명령어를-통한-컬럼정보-조회"><a href="#명령어를-통한-컬럼정보-조회" class="headerlink" title="명령어를 통한 컬럼정보 조회"></a>명령어를 통한 컬럼정보 조회</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SHOW</span> <span class="keyword">FULL</span> <span class="keyword">COLUMNS</span> <span class="keyword">FROM</span> TABLE_NAME;</div></pre></td></tr></table></figure>
+<h4 id="Query를-통한-테이블정보-조회-1"><a href="#Query를-통한-테이블정보-조회-1" class="headerlink" title="Query를 통한 테이블정보 조회"></a>Query를 통한 테이블정보 조회</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span> *</div><div class="line"><span class="keyword">FROM</span> INFORMATION_SCHEMA.TABLES</div><div class="line"><span class="keyword">WHERE</span> TABLE_SCHEMA=<span class="string">'database_name'</span>;</div><div class="line"></div><div class="line"><span class="keyword">SELECT</span>  TABLE_SCHEMA,TABLE_NAME,COLUMN_NAME,ORDINAL_POSITION,COLUMN_DEFAULT ,DATA_TYPE,COLUMN_TYPE,COLUMN_KEY,EXTRA,COLUMN_COMMENT</div><div class="line"><span class="keyword">FROM</span> INFORMATION_SCHEMA.COLUMNS</div><div class="line"><span class="keyword">WHERE</span> TABLE_SCHEMA=<span class="string">'database_name'</span>  <span class="keyword">AND</span> TABLE_NAME=<span class="string">'table_name'</span>;</div></pre></td></tr></table></figure>
+<h3 id="TABLE-COMMENT-설정"><a href="#TABLE-COMMENT-설정" class="headerlink" title="TABLE COMMENT 설정"></a>TABLE COMMENT 설정</h3><h4 id="테이블-생성시-COMMENT-설정"><a href="#테이블-생성시-COMMENT-설정" class="headerlink" title="테이블 생성시 COMMENT 설정"></a>테이블 생성시 COMMENT 설정</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> TABLE_NAME (</div><div class="line">  column1 <span class="built_in">INT</span>,</div><div class="line">  ...</div><div class="line">) <span class="keyword">COMMENT</span> = <span class="string">'table comment'</span>;</div></pre></td></tr></table></figure>
+<h4 id="TABLE-COMMENT-만-별도-수정하는-방법"><a href="#TABLE-COMMENT-만-별도-수정하는-방법" class="headerlink" title="TABLE COMMENT 만 별도 수정하는 방법"></a>TABLE COMMENT 만 별도 수정하는 방법</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> TABLE_NAME <span class="keyword">COMMENT</span> = <span class="string">'테이블설명'</span>;</div></pre></td></tr></table></figure>
+<h3 id="COLUMNS-COMMENT-설정"><a href="#COLUMNS-COMMENT-설정" class="headerlink" title="COLUMNS COMMENT 설정"></a>COLUMNS COMMENT 설정</h3><h4 id="테이블-생성시-COLUMN-COMMENT-설정"><a href="#테이블-생성시-COLUMN-COMMENT-설정" class="headerlink" title="테이블 생성시 COLUMN COMMENT 설정"></a>테이블 생성시 COLUMN COMMENT 설정</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> TABLE_NAME (</div><div class="line">  column1 <span class="built_in">INT</span> <span class="keyword">COMMENT</span> <span class="string">'column1 comment'</span>,</div><div class="line">  ...</div><div class="line">);</div></pre></td></tr></table></figure>
+<h4 id="TABLE-COMMENT-만-별도-수정하는-방법-1"><a href="#TABLE-COMMENT-만-별도-수정하는-방법-1" class="headerlink" title="TABLE COMMENT 만 별도 수정하는 방법"></a>TABLE COMMENT 만 별도 수정하는 방법</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> TABLE_NAME <span class="keyword">CHANGE</span> <span class="keyword">COLUMN</span> column_name column_name data_type <span class="literal">NULL</span>여부 <span class="keyword">COMMENT</span> <span class="string">'column comment'</span>;</div><div class="line"></div><div class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="string">`callcenter`</span> <span class="keyword">CHANGE</span> <span class="string">`regdate`</span> <span class="string">`regdate`</span></div><div class="line"><span class="keyword">TIMESTAMP</span> <span class="keyword">ON</span> <span class="keyword">UPDATE</span> <span class="keyword">CURRENT_TIMESTAMP</span></div><div class="line"><span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="keyword">CURRENT_TIMESTAMP</span></div><div class="line"><span class="keyword">COMMENT</span> <span class="string">'callcenter 등록일'</span>;</div></pre></td></tr></table></figure>
+]]></content>
+      
+        <categories>
+            
+            <category> Mysql </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> comment </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[보안연결]]></title>
+      <url>/2017/12/01/mysql-%EB%B3%B4%EC%95%88%EC%97%B0%EA%B2%B0/</url>
+      <content type="html"><![CDATA[<h3 id="보안-접속-생성"><a href="#보안-접속-생성" class="headerlink" title="보안 접속 생성"></a>보안 접속 생성</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql_config_editor <span class="built_in">set</span> --login-path=[접속이름] --host=[host정보] --user=[계정명] --password --socket=/tmp/mysql.sock --port=3306</div></pre></td></tr></table></figure>
+<h4 id="등록-list-확인"><a href="#등록-list-확인" class="headerlink" title="등록 list 확인"></a>등록 list 확인</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql_config_editor <span class="built_in">print</span> --all</div></pre></td></tr></table></figure>
+<h4 id="mysql-에-접속"><a href="#mysql-에-접속" class="headerlink" title="mysql 에 접속"></a>mysql 에 접속</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql --login-path=myconn</div></pre></td></tr></table></figure>
+<h4 id="접속-정보-삭제"><a href="#접속-정보-삭제" class="headerlink" title="접속 정보 삭제"></a>접속 정보 삭제</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql_config_editor remove --login-path=myconn</div></pre></td></tr></table></figure>
+<h4 id="전체-정보를-삭제"><a href="#전체-정보를-삭제" class="headerlink" title="전체 정보를 삭제"></a>전체 정보를 삭제</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql_config_editor remove</div></pre></td></tr></table></figure>
+]]></content>
+      
+        <categories>
+            
+            <category> Mysql </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> mysql_config_editor </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[테이블 만들기]]></title>
+      <url>/2017/12/01/mysql-%ED%85%8C%EC%9D%B4%EB%B8%94%EB%A7%8C%EB%93%A4%EA%B8%B0/</url>
+      <content type="html"><![CDATA[<h3 id="테이블-만들기"><a href="#테이블-만들기" class="headerlink" title="테이블 만들기"></a>테이블 만들기</h3><p>create table table명(<br>컬럼명 타입(크기),…);</p>
+<p>show databases;</p>
+<p>show tables;</p>
+<p>use korcow;</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">create</span> <span class="keyword">table</span> mytable(</div><div class="line"><span class="keyword">no</span> <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">unsigned</span> <span class="keyword">not</span> <span class="literal">null</span> auto_increment,</div><div class="line">subject <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">not</span> <span class="literal">null</span>,</div><div class="line"><span class="keyword">content</span> mediumtext,</div><div class="line">created datetime,</div><div class="line"><span class="keyword">updated</span> datetime,</div><div class="line">primary <span class="keyword">key</span>(<span class="keyword">no</span>)</div><div class="line">);</div></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> mytable</div></pre></td></tr></table></figure>
+<p>``` sql<br>insert into mytable(subject, content, created) values (‘코미디언 이름’, ‘유재석, 강호동, 박명수, 박미선’, now());</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Mysql </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> create table </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[C언어 목차]]></title>
-      <url>/2017/11/25/c-%EB%AA%A9%EC%B0%A8/</url>
+      <url>/2017/11/28/c-%EB%AA%A9%EC%B0%A8/</url>
       <content type="html"><![CDATA[<h3 id="목차"><a href="#목차" class="headerlink" title="목차"></a>목차</h3><h3 id="c언어-기초"><a href="#c언어-기초" class="headerlink" title="c언어 기초"></a>c언어 기초</h3><p>c언어는 가장 기초가 되는 프로그래밍 언어로 c++, objective c, java, python등의 언어로 접근하기 위한 필수 프로그램입니다.</p>
-<p>shell 프로그래밍으로도 프로그램 작성이 가능하지만 c언어가 더 강력하고 빠릅니다.<br>c언어가 빠르고 강력하지만 라이브러리가 많이 부족한 편입니다.<br>한마디로 배울게 많지 않고 라이브러리에 없으면 만들어야 한다는 겁니다. 하지만 쓰면 쓸수록 라이브러리는 많아 집니다. </p>
+<p>shell 프로그래밍으로도 프로그램 작성이 가능하지만 c언어가 더 강력하고 빠릅니다.<br>c언어가 빠르고 강력하지만 라이브러리가 많이 부족한 편입니다.<br>한마디로 배울게 많지 않고 라이브러리에 없으면 만들어야 한다는 겁니다.<br>응용 프로그램을 만들때는 c언어로 만들지 않습니다. 생산성이 떨어지고 불편합니다.<br>c언어를 배우는 이유는 컴퓨터의 구조 프로그램의 동작원리를 알기 위해서입니다.</p>
 <p>이번에 진행하는 c언어는 linux에서 gcc, vim, bash shell을 이용해 진행됩니다. 가장 기본적인 학습법입니다. Terminal이 아닌 윈도우에서 GUI에디터로 프로그래밍을 하면 C언어의 본래 의미를 찾기 힘듭니다. 재미도 없구요. Hello World의 의미도 깨닫지 못합니다. </p>
 <h3 id="실습환경-설정"><a href="#실습환경-설정" class="headerlink" title="실습환경 설정"></a>실습환경 설정</h3><p>(맥과 리눅스 사용자는 Terminal과 vim을 사용할 수 있다는 전제 하에 패스해도 됨.)</p>
 <ol>
@@ -16,7 +321,7 @@
 </ol>
 <h3 id="c언어를-시작하며"><a href="#c언어를-시작하며" class="headerlink" title="c언어를 시작하며"></a>c언어를 시작하며</h3><ol>
 <li>c언어를 배우면서 기본적으로 알아 두면 좋은 내용들을 정리 했습니다.</li>
-<li>c언어는 배울것이 많지 않습니다. 문법 이론만  배운다면 1시간이면 충분합니다. 다만 컴퓨터의 전반에 대해 이해를 하고 있어야 합니다. 별도로 공부를 해야 한다는 겁니다. 컴퓨터의 구조, 동작원리, 통신, 자료구조, 수학 및 통계, 운영체제, 각종 업무에대한 알고리즘…등. c언어는 보조 도구일 뿐입니다. 입력하고, 계산하고, 반복하고, 출력하는 기능밖에 없습니다. c언어에 많은 시간과 노력을 할애하지 마세요. 1일 배우고, 1일 복습하고, 아래 목차를 안보고 쓸수 있으면 됩니다. 그리고 python, java, c++ 기타 원하는 프로그램언어를 메인으로 배우세요.</li>
+<li>c언어는 배울것이 많지 않습니다. 문법 이론만  배운다면 1시간이면 충분합니다. 다만 컴퓨터의 전반에 대해 학습이 필요합니다. 컴퓨터의 구조, 동작원리, 통신, 자료구조, 수학 및 통계, 운영체제, 각종 업무에대한 알고리즘…등</li>
 </ol>
 <h3 id="화면에-글자-출력하기"><a href="#화면에-글자-출력하기" class="headerlink" title="화면에 글자 출력하기"></a>화면에 글자 출력하기</h3><ol>
 <li>putchar()</li>
@@ -76,17 +381,16 @@
 <li>int main(int argc const char *argv[])</li>
 </ol>
 <h3 id="파일-입출력"><a href="#파일-입출력" class="headerlink" title="파일 입출력"></a>파일 입출력</h3><ol>
-<li>fopen, fclose</li>
+<li>fopen, fclose, free(), fprintf(), fscanf(), fseek(), rewind()</li>
 </ol>
 <h3 id="표준-라이브러리"><a href="#표준-라이브러리" class="headerlink" title="표준 라이브러리"></a>표준 라이브러리</h3><ol>
 <li>표준라이브러리 알아보기</li>
 </ol>
 <h3 id="구조체-사용하기"><a href="#구조체-사용하기" class="headerlink" title="구조체 사용하기"></a>구조체 사용하기</h3><ol>
-<li>여러 자료형이 혼합된 배열.</li>
+<li>여러 자료형이 혼합된 자료형.</li>
 </ol>
 <h3 id="유니온"><a href="#유니온" class="headerlink" title="유니온"></a>유니온</h3><ol>
-<li>구조체와 같음. 내부적 처리 방식이 다름.</li>
-<li>구조체 보다 처리 속도가 빠르나, 메모리 소비가 효율적이지 못함.</li>
+<li>구조체와 같음. 패딩바이트를 줄이기 위해 사용함.</li>
 </ol>
 <hr>
 <h2 id="응용실습"><a href="#응용실습" class="headerlink" title="응용실습"></a>응용실습</h2><h3 id="curses-ncurses"><a href="#curses-ncurses" class="headerlink" title="curses, ncurses"></a>curses, ncurses</h3><ol>
@@ -886,141 +1190,6 @@
         <tags>
             
             <tag> 계산하기 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[REPL 사용하기]]></title>
-      <url>/2017/11/18/python-repl-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</url>
-      <content type="html"><![CDATA[<h3 id="REPL"><a href="#REPL" class="headerlink" title="REPL"></a>REPL</h3><p>파이썬의 REPL은 shell의 기본 사용법과 동일합니다.</p>
-<h4 id="단축키"><a href="#단축키" class="headerlink" title="단축키"></a>단축키</h4><table>
-<thead>
-<tr>
-<th>단축키</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>TAB</code></td>
-<td>자동완성(파일및디렉토리, 명령을 자동완성)</td>
-</tr>
-<tr>
-<td><code>Ctrl+h</code></td>
-<td>백스페이와 같습니다.(더 편합니다.)</td>
-</tr>
-<tr>
-<td><code>Ctrl+a</code></td>
-<td>처음으로 이동</td>
-</tr>
-<tr>
-<td><code>Ctrl+e</code></td>
-<td>행 끝으로 이동</td>
-</tr>
-<tr>
-<td><code>Ctrl+b</code></td>
-<td>한 문자 뒤로 이동</td>
-</tr>
-<tr>
-<td><code>Alt+b</code></td>
-<td>한 단어 뒤로 이동</td>
-</tr>
-<tr>
-<td><code>Ctrl+f</code></td>
-<td>한 문자 앞으로 이동</td>
-</tr>
-<tr>
-<td><code>Alt+f</code></td>
-<td>한 단어 앞으로 이동</td>
-</tr>
-<tr>
-<td><code>Ctrl+u</code></td>
-<td>현재줄을 삭제합니다.</td>
-</tr>
-<tr>
-<td><code>Ctrl+k</code></td>
-<td>커서 위치에서 행 끝까지 삭제합니다.</td>
-</tr>
-<tr>
-<td><code>Ctrl+w</code></td>
-<td>커서앞 한단어를 삭제합니다.</td>
-</tr>
-<tr>
-<td><code>Esc+Backspace</code></td>
-<td>이전 단어 삭제</td>
-</tr>
-<tr>
-<td><code>Ctrl+y</code></td>
-<td>클립보드에서 텍스트를 붙여넣습니다.</td>
-</tr>
-<tr>
-<td><code>Ctrl+l</code></td>
-<td>화면 상단에 현재 줄을 남겨두고 화면을 지웁니다.</td>
-</tr>
-<tr>
-<td><code>Ctrl+r</code></td>
-<td>증분 검색 기록 을 역순으로 추적</td>
-</tr>
-<tr>
-<td><code>Alt+p</code></td>
-<td>비 증분 검색 기록을 역순으로 추적</td>
-</tr>
-<tr>
-<td><code>Ctrl+p</code></td>
-<td>비 증분 검색 기록을 역순으로 추적</td>
-</tr>
-</tbody>
-</table>
-<h4 id="help"><a href="#help" class="headerlink" title="help"></a>help</h4><p>프롬프트에서 help()를 입력합니다.<br>도움말 유틸리티로 들어가게 되는데 이때 topics를 입력합니다.<br>도움말 목차가 리스트되고 원하는 타이틀을 입력하면 도움말을 보여줍니다.<br>사용법은 less와 동일합니다. 종료는 quit 또는 q<br>modules, keywords, symbols 동일하게 사용할 수 있습니다.<br>symbols 는 예약된 표시문자를 확인 할 수 있습니다.<br>keywords 는 예약어를 볼수 있습니다.<br>modules는 클래스 리스트를 볼수 있습니다.</p>
-<h4 id="dir"><a href="#dir" class="headerlink" title="dir"></a>dir</h4><p>python은 c언어와 다르게 한번에 컴파일해서 사용하는 것이 아니라 스크립트를 한줄씩 인터프리터가 처리하는 방식으로 구동됩니다.<br>처음에 실행된 인터프리터의 머리는 텅 비어있습니다.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;dir()</div><div class="line">[<span class="string">'__annotations__'</span>, <span class="string">'__builtins__'</span>, <span class="string">'__doc__'</span>, <span class="string">'__loader__'</span></div><div class="line">, <span class="string">'__name__'</span>, <span class="string">'__package__'</span>, <span class="string">'__spec__'</span>]</div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure></p>
-<p>언더바 2개로 감싸저 있는 것을 모듈이라고 합니다. 클래스의 집합이라고 생각하면 됩니다.<br>클래스는 변수의 집합이구요.<br>각각의 모듈이 궁금하면 help(“모듈명”) 하면 됩니다.<br>위에 리스트된 모듈이 파이썬기 동작되기 위한 기본 모듈입니다. 이 모듈들이 메모리에 적재되어 있는 겁니다.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>iKor = <span class="number">100</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>iEng = <span class="number">90</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>iMath = <span class="number">90</span></div></pre></td></tr></table></figure></p>
-<p>위와 같이 입력하고 dir() 해보세요.<br>변수를 선언 한겁니다. 변수는 메모리의 스택영역에 적재 됩니다.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>dir()</div><div class="line">[<span class="string">'__annotations__'</span>, <span class="string">'__builtins__'</span>, <span class="string">'__doc__'</span>, <span class="string">'__loader__'</span></div><div class="line">, <span class="string">'__name__'</span>, <span class="string">'__package__'</span>, <span class="string">'__spec__'</span>, <span class="string">'iEng'</span>, <span class="string">'iMath'</span>, <span class="string">'ikor'</span>]</div></pre></td></tr></table></figure></p>
-<p>그럼 메모리 속을 들여다 봅시다. 처음에 있는 모듈 부터 차례로 입력하세요.<br>잠깐 REPL는 shell과 사용법이 똑같다고 했습니다. 전부 입력하지 말고 tab자동완성을 쓰세요.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>__annotations__</div><div class="line">&#123;&#125;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>__builtins__</div><div class="line">&lt;module <span class="string">'builtins'</span> (built-<span class="keyword">in</span>)&gt;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>__doc__</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>__loader__</div><div class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">_frozen_importlib</span>.<span class="title">BuiltinImporter</span>'&gt;</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">__name__</span></span></div><div class="line"><span class="class">'<span class="title">__main__</span>'</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">__package__</span></span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">__spec__</span></span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">iEng</span></span></div><div class="line"><span class="class">90</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">iMath</span></span></div><div class="line"><span class="class">90</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">iKor</span></span></div><div class="line"><span class="class">100</span></div><div class="line"><span class="class">&gt;&gt;&gt;</span></div></pre></td></tr></table></figure>
-<ul>
-<li><code>__annotations__</code>은 주석입니다. 우리가 주석을 사용하지 않았으니 아무것도 없네요.</li>
-<li><code>__builtins__</code>은 내장객체입니다. 자동완성하면 괄호가 나왔을 겁니다. 뭔가 많이 있는데 우리가 지정하지 않은 겁니다.</li>
-<li><code>__doc__</code>는 설명서입니다. 우리가 설명서를 만들지 않았으니 아무것도 없는 겁니다.</li>
-<li><code>__loader__</code>는 뭔가 많이 있는데 우리가 호출하지 않은 겁니다. 모듈이름이 뭔가 읽어 온다는 느낌만 갖이면 됩니다.</li>
-<li><code>__name__</code>은 우리가 만들고 있는 클래스 이름입니다. 기본이 main입니다.</li>
-<li><code>__package__</code>는 여러 프로그램을 합칠때 호출하는 건데 이것도 사용하지 않았으니 비어 있네요.</li>
-<li><code>__spec__</code>는 파이썬의 기본 설정값을 세팅하는 겁니다. 이것도 설정하지 않았으니 비어 있습니다.</li>
-<li>iEng 이건 우리가 iEng라는 변수를 생성했기 때문에 90 이라는 값이 나왔습니다. iMath, iKor동일 합니다.</li>
-</ul>
-<p>변수를 하나 더 만들고 dir() 해보세요. 이번에는 iSum = 0 으로 만드세요.<br>국, 영, 수 점수를 더해서 iSum에 넣을 겁니다. 자동완성 잊지마세요.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>iSum = iKor + iEng + iMath</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>iSum</div><div class="line"><span class="number">280</span></div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure>
-<p>이번에는 프롬프트에서 dir(iSum) 해보세요.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>dir(iSum)</div><div class="line">[<span class="string">'__abs__'</span>, <span class="string">'__add__'</span>, <span class="string">'__and__'</span>, <span class="string">'__bool__'</span>, <span class="string">'__ceil__'</span></div><div class="line">, <span class="string">'__class__'</span>, <span class="string">'__delattr__'</span>, <span class="string">'__dir__'</span>, <span class="string">'__divmod__'</span>, <span class="string">'__doc__'</span></div><div class="line">, <span class="string">'__eq__'</span>, <span class="string">'__float__'</span>, <span class="string">'__floor__'</span>, <span class="string">'__floordiv__'</span>, <span class="string">'__format__'</span></div><div class="line">, <span class="string">'__ge__'</span>, <span class="string">'__getattribute__'</span>, <span class="string">'__getnewargs__'</span>, <span class="string">'__gt__'</span>, <span class="string">'__hash__'</span></div><div class="line">, <span class="string">'__index__'</span>, <span class="string">'__init__'</span>, <span class="string">'__init_subclass__'</span>, <span class="string">'__int__'</span>, <span class="string">'__invert__'</span></div><div class="line">, <span class="string">'__le__'</span>, <span class="string">'__lshift__'</span>, <span class="string">'__lt__'</span>, <span class="string">'__mod__'</span>, <span class="string">'__mul__'</span></div><div class="line">, <span class="string">'__ne__'</span>, <span class="string">'__neg__'</span>, <span class="string">'__new__'</span>, <span class="string">'__or__'</span>, <span class="string">'__pos__'</span></div><div class="line">, <span class="string">'__pow__'</span>, <span class="string">'__radd__'</span>, <span class="string">'__rand__'</span>, <span class="string">'__rdivmod__'</span>, <span class="string">'__reduce__'</span></div><div class="line">, <span class="string">'__reduce_ex__'</span>, <span class="string">'__repr__'</span>, <span class="string">'__rfloordiv__'</span>, <span class="string">'__rlshift__'</span> , <span class="string">'__rmod__'</span></div><div class="line">, <span class="string">'__rmul__'</span>, <span class="string">'__ror__'</span>, <span class="string">'__round__'</span>, <span class="string">'__rpow__'</span> , <span class="string">'__rrshift__'</span></div><div class="line">, <span class="string">'__rshift__'</span>, <span class="string">'__rsub__'</span>, <span class="string">'__rtruediv__'</span> , <span class="string">'__rxor__'</span> , <span class="string">'__setattr__'</span></div><div class="line">, <span class="string">'__sizeof__'</span>, <span class="string">'__str__'</span> , <span class="string">'__sub__'</span>, <span class="string">'__subclasshook__'</span> , <span class="string">'__truediv__'</span> </div><div class="line">, <span class="string">'__trunc__'</span>, <span class="string">'__xor__'</span>, <span class="string">'bit_length'</span>, <span class="string">'conjugate'</span> , <span class="string">'denominator'</span> </div><div class="line">, <span class="string">'from_bytes'</span>, <span class="string">'imag'</span>, <span class="string">'numerator'</span>, <span class="string">'real'</span> , <span class="string">'to_bytes'</span>]</div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure>
-<p>iSum은 정수형 변수가 생성되면서 상속받는 속성들 입니다.</p>
-<p>우리는 국,영,수 점수만 더해서 저장했는데 뭔가 많이 들어있네요.<br>int class에서 상속받아 기본으로 사용할 수 있는 객체들입니다.<br>용어를 처음 듣는다고 해서 어려워 하지 말고 그냥 받아 들이세요.<br>부모님이 재산이 많으면 자식에게 상속하듯 파이썬도 정수형 변수를 찍어 낼때 정수형 클래스의 속성을 iSum 변수에 상속해 준겁니다.</p>
-<p>c언어는 함수로 시작해서 함수로 끝납니다.<br>python은 클래스로 시작해서 클래스로 끝납니다.<br>c언어는 모든 것을 만들어야 하는데, 파이썬은 상속 받아 쓰기만 하면 됩니다.</p>
-<p>클래스, 객체(Object), 속성(Method), 데이터(Data)는 많이 나오는 단어이니 간단히 이해 하고 있으면 됩니다.</p>
-<p>클래스는 객체를 구분하는 단위, 클래스로 찍어 낸것을 객체라고 합니다. 클래스가 자식 객체에게 속성과 데이터를 쓸수 있게 해주는 것을 상속이라 합니다. </p>
-<p>정리하면 클래스는 객체를 찍어 낼수 있고 객체는 속성과 DATA가 있다 라고 합니다. 한번더 헛갈리게 할 께요. 영어와 한글을 혼용해서 사용하는데, 속성은 메쏘드라고 부르고 메쏘드는 함수라고 부릅니다. 객체는 object라고 부릅니다. 마지막으로 정리 해볼께요.</p>
-<p>파이썬은 클래스로 시작해서 클래스로 끝납니다.<br>클래스에는 메쏘드와 데이터가 있습니다.<br>클래스로 찍어낸 것을 오브젝트라고 합니다.<br>오브젝트는 클래스로부터 상속받은 메쏘드와 데이터를 사용할 수 있습니다.</p>
-<p>iSum은 int클래스가 생성한 Object이니 int클래스의 메쏘드를 물려 받은 겁니다.</p>
-<p>이제 모두 잊어 버리세요. 이런거 외우는거 아닙니다. 쓰면서 느끼면 됩니다.</p>
-<h3 id="ipython"><a href="#ipython" class="headerlink" title="ipython"></a>ipython</h3><p>기본 REPL은 기능이 없어 많이 불편합니다. </p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ipython</div></pre></td></tr></table></figure>
-<p>프롬프트가 좀 바뀌긴 했지만 그냥 한번 써보세요.<br>색깔도 변한것 같습니다. 자동완성도 지원하고, 명령을 입력하다 잘 모르겠으면 Tab을 누르세요.<br>파일저장, 읽어오기등 부족하지만 ide처럼 사용할 수 있습니다.</p>
-<p>종료는 똑같이 quit()</p>
-<p>시작할때 각종 도움말 보는 법 나와 있으니 참고 하세요. 이것도 안쓸 겁니다.</p>
-<h3 id="jupyter-notebook"><a href="#jupyter-notebook" class="headerlink" title="jupyter notebook"></a>jupyter notebook</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ jupyter notebook</div></pre></td></tr></table></figure>
-<p>뭔가 이것저것 실행 되고 브라우저가 열립니다.<br>이놈이 앞으로 우리가 사용할 python 입니다.<br>종료하려면 브라우저 닫고 터미널에서는 Ctrl+c 누르면 종료 됩니다.</p>
-]]></content>
-      
-        <categories>
-            
-            <category> python </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> python REPL </tag>
             
         </tags>
         
