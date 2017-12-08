@@ -3,6 +3,98 @@
   
     
     <entry>
+      <title><![CDATA[사용자 및 database 생성]]></title>
+      <url>/2017/12/07/mysql-%EC%82%AC%EC%9A%A9%EC%9E%90%EB%B0%8Fdb%EC%83%9D%EC%84%B1/</url>
+      <content type="html"><![CDATA[<h3 id="데이타베이스-생성"><a href="#데이타베이스-생성" class="headerlink" title="데이타베이스 생성"></a>데이타베이스 생성</h3><h5 id="기본구문"><a href="#기본구문" class="headerlink" title="기본구문"></a>기본구문</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> &#123;<span class="keyword">DATABASE</span> | <span class="keyword">SCHEMA</span>&#125; [<span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span>] db_name</div><div class="line">    [create_specification] ...</div><div class="line"></div><div class="line">create_specification:</div><div class="line">    [<span class="keyword">DEFAULT</span>] <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> [=] charset_name</div><div class="line">  | [<span class="keyword">DEFAULT</span>] <span class="keyword">COLLATE</span> [=] collation_name</div></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">show</span> <span class="keyword">databases</span>;</div><div class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> dbname <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> utf8 <span class="keyword">COLLATE</span> utf8_bin;</div></pre></td></tr></table></figure>
+<h3 id="사용자-생성"><a href="#사용자-생성" class="headerlink" title="사용자 생성"></a>사용자 생성</h3><p>mysql 5.7 이상은 Create User 구문 사용<br>MySQL 5.7 이상</p>
+<h4 id="기본구문-1"><a href="#기본구문-1" class="headerlink" title="기본구문"></a>기본구문</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> [<span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span>]</div><div class="line">    <span class="keyword">user</span> [auth_option] [, <span class="keyword">user</span> [auth_option]] ...</div><div class="line">    [REQUIRE &#123;<span class="keyword">NONE</span> | tls_option [[<span class="keyword">AND</span>] tls_option] ...&#125;]</div><div class="line">    [<span class="keyword">WITH</span> resource_option [resource_option] ...]</div><div class="line">    [password_option | lock_option] ...</div><div class="line"></div><div class="line">auth_option: &#123;</div><div class="line">    <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'auth_string'</span></div><div class="line">  | <span class="keyword">IDENTIFIED</span> <span class="keyword">WITH</span> auth_plugin</div><div class="line">  | <span class="keyword">IDENTIFIED</span> <span class="keyword">WITH</span> auth_plugin <span class="keyword">BY</span> <span class="string">'auth_string'</span></div><div class="line">  | <span class="keyword">IDENTIFIED</span> <span class="keyword">WITH</span> auth_plugin <span class="keyword">AS</span> <span class="string">'hash_string'</span></div><div class="line">  | <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="keyword">PASSWORD</span> <span class="string">'hash_string'</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">tls_option: &#123;</div><div class="line">   SSL</div><div class="line"> | X509</div><div class="line"> | CIPHER <span class="string">'cipher'</span></div><div class="line"> | ISSUER <span class="string">'issuer'</span></div><div class="line"> | SUBJECT <span class="string">'subject'</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">resource_option: &#123;</div><div class="line">    MAX_QUERIES_PER_HOUR <span class="keyword">count</span></div><div class="line">  | MAX_UPDATES_PER_HOUR <span class="keyword">count</span></div><div class="line">  | MAX_CONNECTIONS_PER_HOUR <span class="keyword">count</span></div><div class="line">  | MAX_USER_CONNECTIONS <span class="keyword">count</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">password_option: &#123;</div><div class="line">    <span class="keyword">PASSWORD</span> <span class="keyword">EXPIRE</span></div><div class="line">  | <span class="keyword">PASSWORD</span> <span class="keyword">EXPIRE</span> <span class="keyword">DEFAULT</span></div><div class="line">  | <span class="keyword">PASSWORD</span> <span class="keyword">EXPIRE</span> <span class="keyword">NEVER</span></div><div class="line">  | <span class="keyword">PASSWORD</span> <span class="keyword">EXPIRE</span> <span class="built_in">INTERVAL</span> N <span class="keyword">DAY</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">lock_option: &#123;</div><div class="line">    <span class="keyword">ACCOUNT</span> <span class="keyword">LOCK</span></div><div class="line">  | <span class="keyword">ACCOUNT</span> <span class="keyword">UNLOCK</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"># 생성과 동시에 기간만료, 사용자가 서버에 처음 연결할 때 비밀번호를 선택</div><div class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> <span class="string">'jeffrey'</span>@<span class="string">'localhost'</span></div><div class="line">  <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'new_password'</span> <span class="keyword">PASSWORD</span> <span class="keyword">EXPIRE</span>;</div><div class="line"></div><div class="line"># 암호와 방식과 만료일자 지정</div><div class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> <span class="string">'jeffrey'</span>@<span class="string">'localhost'</span></div><div class="line">  <span class="keyword">IDENTIFIED</span> <span class="keyword">WITH</span> sha256_password <span class="keyword">BY</span> <span class="string">'new_password'</span></div><div class="line">  <span class="keyword">PASSWORD</span> <span class="keyword">EXPIRE</span> <span class="built_in">INTERVAL</span> <span class="number">180</span> <span class="keyword">DAY</span>;</div><div class="line"></div><div class="line"># 암호를 일반 텍스트로 지정하면, 기본 플러그인이 사용됨.</div><div class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> <span class="string">'jeffrey'</span>@<span class="string">'localhost'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'password'</span>;</div></pre></td></tr></table></figure>
+<p>IDENTIFIED BY PASSWORD 구문은 더 이상 사용되지 않으며 향후 MySQL 릴리스에서 제거예정</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> <span class="string">'userid'</span>@<span class="string">'localhost'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'secret'</span> <span class="keyword">PASSWORD</span> <span class="keyword">EXPIRE</span> <span class="keyword">NEVER</span>;</div><div class="line"><span class="keyword">GRANT</span> ALL <span class="keyword">PRIVILEGES</span> <span class="keyword">ON</span> database.* <span class="keyword">TO</span> <span class="string">'userid'</span>@<span class="string">'localhost'</span>;</div><div class="line"></div><div class="line"><span class="keyword">flush</span> <span class="keyword">privileges</span>;</div></pre></td></tr></table></figure>
+<p>MySQL 5.7 미만<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">GRANT</span> ALL <span class="keyword">PRIVILEGES</span> <span class="keyword">ON</span> database.* <span class="keyword">TO</span> <span class="string">'userid'</span>@<span class="string">'localhost'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'secret'</span>;</div><div class="line"></div><div class="line"><span class="keyword">flush</span> <span class="keyword">privileges</span>;</div></pre></td></tr></table></figure></p>
+<p>MySQL 암호 변경<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SET</span> <span class="keyword">PASSWORD</span> 사용</div><div class="line"><span class="keyword">SET</span> <span class="keyword">PASSWORD</span> [<span class="keyword">FOR</span> <span class="keyword">user</span>] = password_option</div><div class="line"></div><div class="line">password_option: &#123;</div><div class="line">    <span class="string">'auth_string'</span></div><div class="line">  | <span class="keyword">PASSWORD</span>(<span class="string">'auth_string'</span>)</div><div class="line">&#125;</div><div class="line"><span class="keyword">SET</span> <span class="keyword">PASSWORD</span> <span class="keyword">FOR</span> <span class="string">'userid'</span>@<span class="string">'localhost'</span> = <span class="string">'secret'</span>;</div><div class="line"></div><div class="line"><span class="keyword">Alter</span> <span class="keyword">user</span> 사용</div><div class="line"><span class="keyword">alter</span> <span class="keyword">USER</span> <span class="string">'userid'</span>@<span class="string">'localhost'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'secret'</span> <span class="keyword">PASSWORD</span> <span class="keyword">EXPIRE</span> <span class="keyword">NEVER</span>;</div></pre></td></tr></table></figure></p>
+<p>MySQL password policy 변경<br>5.7부터는 암호화 방식이 바뀌었음.(복잡한 암호 지원)<br>보안을 위해 복잡한 암호를 쓰라고 만들었는데, 이걸 안쓰는건 좀…</p>
+<p>아무튼,</p>
+<p>validate password plugin 삭제하거나 암호규정을 낮추는 방법이 있음. </p>
+<p>mysql root 로 로그인한 후에 다음 명령어 실행후 mysql 재구동<br>uninstall plugin validate_password;</p>
+<p>암호 규칙을 낮게 설정<br><a href="https://dev.mysql.com/doc/refman/5.7/en/validate-password-plugin.html" target="_blank" rel="external">https://dev.mysql.com/doc/refman/5.7/en/validate-password-plugin.html</a><br>my.cnf에 다음과 같이 설정하고 mysql 재구동<br>[mysqld]<br>validate_password_policy=LOW</p>
+<p>기본 값은 1(MEDIUM) 입니다. </p>
+<table>
+<thead>
+<tr>
+<th>Policy</th>
+<th>암호적용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0 or LOW</td>
+<td>Length</td>
+</tr>
+<tr>
+<td>1 or MEDIUM</td>
+<td>Length; numeric, lowercase/uppercase, and special characters</td>
+</tr>
+<tr>
+<td>2 or STRONG</td>
+<td>Length; numeric, lowercase/uppercase, and special characters; dictionary file</td>
+</tr>
+</tbody>
+</table>
+<h3 id="UTF8MB4로-테이블-생성"><a href="#UTF8MB4로-테이블-생성" class="headerlink" title="UTF8MB4로 테이블 생성"></a>UTF8MB4로 테이블 생성</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> mydatabase <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> = utf8mb4 <span class="keyword">COLLATE</span> = utf8mb4_unicode_ci;</div><div class="line"></div><div class="line"><span class="keyword">GRANT</span> ALL <span class="keyword">PRIVILEGES</span> <span class="keyword">ON</span> database.selectTable <span class="keyword">TO</span> <span class="string">'userid'</span>@<span class="string">'localhost'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'password'</span>;</div><div class="line"><span class="keyword">flush</span> <span class="keyword">privileges</span>;</div></pre></td></tr></table></figure>
+<p>mysql utf8은 3바이트로 인식, 이모티콘은 4바이트 이므로 저장이 안됩니다.<br>모든 테이블을 MB4로 만드는건 db 관점에서 효율적이지 못하므로 이모티콘이 사용되는 테이블만 MB4로 만들거나 변경해야 합니다.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">ALTER</span> <span class="keyword">DATABASE</span> database_name <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> = utf8mb4 <span class="keyword">COLLATE</span> = utf8mb4_unicode_ci;</div><div class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> table_name <span class="keyword">CONVERT</span> <span class="keyword">TO</span> <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> utf8mb4 <span class="keyword">COLLATE</span> utf8mb4_unicode_ci;</div></pre></td></tr></table></figure></p>
+]]></content>
+      
+        <categories>
+            
+            <category> Mysql </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 사용자생성 </tag>
+            
+            <tag> database 생성 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[보안연결]]></title>
+      <url>/2017/12/07/mysql-%EB%B3%B4%EC%95%88%EC%97%B0%EA%B2%B0/</url>
+      <content type="html"><![CDATA[<h3 id="보안-접속-생성"><a href="#보안-접속-생성" class="headerlink" title="보안 접속 생성"></a>보안 접속 생성</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql_config_editor <span class="built_in">set</span> --login-path=[접속이름] --host=[host정보] --user=[계정명] --password --socket=/tmp/mysql.sock --port=3306</div></pre></td></tr></table></figure>
+<p>소켓은 옵션이고, 패스워드는 실행시 입력해줍니다.</p>
+<h4 id="등록-list-확인"><a href="#등록-list-확인" class="headerlink" title="등록 list 확인"></a>등록 list 확인</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql_config_editor <span class="built_in">print</span> --all</div></pre></td></tr></table></figure>
+<h4 id="mysql-에-접속"><a href="#mysql-에-접속" class="headerlink" title="mysql 에 접속"></a>mysql 에 접속</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql --login-path=myconn</div></pre></td></tr></table></figure>
+<p>데이터베이스를 선택할려면</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql --login-path=myconn --database=데이터베이스명</div></pre></td></tr></table></figure>
+<p>vim에서 </p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">"vimrc에 추가</span></div><div class="line"><span class="keyword">vmap</span> <span class="symbol">&lt;Leader&gt;</span>sql :<span class="string">'&lt;,'</span>&gt;!mysql --login-path=local -vvv --database=mydb<span class="symbol">&lt;CR&gt;</span></div><div class="line"><span class="keyword">nnoremap</span> <span class="symbol">&lt;Leader&gt;</span>sql :.!mysql --login-path=local -vvv --database=mydb<span class="symbol">&lt;CR&gt;</span></div></pre></td></tr></table></figure>
+<p>옵션이 궁금하면<br>mysql –help</p>
+<h4 id="접속-정보-삭제"><a href="#접속-정보-삭제" class="headerlink" title="접속 정보 삭제"></a>접속 정보 삭제</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql_config_editor remove --login-path=myconn</div></pre></td></tr></table></figure>
+<h4 id="전체-정보를-삭제"><a href="#전체-정보를-삭제" class="headerlink" title="전체 정보를 삭제"></a>전체 정보를 삭제</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql_config_editor remove</div></pre></td></tr></table></figure>
+]]></content>
+      
+        <categories>
+            
+            <category> Mysql </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> mysql_config_editor </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[유니온]]></title>
       <url>/2017/12/04/c-%EC%9C%A0%EB%8B%88%EC%98%A8/</url>
       <content type="html"><![CDATA[<h3 id="유니온"><a href="#유니온" class="headerlink" title="유니온"></a>유니온</h3><img src="/c언어기초/2017-12-02_19-30-05.png" width="500" title="구조체그림1">
@@ -250,31 +342,6 @@
         <tags>
             
             <tag> comment </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[보안연결]]></title>
-      <url>/2017/12/01/mysql-%EB%B3%B4%EC%95%88%EC%97%B0%EA%B2%B0/</url>
-      <content type="html"><![CDATA[<h3 id="보안-접속-생성"><a href="#보안-접속-생성" class="headerlink" title="보안 접속 생성"></a>보안 접속 생성</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql_config_editor <span class="built_in">set</span> --login-path=[접속이름] --host=[host정보] --user=[계정명] --password --socket=/tmp/mysql.sock --port=3306</div></pre></td></tr></table></figure>
-<h4 id="등록-list-확인"><a href="#등록-list-확인" class="headerlink" title="등록 list 확인"></a>등록 list 확인</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql_config_editor <span class="built_in">print</span> --all</div></pre></td></tr></table></figure>
-<h4 id="mysql-에-접속"><a href="#mysql-에-접속" class="headerlink" title="mysql 에 접속"></a>mysql 에 접속</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql --login-path=myconn</div></pre></td></tr></table></figure>
-<h4 id="접속-정보-삭제"><a href="#접속-정보-삭제" class="headerlink" title="접속 정보 삭제"></a>접속 정보 삭제</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql_config_editor remove --login-path=myconn</div></pre></td></tr></table></figure>
-<h4 id="전체-정보를-삭제"><a href="#전체-정보를-삭제" class="headerlink" title="전체 정보를 삭제"></a>전체 정보를 삭제</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql_config_editor remove</div></pre></td></tr></table></figure>
-]]></content>
-      
-        <categories>
-            
-            <category> Mysql </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> mysql_config_editor </tag>
             
         </tags>
         
