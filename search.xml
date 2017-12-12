@@ -91,6 +91,10 @@
 <td>DECIMAL( , )</td>
 <td>숫자형</td>
 </tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>숫자형</td>
+</tr>
 </tbody>
 </table>
 <h3 id="날짜형"><a href="#날짜형" class="headerlink" title="날짜형"></a>날짜형</h3><table>
