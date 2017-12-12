@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://korcow.github.io/"/>
-  <updated>2017-12-12T10:13:00.143Z</updated>
+  <updated>2017-12-12T10:15:27.515Z</updated>
   <id>http://korcow.github.io/</id>
   
   <author>
@@ -20,16 +20,16 @@
     <title>자료형</title>
     <link href="http://korcow.github.io/2017/12/12/mysql-%EC%9E%90%EB%A3%8C%ED%98%95/"/>
     <id>http://korcow.github.io/2017/12/12/mysql-자료형/</id>
-    <published>2017-12-12T10:13:00.143Z</published>
-    <updated>2017-12-12T10:13:00.143Z</updated>
+    <published>2017-12-12T10:15:27.515Z</published>
+    <updated>2017-12-12T10:15:27.515Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="mysql-데이터-타입"><a href="#mysql-데이터-타입" class="headerlink" title="mysql 데이터 타입"></a>mysql 데이터 타입</h3><h4 id="문자형"><a href="#문자형" class="headerlink" title="문자형"></a>문자형</h4><table><thead><tr><th>데이터 타입</th><th>길이</th></tr></thead><tbody><tr><td>CHAR()</td><td>0 to 255 고정문자 길이</td></tr><tr><td>VARCHAR()</td><td>0~65535 가변 문자 길이</td></tr><tr><td>TINYTEXT</td><td>최대 255 문자길이</td></tr><tr><td>TEXT</td><td>최대 65535 문자길이</td></tr><tr><td>BLOB</td><td>최대 65535 문자길이(이진파일)</td></tr><tr><td>MEDIUMTEXT</td><td>최대 16777215 문자길이</td></tr><tr><td>MEDIUMBLOB</td><td>최대 16777215 문자길이(이진파일)</td></tr><tr><td>LONGTEXT</td><td>최대 4294967295 문자길이</td></tr><tr><td>LONGBLOB</td><td>최대 4294967295 문자길이(이진파일)</td></tr></tbody></table><h4 id="숫자형"><a href="#숫자형" class="headerlink" title="숫자형"></a>숫자형</h4><table><thead><tr><th>데이터 타입</th><th>길이</th></tr></thead><tbody><tr><td>TINYINT()</td><td>정수형 -128 ~ 127 , UNSIGNED 0 ~ 255 정수형</td></tr><tr><td>SMALLINT()</td><td>정수형 -32768 ~ 32767, UNSIGNED 정수형 0 ~ 65535</td></tr><tr><td>MEDIUMINT()</td><td>정수형 -8388608 to 8388607, UNSIGNED 정수형 0 to 16777215 </td></tr><tr><td>INT()</td><td>정수형 -2147483648 ~ 2147483647 UNSIGNED 정수형 0 ~ 4294967295</td></tr><tr><td>BIGINT()</td><td>정수형 -9223372036854775808 ~ 9223372036854775807, UNSIGNED 정수형 0 ~ 18446744073709551615</td></tr><tr><td>FLOAT</td><td>부동소수점</td></tr><tr><td>DOUBLE( , )</td><td>배정도 부동소수점</td></tr><tr><td>DECIMAL( , )</td><td>숫자형</td></tr></tbody></table><h4 id="날짜형"><a href="#날짜형" class="headerlink" title="날짜형"></a>날짜형</h4><table><thead><tr><th>데이터 타입</th><th>길이</th></tr></thead><tbody><tr><td>DATE</td><td>YYYY-MM-DD</td></tr><tr><td>TIME</td><td>HH:MM:SS</td></tr><tr><td>DATETIME</td><td>YYYY-MM-DD HH:MM:SS</td></tr><tr><td>TIMESTAMP</td><td>YYYY-MM-DD HH:MM:SS</td></tr><tr><td>YEAR</td><td>0000</td></tr></tbody></table><h4 id="기타"><a href="#기타" class="headerlink" title="기타"></a>기타</h4><table><thead><tr><th>데이터 타입</th><th>길이</th></tr></thead><tbody><tr><td>ENUM ()</td><td>열거된 값으로 제한</td></tr><tr><td>SET</td><td>0개 이상의 집합</td></tr></tbody></table>]]></content>
+    <content type="html"><![CDATA[<h2 id="mysql-데이터-타입"><a href="#mysql-데이터-타입" class="headerlink" title="mysql 데이터 타입"></a>mysql 데이터 타입</h2><h3 id="문자형"><a href="#문자형" class="headerlink" title="문자형"></a>문자형</h3><table><thead><tr><th>데이터 타입</th><th>길이</th></tr></thead><tbody><tr><td>CHAR()</td><td>0 to 255 고정문자 길이</td></tr><tr><td>VARCHAR()</td><td>0~65535 가변 문자 길이</td></tr><tr><td>TINYTEXT</td><td>최대 255 문자길이</td></tr><tr><td>TEXT</td><td>최대 65535 문자길이</td></tr><tr><td>BLOB</td><td>최대 65535 문자길이(이진파일)</td></tr><tr><td>MEDIUMTEXT</td><td>최대 16777215 문자길이</td></tr><tr><td>MEDIUMBLOB</td><td>최대 16777215 문자길이(이진파일)</td></tr><tr><td>LONGTEXT</td><td>최대 4294967295 문자길이</td></tr><tr><td>LONGBLOB</td><td>최대 4294967295 문자길이(이진파일)</td></tr></tbody></table><h3 id="숫자형"><a href="#숫자형" class="headerlink" title="숫자형"></a>숫자형</h3><table><thead><tr><th>데이터 타입</th><th>길이</th></tr></thead><tbody><tr><td>TINYINT()</td><td>정수형 -128 ~ 127 , UNSIGNED 0 ~ 255 정수형</td></tr><tr><td>SMALLINT()</td><td>정수형 -32768 ~ 32767, UNSIGNED 정수형 0 ~ 65535</td></tr><tr><td>MEDIUMINT()</td><td>정수형 -8388608 to 8388607, UNSIGNED 정수형 0 to 16777215 </td></tr><tr><td>INT()</td><td>정수형 -2147483648 ~ 2147483647 UNSIGNED 정수형 0 ~ 4294967295</td></tr><tr><td>BIGINT()</td><td>정수형 -9223372036854775808 ~ 9223372036854775807, UNSIGNED 정수형 0 ~ 18446744073709551615</td></tr><tr><td>FLOAT</td><td>부동소수점</td></tr><tr><td>DOUBLE( , )</td><td>배정도 부동소수점</td></tr><tr><td>DECIMAL( , )</td><td>숫자형</td></tr></tbody></table><h3 id="날짜형"><a href="#날짜형" class="headerlink" title="날짜형"></a>날짜형</h3><table><thead><tr><th>데이터 타입</th><th>길이</th></tr></thead><tbody><tr><td>DATE</td><td>YYYY-MM-DD</td></tr><tr><td>TIME</td><td>HH:MM:SS</td></tr><tr><td>DATETIME</td><td>YYYY-MM-DD HH:MM:SS</td></tr><tr><td>TIMESTAMP</td><td>YYYY-MM-DD HH:MM:SS</td></tr><tr><td>YEAR</td><td>0000</td></tr></tbody></table><h3 id="기타"><a href="#기타" class="headerlink" title="기타"></a>기타</h3><table><thead><tr><th>데이터 타입</th><th>길이</th></tr></thead><tbody><tr><td>ENUM ()</td><td>열거된 값으로 제한</td></tr><tr><td>SET</td><td>0개 이상의 집합</td></tr></tbody></table>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h3 id=&quot;mysql-데이터-타입&quot;&gt;&lt;a href=&quot;#mysql-데이터-타입&quot; class=&quot;headerlink&quot; title=&quot;mysql 데이터 타입&quot;&gt;&lt;/a&gt;mysql 데이터 타입&lt;/h3&gt;&lt;h4 id=&quot;문자형&quot;&gt;&lt;a href=&quot;#문자형&quot; class
+        &lt;h2 id=&quot;mysql-데이터-타입&quot;&gt;&lt;a href=&quot;#mysql-데이터-타입&quot; class=&quot;headerlink&quot; title=&quot;mysql 데이터 타입&quot;&gt;&lt;/a&gt;mysql 데이터 타입&lt;/h2&gt;&lt;h3 id=&quot;문자형&quot;&gt;&lt;a href=&quot;#문자형&quot; class
       
     
     </summary>
