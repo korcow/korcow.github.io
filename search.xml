@@ -5,8 +5,7 @@
     <entry>
       <title><![CDATA[자료형]]></title>
       <url>/2017/12/12/mysql-%EC%9E%90%EB%A3%8C%ED%98%95/</url>
-      <content type="html"><![CDATA[<h3 id="mysql-데이터-타입"><a href="#mysql-데이터-타입" class="headerlink" title="mysql 데이터 타입"></a>mysql 데이터 타입</h3><p>문자형</p>
-<table>
+      <content type="html"><![CDATA[<h3 id="mysql-데이터-타입"><a href="#mysql-데이터-타입" class="headerlink" title="mysql 데이터 타입"></a>mysql 데이터 타입</h3><h4 id="문자형"><a href="#문자형" class="headerlink" title="문자형"></a>문자형</h4><table>
 <thead>
 <tr>
 <th>데이터 타입</th>
@@ -52,8 +51,7 @@
 </tr>
 </tbody>
 </table>
-<p>숫자형</p>
-<table>
+<h4 id="숫자형"><a href="#숫자형" class="headerlink" title="숫자형"></a>숫자형</h4><table>
 <thead>
 <tr>
 <th>데이터 타입</th>
@@ -95,8 +93,7 @@
 </tr>
 </tbody>
 </table>
-<p>날짜형</p>
-<table>
+<h4 id="날짜형"><a href="#날짜형" class="headerlink" title="날짜형"></a>날짜형</h4><table>
 <thead>
 <tr>
 <th>데이터 타입</th>
@@ -126,8 +123,7 @@
 </tr>
 </tbody>
 </table>
-<p>기타</p>
-<table>
+<h4 id="기타"><a href="#기타" class="headerlink" title="기타"></a>기타</h4><table>
 <thead>
 <tr>
 <th>데이터 타입</th>
