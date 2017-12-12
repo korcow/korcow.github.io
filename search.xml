@@ -6,13 +6,145 @@
       <title><![CDATA[자료형]]></title>
       <url>/2017/12/12/mysql-%EC%9E%90%EB%A3%8C%ED%98%95/</url>
       <content type="html"><![CDATA[<h3 id="mysql-데이터-타입"><a href="#mysql-데이터-타입" class="headerlink" title="mysql 데이터 타입"></a>mysql 데이터 타입</h3><p>문자형</p>
-<p>데이터 타입| 길이<br>CHAR()      | 0 to 255 고정문자 길이<br>VARCHAR()   | 0~65535 가변 문자 길이<br>TINYTEXT    | 최대 255 문자길이<br>TEXT        | 최대 65535 문자길이<br>BLOB        | 최대 65535 문자길이(이진파일)<br>MEDIUMTEXT  | 최대 16777215 문자길이<br>MEDIUMBLOB  | 최대 16777215 문자길이(이진파일)<br>LONGTEXT    | 최대 4294967295 문자길이<br>LONGBLOB    | 최대 4294967295 문자길이(이진파일)</p>
+<table>
+<thead>
+<tr>
+<th>데이터 타입</th>
+<th>길이</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CHAR()</td>
+<td>0 to 255 고정문자 길이</td>
+</tr>
+<tr>
+<td>VARCHAR()</td>
+<td>0~65535 가변 문자 길이</td>
+</tr>
+<tr>
+<td>TINYTEXT</td>
+<td>최대 255 문자길이</td>
+</tr>
+<tr>
+<td>TEXT</td>
+<td>최대 65535 문자길이</td>
+</tr>
+<tr>
+<td>BLOB</td>
+<td>최대 65535 문자길이(이진파일)</td>
+</tr>
+<tr>
+<td>MEDIUMTEXT</td>
+<td>최대 16777215 문자길이</td>
+</tr>
+<tr>
+<td>MEDIUMBLOB</td>
+<td>최대 16777215 문자길이(이진파일)</td>
+</tr>
+<tr>
+<td>LONGTEXT</td>
+<td>최대 4294967295 문자길이</td>
+</tr>
+<tr>
+<td>LONGBLOB</td>
+<td>최대 4294967295 문자길이(이진파일)</td>
+</tr>
+</tbody>
+</table>
 <p>숫자형</p>
-<p>데이터 타입| 길이<br>TINYINT()     | 정수형 -128 ~ 127 , UNSIGNED 0 ~ 255 정수형<br>SMALLINT()    | 정수형 -32768 ~ 32767, UNSIGNED 정수형 0 ~ 65535<br>MEDIUMINT()   | 정수형 -8388608 to 8388607, UNSIGNED 정수형 0 to 16777215<br>INT()         | 정수형 -2147483648 ~ 2147483647 UNSIGNED 정수형 0 ~ 4294967295<br>BIGINT()      | 정수형 -9223372036854775808 ~ 9223372036854775807, UNSIGNED 정수형 0 ~ 18446744073709551615<br>FLOAT         | 부동소수점<br>DOUBLE( , )   | 배정도 부동소수점<br>DECIMAL( , )  | 숫자형</p>
+<table>
+<thead>
+<tr>
+<th>데이터 타입</th>
+<th>길이</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TINYINT()</td>
+<td>정수형 -128 ~ 127 , UNSIGNED 0 ~ 255 정수형</td>
+</tr>
+<tr>
+<td>SMALLINT()</td>
+<td>정수형 -32768 ~ 32767, UNSIGNED 정수형 0 ~ 65535</td>
+</tr>
+<tr>
+<td>MEDIUMINT()</td>
+<td>정수형 -8388608 to 8388607, UNSIGNED 정수형 0 to 16777215 </td>
+</tr>
+<tr>
+<td>INT()</td>
+<td>정수형 -2147483648 ~ 2147483647 UNSIGNED 정수형 0 ~ 4294967295</td>
+</tr>
+<tr>
+<td>BIGINT()</td>
+<td>정수형 -9223372036854775808 ~ 9223372036854775807, UNSIGNED 정수형 0 ~ 18446744073709551615</td>
+</tr>
+<tr>
+<td>FLOAT</td>
+<td>부동소수점</td>
+</tr>
+<tr>
+<td>DOUBLE( , )</td>
+<td>배정도 부동소수점</td>
+</tr>
+<tr>
+<td>DECIMAL( , )</td>
+<td>숫자형</td>
+</tr>
+</tbody>
+</table>
 <p>날짜형</p>
-<p>데이터 타입| 길이<br>DATE       | YYYY-MM-DD<br>TIME       | HH:MM:SS<br>DATETIME   | YYYY-MM-DD HH:MM:SS<br>TIMESTAMP  | YYYY-MM-DD HH:MM:SS<br>YEAR       | 0000</p>
+<table>
+<thead>
+<tr>
+<th>데이터 타입</th>
+<th>길이</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DATE</td>
+<td>YYYY-MM-DD</td>
+</tr>
+<tr>
+<td>TIME</td>
+<td>HH:MM:SS</td>
+</tr>
+<tr>
+<td>DATETIME</td>
+<td>YYYY-MM-DD HH:MM:SS</td>
+</tr>
+<tr>
+<td>TIMESTAMP</td>
+<td>YYYY-MM-DD HH:MM:SS</td>
+</tr>
+<tr>
+<td>YEAR</td>
+<td>0000</td>
+</tr>
+</tbody>
+</table>
 <p>기타</p>
-<p>데이터 타입| 길이<br>ENUM () | 열거된 값으로 제한<br>SET | 0개 이상의 집합</p>
+<table>
+<thead>
+<tr>
+<th>데이터 타입</th>
+<th>길이</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ENUM ()</td>
+<td>열거된 값으로 제한</td>
+</tr>
+<tr>
+<td>SET</td>
+<td>0개 이상의 집합</td>
+</tr>
+</tbody>
+</table>
 ]]></content>
       
         <categories>
