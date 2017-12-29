@@ -3,6 +3,330 @@
   
     
     <entry>
+      <title><![CDATA[REPL 사용하기]]></title>
+      <url>/2017/12/29/python-repl-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</url>
+      <content type="html"><![CDATA[<h3 id="REPL"><a href="#REPL" class="headerlink" title="REPL"></a>REPL</h3><p>파이썬의 REPL은 기본적으로 readline api를 사용하기 때문에 키보드 단축키 사용법이 terminal 과 거의 같습니다. </p>
+<h4 id="단축키"><a href="#단축키" class="headerlink" title="단축키"></a>단축키</h4><table>
+<thead>
+<tr>
+<th>단축키</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TAB</code></td>
+<td>자동완성(파일및디렉토리, 명령을 자동완성)</td>
+</tr>
+<tr>
+<td><code>Ctrl+h</code></td>
+<td>백스페이와 같습니다.(더 편합니다.)</td>
+</tr>
+<tr>
+<td><code>Ctrl+a</code></td>
+<td>처음으로 이동</td>
+</tr>
+<tr>
+<td><code>Ctrl+e</code></td>
+<td>행 끝으로 이동</td>
+</tr>
+<tr>
+<td><code>Ctrl+b</code></td>
+<td>한 문자 뒤로 이동</td>
+</tr>
+<tr>
+<td><code>Alt+b</code></td>
+<td>한 단어 뒤로 이동</td>
+</tr>
+<tr>
+<td><code>Ctrl+f</code></td>
+<td>한 문자 앞으로 이동</td>
+</tr>
+<tr>
+<td><code>Alt+f</code></td>
+<td>한 단어 앞으로 이동</td>
+</tr>
+<tr>
+<td><code>Ctrl+u</code></td>
+<td>현재줄을 삭제합니다.</td>
+</tr>
+<tr>
+<td><code>Ctrl+k</code></td>
+<td>커서 위치에서 행 끝까지 삭제합니다.</td>
+</tr>
+<tr>
+<td><code>Ctrl+w</code></td>
+<td>커서앞 한단어를 삭제합니다.</td>
+</tr>
+<tr>
+<td><code>Esc+Backspace</code></td>
+<td>이전 단어 삭제</td>
+</tr>
+<tr>
+<td><code>Ctrl+y</code></td>
+<td>클립보드에서 텍스트를 붙여넣습니다.</td>
+</tr>
+<tr>
+<td><code>Ctrl+l</code></td>
+<td>화면 상단에 현재 줄을 남겨두고 화면을 지웁니다.</td>
+</tr>
+<tr>
+<td><code>Ctrl+r</code></td>
+<td>증분 검색 기록 을 역순으로 추적</td>
+</tr>
+<tr>
+<td><code>Alt+p</code></td>
+<td>비 증분 검색 기록을 역순으로 추적</td>
+</tr>
+<tr>
+<td><code>Ctrl+p</code></td>
+<td>비 증분 검색 기록을 역순으로 추적</td>
+</tr>
+</tbody>
+</table>
+<h4 id="help"><a href="#help" class="headerlink" title="help"></a>help</h4><p>프롬프트에서 help()를 입력합니다.<br>도움말 유틸리티로 들어가게 되는데 이때 topics를 입력합니다.<br>도움말 목차가 리스트되고 원하는 타이틀을 입력하면 도움말을 보여줍니다.<br>사용법은 less와 동일합니다. 종료는 quit 또는 q<br>modules, keywords, symbols 동일하게 사용할 수 있습니다.<br>symbols 는 예약된 표시문자를 확인 할 수 있습니다.<br>keywords 는 예약어를 볼수 있습니다.<br>modules는 클래스 리스트를 볼수 있습니다.</p>
+<h4 id="dir"><a href="#dir" class="headerlink" title="dir"></a>dir</h4><p>python은 c언어와 다르게 한번에 컴파일해서 사용하는 것이 아니라 스크립트를 한줄씩 인터프리터가 처리하는 방식으로 구동됩니다.<br>처음에 실행된 인터프리터의 머리는 텅 비어있습니다.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;dir()</div><div class="line">[<span class="string">'__annotations__'</span>, <span class="string">'__builtins__'</span>, <span class="string">'__doc__'</span>, <span class="string">'__loader__'</span></div><div class="line">, <span class="string">'__name__'</span>, <span class="string">'__package__'</span>, <span class="string">'__spec__'</span>]</div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure></p>
+<p>언더바 2개로 감싸저 있는 것을 모듈이라고 합니다. 클래스의 집합이라고 생각하면 됩니다.<br>클래스는 변수의 집합이구요.<br>각각의 모듈이 궁금하면 help(“모듈명”) 하면 됩니다.<br>위에 리스트된 모듈이 파이썬기 동작되기 위한 기본 모듈입니다. 이 모듈들이 메모리에 적재되어 있는 겁니다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>iKor = <span class="number">100</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>iEng = <span class="number">90</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>iMath = <span class="number">90</span></div></pre></td></tr></table></figure>
+<p>위와 같이 입력하고 dir() 해보세요.<br>변수를 선언 한겁니다. 변수는 메모리의 스택영역에 적재 됩니다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>dir()</div><div class="line">[<span class="string">'__annotations__'</span>, <span class="string">'__builtins__'</span>, <span class="string">'__doc__'</span>, <span class="string">'__loader__'</span></div><div class="line">, <span class="string">'__name__'</span>, <span class="string">'__package__'</span>, <span class="string">'__spec__'</span>, <span class="string">'iEng'</span>, <span class="string">'iMath'</span>, <span class="string">'ikor'</span>]</div></pre></td></tr></table></figure>
+<p>그럼 메모리 속을 들여다 봅시다. 처음에 있는 모듈 부터 차례로 입력하세요.<br>잠깐 REPL는 shell과 사용법이 똑같다고 했습니다. 전부 입력하지 말고 tab자동완성을 쓰세요.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>__annotations__</div><div class="line">&#123;&#125;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>__builtins__</div><div class="line">&lt;module <span class="string">'builtins'</span> (built-<span class="keyword">in</span>)&gt;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>__doc__</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>__loader__</div><div class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">_frozen_importlib</span>.<span class="title">BuiltinImporter</span>'&gt;</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">__name__</span></span></div><div class="line"><span class="class">'<span class="title">__main__</span>'</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">__package__</span></span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">__spec__</span></span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">iEng</span></span></div><div class="line"><span class="class">90</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">iMath</span></span></div><div class="line"><span class="class">90</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">iKor</span></span></div><div class="line"><span class="class">100</span></div><div class="line"><span class="class">&gt;&gt;&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li><code>__annotations__</code>은 주석입니다. 우리가 주석을 사용하지 않았으니 아무것도 없네요.</li>
+<li><code>__builtins__</code>은 내장객체입니다. 자동완성하면 괄호가 나왔을 겁니다. 뭔가 많이 있는데 우리가 지정하지 않은 겁니다.</li>
+<li><code>__doc__</code>는 설명서입니다. 우리가 설명서를 만들지 않았으니 아무것도 없는 겁니다.</li>
+<li><code>__loader__</code>는 뭔가 많이 있는데 우리가 호출하지 않은 겁니다. 모듈이름이 뭔가 읽어 온다는 느낌만 갖이면 됩니다.</li>
+<li><code>__name__</code>은 우리가 만들고 있는 클래스 이름입니다. 기본이 main입니다.</li>
+<li><code>__package__</code>는 여러 프로그램을 합칠때 호출하는 건데 이것도 사용하지 않았으니 비어 있네요.</li>
+<li><code>__spec__</code>는 파이썬의 기본 설정값을 세팅하는 겁니다. 이것도 설정하지 않았으니 비어 있습니다.</li>
+<li>iEng 이건 우리가 iEng라는 변수를 생성했기 때문에 90 이라는 값이 나왔습니다. iMath, iKor동일 합니다.</li>
+</ul>
+<p>변수를 하나 더 만들고 dir() 해보세요. 이번에는 iSum = 0 으로 만드세요.<br>국, 영, 수 점수를 더해서 iSum에 넣을 겁니다. 자동완성 잊지마세요.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>iSum = iKor + iEng + iMath</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>iSum</div><div class="line"><span class="number">280</span></div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure>
+<p>이번에는 프롬프트에서 dir(iSum) 해보세요.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>dir(iSum)</div><div class="line">[<span class="string">'__abs__'</span>, <span class="string">'__add__'</span>, <span class="string">'__and__'</span>, <span class="string">'__bool__'</span>, <span class="string">'__ceil__'</span></div><div class="line">, <span class="string">'__class__'</span>, <span class="string">'__delattr__'</span>, <span class="string">'__dir__'</span>, <span class="string">'__divmod__'</span>, <span class="string">'__doc__'</span></div><div class="line">, <span class="string">'__eq__'</span>, <span class="string">'__float__'</span>, <span class="string">'__floor__'</span>, <span class="string">'__floordiv__'</span>, <span class="string">'__format__'</span></div><div class="line">, <span class="string">'__ge__'</span>, <span class="string">'__getattribute__'</span>, <span class="string">'__getnewargs__'</span>, <span class="string">'__gt__'</span>, <span class="string">'__hash__'</span></div><div class="line">, <span class="string">'__index__'</span>, <span class="string">'__init__'</span>, <span class="string">'__init_subclass__'</span>, <span class="string">'__int__'</span>, <span class="string">'__invert__'</span></div><div class="line">, <span class="string">'__le__'</span>, <span class="string">'__lshift__'</span>, <span class="string">'__lt__'</span>, <span class="string">'__mod__'</span>, <span class="string">'__mul__'</span></div><div class="line">, <span class="string">'__ne__'</span>, <span class="string">'__neg__'</span>, <span class="string">'__new__'</span>, <span class="string">'__or__'</span>, <span class="string">'__pos__'</span></div><div class="line">, <span class="string">'__pow__'</span>, <span class="string">'__radd__'</span>, <span class="string">'__rand__'</span>, <span class="string">'__rdivmod__'</span>, <span class="string">'__reduce__'</span></div><div class="line">, <span class="string">'__reduce_ex__'</span>, <span class="string">'__repr__'</span>, <span class="string">'__rfloordiv__'</span>, <span class="string">'__rlshift__'</span> , <span class="string">'__rmod__'</span></div><div class="line">, <span class="string">'__rmul__'</span>, <span class="string">'__ror__'</span>, <span class="string">'__round__'</span>, <span class="string">'__rpow__'</span> , <span class="string">'__rrshift__'</span></div><div class="line">, <span class="string">'__rshift__'</span>, <span class="string">'__rsub__'</span>, <span class="string">'__rtruediv__'</span> , <span class="string">'__rxor__'</span> , <span class="string">'__setattr__'</span></div><div class="line">, <span class="string">'__sizeof__'</span>, <span class="string">'__str__'</span> , <span class="string">'__sub__'</span>, <span class="string">'__subclasshook__'</span> , <span class="string">'__truediv__'</span> </div><div class="line">, <span class="string">'__trunc__'</span>, <span class="string">'__xor__'</span>, <span class="string">'bit_length'</span>, <span class="string">'conjugate'</span> , <span class="string">'denominator'</span> </div><div class="line">, <span class="string">'from_bytes'</span>, <span class="string">'imag'</span>, <span class="string">'numerator'</span>, <span class="string">'real'</span> , <span class="string">'to_bytes'</span>]</div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure>
+<p>iSum은 정수형 변수가 생성되면서 상속받는 속성들 입니다.</p>
+<p>우리는 국,영,수 점수만 더해서 저장했는데 뭔가 많이 들어있네요.<br>int class에서 상속받아 기본으로 사용할 수 있는 객체들입니다.<br>용어를 처음 듣는다고 해서 어려워 하지 말고 그냥 받아 들이세요.<br>부모님이 재산이 많으면 자식에게 상속하듯 파이썬도 정수형 변수를 찍어 낼때 정수형 클래스의 속성을 iSum 변수에 상속해 준겁니다.</p>
+<p>c언어는 함수로 시작해서 함수로 끝납니다.<br>python은 클래스로 시작해서 클래스로 끝납니다.<br>c언어는 모든 것을 만들어야 하는데, 파이썬은 상속 받아 쓰기만 하면 됩니다.</p>
+<p>클래스, 객체(Object), 속성(Method), 데이터(Data)는 많이 나오는 단어이니 간단히 이해 하고 있으면 됩니다.</p>
+<p>클래스는 객체를 구분하는 단위, 클래스로 찍어 낸것을 객체라고 합니다. 클래스가 자식 객체에게 속성과 데이터를 쓸수 있게 해주는 것을 상속이라 합니다. </p>
+<p>정리하면 클래스는 객체를 찍어 낼수 있고 객체는 속성과 DATA가 있다 라고 합니다. 한번더 헛갈리게 할 께요. 영어와 한글을 혼용해서 사용하는데, 속성은 메쏘드라고 부르고 메쏘드는 함수라고 부릅니다. 객체는 object라고 부릅니다. 마지막으로 정리 해볼께요.</p>
+<p>파이썬은 클래스로 시작해서 클래스로 끝납니다.<br>클래스에는 메쏘드와 데이터가 있습니다.<br>클래스로 찍어낸 것을 오브젝트라고 합니다.<br>오브젝트는 클래스로부터 상속받은 메쏘드와 데이터를 사용할 수 있습니다.</p>
+<p>iSum은 int클래스가 생성한 Object이니 int클래스의 메쏘드를 물려 받은 겁니다.</p>
+<p>이제 모두 잊어 버리세요. 이런거 외우는거 아닙니다. 쓰면서 느끼면 됩니다.</p>
+<h3 id="ipython"><a href="#ipython" class="headerlink" title="ipython"></a>ipython</h3><p>기본 REPL은 기능이 없어 많이 불편합니다. </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ipython</div></pre></td></tr></table></figure>
+<p>프롬프트가 좀 바뀌긴 했지만 그냥 한번 써보세요.<br>색깔도 변한것 같습니다. 자동완성도 지원하고, 명령을 입력하다 잘 모르겠으면 Tab을 누르세요.<br>파일저장, 읽어오기등 부족하지만 ide처럼 사용할 수 있습니다.</p>
+<p>종료는 똑같이 quit()</p>
+<p>시작할때 각종 도움말 보는 법 나와 있으니 참고 하세요. 이것도 안쓸 겁니다.</p>
+<h3 id="jupyter-notebook"><a href="#jupyter-notebook" class="headerlink" title="jupyter notebook"></a>jupyter notebook</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ jupyter notebook</div></pre></td></tr></table></figure>
+<p>뭔가 이것저것 실행 되고 브라우저가 열립니다.<br>이놈이 앞으로 우리가 사용할 python 입니다.<br>종료하려면 브라우저 닫고 터미널에서는 Ctrl+c 누르면 종료 됩니다.</p>
+]]></content>
+      
+        <categories>
+            
+            <category> python </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> REPL </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[계산하기]]></title>
+      <url>/2017/12/29/python-%EA%B3%84%EC%82%B0%ED%95%98%EA%B8%B0/</url>
+      <content type="html"><![CDATA[<h3 id="계산하기"><a href="#계산하기" class="headerlink" title="계산하기"></a>계산하기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="number">5</span> + <span class="number">2</span></div><div class="line"><span class="number">5</span> - <span class="number">2</span></div><div class="line"><span class="number">5</span> * <span class="number">2</span></div><div class="line"><span class="number">10</span> / <span class="number">2</span></div><div class="line"><span class="number">2</span> ** <span class="number">4</span></div><div class="line"><span class="number">10</span> % <span class="number">2</span></div><div class="line"><span class="number">10</span> // <span class="number">2</span></div></pre></td></tr></table></figure>
+<ul>
+<li>일반적으로 파이썬은 계산후 결과를 변수에 담지 않으면 바로 사라집니다.</li>
+<li>print() 함수로 출력하지 않은 interpretor 화면에 보이는 결과는 메모리에 출력된 결과 입니다.</li>
+<li>파이썬에서 <code>/</code>는 기본적으로 실수로 표기 됩니다.</li>
+</ul>
+<h3 id="연산자"><a href="#연산자" class="headerlink" title="연산자"></a>연산자</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">산술연산자</th>
+<th>설 명</th>
+<th style="text-align:center">비교연산자</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>+</code></td>
+<td>덧셈</td>
+<td style="text-align:center"><code>&gt;</code></td>
+<td>크다</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>-</code></td>
+<td>뺄셈</td>
+<td style="text-align:center"><code>&lt;</code></td>
+<td>작다</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>/</code></td>
+<td>나눗셈</td>
+<td style="text-align:center"><code>==</code></td>
+<td>같다</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>*</code></td>
+<td>곱셈</td>
+<td style="text-align:center"><code>&gt;=</code></td>
+<td>크거나같다</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>**</code></td>
+<td>거듭제곱</td>
+<td style="text-align:center"><code>&lt;=</code></td>
+<td>작거나같다</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>%</code></td>
+<td>나머지</td>
+<td style="text-align:center"><code>!==</code></td>
+<td>같지않다</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>//</code></td>
+<td>몫</td>
+<td style="text-align:center"><code>!</code></td>
+<td>거짓</td>
+</tr>
+</tbody>
+</table>
+<h3 id="자료형"><a href="#자료형" class="headerlink" title="자료형"></a>자료형</h3><ul>
+<li><p>정수형</p>
+<ul>
+<li>정수형은 기본적으로 8byte 크기를 갖습니다. 값이 크면 자동으로 크기를 키웁니다. 최대값의 크기를 생각하지 않고 사용해도 됩니다.<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">myInt = <span class="number">10</span></div><div class="line">type(myInt)</div><div class="line"><span class="keyword">import</span> sys</div><div class="line">sys.maxsize</div><div class="line">myInt = sys.maxsize + <span class="number">9223372036854775808</span></div><div class="line">myInt</div><div class="line"><span class="number">2</span>**<span class="number">128</span></div><div class="line"><span class="number">2</span>**<span class="number">256</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>실수형</p>
+<ul>
+<li><p>실수형도 정수형처럼 필요하다면 자동으로 크기를 키우기 때문에 자유롭게 사용하면 됩니다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">myReal = <span class="number">0.3</span></div><div class="line">myReal = myReal + <span class="number">0.3</span> + <span class="number">0.3</span> + <span class="number">0.1</span></div><div class="line">myReal</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>문자열형</p>
+<ul>
+<li>문자열은 내부적으로 배열로 구성됩니다.</li>
+<li><p>슬라이싱</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">myString = <span class="string">"hello world"</span></div><div class="line">myString[<span class="number">0</span>:<span class="number">3</span>]</div><div class="line">myString[<span class="number">3</span>:<span class="number">7</span>]</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>list</p>
+<ul>
+<li>배열 []</li>
+</ul>
+</li>
+<li>tuple<ul>
+<li>튜플 () : 배열과 같지만 요소의 삭제, 수정이 불가능하다. 추가는 가능</li>
+</ul>
+</li>
+<li>dictionary<ul>
+<li>사전 {}</li>
+</ul>
+</li>
+<li>set<ul>
+<li>set([])</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> python </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[리스트]]></title>
+      <url>/2017/12/29/python-%EB%A6%AC%EC%8A%A4%ED%8A%B8/</url>
+      <content type="html"><![CDATA[<h3 id="list"><a href="#list" class="headerlink" title="list"></a>list</h3><p>리스트 자료형은 가장 많이 사용하는 자료형으로 데이터를 담는 용도로 사용합니다.</p>
+<p>list method<br>append : 데이터를 추가 합니다.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">ly_list = []</div><div class="line">my_list.append(<span class="string">'홍길동'</span>)</div><div class="line">my_list.append(<span class="number">100</span>)</div><div class="line">print(my_list)</div><div class="line"><span class="comment">#</span></div></pre></td></tr></table></figure></p>
+<p>remove | 데이터를 삭제 합니다.<br> |  append(…)<br> |      L.append(object) -&gt; None – append object to end<br> |<br> |  clear(…)<br> |      L.clear() -&gt; None – remove all items from L<br> |<br> |  copy(…)<br> |      L.copy() -&gt; list – a shallow copy of L<br> |<br> |  count(…)<br>my_list = []<br>my_list.append(‘홍길동’)<br>my_list.append(100)<br>print(my_list)<br> |      L.count(value) -&gt; integer – return number of occurrences of value<br> |<br> |  extend(…)<br> |      L.extend(iterable) -&gt; None – extend list by appending elements from the iterable<br> |<br> |  index(…)<br> |      L.index(value, [start, [stop]]) -&gt; integer – return first index of value.<br> |      Raises ValueError if the value is not present.<br> |<br> |  insert(…)<br> |      L.insert(index, object) – insert object before index<br> |<br> |  pop(…)<br> |      L.pop([index]) -&gt; item – remove and return item at index (default last).<br> |      Raises IndexError if list is empty or index is out of range.<br> |<br> |  remove(…)<br> |      L.remove(value) -&gt; None – remove first occurrence of value.<br> |      Raises ValueError if the value is not present.<br> |<br> |  reverse(…)<br> |      L.reverse() – reverse <em>IN PLACE</em><br> |<br> |  sort(…)<br> |      L.sort(key=None, reverse=False) -&gt; None – stable sort <em>IN PLACE</em></p>
+]]></content>
+      
+        <categories>
+            
+            <category> python </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> list </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[목차]]></title>
+      <url>/2017/12/29/python-%EB%AA%A9%EC%B0%A8/</url>
+      <content type="html"><![CDATA[<h3 id="python-목차-md"><a href="#python-목차-md" class="headerlink" title="python-목차.md"></a>python-목차.md</h3><h4 id="python-설치-md"><a href="#python-설치-md" class="headerlink" title="python-설치.md"></a>python-설치.md</h4><h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><h4 id="REPL-사용하기-md"><a href="#REPL-사용하기-md" class="headerlink" title="REPL-사용하기.md"></a>REPL-사용하기.md</h4><h4 id="사칙연산"><a href="#사칙연산" class="headerlink" title="사칙연산"></a>사칙연산</h4><h4 id="변수"><a href="#변수" class="headerlink" title="변수"></a>변수</h4><h4 id="상수"><a href="#상수" class="headerlink" title="상수"></a>상수</h4><h4 id="출력하기"><a href="#출력하기" class="headerlink" title="출력하기"></a>출력하기</h4><h4 id="list"><a href="#list" class="headerlink" title="list"></a>list</h4><h4 id="tuple"><a href="#tuple" class="headerlink" title="tuple"></a>tuple</h4><h4 id="dictionary"><a href="#dictionary" class="headerlink" title="dictionary"></a>dictionary</h4><h4 id="입력받기"><a href="#입력받기" class="headerlink" title="입력받기"></a>입력받기</h4><h4 id="조건문"><a href="#조건문" class="headerlink" title="조건문"></a>조건문</h4><h4 id="반복문"><a href="#반복문" class="headerlink" title="반복문"></a>반복문</h4>]]></content>
+      
+        <categories>
+            
+            <category> python </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[python 설치]]></title>
+      <url>/2017/12/29/python-%EC%84%A4%EC%B9%98/</url>
+      <content type="html"><![CDATA[<h3 id="파이썬의-설치"><a href="#파이썬의-설치" class="headerlink" title="파이썬의 설치"></a>파이썬의 설치</h3><p>파이썬은 버젼이 2와 3가 있습니다.<br>우리는 3를 사용할 겁니다.</p>
+<h4 id="윈도우"><a href="#윈도우" class="headerlink" title="윈도우"></a>윈도우</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">python.org 사이트에서 자신의 윈도우 버젼에 맞는 python3를 다운 받아 설치합니다.</div><div class="line">설치 완료후 터미널을 열어 아래처럼 실행합니다.</div><div class="line">c:\&gt;pip install jupyter</div></pre></td></tr></table></figure>
+<h4 id="맥"><a href="#맥" class="headerlink" title="맥"></a>맥</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># brew 설치 설치되어 있으면 통과</span></div><div class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></div><div class="line">brew install python3</div><div class="line">pip3 instll --upgrade pip</div><div class="line">pip3 install jupyter</div></pre></td></tr></table></figure>
+<h4 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install python3</div><div class="line">apt-get install python3</div><div class="line">pip3 install --upgrade pip</div><div class="line">pip3 install jupyter</div></pre></td></tr></table></figure>
+]]></content>
+      
+        <categories>
+            
+            <category> python </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[가상환경(pyenv)]]></title>
       <url>/2017/12/29/python-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD/</url>
       <content type="html"><![CDATA[<h3 id="가상환경-설정하기"><a href="#가상환경-설정하기" class="headerlink" title="가상환경 설정하기"></a>가상환경 설정하기</h3><h2 id="pyenv-pyenv-virtualenv-설치"><a href="#pyenv-pyenv-virtualenv-설치" class="headerlink" title="pyenv, pyenv-virtualenv 설치"></a>pyenv, pyenv-virtualenv 설치</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ brew install pyenv</div><div class="line">$ brew install pyenv-virtualenv</div></pre></td></tr></table></figure>
@@ -82,29 +406,6 @@
         <tags>
             
             <tag> pyenv </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[리스트]]></title>
-      <url>/2017/12/21/python-%EB%A6%AC%EC%8A%A4%ED%8A%B8/</url>
-      <content type="html"><![CDATA[<h3 id="list"><a href="#list" class="headerlink" title="list"></a>list</h3><p>리스트 자료형은 가장 많이 사용하는 자료형으로 데이터를 담는 용도로 사용합니다.</p>
-<p>list method<br>append : 데이터를 추가 합니다.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">ly_list = []</div><div class="line">my_list.append(<span class="string">'홍길동'</span>)</div><div class="line">my_list.append(<span class="number">100</span>)</div><div class="line">print(my_list)</div><div class="line"><span class="comment">#</span></div></pre></td></tr></table></figure></p>
-<p>remove | 데이터를 삭제 합니다.<br> |  append(…)<br> |      L.append(object) -&gt; None – append object to end<br> |<br> |  clear(…)<br> |      L.clear() -&gt; None – remove all items from L<br> |<br> |  copy(…)<br> |      L.copy() -&gt; list – a shallow copy of L<br> |<br> |  count(…)<br>my_list = []<br>my_list.append(‘홍길동’)<br>my_list.append(100)<br>print(my_list)<br> |      L.count(value) -&gt; integer – return number of occurrences of value<br> |<br> |  extend(…)<br> |      L.extend(iterable) -&gt; None – extend list by appending elements from the iterable<br> |<br> |  index(…)<br> |      L.index(value, [start, [stop]]) -&gt; integer – return first index of value.<br> |      Raises ValueError if the value is not present.<br> |<br> |  insert(…)<br> |      L.insert(index, object) – insert object before index<br> |<br> |  pop(…)<br> |      L.pop([index]) -&gt; item – remove and return item at index (default last).<br> |      Raises IndexError if list is empty or index is out of range.<br> |<br> |  remove(…)<br> |      L.remove(value) -&gt; None – remove first occurrence of value.<br> |      Raises ValueError if the value is not present.<br> |<br> |  reverse(…)<br> |      L.reverse() – reverse <em>IN PLACE</em><br> |<br> |  sort(…)<br> |      L.sort(key=None, reverse=False) -&gt; None – stable sort <em>IN PLACE</em></p>
-]]></content>
-      
-        <categories>
-            
-            <category> Python </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> list </tag>
             
         </tags>
         
@@ -1839,143 +2140,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[REPL 사용하기]]></title>
-      <url>/2017/12/02/python-repl-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0/</url>
-      <content type="html"><![CDATA[<h3 id="REPL"><a href="#REPL" class="headerlink" title="REPL"></a>REPL</h3><p>파이썬의 REPL은 기본적으로 readline api를 사용하기 때문에 키보드 단축키 사용법이 terminal 과 거의 같습니다. </p>
-<h4 id="단축키"><a href="#단축키" class="headerlink" title="단축키"></a>단축키</h4><table>
-<thead>
-<tr>
-<th>단축키</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>TAB</code></td>
-<td>자동완성(파일및디렉토리, 명령을 자동완성)</td>
-</tr>
-<tr>
-<td><code>Ctrl+h</code></td>
-<td>백스페이와 같습니다.(더 편합니다.)</td>
-</tr>
-<tr>
-<td><code>Ctrl+a</code></td>
-<td>처음으로 이동</td>
-</tr>
-<tr>
-<td><code>Ctrl+e</code></td>
-<td>행 끝으로 이동</td>
-</tr>
-<tr>
-<td><code>Ctrl+b</code></td>
-<td>한 문자 뒤로 이동</td>
-</tr>
-<tr>
-<td><code>Alt+b</code></td>
-<td>한 단어 뒤로 이동</td>
-</tr>
-<tr>
-<td><code>Ctrl+f</code></td>
-<td>한 문자 앞으로 이동</td>
-</tr>
-<tr>
-<td><code>Alt+f</code></td>
-<td>한 단어 앞으로 이동</td>
-</tr>
-<tr>
-<td><code>Ctrl+u</code></td>
-<td>현재줄을 삭제합니다.</td>
-</tr>
-<tr>
-<td><code>Ctrl+k</code></td>
-<td>커서 위치에서 행 끝까지 삭제합니다.</td>
-</tr>
-<tr>
-<td><code>Ctrl+w</code></td>
-<td>커서앞 한단어를 삭제합니다.</td>
-</tr>
-<tr>
-<td><code>Esc+Backspace</code></td>
-<td>이전 단어 삭제</td>
-</tr>
-<tr>
-<td><code>Ctrl+y</code></td>
-<td>클립보드에서 텍스트를 붙여넣습니다.</td>
-</tr>
-<tr>
-<td><code>Ctrl+l</code></td>
-<td>화면 상단에 현재 줄을 남겨두고 화면을 지웁니다.</td>
-</tr>
-<tr>
-<td><code>Ctrl+r</code></td>
-<td>증분 검색 기록 을 역순으로 추적</td>
-</tr>
-<tr>
-<td><code>Alt+p</code></td>
-<td>비 증분 검색 기록을 역순으로 추적</td>
-</tr>
-<tr>
-<td><code>Ctrl+p</code></td>
-<td>비 증분 검색 기록을 역순으로 추적</td>
-</tr>
-</tbody>
-</table>
-<h4 id="help"><a href="#help" class="headerlink" title="help"></a>help</h4><p>프롬프트에서 help()를 입력합니다.<br>도움말 유틸리티로 들어가게 되는데 이때 topics를 입력합니다.<br>도움말 목차가 리스트되고 원하는 타이틀을 입력하면 도움말을 보여줍니다.<br>사용법은 less와 동일합니다. 종료는 quit 또는 q<br>modules, keywords, symbols 동일하게 사용할 수 있습니다.<br>symbols 는 예약된 표시문자를 확인 할 수 있습니다.<br>keywords 는 예약어를 볼수 있습니다.<br>modules는 클래스 리스트를 볼수 있습니다.</p>
-<h4 id="dir"><a href="#dir" class="headerlink" title="dir"></a>dir</h4><p>python은 c언어와 다르게 한번에 컴파일해서 사용하는 것이 아니라 스크립트를 한줄씩 인터프리터가 처리하는 방식으로 구동됩니다.<br>처음에 실행된 인터프리터의 머리는 텅 비어있습니다.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt;dir()</div><div class="line">[<span class="string">'__annotations__'</span>, <span class="string">'__builtins__'</span>, <span class="string">'__doc__'</span>, <span class="string">'__loader__'</span></div><div class="line">, <span class="string">'__name__'</span>, <span class="string">'__package__'</span>, <span class="string">'__spec__'</span>]</div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure></p>
-<p>언더바 2개로 감싸저 있는 것을 모듈이라고 합니다. 클래스의 집합이라고 생각하면 됩니다.<br>클래스는 변수의 집합이구요.<br>각각의 모듈이 궁금하면 help(“모듈명”) 하면 됩니다.<br>위에 리스트된 모듈이 파이썬기 동작되기 위한 기본 모듈입니다. 이 모듈들이 메모리에 적재되어 있는 겁니다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>iKor = <span class="number">100</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>iEng = <span class="number">90</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>iMath = <span class="number">90</span></div></pre></td></tr></table></figure>
-<p>위와 같이 입력하고 dir() 해보세요.<br>변수를 선언 한겁니다. 변수는 메모리의 스택영역에 적재 됩니다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>dir()</div><div class="line">[<span class="string">'__annotations__'</span>, <span class="string">'__builtins__'</span>, <span class="string">'__doc__'</span>, <span class="string">'__loader__'</span></div><div class="line">, <span class="string">'__name__'</span>, <span class="string">'__package__'</span>, <span class="string">'__spec__'</span>, <span class="string">'iEng'</span>, <span class="string">'iMath'</span>, <span class="string">'ikor'</span>]</div></pre></td></tr></table></figure>
-<p>그럼 메모리 속을 들여다 봅시다. 처음에 있는 모듈 부터 차례로 입력하세요.<br>잠깐 REPL는 shell과 사용법이 똑같다고 했습니다. 전부 입력하지 말고 tab자동완성을 쓰세요.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>__annotations__</div><div class="line">&#123;&#125;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>__builtins__</div><div class="line">&lt;module <span class="string">'builtins'</span> (built-<span class="keyword">in</span>)&gt;</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>__doc__</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>__loader__</div><div class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">_frozen_importlib</span>.<span class="title">BuiltinImporter</span>'&gt;</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">__name__</span></span></div><div class="line"><span class="class">'<span class="title">__main__</span>'</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">__package__</span></span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">__spec__</span></span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">iEng</span></span></div><div class="line"><span class="class">90</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">iMath</span></span></div><div class="line"><span class="class">90</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">iKor</span></span></div><div class="line"><span class="class">100</span></div><div class="line"><span class="class">&gt;&gt;&gt;</span></div></pre></td></tr></table></figure>
-<ul>
-<li><code>__annotations__</code>은 주석입니다. 우리가 주석을 사용하지 않았으니 아무것도 없네요.</li>
-<li><code>__builtins__</code>은 내장객체입니다. 자동완성하면 괄호가 나왔을 겁니다. 뭔가 많이 있는데 우리가 지정하지 않은 겁니다.</li>
-<li><code>__doc__</code>는 설명서입니다. 우리가 설명서를 만들지 않았으니 아무것도 없는 겁니다.</li>
-<li><code>__loader__</code>는 뭔가 많이 있는데 우리가 호출하지 않은 겁니다. 모듈이름이 뭔가 읽어 온다는 느낌만 갖이면 됩니다.</li>
-<li><code>__name__</code>은 우리가 만들고 있는 클래스 이름입니다. 기본이 main입니다.</li>
-<li><code>__package__</code>는 여러 프로그램을 합칠때 호출하는 건데 이것도 사용하지 않았으니 비어 있네요.</li>
-<li><code>__spec__</code>는 파이썬의 기본 설정값을 세팅하는 겁니다. 이것도 설정하지 않았으니 비어 있습니다.</li>
-<li>iEng 이건 우리가 iEng라는 변수를 생성했기 때문에 90 이라는 값이 나왔습니다. iMath, iKor동일 합니다.</li>
-</ul>
-<p>변수를 하나 더 만들고 dir() 해보세요. 이번에는 iSum = 0 으로 만드세요.<br>국, 영, 수 점수를 더해서 iSum에 넣을 겁니다. 자동완성 잊지마세요.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>iSum = iKor + iEng + iMath</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>iSum</div><div class="line"><span class="number">280</span></div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure>
-<p>이번에는 프롬프트에서 dir(iSum) 해보세요.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span>dir(iSum)</div><div class="line">[<span class="string">'__abs__'</span>, <span class="string">'__add__'</span>, <span class="string">'__and__'</span>, <span class="string">'__bool__'</span>, <span class="string">'__ceil__'</span></div><div class="line">, <span class="string">'__class__'</span>, <span class="string">'__delattr__'</span>, <span class="string">'__dir__'</span>, <span class="string">'__divmod__'</span>, <span class="string">'__doc__'</span></div><div class="line">, <span class="string">'__eq__'</span>, <span class="string">'__float__'</span>, <span class="string">'__floor__'</span>, <span class="string">'__floordiv__'</span>, <span class="string">'__format__'</span></div><div class="line">, <span class="string">'__ge__'</span>, <span class="string">'__getattribute__'</span>, <span class="string">'__getnewargs__'</span>, <span class="string">'__gt__'</span>, <span class="string">'__hash__'</span></div><div class="line">, <span class="string">'__index__'</span>, <span class="string">'__init__'</span>, <span class="string">'__init_subclass__'</span>, <span class="string">'__int__'</span>, <span class="string">'__invert__'</span></div><div class="line">, <span class="string">'__le__'</span>, <span class="string">'__lshift__'</span>, <span class="string">'__lt__'</span>, <span class="string">'__mod__'</span>, <span class="string">'__mul__'</span></div><div class="line">, <span class="string">'__ne__'</span>, <span class="string">'__neg__'</span>, <span class="string">'__new__'</span>, <span class="string">'__or__'</span>, <span class="string">'__pos__'</span></div><div class="line">, <span class="string">'__pow__'</span>, <span class="string">'__radd__'</span>, <span class="string">'__rand__'</span>, <span class="string">'__rdivmod__'</span>, <span class="string">'__reduce__'</span></div><div class="line">, <span class="string">'__reduce_ex__'</span>, <span class="string">'__repr__'</span>, <span class="string">'__rfloordiv__'</span>, <span class="string">'__rlshift__'</span> , <span class="string">'__rmod__'</span></div><div class="line">, <span class="string">'__rmul__'</span>, <span class="string">'__ror__'</span>, <span class="string">'__round__'</span>, <span class="string">'__rpow__'</span> , <span class="string">'__rrshift__'</span></div><div class="line">, <span class="string">'__rshift__'</span>, <span class="string">'__rsub__'</span>, <span class="string">'__rtruediv__'</span> , <span class="string">'__rxor__'</span> , <span class="string">'__setattr__'</span></div><div class="line">, <span class="string">'__sizeof__'</span>, <span class="string">'__str__'</span> , <span class="string">'__sub__'</span>, <span class="string">'__subclasshook__'</span> , <span class="string">'__truediv__'</span> </div><div class="line">, <span class="string">'__trunc__'</span>, <span class="string">'__xor__'</span>, <span class="string">'bit_length'</span>, <span class="string">'conjugate'</span> , <span class="string">'denominator'</span> </div><div class="line">, <span class="string">'from_bytes'</span>, <span class="string">'imag'</span>, <span class="string">'numerator'</span>, <span class="string">'real'</span> , <span class="string">'to_bytes'</span>]</div><div class="line">&gt;&gt;&gt;</div></pre></td></tr></table></figure>
-<p>iSum은 정수형 변수가 생성되면서 상속받는 속성들 입니다.</p>
-<p>우리는 국,영,수 점수만 더해서 저장했는데 뭔가 많이 들어있네요.<br>int class에서 상속받아 기본으로 사용할 수 있는 객체들입니다.<br>용어를 처음 듣는다고 해서 어려워 하지 말고 그냥 받아 들이세요.<br>부모님이 재산이 많으면 자식에게 상속하듯 파이썬도 정수형 변수를 찍어 낼때 정수형 클래스의 속성을 iSum 변수에 상속해 준겁니다.</p>
-<p>c언어는 함수로 시작해서 함수로 끝납니다.<br>python은 클래스로 시작해서 클래스로 끝납니다.<br>c언어는 모든 것을 만들어야 하는데, 파이썬은 상속 받아 쓰기만 하면 됩니다.</p>
-<p>클래스, 객체(Object), 속성(Method), 데이터(Data)는 많이 나오는 단어이니 간단히 이해 하고 있으면 됩니다.</p>
-<p>클래스는 객체를 구분하는 단위, 클래스로 찍어 낸것을 객체라고 합니다. 클래스가 자식 객체에게 속성과 데이터를 쓸수 있게 해주는 것을 상속이라 합니다. </p>
-<p>정리하면 클래스는 객체를 찍어 낼수 있고 객체는 속성과 DATA가 있다 라고 합니다. 한번더 헛갈리게 할 께요. 영어와 한글을 혼용해서 사용하는데, 속성은 메쏘드라고 부르고 메쏘드는 함수라고 부릅니다. 객체는 object라고 부릅니다. 마지막으로 정리 해볼께요.</p>
-<p>파이썬은 클래스로 시작해서 클래스로 끝납니다.<br>클래스에는 메쏘드와 데이터가 있습니다.<br>클래스로 찍어낸 것을 오브젝트라고 합니다.<br>오브젝트는 클래스로부터 상속받은 메쏘드와 데이터를 사용할 수 있습니다.</p>
-<p>iSum은 int클래스가 생성한 Object이니 int클래스의 메쏘드를 물려 받은 겁니다.</p>
-<p>이제 모두 잊어 버리세요. 이런거 외우는거 아닙니다. 쓰면서 느끼면 됩니다.</p>
-<h3 id="ipython"><a href="#ipython" class="headerlink" title="ipython"></a>ipython</h3><p>기본 REPL은 기능이 없어 많이 불편합니다. </p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ipython</div></pre></td></tr></table></figure>
-<p>프롬프트가 좀 바뀌긴 했지만 그냥 한번 써보세요.<br>색깔도 변한것 같습니다. 자동완성도 지원하고, 명령을 입력하다 잘 모르겠으면 Tab을 누르세요.<br>파일저장, 읽어오기등 부족하지만 ide처럼 사용할 수 있습니다.</p>
-<p>종료는 똑같이 quit()</p>
-<p>시작할때 각종 도움말 보는 법 나와 있으니 참고 하세요. 이것도 안쓸 겁니다.</p>
-<h3 id="jupyter-notebook"><a href="#jupyter-notebook" class="headerlink" title="jupyter notebook"></a>jupyter notebook</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ jupyter notebook</div></pre></td></tr></table></figure>
-<p>뭔가 이것저것 실행 되고 브라우저가 열립니다.<br>이놈이 앞으로 우리가 사용할 python 입니다.<br>종료하려면 브라우저 닫고 터미널에서는 Ctrl+c 누르면 종료 됩니다.</p>
-]]></content>
-      
-        <categories>
-            
-            <category> python </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> python REPL </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[설치]]></title>
       <url>/2017/12/01/mysql-%EC%84%A4%EC%B9%98/</url>
       <content type="html"><![CDATA[<h4 id="mysql-설치"><a href="#mysql-설치" class="headerlink" title="mysql 설치"></a>mysql 설치</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install mysql</div></pre></td></tr></table></figure>
@@ -2832,126 +2996,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[계산하기]]></title>
-      <url>/2017/11/18/python-%EA%B3%84%EC%82%B0%ED%95%98%EA%B8%B0/</url>
-      <content type="html"><![CDATA[<h3 id="계산하기"><a href="#계산하기" class="headerlink" title="계산하기"></a>계산하기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="number">5</span> + <span class="number">2</span></div><div class="line"><span class="number">5</span> - <span class="number">2</span></div><div class="line"><span class="number">5</span> * <span class="number">2</span></div><div class="line"><span class="number">10</span> / <span class="number">2</span></div><div class="line"><span class="number">2</span> ** <span class="number">4</span></div><div class="line"><span class="number">10</span> % <span class="number">2</span></div><div class="line"><span class="number">10</span> // <span class="number">2</span></div></pre></td></tr></table></figure>
-<ul>
-<li>일반적으로 파이썬은 계산후 결과를 변수에 담지 않으면 바로 사라집니다.</li>
-<li>print() 함수로 출력하지 않은 interpretor 화면에 보이는 결과는 메모리에 출력된 결과 입니다.</li>
-<li>파이썬에서 <code>/</code>는 기본적으로 실수로 표기 됩니다.</li>
-</ul>
-<h3 id="연산자"><a href="#연산자" class="headerlink" title="연산자"></a>연산자</h3><table>
-<thead>
-<tr>
-<th style="text-align:center">산술연산자</th>
-<th>설 명</th>
-<th style="text-align:center">비교연산자</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>+</code></td>
-<td>덧셈</td>
-<td style="text-align:center"><code>&gt;</code></td>
-<td>크다</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>-</code></td>
-<td>뺄셈</td>
-<td style="text-align:center"><code>&lt;</code></td>
-<td>작다</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>/</code></td>
-<td>나눗셈</td>
-<td style="text-align:center"><code>==</code></td>
-<td>같다</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>*</code></td>
-<td>곱셈</td>
-<td style="text-align:center"><code>&gt;=</code></td>
-<td>크거나같다</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>**</code></td>
-<td>거듭제곱</td>
-<td style="text-align:center"><code>&lt;=</code></td>
-<td>작거나같다</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>%</code></td>
-<td>나머지</td>
-<td style="text-align:center"><code>!==</code></td>
-<td>같지않다</td>
-</tr>
-<tr>
-<td style="text-align:center"><code>//</code></td>
-<td>몫</td>
-<td style="text-align:center"><code>!</code></td>
-<td>거짓</td>
-</tr>
-</tbody>
-</table>
-<h3 id="자료형"><a href="#자료형" class="headerlink" title="자료형"></a>자료형</h3><ul>
-<li><p>정수형</p>
-<ul>
-<li>정수형은 기본적으로 8byte 크기를 갖습니다. 값이 크면 자동으로 크기를 키웁니다. 최대값의 크기를 생각하지 않고 사용해도 됩니다.<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">myInt = <span class="number">10</span></div><div class="line">type(myInt)</div><div class="line"><span class="keyword">import</span> sys</div><div class="line">sys.maxsize</div><div class="line">myInt = sys.maxsize + <span class="number">9223372036854775808</span></div><div class="line">myInt</div><div class="line"><span class="number">2</span>**<span class="number">128</span></div><div class="line"><span class="number">2</span>**<span class="number">256</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>실수형</p>
-<ul>
-<li><p>실수형도 정수형처럼 필요하다면 자동으로 크기를 키우기 때문에 자유롭게 사용하면 됩니다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">myReal = <span class="number">0.3</span></div><div class="line">myReal = myReal + <span class="number">0.3</span> + <span class="number">0.3</span> + <span class="number">0.1</span></div><div class="line">myReal</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>문자열형</p>
-<ul>
-<li>문자열은 내부적으로 배열로 구성됩니다.</li>
-<li><p>슬라이싱</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">myString = <span class="string">"hello world"</span></div><div class="line">myString[<span class="number">0</span>:<span class="number">3</span>]</div><div class="line">myString[<span class="number">3</span>:<span class="number">7</span>]</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>list</p>
-<ul>
-<li>배열 []</li>
-</ul>
-</li>
-<li>tuple<ul>
-<li>튜플 () : 배열과 같지만 요소의 삭제, 수정이 불가능하다. 추가는 가능</li>
-</ul>
-</li>
-<li>dictionary<ul>
-<li>사전 {}</li>
-</ul>
-</li>
-<li>set<ul>
-<li>set([])</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> python </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 계산하기 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[실행하기]]></title>
       <url>/2017/11/18/python-%EC%8B%A4%ED%96%89%ED%95%98%EA%B8%B0/</url>
       <content type="html"><![CDATA[<h3 id="실행하기"><a href="#실행하기" class="headerlink" title="실행하기"></a>실행하기</h3><p>파이썬을 실행하는 방법은 2가지 가 있습니다.<br>터미널에서 python3 하면 python intepretor가 실행됩니다.<br><code>&gt;&gt;&gt;</code> 이렇게 프롬프트가 나오면 이곳에 명령어를 입력하면 됩니다.<br>모든 인터프리터는 이렇게 프롬프트가 나오고 명령을 입력하면 한줄씩 번역하고 실행하게 됩니다. REPL(Read Eval Print Loop) 이라고 부릅니다. bash shell은 <code>$</code>  이렇게 프롬프트가 나오는 것과 동일합니다.<br>xNix를 사용해 보지 않은 사람은 생소하고 불편할 겁니다.</p>
@@ -2975,50 +3019,6 @@
         <tags>
             
             <tag> python </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[python 설치]]></title>
-      <url>/2017/11/18/python-%EC%84%A4%EC%B9%98/</url>
-      <content type="html"><![CDATA[<h3 id="파이썬의-설치"><a href="#파이썬의-설치" class="headerlink" title="파이썬의 설치"></a>파이썬의 설치</h3><p>파이썬은 버젼이 2와 3가 있습니다.<br>우리는 3를 사용할 겁니다.</p>
-<h4 id="윈도우"><a href="#윈도우" class="headerlink" title="윈도우"></a>윈도우</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">python.org 사이트에서 자신의 윈도우 버젼에 맞는 python3를 다운 받아 설치합니다.</div><div class="line">설치 완료후 터미널을 열어 아래처럼 실행합니다.</div><div class="line">c:\&gt;pip install jupyter</div></pre></td></tr></table></figure>
-<h4 id="맥"><a href="#맥" class="headerlink" title="맥"></a>맥</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># brew 설치 설치되어 있으면 통과</span></div><div class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></div><div class="line">brew install python3</div><div class="line">pip3 instll --upgrade pip</div><div class="line">pip3 install jupyter</div></pre></td></tr></table></figure>
-<h4 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install python3</div><div class="line">apt-get install python3</div><div class="line">pip3 install --upgrade pip</div><div class="line">pip3 install jupyter</div></pre></td></tr></table></figure>
-]]></content>
-      
-        <categories>
-            
-            <category> python </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> python 설치 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[목차]]></title>
-      <url>/2017/11/18/python-%EB%AA%A9%EC%B0%A8/</url>
-      <content type="html"><![CDATA[<h3 id="python-목차-md"><a href="#python-목차-md" class="headerlink" title="python-목차.md"></a>python-목차.md</h3><h4 id="python-설치-md"><a href="#python-설치-md" class="headerlink" title="python-설치.md"></a>python-설치.md</h4><h4 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h4><h4 id="REPL-사용하기-md"><a href="#REPL-사용하기-md" class="headerlink" title="REPL-사용하기.md"></a>REPL-사용하기.md</h4><h4 id="사칙연산"><a href="#사칙연산" class="headerlink" title="사칙연산"></a>사칙연산</h4><h4 id="변수"><a href="#변수" class="headerlink" title="변수"></a>변수</h4><h4 id="상수"><a href="#상수" class="headerlink" title="상수"></a>상수</h4><h4 id="출력하기"><a href="#출력하기" class="headerlink" title="출력하기"></a>출력하기</h4><h4 id="list"><a href="#list" class="headerlink" title="list"></a>list</h4><h4 id="tuple"><a href="#tuple" class="headerlink" title="tuple"></a>tuple</h4><h4 id="dictionary"><a href="#dictionary" class="headerlink" title="dictionary"></a>dictionary</h4><h4 id="입력받기"><a href="#입력받기" class="headerlink" title="입력받기"></a>입력받기</h4><h4 id="조건문"><a href="#조건문" class="headerlink" title="조건문"></a>조건문</h4><h4 id="반복문"><a href="#반복문" class="headerlink" title="반복문"></a>반복문</h4>]]></content>
-      
-        <categories>
-            
-            <category> python </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> python 목차 </tag>
             
         </tags>
         
