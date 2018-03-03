@@ -69,7 +69,7 @@
 <li><p>정수형</p>
 <ul>
 <li><p>정수형은 기본적으로 28byte 크기를 갖습니다. 값이 크면 자동으로 크기를 키웁니다. 최대값의 크기를 생각하지 않고 사용해도 됩니다. 최대 400byte까지 키울 수 있습니다. 64bit, 32bit 운영체제에 따라 기본 크기가 다릅니다. </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> sys</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>myint = <span class="number">10</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>type(myint)</div><div class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">int</span>'&gt;</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">sys</span>.<span class="title">maxsize</span></span></div><div class="line"><span class="class">9223372036854775807</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">sys</span>.<span class="title">getsizeof</span><span class="params">(int)</span></span></div><div class="line"><span class="class">400</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">sys</span>.<span class="title">getsizeof</span><span class="params">(myint)</span></span></div><div class="line"><span class="class">28</span></div><div class="line">&gt;&gt;&gt; myint = sys.maxsize</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>myint</div><div class="line"><span class="number">9223372036854775807</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sys.getsizeof(myint)</div><div class="line"><span class="number">36</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> sys <span class="comment"># sys 모듈을 불러옴</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>myint = <span class="number">10</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>type(myint)</div><div class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">int</span>'&gt;</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">sys</span>.<span class="title">maxsize</span></span></div><div class="line"><span class="class">9223372036854775807</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">sys</span>.<span class="title">getsizeof</span><span class="params">(int)</span></span></div><div class="line"><span class="class">400</span></div><div class="line"><span class="class">&gt;&gt;&gt; <span class="title">sys</span>.<span class="title">getsizeof</span><span class="params">(myint)</span></span></div><div class="line"><span class="class">28</span></div><div class="line">&gt;&gt;&gt; myint = sys.maxsize</div><div class="line"><span class="meta">&gt;&gt;&gt; </span>myint</div><div class="line"><span class="number">9223372036854775807</span></div><div class="line"><span class="meta">&gt;&gt;&gt; </span>sys.getsizeof(myint)</div><div class="line"><span class="number">36</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -90,6 +90,12 @@
 </li>
 </ul>
 </li>
+<li><p>List 형</p>
+</li>
+<li><p>Tuple 형</p>
+</li>
+<li>Dictionary 형</li>
+<li>Set 형</li>
 </ul>
 ]]></content>
       
@@ -318,6 +324,51 @@
         <tags>
             
             <tag> REPL </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[jupyter 사용법]]></title>
+      <url>/2017/12/29/python-jupyter-%EC%82%AC%EC%9A%A9%EB%B2%95/</url>
+      <content type="html"><![CDATA[<h3 id="주피터-사용법"><a href="#주피터-사용법" class="headerlink" title="주피터 사용법"></a>주피터 사용법</h3><p><img src="/python/2017-11-18_09-11-11.png" alt="초기화면"></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jupyter notebook</div></pre></td></tr></table></figure>
+<p>위와 같이 주피터를 처음 실행시키면 주피터 탐색기가 실행 됩니다. 원하는 디렉토리로 이동하거나 새로운 폴더를 만들 수 있습니다.</p>
+<p>실행 중인 노트북이나 클러스터를 확인 할 수 있습니다.</p>
+<h3 id="새파일-만들기"><a href="#새파일-만들기" class="headerlink" title="새파일 만들기"></a>새파일 만들기</h3><p><img src="/python/2017-11-18_09-14-29.png" alt="새파일 만들기"><br>위 처럼 우측에 새파일 만들기 =&gt; python3를 선택하면 새로운 python3파일이 생성됩니다.</p>
+<h3 id="이름바꾸기"><a href="#이름바꾸기" class="headerlink" title="이름바꾸기"></a>이름바꾸기</h3><p><img src="/python/2017-11-18_09-20-14.png" alt="이름바꾸기"><br>위 그림처럼 Untitled를 클릭하면 이름을 바꿀수 있습니다.</p>
+<p>전체적으로 직관적이고 사용법이 사용하기 쉽습니다.<br><code>&lt;F1&gt;</code> 을 누르면 도움말이 나옵니다.</p>
+<p>메뉴와 툴바는 직접 확인해 보세요.</p>
+<h3 id="mode"><a href="#mode" class="headerlink" title="mode"></a>mode</h3><p>주피터 셀은 3가지 모드가 있습니다. </p>
+<ul>
+<li><p>code<br>파이썬 코드를 입력할 수 있습니다.</p>
+</li>
+<li><p>툴바의 키보드 모양 왼쪽에 보면 code로 되어 있습니다.<br>클릭해서 markdown과 raw로 바꿀수 있습니다.</p>
+</li>
+<li><p>raw는 ascii파일 입니다.</p>
+</li>
+<li>markdown<br>마크다운 문서를 만들 수 있습니다.</li>
+</ul>
+<h3 id="기본-사용법"><a href="#기본-사용법" class="headerlink" title="기본 사용법"></a>기본 사용법</h3><p>먼저 code mode로 python code를 입력해보세요.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a = <span class="number">10</span></div><div class="line">b = <span class="number">20</span></div><div class="line">sum = a + b</div><div class="line">print(sum)</div></pre></td></tr></table></figure>
+<p><code>shift + Enter</code> 하면 해당 셀이 실행되고 한줄이 추가 되어 집니다.<br>별도로 다시 실행 하려면 윈도우는 <code>Ctrl+Enter</code> 맥은 커맨드+엔터 하면 실행 됩니다.</p>
+<p>이번에는 두번째 셀을 markdown mode로 바꾸고 마크다운을 입력해 보세요.</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="section"># 마크다운</span></div><div class="line"><span class="section">## 마크다운</span></div><div class="line"><span class="section">### 마크다운</span></div><div class="line"><span class="section">#### 마크다운</span></div><div class="line"><span class="section">##### 마크다운</span></div><div class="line"></div><div class="line">마크다운 문법을 입력 할 수 있습다.</div><div class="line"><span class="bullet">- </span>ul</div><div class="line"><span class="bullet">- </span>ul2</div><div class="line"></div><div class="line"><span class="bullet">1. </span>ol</div><div class="line"><span class="bullet">2. </span>ol2</div><div class="line"></div><div class="line"><span class="quote">&gt; 인용도 다음과 같이 사용할 수 있습니다.</span></div><div class="line"><span class="quote">&gt; 인용이예요.</span></div><div class="line"></div><div class="line"><span class="section">## 수식도 입력할 수 있습니다.</span></div><div class="line">$$ x(t)=\frac&#123;-b\pm \sqrt&#123;&#123;b&#125;^&#123;2&#125;-4ac&#125;&#125;&#123;2a&#125; $$</div></pre></td></tr></table></figure>
+<h3 id="코드블럭도-사용할-수-있습니다"><a href="#코드블럭도-사용할-수-있습니다" class="headerlink" title="코드블럭도 사용할 수 있습니다."></a>코드블럭도 사용할 수 있습니다.</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"hello world"</span>);</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>raw 나 head line은 직접 해보세요.</p>
+]]></content>
+      
+        <categories>
+            
+            <category> python </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> jupyter </tag>
             
         </tags>
         
@@ -2998,51 +3049,6 @@
         <tags>
             
             <tag> python </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[jupyter 사용법]]></title>
-      <url>/2017/11/18/python-jupyter-%EC%82%AC%EC%9A%A9%EB%B2%95/</url>
-      <content type="html"><![CDATA[<h3 id="주피터-사용법"><a href="#주피터-사용법" class="headerlink" title="주피터 사용법"></a>주피터 사용법</h3><p><img src="/python/2017-11-18_09-11-11.png" alt="초기화면"></p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jupyter notebook</div></pre></td></tr></table></figure>
-<p>위와 같이 주피터를 처음 실행시키면 주피터 탐색기가 실행 됩니다. 원하는 디렉토리로 이동하거나 새로운 폴더를 만들 수 있습니다.</p>
-<p>실행 중인 노트북이나 클러스터를 확인 할 수 있습니다.</p>
-<h3 id="새파일-만들기"><a href="#새파일-만들기" class="headerlink" title="새파일 만들기"></a>새파일 만들기</h3><p><img src="/python/2017-11-18_09-14-29.png" alt="새파일 만들기"><br>위 처럼 우측에 새파일 만들기 =&gt; python3를 선택하면 새로운 python3파일이 생성됩니다.</p>
-<h3 id="이름바꾸기"><a href="#이름바꾸기" class="headerlink" title="이름바꾸기"></a>이름바꾸기</h3><p><img src="/python/2017-11-18_09-20-14.png" alt="이름바꾸기"><br>위 그림처럼 Untitled를 클릭하면 이름을 바꿀수 있습니다.</p>
-<p>전체적으로 직관적이고 사용법이 사용하기 쉽습니다.<br><code>&lt;F1&gt;</code> 을 누르면 도움말이 나옵니다.</p>
-<p>메뉴와 툴바는 직접 확인해 보세요.</p>
-<h3 id="mode"><a href="#mode" class="headerlink" title="mode"></a>mode</h3><p>주피터 셀은 3가지 모드가 있습니다. </p>
-<ul>
-<li><p>code<br>파이썬 코드를 입력할 수 있습니다.</p>
-</li>
-<li><p>툴바의 키보드 모양 왼쪽에 보면 code로 되어 있습니다.<br>클릭해서 markdown과 raw로 바꿀수 있습니다.</p>
-</li>
-<li><p>raw는 ascii파일 입니다.</p>
-</li>
-<li>markdown<br>마크다운 문서를 만들 수 있습니다.</li>
-</ul>
-<h3 id="기본-사용법"><a href="#기본-사용법" class="headerlink" title="기본 사용법"></a>기본 사용법</h3><p>먼저 code mode로 python code를 입력해보세요.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a = <span class="number">10</span></div><div class="line">b = <span class="number">20</span></div><div class="line">sum = a + b</div><div class="line">print(sum)</div></pre></td></tr></table></figure>
-<p><code>shift + Enter</code> 하면 해당 셀이 실행되고 한줄이 추가 되어 집니다.<br>별도로 다시 실행 하려면 윈도우는 <code>Ctrl+Enter</code> 맥은 커맨드+엔터 하면 실행 됩니다.</p>
-<p>이번에는 두번째 셀을 markdown mode로 바꾸고 마크다운을 입력해 보세요.</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="section"># 마크다운</span></div><div class="line"><span class="section">## 마크다운</span></div><div class="line"><span class="section">### 마크다운</span></div><div class="line"><span class="section">#### 마크다운</span></div><div class="line"><span class="section">##### 마크다운</span></div><div class="line"></div><div class="line">마크다운 문법을 입력 할 수 있습다.</div><div class="line"><span class="bullet">- </span>ul</div><div class="line"><span class="bullet">- </span>ul2</div><div class="line"></div><div class="line"><span class="bullet">1. </span>ol</div><div class="line"><span class="bullet">2. </span>ol2</div><div class="line"></div><div class="line"><span class="quote">&gt; 인용도 다음과 같이 사용할 수 있습니다.</span></div><div class="line"><span class="quote">&gt; 인용이예요.</span></div><div class="line"></div><div class="line"><span class="section">## 수식도 입력할 수 있습니다.</span></div><div class="line">$$ x(t)=\frac&#123;-b\pm \sqrt&#123;&#123;b&#125;^&#123;2&#125;-4ac&#125;&#125;&#123;2a&#125; $$</div></pre></td></tr></table></figure>
-<h3 id="코드블럭도-사용할-수-있습니다"><a href="#코드블럭도-사용할-수-있습니다" class="headerlink" title="코드블럭도 사용할 수 있습니다."></a>코드블럭도 사용할 수 있습니다.</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span>&#123;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"hello world"</span>);</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>raw 나 head line은 직접 해보세요.</p>
-]]></content>
-      
-        <categories>
-            
-            <category> python </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> jupyter </tag>
             
         </tags>
         
